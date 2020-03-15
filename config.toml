@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "//noor.bodge.team/"
+baseurl = "//bodge.team/"
 languageCode = "en-us"
 title = "badge.team"
 theme = "hugrid"
