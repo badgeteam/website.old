@@ -1,0 +1,30 @@
+# Site settings
+baseurl = "//noor.bodge.team/"
+languageCode = "en-us"
+title = "badge.team"
+theme = "hugrid"
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = "UA-XXXXXXXX-Y"
+
+contentdir = "content"
+datadir = "data"
+layoutdir = "layouts"
+publishdir = "public"
+
+[params]
+    # Meta
+    title = "badge.team"
+    subtitle = "Badges, badges, bodges, and more badges and bodges"
+    author = "Pavel Kanyshev"
+    description = "Hugrid - grid theme for Hugo with an expanding image preview."
+    keywords = "badges, bodges, badge.team, hack, hacker"
+
+    # Body background color
+    bodybgcolor = "#f9f9f9"
+
+    # Preview container button text
+    buttontext = "Get the theme"
+
+    # add extra-css
+    # custom_css = ['css/extra1.css', 'css/extra2.css']
+
