@@ -2,9 +2,9 @@
 baseurl = "//bodge.team/"
 languageCode = "en-us"
 title = "badge.team"
-theme = "hugrid"
+theme = "bodgetheme"
 # Enter your tracking code to enable Google Analytics
-googleAnalytics = "UA-XXXXXXXX-Y"
+# googleAnalytics = "UA-XXXXXXXX-Y"
 
 contentdir = "content"
 datadir = "data"
@@ -27,4 +27,3 @@ publishdir = "public"
 
     # add extra-css
     # custom_css = ['css/extra1.css', 'css/extra2.css']
-
