@@ -3,13 +3,16 @@ baseurl = "//bodge.team/"
 languageCode = "en-us"
 title = "badge.team"
 theme = "bodgetheme"
-# Enter your tracking code to enable Google Analytics
-# googleAnalytics = "UA-XXXXXXXX-Y"
 
 contentdir = "content"
 datadir = "data"
 layoutdir = "layouts"
 publishdir = "public"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  project = "projects"
 
 [params]
     # Meta
