@@ -2,10 +2,10 @@
 date: {{ .Date }}
 draft: true
 title:  "{{ replace .TranslationBaseName "-" " " | title }}"
-description : ""
+description : "{{ replace .TranslationBaseName "-" " " | title }} Project"
 tags: []
 categories: []
-projects: []
+projects: [""{{ replace .TranslationBaseName "-" " " | upper }}""]
 image-src : ""
-image-alt : ""
+image-alt : "Project"
 ---
