@@ -8,4 +8,5 @@ categories: []
 projects: [""{{ replace .TranslationBaseName "-" " " | upper }}""]
 image-src : ""
 image-alt : "Project"
+archived: false
 ---
