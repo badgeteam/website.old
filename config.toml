@@ -1,18 +1,18 @@
 # Site settings
-baseurl = "https://bodge.team"
+baseurl      = "https://bodge.team"
 languageCode = "en-us"
-title = "badge.team"
-theme = "bodgetheme"
+title        = "badge.team"
+theme        = "bodgetheme"
 
 contentdir = "content"
-datadir = "data"
-layoutdir = "layouts"
+datadir    = "data"
+layoutdir  = "layouts"
 publishdir = "public"
 
 [taxonomies]
-  tag = "tags"
+  tag      = "tags"
   category = "categories"
-  project = "projects"
+  activity = "activities"
 
 [params]
     # Meta

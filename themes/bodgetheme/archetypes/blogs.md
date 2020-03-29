@@ -1,14 +1,14 @@
 ---
-date: {{ .Date }}
-draft: true
-title:  "{{ replace .TranslationBaseName "-" " " | title }}"
-author: "Anonymous"
+date        : {{ .Date }}
+draft       : true
+title       : "{{ replace .TranslationBaseName "-" " " | title }}"
+author      : "Anonymous"
 description : ""
-tags: []
-categories: []
-projects: []
-image-src : ""
-image-alt : ""
+tags        : []
+categories  : []
+activities  : []
+image-src   : ""
+image-alt   : ""
 ---
 
-Content goes here.
+Blog content goes here.

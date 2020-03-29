@@ -1,41 +1,131 @@
 {{ define "main" }}
 
-		  <!-- Project Section -->
-		  <div class="w3-container w3-padding-32 w3-margin-top" id="projects">
+{{ $projects := where .Site.Pages "Section" "projects" }}
+{{ $current  := where .Site.Pages "Params.archived" false }}
+
+{{ $debugcount := len $projects }}
+{{ printf "Projects count %#v" $debugcount }}
+
+{{ $debugcount := len $current }}
+{{ printf "Current count %#v" $debugcount }}
+
+{{ $current_projects := $projects | intersect $current }}
+{{ $current_projects_count := len $current_projects }}
+{{ if ge $current_projects_count 1 }}
+			<!-- Project Section -->
+			<div class="w3-container w3-padding-32 w3-margin-top" id="projects">
 				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Current Projects</h3>
-		  </div>
+			</div>
 
-		  <div class="w3-row-padding">
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="test8images/house5.jpg" alt="MCH2021" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>MCH 2021</h4></div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="test8images/house2.jpg" alt="HH2021" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>Hacker Hotel 2021</h4></div>
-					</div>
-				</div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <div class="w3-display-container">
-            <img class="w3-hover-grayscale" src="images/thumbs/hh2020.png" alt="HH2020" style="width:100%">
-            <div class="w3-display-middle w3-text-white"><h4>Hacker Hotel 2020</h4></div>
-          </div>
-        </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/eth02019.png" alt="ETH0" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>ETH0 2019</h4></div>
-					</div>
-				</div>
-		  </div>
+			<div class="w3-row-padding">
 
-			<!-- Project Archive Section -->
-		  <div class="w3-container w3-padding-32" id="finished-projects">
-				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Project Archive</h3>
-		  </div>
+				{{ range $current_projects }}
+				<div class="w3-col l3 m6 w3-margin-bottom">
+					<a title="Documentation" href="{{ .Permalink }}">
+						<div class="w3-card">
+							{{ if .Params.image_src }}
+							<img class="w3-hover-grayscale" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
+							{{ else if .Params.thumb_src }}
+							<img class="w3-hover-grayscale" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
+							{{ else }}
+							<img class="w3-hover-grayscale" src="/images/mascot.png" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+							{{ end }}
+							<div class="w3-container w3-center"><h4>{{ .Params.Short_Title | default .Title }}</h4></div>
+						</div>
+					</a>
+				</div>
+				{{ end }}
+			</div>
+{{ end }}
+
+{{ $archived := where .Site.Pages "Params.archived" true }}
+{{ $archived_projects := $projects | intersect $archived }}
+{{ $archived_projects_count := len $archived_projects }}
+{{ if ge $archived_projects_count 1 }}
+			<!-- Project Section -->
+			<div class="w3-container w3-padding-32 w3-margin-top" id="projects">
+				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Archived Projects</h3>
+			</div>
+
+			<div class="w3-row-padding">
+
+				{{ range $archived_projects }}
+				<div class="w3-col l3 m6 w3-margin-bottom">
+					<a title="Documentation" href="{{ .Permalink }}">
+						<div class="w3-card">
+							{{ if .Params.image_src }}
+							<img class="w3-hover-grayscale" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
+							{{ else if .Params.thumb_src }}
+							<img class="w3-hover-grayscale" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
+							{{ else }}
+							<img class="w3-hover-grayscale" src="/images/mascot.png" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+							{{ end }}
+							<div class="w3-container w3-center"><h4>{{ .Params.Short_Title | default .Title }}</h4></div>
+						</div>
+					</a>
+				</div>
+				{{ end }}
+			</div>
+{{ end }}
+
+
+
+
+
+
+
+<!-- Alternative Section -->
+<div class="w3-container w3-padding-32" id="finished-projects">
+	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Temporary page display alternatives</h3>
+</div>
+
+
+{{ $current_projects := $projects | intersect $current }}
+{{ $current_projects_count := len $current_projects }}
+{{ if ge $current_projects_count 1 }}
+
+			<div class="w3-row-padding">
+
+				{{ range $current_projects }}
+				<div class="w3-col l3 m6 w3-margin-bottom">
+					<a title="Documentation" href="{{ .Permalink }}">
+						<div class="w3-display-container w3-border">
+							{{ if .Params.image_src }}
+							<img class="w3-hover-grayscale" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
+							{{ else if .Params.thumb_src }}
+							<img class="w3-hover-grayscale" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
+							{{ end }}
+							<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>{{ .Params.Short_Title | default .Title }}</h4></div>
+						</div>
+					</a>
+				</div>
+				{{ end }}
+			</div>
+{{ end }}
+
+{{ $archived  := where .Site.Pages "Params.archived" true }}
+{{ $archived_projects := $projects | intersect $archived }}
+{{ $archived_projects_count := len $archived_projects }}
+{{ if ge $archived_projects_count 1 }}
+
+			<div class="w3-row-padding">
+
+				{{ range $archived_projects }}
+				<div class="w3-col l3 m6 w3-margin-bottom">
+					<a title="Documentation" href="{{ .Permalink }}">
+						<div class="w3-display-container w3-border">
+							{{- if .Params.image_src -}}
+							<img class="w3-hover-grayscale" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
+							{{- else if .Params.thumb_src -}}
+							<img class="w3-hover-grayscale" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
+							{{- end -}}
+							<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>{{ .Params.Short_Title | default .Title }}</h4></div>
+						</div>
+					</a>
+				</div>
+				{{ end }}
+			</div>
+{{ end }}
 
 			<div class="w3-row-padding">
 				<div class="w3-col l3 m6 w3-margin-bottom">
@@ -62,11 +152,6 @@
 						<div class="w3-display-middle w3-text-white"><h4>SHA 2017</h4></div>
 					</div>
 				</div>
-		  </div>
-
-			<!-- Alternative Section -->
-		  <div class="w3-container w3-padding-32" id="finished-projects">
-				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Alternative display tests</h3>
 		  </div>
 
 			<div class="w3-row-padding">
