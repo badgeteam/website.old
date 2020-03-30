@@ -2,13 +2,6 @@
 
 {{ $projects := where .Site.Pages "Section" "projects" }}
 {{ $current  := where .Site.Pages "Params.archived" false }}
-
-{{ $debugcount := len $projects }}
-{{ printf "Projects count %#v" $debugcount }}
-
-{{ $debugcount := len $current }}
-{{ printf "Current count %#v" $debugcount }}
-
 {{ $current_projects := $projects | intersect $current }}
 {{ $current_projects_count := len $current_projects }}
 {{ if ge $current_projects_count 1 }}
@@ -21,7 +14,7 @@
 
 				{{ range $current_projects }}
 				<div class="w3-col l3 m6 w3-margin-bottom">
-					<a title="Documentation" href="{{ .Permalink }}">
+					<a title="Documentation" href="{{ .Permalink }}" style="text-decoration:none;">
 						<div class="w3-card">
 							{{ if .Params.image_src }}
 							<img class="w3-hover-grayscale" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
@@ -51,7 +44,7 @@
 
 				{{ range $archived_projects }}
 				<div class="w3-col l3 m6 w3-margin-bottom">
-					<a title="Documentation" href="{{ .Permalink }}">
+					<a title="Documentation" href="{{ .Permalink }}" style="text-decoration:none;">
 						<div class="w3-card">
 							{{ if .Params.image_src }}
 							<img class="w3-hover-grayscale" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
