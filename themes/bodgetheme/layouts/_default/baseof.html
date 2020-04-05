@@ -6,7 +6,7 @@
     {{- partial "site-header.html" . }}
 
     {{ "<!-- Page content -->" | safeHTML }}
-    <div class="w3-content w3-padding" style="max-width:1500px">
+    <div class="w3-content w3-padding w3-margin-top" style="max-width:1500px">
     {{- block "main" . }}{{- end }}
     {{ "<!-- End page content -->" | safeHTML }}
     </div>
