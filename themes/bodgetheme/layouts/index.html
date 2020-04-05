@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ "<!-- Index page -->" | safeHTML }}
 
 {{ $projects := where .Site.Pages "Section" "projects" }}
 {{ $current  := where .Site.Pages "Params.archived" false }}
@@ -311,4 +312,5 @@
 
 			<br><br><br>
 
+{{ "<!-- End index page -->" | safeHTML }}
 {{ end }}

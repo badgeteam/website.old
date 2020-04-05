@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
-  <!-- Head -->
-{{- partial "site-head.html" . -}}
+  {{- partial "site-head.html" . }}
 
   <body>
-    <!-- Header -->
-{{- partial "site-header.html" . -}}
+    {{- partial "site-header.html" . }}
 
-    <!-- Page content -->
+    {{ "<!-- Page content -->" | safeHTML }}
     <div class="w3-content w3-padding" style="max-width:1500px">
-{{- block "main" . }}{{- end }}
-    <!-- End page content -->
+    {{- block "main" . }}{{- end }}
+    {{ "<!-- End page content -->" | safeHTML }}
     </div>
 
     <!-- Footer -->
-{{- partial "site-footer.html" . -}}
+    {{- partial "site-footer.html" . -}}
   </body>
 </html>

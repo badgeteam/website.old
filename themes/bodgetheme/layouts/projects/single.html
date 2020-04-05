@@ -1,19 +1,70 @@
 {{ define "main" }}
+{{ "<!-- Project single -->" | safeHTML }}
 
- <!-- Default single -->
- <article>
-   <div class="w3-container w3-center w3-margin-top">
-     <h3 class="w3-left">{{ .Title | default .Site.Title }} - Project marker</h3><br>
-     <span class="w3-left w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span>
-   </div>
-   <section>
-     <div class="w3-card w3-margin w3-padding">
-{{- if .Params.image_src -}}
-       <img src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" class="w3-image w3-round w3-left w3-margin-right" style="width:75px">
-{{- end -}}
-       <span>{{ .Content }}</span>
-     </div>
-    </section>
-  </article>
+ <!-- Header -->
+<header class="w3-container w3-center w3-padding-32">
+  <h1 class="w3-left">{{ .Title | default .Site.Title }}</h1>
+</header>
 
- {{ end }}
+<div class="w3-row">
+  {{ $blogs := where .Site.Pages "Section" "blogs" }}
+  {{ $project_blogs  := first 4 (where $blogs "Params.activities" "intersect" .Params.activities) }}
+  {{ $project_blogs_count := len $project_blogs }}
+  {{ if ge $project_blogs_count 1 }}
+  {{ "<!-- Blogs -->" | safeHTML }}
+  <div class="w3-col l8 s12">
+    {{ range $project_blogs }}
+    <!-- Blog entry -->
+    <div class="w3-card-4 w3-margin w3-white">
+      {{ if .Params.image_src }}
+		  <img class="" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
+		  {{ else if .Params.thumb_src }}
+		  <img class="" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
+		  {{ end }}
+      <div class="w3-container">
+        <h3><b>{{ .Title }}</b></h3>
+        <span class="w3-left w3-opacity w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span>
+      </div>
+      <div class="w3-container">
+        <p>{{ .Description }}</p>
+        <div class="w3-row">
+          <div class="w3-col m8 s12">
+            <p><a class="w3-button w3-padding-large w3-white w3-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><b>READ MORE &raquo;</b></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  {{ end }}
+  </div>
+  {{ "<!-- End blogs -->" | safeHTML }}
+{{ end }}
+
+<!-- Right side column -->
+<div class="w3-col l4">
+  <!-- About Project -->
+  <div class="w3-card w3-margin w3-margin-top">
+    {{ if .Params.image_src }}
+    <img class="" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
+    {{ else if .Params.thumb_src }}
+    <img class="" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
+    {{ else }}
+    <img class="" src="/images/mascot.png" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+    {{ end }}
+    <div class="w3-container w3-white">
+      <h4><b>{{ .Title }}</b></h4>
+      <p>{{ .Description }}</p>
+    </div>
+  </div>
+  <hr>
+
+  {{- partial "widget-recent-updates.html" . -}}
+  {{- partial "widget-tags.html" . -}}
+
+<!-- Right side column -->
+</div>
+
+</div><br>
+
+{{ "<!-- End project single -->" | safeHTML }}
+{{ end }}

@@ -1,19 +1,22 @@
 {{ define "main" }}
 
- <!-- Default single -->
- <article>
-   <div class="w3-container w3-center w3-margin-top">
-     <h3 class="w3-left">{{ .Title | default .Site.Title }}</h3><br>
-     <span class="w3-left w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span>
-   </div>
-   <section>
-     <div class="w3-card w3-margin w3-padding">
-{{- if .Params.image_src -}}
-       <img src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" class="w3-image w3-round w3-left w3-margin-right" style="width:75px">
-{{- end -}}
-       <span>{{ .Content }}</span>
-     </div>
+{{ "<!-- Default single -->" | safeHTML }}
+
+  <article>
+    <div class="w3-container w3-center w3-margin-top">
+      <h3 class="w3-left">{{ .Title | default .Site.Title }}</h3><br>
+      <span class="w3-left w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span>
+    </div>
+    <section>
+      <div class="w3-card w3-margin w3-padding">
+        {{- if .Params.image_src -}}
+        <img src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" class="w3-image w3-round w3-left w3-margin-right" style="width:75px">
+        {{- end -}}
+        <span>{{ .Content }}</span>
+      </div>
     </section>
   </article>
 
- {{ end }}
+{{ "<!-- End default single -->" | safeHTML }}
+
+{{ end }}

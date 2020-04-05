@@ -15,6 +15,13 @@ publishdir = "public"
   activity = "activities"
 
 [params]
+  mainSections = ["blogs"]
+
+
+
+
+
+
     # Meta
     title = "badge.team"
     subtitle = "Badges, badges, bodges, and more badges and bodges"
