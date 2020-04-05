@@ -16,7 +16,7 @@
   <div class="w3-col l8 s12">
     {{ range $current_projects }}
     <!-- Blog entry -->
-    <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-card w3-margin w3-white">
       {{ if .Params.image_src }}
 		  <img class="" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
 		  {{ else if .Params.thumb_src }}
