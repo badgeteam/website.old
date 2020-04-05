@@ -8,7 +8,7 @@
 
 <div class="w3-row">
   {{ $blogs := where .Site.RegularPages "Section" "blogs" }}
-  {{ $project_blogs  := first 4 (where $blogs "Params.activities" "intersect" .Params.activities) }}
+  {{ $project_blogs  := first 6 (where $blogs "Params.activities" "intersect" .Params.activities) }}
   {{ $project_blogs_count := len $project_blogs }}
   {{ if ge $project_blogs_count 1 }}
   {{ "<!-- Blogs -->" | safeHTML }}
