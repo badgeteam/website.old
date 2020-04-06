@@ -1,1 +1,17 @@
- <img src="img_snowtops.jpg" class="w3-round" alt="Norway">
+{{- $img_src := (.Get "src") }}
+{{- $img_alt := (.Get "alt") }}
+{{- $img_width := (.Get "width") | default "100%" }}
+{{- $img_class := (.Get "class") | default "w3-round" }}
+{{- $img_title := (.Get "title") }}
+{{- $img_descr := (.Get "descr") }}
+  <div class="w3-white" style="width:{{ $img_width }}">
+    <img class="{{ $img_class }}" src="{{ $img_src }}" alt="{{ $img_alt }}" style="width:100%">
+    <div class="w3-container">
+      {{- if $img_title -}}
+      <h4><b>{{ $img_title }}</b></h4>
+      {{- end -}}
+      {{- if $img_descr -}}
+      <p>{{ $img_descr }}</p>
+      {{- end -}}
+    </div>
+  </div>
