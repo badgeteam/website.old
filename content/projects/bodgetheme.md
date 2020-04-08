@@ -1,10 +1,10 @@
 ---
-date        : 2000-01-01T13:37:37+01:00
+date        : 2000-01-01T12:34:56+01:00
 draft       : true
 short_title : "Bodgetheme"
 title       : "Bodgetheme Project"
 description : "This is a temporary Bodgetheme test project. Blogs are created to test for the proper behaviour of new functionality."
-tags        : ["Bodgetheme"]
+tags        : []
 categories  : []
 activities  : ["Bodgetheme"]
 image_src   : "/images/full/sha2017.jpg"
