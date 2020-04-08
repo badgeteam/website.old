@@ -2,6 +2,7 @@
 date        : {{ .Date }}
 draft       : true
 title       : "{{ replace .TranslationBaseName "-" " " | title }}"
+author      : "Anonymous"
 description : ""
 tags        : []
 categories  : []
@@ -12,3 +13,5 @@ projects    : ["ReplaceThisWithTheCorrectProjectID"]
 image-src   : ""
 image-alt   : ""
 ---
+
+Blog content goes here.

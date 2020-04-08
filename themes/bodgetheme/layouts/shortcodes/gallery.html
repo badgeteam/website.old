@@ -1,0 +1,22 @@
+{{/* Get album folder or default to `gallery/`. */}}
+{{ $album := "" }}
+{{ with .Get "album" }}{{ $album = . }}{{else}}{{ $album = "gallery" }}{{end}}
+
+{{/* Set image path and page bundle that images are associated with. */}}
+{{ $album_path := "" }}
+{{ $resource_page := "" }}
+{{ if eq .Page.Parent.Type "widget_page" }}
+  {{ $album_path = printf "%s/%s/*" (path.Base (path.Split .Page.Path).Dir) $album }}
+  {{ $resource_page = $.Page.Parent }}
+{{ else }}
+  {{ $album_path = printf "%s/*" $album }}
+  {{ $resource_page = $.Page }}
+{{ end }}
+
+{{ $album_path := "/images/full/*" }}
+{{ $album_path = printf "%s/%s/*" (path.Base (path.Split .Page.Path).Dir) $album }}
+{{ $resource_page = $.Page.Parent }}
+
+{{ printf "<br><br>" | safeHTML}}
+{{ printf "%#v" . }}
+{{ printf "<br><br>" | safeHTML}}

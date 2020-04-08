@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ "<!-- Index page -->" | safeHTML }}
 
-{{ $projects := where .Site.RegularPages "Section" "projects" }}
+{{ $projects := where .Site.RegularPages "Section" "project" }}
 {{ $current  := where .Site.RegularPages "Params.archived" false }}
 {{ $current_projects := $projects | intersect $current }}
 {{ $current_projects_count := len $current_projects }}
@@ -32,7 +32,7 @@
 			</div>
 {{ end }}
 
-{{ $archived := where .Site.Pages "Params.archived" true }}
+{{ $archived := where .Site.RegularPages "Params.archived" true }}
 {{ $archived_projects := $projects | intersect $archived }}
 {{ $archived_projects_count := len $archived_projects }}
 {{ if ge $archived_projects_count 1 }}
