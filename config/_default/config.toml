@@ -12,7 +12,8 @@ publishdir = "public"
 [taxonomies]
   tag      = "tags"
   category = "categories"
-  activity = "activities"
+  project  = "projects"
+  blog     = "blogs"
 
 [params]
-  mainSections = ["blogs"]
+  mainSections = ["blog"]
