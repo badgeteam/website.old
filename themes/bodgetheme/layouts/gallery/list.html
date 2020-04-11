@@ -1,36 +1,43 @@
 {{ define "main" }}
-
- <!-- Default list -->
- <article>
-   <div class="w3-container w3-center w3-margin-top">
-     <h3 class="w3-left w3-padding-16 w3-margin-top">{{ humanize .Section }}</h3>
-   </div>
-
-   <section>
-     <div class="w3-container w3-center">
-       <h4 class="w3-left">{{ humanize .CurrentSection.Title }} - Gallery marker</h4>
-     </div>
-     <div class="w3-card w3-margin">
-       <ul class="w3-ul w3-hoverable w3-white">
-         {{ .Content }}
-         {{ range .Paginator.Pages }}
-         <li class="w3-padding-16">
-           <a href="{{ .Permalink }}" style="text-decoration:none;">
-             {{- if .Params.thumb_src -}}
-             <img src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" class="w3-image w3-round w3-left w3-margin-right" style="width:75px">
-             {{- else if .Params.image_src -}}
-             <img src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" class="w3-image w3-round w3-left w3-margin-right" style="width:75px">
-             {{- end -}}
-             <span class="w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span><br>
-             <span class="w3-large">{{ .Title | default .Site.Title }}</span><br>
-             <span class="">{{ .Params.description }}</span>
-           </a>
-         </li>
-         {{ end }}
-       </ul>
-     </div>
-    </section>
-    {{- template "_internal/pagination.html" . -}}
-   </article>
-
-{{ end }}
+      <article> {{ "<!-- Gallery -->" | safeHTML }}
+        <div class="w3-container w3-center">
+          <h3 class="w3-left">{{ humanize .Section }}</h3>
+        </div>
+        <hr>
+  {{- range .Paginator.Pages }}
+  {{- $album := .Page }}
+        <section> {{ printf "<!-- %#v site gallery -->" .Params.title | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">{{ .Params.title }}</h4>
+          </div>
+          <div class="w3-row-padding">
+    {{- if .Resources }}
+      {{- range .Resources.ByType "image" }}
+        {{- $image := .Resize "600x600" }}
+        {{- $filename := path.Base .Name }}
+        {{- $caption  := "Noname"}}
+        {{- $alt      := "Noname"}}
+        {{- if $album.Params.gallery }}
+          {{- range (where $album.Params.gallery "image" $filename) }}
+            {{- $caption = .caption }}
+            {{- if .alt}}{{$alt = .alt}}{{else}}{{$alt = .caption}}{{end}}
+          {{- end }}
+        {{- end }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="Documentation" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-card">
+                  <img class="w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
+                  <div class="w3-container w3-center"><h5>{{ $caption }}</h5></div>
+                </div>
+              </a>
+            </div>
+      {{- end }}
+    {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>Gallery <strong>{{ .Params.title }}</strong> has no resources yet.</h5></div>
+    {{- end }}
+          </div>
+        </section> {{ printf "<!-- End %#v site gallery -->" .Params.title | safeHTML }}
+        <hr>
+  {{- end }}
+      </article> {{ "<!-- End Gallery -->" | safeHTML }}
+{{- end }}
