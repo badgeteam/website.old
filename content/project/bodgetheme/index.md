@@ -31,7 +31,10 @@ gallery:
   exclude : false
   images  :
   - image   : "bodge.jpg"
-    caption : "Imagine"
+    caption : "Bodge"
+    exclude : false
+  - image   : "bodgeteam.jpg"
+    caption : "Bodgeteam"
     exclude : false
 - album   : "thumbs"
   exclude : true

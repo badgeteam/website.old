@@ -30,8 +30,17 @@ gallery:
 - album   : "images"
   exclude : true
   images  :
-  - image   : "imagine.jpg"
-    caption : "Imagine"
+  - image   : "eth02019.jpg"
+    caption : "ETH0 2019"
+    exclude : false
+  - image   : "people.jpg"
+    caption : "People"
+    exclude : false
+- album   : "thumbs"
+  exclude : true
+  images  :
+  - image   : "eth02019.png"
+    caption : "ETH0 2019"
     exclude : false
   - image   : "people.jpg"
     caption : "People"

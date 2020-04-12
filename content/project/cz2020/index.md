@@ -40,4 +40,13 @@ gallery:
   - image   : "people.jpg"
     caption : "People"
     exclude : false
+- album   : "thumbs"
+  exclude : true
+  images  :
+  - image   : "imagine.jpg"
+    caption : "Imagine"
+    exclude : false
+  - image   : "people.jpg"
+    caption : "People"
+    exclude : false
 ---

@@ -35,10 +35,13 @@ gallery:
 - album   : "images"
   exclude : true
   images  :
-  - image   : "imagine.jpg"
-    caption : "Imagine"
+  - image   : "hh2020.jpg"
+    caption : "HH2020"
     exclude : false
-  - image   : "people.jpg"
-    caption : "People"
+- album   : "thumbs"
+  exclude : true
+  images  :
+  - image   : "hh2020.png"
+    caption : "HH2020"
     exclude : false
 ---

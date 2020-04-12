@@ -34,10 +34,13 @@ gallery:
 - album   : "images"
   exclude : true
   images  :
-  - image   : "imagine.jpg"
-    caption : "Imagine"
+  - image   : "campzone2019.jpg"
+    caption : "CampZone2019"
     exclude : false
-  - image   : "people.jpg"
-    caption : "People"
+- album   : "thumbs"
+  exclude : true
+  images  :
+  - image   : "campzone2019.png"
+    caption : "CampZone2019"
     exclude : false
 ---

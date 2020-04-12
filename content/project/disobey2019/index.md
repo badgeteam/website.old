@@ -1,9 +1,9 @@
 ---
 date        : 2019-04-10T13:14:57+02:00
 draft       : true
-short_title : "Disobey2019"
-title       : "Disobey2019"
-description : "Disobey2019 Project"
+short_title : "Disobey 2019"
+title       : "Disobey 2019"
+description : "Disobey 2019 Project"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["DISOBEY2019"]
@@ -30,10 +30,13 @@ gallery:
 - album   : "images"
   exclude : true
   images  :
-  - image   : "imagine.jpg"
-    caption : "Imagine"
+  - image   : "disobey2019.jpg"
+    caption : "Disobey 2019"
     exclude : false
-  - image   : "people.jpg"
-    caption : "People"
+- album   : "thumbs"
+  exclude : true
+  images  :
+  - image   : "disobey2019.png"
+    caption : "Disobey 2019"
     exclude : false
 ---

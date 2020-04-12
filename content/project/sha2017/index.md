@@ -33,19 +33,13 @@ gallery:
 - album   : "images"
   exclude : true
   images  :
-  - image   : "imagine.jpg"
-    caption : "Imagine"
-    exclude : false
-  - image   : "people.jpg"
-    caption : "People"
+  - image   : "sha2017.jpg"
+    caption : "SHA2017"
     exclude : false
 - album   : "thumbs"
   exclude : true
   images  :
-  - image   : "imagine.jpg"
-    caption : "Imagine"
-    exclude : false
-  - image   : "people.jpg"
-    caption : "People"
+  - image   : "sha2017.png"
+    caption : "SHA2017"
     exclude : false
 ---
