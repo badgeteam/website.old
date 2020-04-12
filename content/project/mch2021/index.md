@@ -23,7 +23,7 @@ tags        :
 categories  : []
 
 # Default images related to this project
-image_src   : ""
+image_src   : "images/mascot.png"
 image_alt   : "MCH2021"
 thumb_src   : ""
 thumb_alt   : "MCH2021"

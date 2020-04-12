@@ -23,7 +23,7 @@ active      : true
 archived    : false
 
 # Default images related to this project
-image_src   : ""
+image_src   : "images/mascot.png"
 image_alt   : "CZ2020"
 thumb_src   : ""
 thumb_alt   : "CZ2020"

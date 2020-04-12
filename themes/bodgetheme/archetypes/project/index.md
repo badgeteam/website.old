@@ -20,9 +20,9 @@ tags        :
 categories  : []
 
 # Default images related to this project
-image_src   : ""
+image_src   : "images/mascot.png"
 image_alt   : "{{ replace .Name "-" " " | upper }}"
-thumb_src   : ""
+thumb_src   : "images/mascot.png"
 thumb_alt   : "{{ replace .Name "-" " " | upper }}"
 
 # Photo gallery
