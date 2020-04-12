@@ -4,7 +4,7 @@ draft       : true
 title       : "Disobey 2019 badge"
 author      : "Anne Jan Brouwer"
 description : "Disobey 2019 badge"
-tags        : ["2019", "Badge","Disobey","CZ2019"]
+tags        : ["2019", "Badge","Disobey","Disobey2019"]
 categories  : []
 projects    : ["DISOBEY2019"]
 image_src   : "images/badge.jpg"

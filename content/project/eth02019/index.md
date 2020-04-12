@@ -28,13 +28,22 @@ thumb_alt   : "ETH02019"
 # Photo gallery
 gallery:
 - album   : "images"
-  exclude : true
+  exclude : false
   images  :
   - image   : "eth02019.jpg"
     caption : "ETH0 2019"
     exclude : false
-  - image   : "people.jpg"
-    caption : "People"
+  - image   : "eth0-tamafoxi-badge.jpg"
+    caption : "Tamafoxi"
+    exclude : false
+  - image   : "eth0-kartoffel-badge.jpg"
+    caption : "Kartoffel"
+    exclude : false
+  - image   : "eth0-bernadski-badge.jpg"
+    caption : "Bernadski"
+    exclude : false
+  - image   : "ef997a4941a8a2e5c9e4acb0cd9eee43.jpg"
+    caption : "Mystery"
     exclude : false
 - album   : "thumbs"
   exclude : true
