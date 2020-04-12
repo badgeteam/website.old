@@ -14,8 +14,13 @@ categories  :
 
 # Photo gallery
 gallery:
-- image   : "image1.jpg"
-  caption : "Imagine One"
-- image   : "image2.jpg"
-  caption : "Imagine Two"
+- album   : "images"
+  exclude : false
+  images  :
+  - image   : "imagine.jpg"
+    caption : "Imagine"
+    exclude : false
+  - image   : "people.jpg"
+    caption : "People"
+    exclude : false
 ---

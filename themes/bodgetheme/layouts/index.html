@@ -1,766 +1,327 @@
 {{ define "main" }}
 {{ "<!-- Index page -->" | safeHTML }}
-
-{{ $projects := where .Site.RegularPages "Section" "project" }}
-{{ $current  := where .Site.RegularPages "Params.archived" false }}
-{{ $current_projects := $projects | intersect $current }}
-{{ $current_projects_count := len $current_projects }}
-{{ if ge $current_projects_count 1 }}
-			<!-- Project Section -->
-			<div class="w3-container w3-padding-16 w3-margin-top" id="projects">
-				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Active Projects</h3>
-			</div>
-
-			<div class="w3-row-padding">
-
-				{{ range $current_projects }}
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<a title="Documentation" href="{{ .Permalink }}" style="text-decoration:none;">
-						<div class="w3-card">
-							{{ if .Params.image_src }}
-							<img class="w3-hover-grayscale" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
-							{{ else if .Params.thumb_src }}
-							<img class="w3-hover-grayscale" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
-							{{ else }}
-							<img class="w3-hover-grayscale" src="/images/mascot.png" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
-							{{ end }}
-							<div class="w3-container w3-center"><h4>{{ .Params.Short_Title | default .Title }}</h4></div>
-						</div>
-					</a>
-				</div>
+      <article> {{ "<!-- Projects -->" | safeHTML }}
+        <div class="w3-container w3-center">
+          <h3 class="w3-left">Projects</h3>
+        </div>
+        <hr>
+	{{- $projects := where .Site.RegularPages "Section" "project" }}
+	{{- $current  := where (where .Site.RegularPages "Params.active" true) "Params.archived" false }}
+	{{- $current_projects := $projects | intersect $current }}
+	{{- $current_projects_count := len $current_projects }}
+        <section> {{ "<!-- Active projects -->" | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">Active Projects</h4>
+          </div>
+	{{- if ge $current_projects_count 1 }}
+	        <div class="w3-row-padding">
+		{{- range $current_projects }}
+			{{- $image_file := "" }}
+			{{- $image_src  := "" }}
+			{{- if .Params.image_src }}
+				{{- $image_file = .Resources.GetMatch .Params.image_src }}
+			{{- else }}
+			  {{ if .Site.Params.defaultImage }}
+			    {{- $image_file = .Resources.GetMatch .Site.Params.defaultImage }}
+					{{- $image_src = .Site.Params.defaultImage }}
+				{{ else }}
+				  {{- $image_src = "/images/mascot_600x600.png" }}
 				{{ end }}
-			</div>
-{{ end }}
-
-{{ $archived := where .Site.RegularPages "Params.archived" true }}
-{{ $archived_projects := $projects | intersect $archived }}
-{{ $archived_projects_count := len $archived_projects }}
-{{ if ge $archived_projects_count 1 }}
-			<!-- Project Section -->
-			<div class="w3-container w3-padding-16 w3-margin-top" id="projects">
-				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Past Projects</h3>
-			</div>
-
-			<div class="w3-row-padding">
-
-				{{ range $archived_projects }}
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<a title="Documentation" href="{{ .Permalink }}" style="text-decoration:none;">
-						<div class="w3-card">
-							{{ if .Params.image_src }}
-							<img class="w3-hover-grayscale" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
-							{{ else if .Params.thumb_src }}
-							<img class="w3-hover-grayscale" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
-							{{ else }}
-							<img class="w3-hover-grayscale" src="/images/mascot.png" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
-							{{ end }}
-							<div class="w3-container w3-center"><h4>{{ .Params.Short_Title | default .Title }}</h4></div>
-						</div>
-					</a>
-				</div>
+			{{- end }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ .Params.Short_Title | default .Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-card">
+      {{- if $image_file }}
+  			{{- $image := $image_file.Resize "600x600" }}
+									<img class="w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			{{- else }}
+			            <img class="w3-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			{{- end }}
+                  <div class="w3-container w3-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+  {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>There are currently no active projects.</h5></div>
+  {{- end }}
+          </div>
+        </section>  {{ "<!-- End Active projects -->" | safeHTML }}
+        <hr>
+	{{- $inactive  := where (where .Site.RegularPages "Params.active" false) "Params.archived" false }}
+	{{- $inactive_projects := $projects | intersect $inactive }}
+	{{- $inactive_projects_count := len $inactive_projects }}
+        <section> {{ "<!-- Finished projects -->" | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">Finished Projects</h4>
+          </div>
+	{{- if ge $inactive_projects_count 1 }}
+	        <div class="w3-row-padding">
+		{{- range $inactive_projects }}
+			{{- $image_file := "" }}
+			{{- $image_src  := "" }}
+			{{- if .Params.image_src }}
+				{{- $image_file = .Resources.GetMatch .Params.image_src }}
+			{{- else }}
+			  {{ if .Site.Params.defaultImage }}
+			    {{- $image_file = .Resources.GetMatch .Site.Params.defaultImage }}
+					{{- $image_src = .Site.Params.defaultImage }}
+				{{ else }}
+				  {{- $image_src = "/images/mascot_600x600.png" }}
 				{{ end }}
-			</div>
-{{ end }}
+			{{- end }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ .Params.Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-card">
+      {{- if $image_file }}
+  			{{- $image := $image_file.Resize "600x600" }}
+									<img class="w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			{{- else }}
+			            <img class="w3-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			{{- end }}
+                  <div class="w3-container w3-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+  {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
+  {{- end }}
+          </div>
+        </section>  {{ "<!-- End Finished projects -->" | safeHTML }}
+				<hr>
+      </article> {{ "<!-- End Projects -->" | safeHTML }}
+{{ "<!-- Index page -->" | safeHTML }}
 
-
-
-
-
-
-
-<!-- Alternative Section -->
-<div class="w3-container w3-padding-16 w3-maring-top" id="finished-projects">
-	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Temporary page display alternatives</h3>
-</div>
-
-
-{{ $current_projects := $projects | intersect $current }}
-{{ $current_projects_count := len $current_projects }}
-{{ if ge $current_projects_count 1 }}
-
-			<div class="w3-row-padding">
-
-				{{ range $current_projects }}
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<a title="Documentation" href="{{ .Permalink }}">
-						<div class="w3-display-container w3-border">
-							{{ if .Params.image_src }}
-							<img class="w3-hover-grayscale" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
-							{{ else if .Params.thumb_src }}
-							<img class="w3-hover-grayscale" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
-							{{ end }}
-							<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>{{ .Params.Short_Title | default .Title }}</h4></div>
-						</div>
-					</a>
-				</div>
+{{ "<!-- Temporary showcase -->" | safeHTML }}
+{{- $prjs := slice }}
+      <article> {{ "<!-- Temporary format samples -->" | safeHTML }}
+        <div class="w3-container w3-center">
+          <h3 class="w3-left">Temporary format examples</h3>
+        </div>
+        <hr>
+	{{- $inactive  := where (where .Site.RegularPages "Params.active" false) "Params.archived" false }}
+	{{- $inactive_projects := last 4 ($projects | intersect $inactive) }}
+	{{- $inactive_projects_count := len $inactive_projects }}
+        <section> {{ "<!-- White bottom -->" | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">White bottom</h4>
+          </div>
+	{{- if ge $inactive_projects_count 1 }}
+	        <div class="w3-row-padding">
+		{{- range $inactive_projects }}
+			{{- $image_file := "" }}
+			{{- $image_src  := "" }}
+			{{- if .Params.image_src }}
+				{{- $image_file = .Resources.GetMatch .Params.image_src }}
+			{{- else }}
+			  {{ if .Site.Params.defaultImage }}
+			    {{- $image_file = .Resources.GetMatch .Site.Params.defaultImage }}
+					{{- $image_src = .Site.Params.defaultImage }}
+				{{ else }}
+				  {{- $image_src = "/images/mascot_600x600.png" }}
 				{{ end }}
-			</div>
-{{ end }}
+			{{- end }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ .Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-card">
+      {{- if $image_file }}
+  			{{- $image := $image_file.Resize "600x600" }}
+									<img class="w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+					{{- $prj := dict "title" ( .Title ) "description" ( .Params.Short_Title | default .Title ) "alt" (.Params.Short_Title | default .Title) "src" $image.RelPermalink }}
+					{{- $prjs = $prjs | append $prj}}
+			{{- else }}
+			            <img class="w3-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			{{- end }}
+                  <div class="w3-container w3-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+  {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
+  {{- end }}
+          </div>
+        </section>  {{ "<!-- White bottom -->" | safeHTML }}
+				<hr>
 
-{{ $archived  := where .Site.Pages "Params.archived" true }}
-{{ $archived_projects := $projects | intersect $archived }}
-{{ $archived_projects_count := len $archived_projects }}
-{{ if ge $archived_projects_count 1 }}
+	{{- $prjs_count := len $prjs }}
+        <section> {{ "<!-- Black bottom -->" | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">Black bottom</h4>
+          </div>
+	{{- if ge $prjs_count 1 }}
+	        <div class="w3-row-padding">
+		{{- range $prjs }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ .title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-card">
+			            <img class="w3-hover-grayscale" src="{{ .src }}" alt="{{ .alt }}" style="width:100%">
+                  <div class="w3-container w3-center w3-black w3-text-white"><h5>{{ .description | truncate 18  }}</h5></div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+  {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
+  {{- end }}
+          </div>
+        </section>  {{ "<!-- Black bottom -->" | safeHTML }}
+				<hr>
 
-			<div class="w3-row-padding">
+				<section> {{ "<!-- White text transparent centered -->" | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">White text transparent centered</h4>
+          </div>
+	{{- if ge $prjs_count 1 }}
+	        <div class="w3-row-padding">
+		{{- range $prjs }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ .title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-display-container">
+			            <img class="w3-hover-grayscale" src="{{ .src }}" alt="{{ .alt }}" style="width:100%">
+                  <div class="w3-display-middle w3-text-white"><h5>{{ .description | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+  {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
+  {{- end }}
+          </div>
+        </section>  {{ "<!-- White text transparent centered -->" | safeHTML }}
+				<hr>
 
-				{{ range $archived_projects }}
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<a title="Documentation" href="{{ .Permalink }}">
-						<div class="w3-display-container w3-border">
-							{{- if .Params.image_src -}}
-							<img class="w3-hover-grayscale" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
-							{{- else if .Params.thumb_src -}}
-							<img class="w3-hover-grayscale" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
-							{{- end -}}
-							<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>{{ .Params.Short_Title | default .Title }}</h4></div>
-						</div>
-					</a>
-				</div>
-				{{ end }}
-			</div>
-{{ end }}
+				<section> {{ "<!-- Black texted opacity centered -->" | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">Black texted opacity centered</h4>
+          </div>
+	{{- if ge $prjs_count 1 }}
+	        <div class="w3-row-padding">
+		{{- range $prjs }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ .title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-display-container">
+			            <img class="w3-hover-grayscale" src="{{ .src }}" alt="{{ .alt }}" style="width:100%">
+                  <div class="w3-display-middle w3-white w3-text-black w3-padding w3-opacity"><h5>{{ .description | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+  {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
+  {{- end }}
+          </div>
+        </section>  {{ "<!-- EBlack texted opacity centered -->" | safeHTML }}
+				<hr>
 
-<!-- Format samples -->
-		<div class="w3-container w3-padding-16 w3-maring-top" id="finished-projects">
-			<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Format samples</h3>
-		</div>
+				<section> {{ "<!-- Black texted no opacity centered -->" | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">Black texted no opacity centered</h4>
+          </div>
+	{{- if ge $prjs_count 1 }}
+	        <div class="w3-row-padding">
+		{{- range $prjs }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ .title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-display-container">
+			            <img class="w3-hover-grayscale" src="{{ .src }}" alt="{{ .alt }}" style="width:100%">
+                  <div class="w3-display-middle w3-white w3-text-black w3-padding"><h5>{{ .description | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+  {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
+  {{- end }}
+          </div>
+        </section>  {{ "<!-- Black texted no opacity centered -->" | safeHTML }}
+				<hr>
 
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-container w3-center"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-container w3-center"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-container w3-center"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-container w3-center"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
+				<section> {{ "<!-- White texted opacity centered -->" | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">White texted opacity centered</h4>
+          </div>
+	{{- if ge $prjs_count 1 }}
+	        <div class="w3-row-padding">
+		{{- range $prjs }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ .title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-display-container">
+			            <img class="w3-hover-grayscale" src="{{ .src }}" alt="{{ .alt }}" style="width:100%">
+                  <div class="w3-display-middle w3-black w3-text-white w3-padding w3-opacity"><h5>{{ .description | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+  {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
+  {{- end }}
+          </div>
+        </section>  {{ "<!-- White texted opacity centered -->" | safeHTML }}
+				<hr>
 
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-container w3-center w3-black w3-text-white"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-container w3-center w3-black w3-text-white"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-container w3-center w3-black w3-text-white"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-container w3-center w3-black w3-text-white"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
+				<section> {{ "<!-- White texted no opacity centered -->" | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">White texted no opacity centered</h4>
+          </div>
+	{{- if ge $prjs_count 1 }}
+	        <div class="w3-row-padding">
+		{{- range $prjs }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ .title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-display-container">
+			            <img class="w3-hover-grayscale" src="{{ .src }}" alt="{{ .alt }}" style="width:100%">
+                  <div class="w3-display-middle w3-black w3-text-white w3-padding"><h5>{{ .description | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+  {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
+  {{- end }}
+          </div>
+        </section>  {{ "<!-- White texted no opacity centered -->" | safeHTML }}
+				<hr>
 
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding w3-opacity"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding w3-opacity"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding w3-opacity"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding w3-opacity"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding w3-opacity"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding w3-opacity"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding w3-opacity"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding w3-opacity"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-topleft w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-topleft w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-topleft w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-topleft w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="BODGETHEME" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>Bodgetheme</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-
-<!-- Format tests -->
-		<div class="w3-container w3-padding-16 w3-maring-top" id="finished-projects">
-			<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Format tests</h3>
-		</div>
-
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-container w3-center"><h4>Disobey 2019</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/campzone2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-container w3-center"><h4>Camp Zone 2019</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-container w3-center"><h4>Hacker Hotel 2019</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-container w3-center"><h4>SHA 2017</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-		<div class="w3-row-padding">
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-container w3-center w3-black w3-text-white"><h4>Disobey 2019</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-container w3-center w3-black w3-text-white"><h4>Camp Zone 2019</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-container w3-center w3-black w3-text-white"><h4>Hacker Hotel 2019</h4></div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-col l3 m6 w3-margin-bottom">
-				<a title="Bodgetheme" href="http://localhost:1313/projects/bodgetheme/" style="text-decoration:none;">
-					<div class="w3-card">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-container w3-center w3-black w3-text-white"><h4>SHA 2017</h4></div>
-					</div>
-				</a>
-			</div>
-		</div>
+				<section> {{ "<!-- White texted no opacity top left -->" | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">White texted no opacity top left</h4>
+          </div>
+	{{- if ge $prjs_count 1 }}
+	        <div class="w3-row-padding">
+		{{- range $prjs }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ .title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-display-container">
+			            <img class="w3-hover-grayscale" src="{{ .src }}" alt="{{ .alt }}" style="width:100%">
+                  <div class="w3-display-topleft w3-black w3-text-white w3-padding"><h5>{{ .description | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+  {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
+  {{- end }}
+          </div>
+        </section>  {{ "<!-- White texted no opacity top left -->" | safeHTML }}
+				<hr>
+      </article> {{ "<!-- End Temporary format samples -->" | safeHTML }}
+{{ "<!-- End Temporary showcase -->" | safeHTML }}
 
 
 
-			<div class="w3-row-padding">
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-display-bottom w3-white w3-padding"><h4>Disobey 2019</h4></div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/campzone2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-display-bottom w3-white w3-padding"><h4>Camp Zone 2019</h4></div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-display-bottom w3-white w3-padding"><h4>Hacker Hotel 2019</h4></div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-display-bottom w3-white w3-padding"><h4>SHA 2017</h4></div>
-					</div>
-				</div>
-		  </div>
 
-			<div class="w3-row-padding">
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>Disobey 2019</h4></div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/campzone2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>Camp Zone 2019</h4></div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>Hacker Hotel 2019</h4></div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding"><h4>SHA 2017</h4></div>
-					</div>
-				</div>
-		  </div>
 
-			<div class="w3-row-padding">
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>Disobey 2019</h4></div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/campzone2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>Camp Zone 2019</h4></div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>Hacker Hotel 2019</h4></div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-display-middle w3-text-white"><h4>SHA 2017</h4></div>
-					</div>
-				</div>
-		  </div>
 
-			<div class="w3-row-padding">
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding w3-opacity">Disobey 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/campzone2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding w3-opacity">Camp Zone 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding w3-opacity">Hacker Hotel 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding w3-opacity">SHA 2017</div>
-					</div>
-				</div>
-		  </div>
 
-			<div class="w3-row-padding">
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding">Disobey 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/campzone2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding">Camp Zone 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding">Hacker Hotel 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-display-middle w3-white w3-text-black w3-padding">SHA 2017</div>
-					</div>
-				</div>
-		  </div>
 
-			<div class="w3-row-padding">
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding w3-opacity">Disobey 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/campzone2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding w3-opacity">Camp Zone 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding w3-opacity">Hacker Hotel 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding w3-opacity">SHA 2017</div>
-					</div>
-				</div>
-		  </div>
 
-			<div class="w3-row-padding">
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding">Disobey 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/campzone2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding">Camp Zone 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding">Hacker Hotel 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-display-middle w3-black w3-text-white w3-padding">SHA 2017</div>
-					</div>
-				</div>
-		  </div>
 
-			<div class="w3-row-padding">
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-display-topleft w3-black w3-text-white w3-padding">Disobey 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/campzone2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-display-topleft w3-black w3-text-white w3-padding">Camp Zone 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-display-topleft w3-black w3-text-white w3-padding">Hacker Hotel 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-display-topleft w3-black w3-text-white w3-padding">SHA 2017</div>
-					</div>
-				</div>
-		  </div>
 
-			<div class="w3-row-padding">
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/disobey2019.png" alt="DISOBEY2019" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding">Disobey 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/campzone2019.png" alt="CAMPZONE2019" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding">Camp Zone 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/hh2019.png" alt="HH2019" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding">Hacker Hotel 2019</div>
-					</div>
-				</div>
-				<div class="w3-col l3 m6 w3-margin-bottom">
-					<div class="w3-display-container">
-						<img class="w3-hover-grayscale" src="images/thumbs/sha2017.png" alt="SHA2017" style="width:100%">
-						<div class="w3-display-bottom w3-black w3-text-white w3-padding">SHA 2017</div>
-					</div>
-				</div>
-		  </div>
+
+
+
 
 			<br><br><br>
 

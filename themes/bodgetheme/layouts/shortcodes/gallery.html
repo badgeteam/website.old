@@ -1,22 +1,42 @@
-{{/* Get album folder or default to `gallery/`. */}}
-{{ $album := "" }}
-{{ with .Get "album" }}{{ $album = . }}{{else}}{{ $album = "gallery" }}{{end}}
-
-{{/* Set image path and page bundle that images are associated with. */}}
-{{ $album_path := "" }}
-{{ $resource_page := "" }}
-{{ if eq .Page.Parent.Type "widget_page" }}
-  {{ $album_path = printf "%s/%s/*" (path.Base (path.Split .Page.Path).Dir) $album }}
-  {{ $resource_page = $.Page.Parent }}
-{{ else }}
-  {{ $album_path = printf "%s/*" $album }}
-  {{ $resource_page = $.Page }}
-{{ end }}
-
-{{ $album_path := "/images/full/*" }}
-{{ $album_path = printf "%s/%s/*" (path.Base (path.Split .Page.Path).Dir) $album }}
-{{ $resource_page = $.Page.Parent }}
-
-{{ printf "<br><br>" | safeHTML}}
-{{ printf "%#v" . }}
-{{ printf "<br><br>" | safeHTML}}
+{{- $album_name := "" }}
+{{- with .Get "album" }}{{ $album_name = . }}{{else}}{{ $album_name = "images" }}{{end}}
+{{- $album_path := "" }}
+{{- $album := "" }}
+{{- if eq .Page.Parent.Type "widget_page" }}
+  {{- $album_path = printf "%s/%s/*" (path.Base (path.Split .File.Path).Dir) $album_name }}
+  {{- $album = .Page.Parent }}
+{{- else }}
+  {{- $album_path = printf "%s/*" $album_name }}
+  {{- $album = .Page }}
+{{- end }}
+<div class="gallery">
+  <div class="w3-row-padding">
+  {{- $images := ($album.Resources.ByType "image").Match $album_path }}
+  {{- if $images }}
+    {{- range $images }}
+      {{- $filename := path.Base .Name }}
+      {{- $include  := true }}
+      {{- $caption  := "Noname"}}
+      {{- $alt      := "Noname"}}
+      {{- if $album.Params.gallery }}
+        {{- range (where $album.Params.gallery "image" $filename) }}
+          {{- $include = (not .exclude) }}
+          {{- $caption = .caption }}
+          {{- if .alt}}{{$alt = .alt}}{{else}}{{$alt = .caption}}{{end}}
+        {{- end }}
+      {{- end }}
+      {{- if $include }}
+        {{- $image := .Resize "600x400" }}
+    <div class="w3-col l3 m6 w3-margin-bottom">
+  		<a title="{{ $caption }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+  			<div class="w3-card">
+  				<img class="w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
+  				<div class="w3-container w3-center"><h6>{{ $caption | truncate 18 }}</h6></div>
+  			</div>
+  		</a>
+  	</div>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  </div>
+</div>

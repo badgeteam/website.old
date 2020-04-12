@@ -7,7 +7,7 @@ description : "While standard formatting should deliver quite a clean page, some
 tags        : []
 categories  : []
 projects    : ["Bodgetheme"]
-image_src   : ""
+image_src   : "images/campzone2019.jpg"
 image_alt   : "Camping"
 ---
 

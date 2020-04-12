@@ -16,4 +16,5 @@ publishdir = "public"
   blog     = "blogs"
 
 [params]
-  mainSections = ["blog"]
+  mainSections = ["blog","project"]
+  defaultImage = "/images/mascot_600x600.png"

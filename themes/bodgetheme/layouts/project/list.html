@@ -2,8 +2,8 @@
 {{ "<!-- Project list -->" | safeHTML }}
 
  <!-- Header -->
-<header class="w3-container w3-center w3-padding-32">
-  <h1 class="w3-left">Projects</h1>
+<header class="w3-container w3-center">
+  <h3 class="w3-left">Projects</h3>
 </header>
 
 <div class="w3-row">
@@ -14,13 +14,15 @@
   {{ if ge $current_projects_count 1 }}
   {{ "<!-- Projects -->" | safeHTML }}
   <div class="w3-col l8 s12">
-    {{ range $current_projects }}
+    {{- range $current_projects }}
+      {{- $image := "" }}
+      {{- if .Params.image_src }}
+        {{- $image = .Resources.GetMatch .Params.image_src }}
+      {{- end }}
     <!-- Blog entry -->
     <div class="w3-card w3-margin w3-white">
-      {{ if .Params.image_src }}
-		  <img class="" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
-		  {{ else if .Params.thumb_src }}
-		  <img class="" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
+      {{ if $image }}
+		  <img class="" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
 		  {{ end }}
       <div class="w3-container">
         <h3><b>{{ .Title }}</b></h3>
@@ -36,7 +38,7 @@
       </div>
     </div>
     <hr>
-  {{ end }}
+  {{- end }}
   </div>
   {{ "<!-- End projects -->" | safeHTML }}
 {{ end }}

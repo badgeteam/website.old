@@ -7,7 +7,7 @@ description : "Markdown formatting tests."
 tags        : []
 categories  : []
 projects    : ["Bodgetheme"]
-image_src   : "/images/full/hh2019.jpg"
+image_src   : "images/sha2017.jpg"
 image_alt   : "Hackerbar"
 ---
 
@@ -163,3 +163,5 @@ Bob
 Gabby
 : Cool Content Master
 : Cautious
+
+----

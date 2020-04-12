@@ -1,14 +1,12 @@
 
-    {{ "<!-- Navigation bar -->" | safeHTML }}
-    <div class="w3-top">
+    <div class="w3-top"> {{ "<!-- Navigation bar -->" | safeHTML }}
       <div class="w3-bar w3-white w3-wide w3-padding w3-card">
         <a class="w3-bar-item w3-button w3-round" title="Home" href="/"><img class="" alt="" style="height:1.2em" src="/images/logo.png"> {{ .Site.Title | upper }}</a>
-
-        {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}
-        <div class="w3-right w3-hide-small">
+        <div class="w3-right w3-hide-small"> {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}
           <a class="w3-bar-item w3-button w3-round" title="Documentation" alt="Documentation" href="https://docs.badge.team/" target="_blank"><i class="fa fa-file-text w3-hover-opacity"></i>Documentation</a>
           <a class="w3-bar-item w3-button w3-round" title="Team" alt="Team" href="/team"><i class="fa fa-user w3-hover-opacity"></i>Team</a>
           <a class="w3-bar-item w3-button w3-round" title="Gallery" alt="Gallery" href="/gallery"><i class="fa fa-camera w3-hover-opacity"></i>Gallery</a>
         </div>
       </div>
-    </div>
+    </div> {{ "<!-- End Navigation bar -->" | safeHTML }}
+    <div class="w3-margin-top">&nbsp;</div> {{ "<!-- Spacer. Clear content from navigation bar. -->" | safeHTML }}

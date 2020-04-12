@@ -7,11 +7,33 @@ description : "Testing shortcodes."
 tags        : []
 categories  : []
 projects    : ["Bodgetheme"]
-image_src   : "/images/full/campzone2019.jpg"
+image_src   : "images/hh2019.jpg"
 image_alt   : "Camping"
 ---
 
-# Testing Shortcodes
+# Built in Shortcodes
+
+----
+
+### Youtube
+{{< youtube hu3tAjLaBWw >}}
+
+----
+
+### Highlighting
+{{< highlight html "linenos=table,hl_lines=2, linenostart=1">}}
+<!-- Youtube markdown that generates code below -->
+{{</* youtube hu3tAjLaBWw */>}}
+
+<!-- Start generated Youtube shortcode -->
+{{< youtube hu3tAjLaBWw >}}
+<!-- End generated Youtube shortcode -->
+{{</ highlight>}}
+
+
+----
+
+# Additional Bodgetheme shortcodes
 
 ### Hyperlink
 {{< ref "https://badge.team">}}Badge.team{{< /ref >}}
@@ -36,6 +58,8 @@ image_alt   : "Camping"
 
 {{< alert >}}This is a generic alert!{{< /alert >}}
 {{< alert title="Generic" >}}This is a generic alert!{{< /alert >}}
+
+----
 
 ## List projects
 {{< list-projects >}}

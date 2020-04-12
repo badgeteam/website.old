@@ -5,13 +5,13 @@
 {{- $project_count := len $project }}
 
  <!-- Header -->
-<header class="w3-container w3-center w3-padding-32">
+<header class="w3-container w3-center">
   {{- if ge $project_count 1 }}
     {{ range $project }}
-  <h1 class="w3-left">{{ .Title }}</h1>
+  <h3 class="w3-left">{{ .Title }}</h3>
     {{ end }}
   {{- else }}
-  <h1 class="w3-left">Unknown project</h1>
+  <h3 class="w3-left">Unknown project</h3>
   {{- end }}
 </header>
 
@@ -43,16 +43,16 @@
 <div class="w3-col l4">
   {{- if ge $project_count 1 }}
     {{- range $project }}
+      {{- $image := "" }}
+      {{- if .Params.image_src }}
+        {{- $image = .Resources.GetMatch .Params.image_src }}
+      {{- end }}
   <!-- About Project -->
   <div class="w3-card w3-margin w3-margin-top">
     <a href="{{ .Permalink }}" style="text-decoration:none;">
-      {{ if .Params.image_src }}
-      <img class="" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
-      {{ else if .Params.thumb_src }}
-      <img class="" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
-      {{ else }}
-      <img class="" src="/images/mascot.png" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
-      {{ end }}
+      {{ if $image }}
+		  <img class="" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
+		  {{ end }}
       <div class="w3-container w3-white">
         <h4><b>{{ .Title }}</b></h4>
         <p>{{ .Description }}</p>

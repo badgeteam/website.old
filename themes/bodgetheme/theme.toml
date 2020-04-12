@@ -11,7 +11,7 @@ features = []
 min_version = "0.41"
 
 [author]
-  name = ""
+  name = "Rob Verseijden"
   homepage = "//badge.team"
 
 # If porting an existing theme
