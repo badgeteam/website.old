@@ -1,9 +1,9 @@
 ---
 date        : 2019-10-10T13:10:46+02:00
 draft       : true
-short_title : "ETH0 2019"
-title       : "ETH0 2019"
-description : "ETH0 2019 Project"
+short_title : "ETH0:2019"
+title       : "ETH0:2019"
+description : "ETH0:2019 Project"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["ETH02019"]
