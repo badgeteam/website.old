@@ -1,11 +1,9 @@
 {{ define "main" }}
 {{ "<!-- Project list -->" | safeHTML }}
-
- <!-- Header -->
-<header class="w3-container w3-center">
-  <h3 class="w3-left">Projects</h3>
-</header>
-
+{{- $maxpaginate := 5 }}
+{{- if .Site.Params.project }}
+{{- $maxpaginate = .Site.Params.project.paginate | default 5 }}
+{{- end }}
 <div class="w3-row">
   {{ $projects := where .Site.RegularPages "Section" "project" }}
   {{ $current  := where .Site.RegularPages "Params.archived" false }}
@@ -13,7 +11,9 @@
   {{ $current_projects_count := len $current_projects }}
   {{ if ge $current_projects_count 1 }}
   {{ "<!-- Projects -->" | safeHTML }}
-  <div class="w3-col l8 s12">
+  <div class="w3-col">
+    {{/*- $paginator := .Paginate ($current_projects) $maxpaginate */}}
+    {{/*- range $paginator.Pages */}}
     {{- range $current_projects }}
       {{- $image := "" }}
       {{- if .Params.image_src }}
@@ -37,20 +37,22 @@
         </div>
       </div>
     </div>
-    <hr>
-  {{- end }}
+    {{- end }}
+    {{/*- template "partials/pagination.html" . */}}
   </div>
   {{ "<!-- End projects -->" | safeHTML }}
+  {{ end }}
+</div>
+{{ "<!-- End project list -->" | safeHTML }}
 {{ end }}
 
-<!-- Right side column -->
-<div class="w3-col l4">
-  {{- partial "widget-recent-updates.html" . -}}
-  {{- partial "widget-tags.html" . -}}
-<!-- Right side column -->
-</div>
+{{ define "page-header" }}
+<header class="w3-container w3-center">
+  <h3 class="w3-left">Projects</h3>
+</header>
+{{ end }}
 
-</div><br>
-
-{{ "<!-- End project list -->" | safeHTML }}
+{{ define "aside-left" }}
+{{ partial "widgets/recent-updates.html" . }}
+{{ partial "widgets/tags-cloud.html" . }}
 {{ end }}

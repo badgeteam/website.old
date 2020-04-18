@@ -1,14 +1,8 @@
 {{ define "main" }}
 {{ "<!-- Blogs list -->" | safeHTML }}
-
- <!-- Header -->
-<header class="w3-container w3-center">
-  <h3 class="w3-left">Blogs</h3>
-</header>
-
 <div class="w3-row">
   {{ "<!-- Projects -->" | safeHTML }}
-  <div class="w3-col l8 s12">
+  <div class="w3-col">
     {{ range .Paginator.Pages }}
       {{- $image := "" }}
       {{- if .Params.image_src }}
@@ -32,19 +26,20 @@
         </div>
       </div>
     </div>
-    <hr>
   {{ end }}
   </div>
   {{ "<!-- End blogs -->" | safeHTML }}
-
-<!-- Right side column -->
-<div class="w3-col l4">
-  {{- partial "widget-recent-updates.html" . -}}
-  {{- partial "widget-tags.html" . -}}
-<!-- Right side column -->
 </div>
-
-</div><br>
-
 {{ "<!-- End blogs list -->" | safeHTML }}
+{{ end }}
+
+{{ define "page-header" }}
+<header class="w3-container w3-center">
+  <h3 class="w3-left">Blogs</h3>
+</header>
+{{ end }}
+
+{{ define "aside-left" }}
+{{ partial "widgets/recent-updates.html" . }}
+{{ partial "widgets/tags-cloud.html" . }}
 {{ end }}

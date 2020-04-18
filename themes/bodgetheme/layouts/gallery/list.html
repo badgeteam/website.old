@@ -1,9 +1,5 @@
 {{ define "main" }}
       <article> {{ "<!-- Gallery -->" | safeHTML }}
-        <div class="w3-container w3-center">
-          <h3 class="w3-left">{{ humanize .Section }}</h3>
-        </div>
-        <hr>
   {{- range .Pages }}
   {{- $album := .Page }}
         <section> {{ printf "<!-- %#v site gallery -->" .Params.title | safeHTML }}
@@ -112,3 +108,9 @@
 
       </article> {{ "<!-- End Gallery -->" | safeHTML }}
 {{- end }}
+
+{{ define "page-header" }}
+<div class="w3-container w3-center">
+  <h3 class="w3-left">{{ humanize .Section }}</h3>
+</div>
+{{ end }}

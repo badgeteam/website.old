@@ -2,22 +2,9 @@
 {{ "<!-- Blogs single -->" | safeHTML }}
 {{- $projects := where .Site.RegularPages "Section" "project" }}
 {{- $project  := first 1 (where $projects "Params.projects" "intersect" .Params.projects) }}
-{{- $project_count := len $project }}
-
- <!-- Header -->
-<header class="w3-container w3-center">
-  {{- if ge $project_count 1 }}
-    {{ range $project }}
-  <h3 class="w3-left">{{ .Title }}</h3>
-    {{ end }}
-  {{- else }}
-  <h3 class="w3-left">Unknown project</h3>
-  {{- end }}
-</header>
-
 <div class="w3-row">
   {{ "<!-- Blog -->" | safeHTML }}
-  <div class="w3-col l8 s12">
+  <div class="w3-col">
     <!-- Blog entry -->
     <div class="w3-card w3-margin w3-white">
       {{ if .Params.image_src }}
@@ -27,47 +14,67 @@
 		  {{ end }}
       <div class="w3-container">
         <h3><b>{{ .Title }}</b></h3>
-        <span class="w3-left w3-opacity w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span>
+        <span class="w3-left w3-opacity w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{ partial `functions/get_team_member_displayname` . }}{{end}}</span>
       </div>
       <div class="w3-container">
         <p>{{ .Description }}</p>
         <hr>
-        <p>{{ .Content }}</p>
+        {{ .Content }}
       </div>
     </div>
-    <hr>
+    {{- if .Params.Author }}
+      {{ partial "widgets/team-about.html" . }}
+    {{- end }}
   </div>
   {{ "<!-- End blog -->" | safeHTML }}
+</div>
 
-<!-- Right side column -->
-<div class="w3-col l4">
+</div>
+{{ "<!-- End blogs single -->" | safeHTML }}
+{{ end }}
+
+{{ define "page-header" }}
+  {{- $projects := where .Site.RegularPages "Section" "project" }}
+  {{- $project  := first 1 (where $projects "Params.projects" "intersect" .Params.projects) }}
+  {{- $project_count := len $project }}
+<header class="w3-container w3-center">
+  {{- if ge $project_count 1 }}
+    {{- range $project }}
+  <h3 class="w3-left">{{ .Title }}</h3>
+    {{- end }}
+  {{- else }}
+  <h3 class="w3-left">Unknown project</h3>
+  {{- end }}
+</header>
+{{ end }}
+
+{{ define "aside-left" }}
+  {{- $projects := where .Site.RegularPages "Section" "project" }}
+  {{- $project  := first 1 (where $projects "Params.projects" "intersect" .Params.projects) }}
+  {{- $project_count := len $project }}
+
+  <!-- About Project -->
   {{- if ge $project_count 1 }}
     {{- range $project }}
       {{- $image := "" }}
       {{- if .Params.image_src }}
         {{- $image = .Resources.GetMatch .Params.image_src }}
       {{- end }}
-  <!-- About Project -->
-  <div class="w3-card w3-margin w3-margin-top">
-    <a href="{{ .Permalink }}" style="text-decoration:none;">
+<!-- About Project -->
+<div class="w3-card w3-margin w3-margin-top">
+  <a href="{{ .Permalink }}" style="text-decoration:none;">
       {{ if $image }}
-		  <img class="" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
-		  {{ end }}
-      <div class="w3-container w3-white">
-        <h4><b>{{ .Title }}</b></h4>
-        <p>{{ .Description }}</p>
-      </div>
-    </a>
-  </div>
-  <hr>
+    <img class="" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
+      {{ end }}
+    <div class="w3-container w3-white">
+      <h4><b>{{ .Title }}</b></h4>
+      <p>{{ .Description }}</p>
+    </div>
+  </a>
+</div>
     {{- end }}
   {{- end }}
-  {{- partial "widget-recent-updates.html" . -}}
-  {{- partial "widget-tags.html" . -}}
-<!-- Right side column -->
-</div>
 
-</div><br>
-
-{{ "<!-- End blogs single -->" | safeHTML }}
+{{ partial "widgets/recent-updates.html" . }}
+{{ partial "widgets/tags-cloud.html" . }}
 {{ end }}

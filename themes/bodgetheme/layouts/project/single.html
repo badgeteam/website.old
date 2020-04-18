@@ -1,18 +1,12 @@
 {{ define "main" }}
 {{ "<!-- Project single -->" | safeHTML }}
-
- <!-- Header -->
-<header class="w3-container w3-center">
-  <h3 class="w3-left">{{ .Title | default .Site.Title }}</h3>
-</header>
-
 <div class="w3-row">
   {{ $blogs := where .Site.RegularPages "Section" "blog" }}
   {{ $project_blogs  := first 10 (where $blogs "Params.projects" "intersect" .Params.projects) }}
   {{ $project_blogs_count := len $project_blogs }}
   {{ if ge $project_blogs_count 1 }}
   {{ "<!-- Blogs -->" | safeHTML }}
-  <div class="w3-col l8 s12">
+  <div class="w3-col">
     {{ range $project_blogs }}
       {{- $image := "" }}
       {{- if .Params.image_src }}
@@ -36,37 +30,36 @@
         </div>
       </div>
     </div>
-    <hr>
-  {{ end }}
+    {{ end }}
   </div>
   {{ "<!-- End blogs -->" | safeHTML }}
+  {{ end }}
+</div>
+{{ "<!-- End project single -->" | safeHTML }}
 {{ end }}
 
-<!-- Right side column -->
-<div class="w3-col l4">
-  <!-- About Project -->
-  <div class="w3-card w3-margin w3-margin-top">
-    {{- $image := "" }}
-    {{- if .Params.image_src }}
-      {{- $image = .Resources.GetMatch .Params.image_src }}
-    {{- end }}
-    {{ if $image }}
-    <img class="" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
-    {{ end }}
-    <div class="w3-container w3-white">
-      <h4><b>{{ .Title }}</b></h4>
-      <p>{{ .Description }}</p>
-    </div>
+{{ define "page-header" }}
+<header class="w3-container w3-center">
+  <h3 class="w3-left">{{ .Title | default .Site.Title }}</h3>
+</header>
+{{ end }}
+
+{{ define "aside-left" }}
+<!-- About Project -->
+<div class="w3-card w3-margin w3-margin-top">
+  {{- $image := "" }}
+  {{- if .Params.image_src }}
+    {{- $image = .Resources.GetMatch .Params.image_src }}
+  {{- end }}
+  {{ if $image }}
+  <img class="" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
+  {{ end }}
+  <div class="w3-container w3-white">
+    <h4><b>{{ .Title }}</b></h4>
+    <p>{{ .Description }}</p>
   </div>
-  <hr>
-
-  {{- partial "widget-recent-updates.html" . -}}
-  {{- partial "widget-tags.html" . -}}
-
-<!-- Right side column -->
 </div>
 
-</div><br>
-
-{{ "<!-- End project single -->" | safeHTML }}
+{{ partial "widgets/recent-updates.html" . }}
+{{ partial "widgets/tags-cloud.html" . }}
 {{ end }}
