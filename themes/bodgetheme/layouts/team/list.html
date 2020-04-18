@@ -1,15 +1,15 @@
 {{ define "main" }}
+{{- $maxpaginate := 12 }}
+{{- if .Site.Params.team }}
+{{- $maxpaginate = .Site.Params.team.paginate | default 12 }}
+{{- end }}
       <article> {{ "<!-- Team -->" | safeHTML }}
-        <div class="w3-container w3-center">
-          <h3 class="w3-left">{{ humanize .Section }}</h3>
-        </div>
-        <hr>
         <section> {{ printf "<!-- The team -->" | safeHTML }}
           <div class="w3-row-padding">
-  {{- range .Pages.ByParam "name" }}
+  {{- range (.Paginator $maxpaginate).Pages.ByParam "name" }}
     {{- $member := .Page }}
     {{- $avatar := "" }}
-    {{- if .Params.avatar }}
+    {{- if $member.Params.avatar }}
       {{- $image := $member.Resources.GetMatch $member.Params.avatar }}
       {{- if $image }}
         {{- $avatar = $image.Resize "600x600" }}
@@ -27,8 +27,13 @@
             </div>
   {{- end }}
           </div>
-          </section> {{ printf "<!-- End The team -->" | safeHTML }}
-        <hr>
-
+        </section> {{ printf "<!-- End The team -->" | safeHTML }}
+        {{- template "partials/pagination.html" . }}
       </article> {{ "<!-- End Team -->" | safeHTML }}
 {{- end }}
+
+{{ define "page-header" }}
+<header class="w3-container w3-center">
+  <h3 class="w3-left">{{ humanize .Section }}</h3>
+</header>
+{{ end }}

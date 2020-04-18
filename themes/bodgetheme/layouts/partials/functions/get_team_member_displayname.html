@@ -1,0 +1,22 @@
+{{/* Get reference to team member profile */}}
+{{ $page := . }}
+{{ $displayname := "" }}
+
+{{ $member := "" }}
+{{ if $page.Params.teammember }}
+  {{ $member = $page.Params.teammember }}
+{{ else if $page.Params.author }}
+  {{ $member = $page.Params.author }}
+{{ end }}
+
+{{/* Get publisher as fall back. */}}
+{{ $publisher := site.Params.org_name | default site.Title }}
+
+{{ $profile := partial `functions/get_team_member_profile` . }}
+{{ with $profile }}
+  {{ $displayname = .Params.name | default .Title }}
+{{ else }}
+  {{ $displayname = $member }}
+{{ end }}
+
+{{ return $displayname }}

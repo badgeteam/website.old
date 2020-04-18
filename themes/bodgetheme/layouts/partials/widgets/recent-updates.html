@@ -9,21 +9,15 @@
   </div>
   <ul class="w3-ul w3-hoverable w3-white">
     {{ range $pages }}
-    <li class="w3-padding-16">
+    <li class="w3-padding">
       <a href="{{ .Permalink }}" style="text-decoration:none;">
-        {{ if .Params.image_src }}
-		    <img class="w3-left w3-margin-right" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:50px">
-		    {{ else if .Params.thumb_src }}
-		    <img class="w3-left w3-margin-right" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:50px">
-		    {{ end }}
-        <span class="w3-left w3-opacity w3-small">{{ humanize .Section }} - {{ .Date.Format "02 January 2006 15:04 MST" }}</span><br>
-        <span class="w3-medium">{{ .Title | default .Site.Title }}</span><br>
+        <span class="w3-opacity w3-small">{{ humanize .Section }} - {{ .Date.Format "02 January 2006 15:04 MST" }}</span><br>
+        <span class="w3-medium">{{ .Title | default .Site.Title | truncate 30 }}</span><br>
         <span class="w3-small">{{ .Params.description }}</span>
       </a>
     </li>
     {{ end }}
   </ul>
 </div>
-<hr>
 {{ end }}
 {{ "<!-- End recent updates -->" | safeHTML -}}

@@ -1,0 +1,24 @@
+{{/* Get reference to team member profile */}}
+
+{{ $page := . }}
+
+{{/* Get publisher as fall back. */}}
+{{ $publisher := site.Params.org_name | default site.Title }}
+
+{{ $member := "" }}
+{{ $member_username := "" }}
+
+{{ if $page.Params.authors }}
+  {{ $member = index $page.Params.authors 0 }}
+  {{ $member_username = urlize $member }}
+{{ end }}
+
+{{ $taxonomy := "team" }}
+{{ $profile_page := site.GetPage (printf "/%s/%s" $taxonomy $member_username) }}
+{{ with $profile_page }}
+  {{ $member = .Params.name | default .Title }}
+{{ else }}
+  {{ $member = $member | default $publisher }}
+{{ end }}
+
+{{ return $member }}

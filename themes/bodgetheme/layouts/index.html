@@ -2,10 +2,6 @@
 {{ "<!-- Index page -->" | safeHTML }}
 {{- if .Content }}
 <article> {{ "<!-- Projects -->" | safeHTML }}
-  <div class="w3-container w3-center">
-    <h3 class="w3-left">{{ .Title | title }}</h3>
-  </div>
-  <hr>
   <section> {{ "<!-- Active projects -->" | safeHTML }}
     <div class="w3-row-padding">
     {{- .Content }}
@@ -17,7 +13,7 @@
         <div class="w3-container w3-center">
           <h3 class="w3-left">Projects</h3>
         </div>
-        <hr>
+
 	{{- $projects := where .Site.RegularPages "Section" "project" }}
 	{{- $current  := where (where .Site.RegularPages "Params.active" true) "Params.archived" false }}
 	{{- $current_projects := $projects | intersect $current }}
@@ -60,7 +56,7 @@
   {{- end }}
           </div>
         </section>  {{ "<!-- End Active projects -->" | safeHTML }}
-        <hr>
+
 	{{- $inactive  := where (where .Site.RegularPages "Params.active" false) "Params.archived" false }}
 	{{- $inactive_projects := $projects | intersect $inactive }}
 	{{- $inactive_projects_count := len $inactive_projects }}
@@ -110,9 +106,9 @@
 {{- $prjs := slice }}
       <article> {{ "<!-- Temporary format samples -->" | safeHTML }}
         <div class="w3-container w3-center">
-          <h3 class="w3-left">Temporary format examples</h3>
+          <h3 class="w3-left">Temporary formatting examples</h3>
         </div>
-        <hr>
+
 	{{- $inactive  := where (where .Site.RegularPages "Params.active" false) "Params.archived" false }}
 	{{- $inactive_projects := last 4 ($projects | intersect $inactive) }}
 	{{- $inactive_projects_count := len $inactive_projects }}
@@ -156,7 +152,7 @@
   {{- end }}
           </div>
         </section>  {{ "<!-- White bottom -->" | safeHTML }}
-				<hr>
+
 
 	{{- $prjs_count := len $prjs }}
         <section> {{ "<!-- Black bottom -->" | safeHTML }}
@@ -180,7 +176,7 @@
   {{- end }}
           </div>
         </section>  {{ "<!-- Black bottom -->" | safeHTML }}
-				<hr>
+
 
 				<section> {{ "<!-- White text transparent centered -->" | safeHTML }}
           <div class="w3-container w3-center">
@@ -203,7 +199,7 @@
   {{- end }}
           </div>
         </section>  {{ "<!-- White text transparent centered -->" | safeHTML }}
-				<hr>
+
 
 				<section> {{ "<!-- Black texted opacity centered -->" | safeHTML }}
           <div class="w3-container w3-center">
@@ -226,7 +222,7 @@
   {{- end }}
           </div>
         </section>  {{ "<!-- EBlack texted opacity centered -->" | safeHTML }}
-				<hr>
+
 
 				<section> {{ "<!-- Black texted no opacity centered -->" | safeHTML }}
           <div class="w3-container w3-center">
@@ -249,7 +245,7 @@
   {{- end }}
           </div>
         </section>  {{ "<!-- Black texted no opacity centered -->" | safeHTML }}
-				<hr>
+
 
 				<section> {{ "<!-- White texted opacity centered -->" | safeHTML }}
           <div class="w3-container w3-center">
@@ -272,7 +268,7 @@
   {{- end }}
           </div>
         </section>  {{ "<!-- White texted opacity centered -->" | safeHTML }}
-				<hr>
+
 
 				<section> {{ "<!-- White texted no opacity centered -->" | safeHTML }}
           <div class="w3-container w3-center">
@@ -295,7 +291,7 @@
   {{- end }}
           </div>
         </section>  {{ "<!-- White texted no opacity centered -->" | safeHTML }}
-				<hr>
+
 
 				<section> {{ "<!-- White texted no opacity top left -->" | safeHTML }}
           <div class="w3-container w3-center">
@@ -318,25 +314,13 @@
   {{- end }}
           </div>
         </section>  {{ "<!-- White texted no opacity top left -->" | safeHTML }}
-				<hr>
+
       </article> {{ "<!-- End Temporary format samples -->" | safeHTML }}
 {{ "<!-- End Temporary showcase -->" | safeHTML }}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			<br><br><br>
-
 {{ "<!-- End index page -->" | safeHTML }}
+{{ end }}
+
+{{ define "page-header"}}
+
 {{ end }}

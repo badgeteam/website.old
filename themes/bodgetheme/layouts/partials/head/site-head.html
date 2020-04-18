@@ -1,7 +1,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ .Site.Title | upper }}</title>
+  <title>{{ block "title" . }}{{ .Site.Title | upper }}{{ end }}</title>
 
   <link rel="canonical" href="{{ .Site.BaseURL | lower }}" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">

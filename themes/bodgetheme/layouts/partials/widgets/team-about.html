@@ -1,0 +1,15 @@
+{{- "<!-- Team about widget -->" | safeHTML }}
+{{- $profile := partial `functions/get_team_member_profile` . }}
+{{- with $profile }}
+  <div class="w3-card w3-margin">
+    <a href="{{ .Permalink }}" style="text-decoration:none;">
+      <div class="w3-container w3-padding">
+        <h4>{{ .Params.Name }}</h4>
+      </div>
+      <div class="w3-container w3-padding">
+        <span class="w3-small">{{ .Params.bio }}</span>
+      </div>
+      </a>
+  </div>
+{{- end }}
+{{- "<!-- End team about widget -->" | safeHTML }}

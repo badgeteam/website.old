@@ -1,4 +1,4 @@
-{{- $taxonomy  := .Page.Params.content.taxonomy | default "tags" }}
+{{- $taxonomy  := .Page.Params.taxonomy | default "tags" }}
 {{- $fontSmall := .Page.Params.design.font_size_min | default 0.8 }}
 {{- $fontBig   := .Page.Params.design.font_size_max | default 2.5 }}
 {{- $tags      := first 20 (index .Site.Taxonomies $taxonomy).ByCount }}
@@ -25,4 +25,3 @@
     {{- end }}
   </div>
 </div>{{ "<!-- End Tag cloud -->" | safeHTML -}}
-<hr>

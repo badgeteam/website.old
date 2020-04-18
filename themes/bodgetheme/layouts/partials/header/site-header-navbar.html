@@ -1,5 +1,4 @@
-
-    <div class="w3-top"> {{ "<!-- Navigation bar -->" | safeHTML }}
+    <div class="w3-top"> {{ "<!-- Header navigation bar -->" | safeHTML }}
       <div class="w3-bar w3-white w3-wide w3-padding w3-card">
         <a class="w3-bar-item w3-button w3-round" title="Home" href="/"><img class="" alt="" style="height:1.2em" src="/images/logo.png"> {{ .Site.Title | upper }}</a>
         <div class="w3-right w3-hide-small"> {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}
@@ -8,5 +7,4 @@
           <a class="w3-bar-item w3-button w3-round" title="Gallery" alt="Gallery" href="/gallery"><i class="fa fa-camera w3-hover-opacity"></i>Gallery</a>
         </div>
       </div>
-    </div> {{ "<!-- End Navigation bar -->" | safeHTML }}
-    <div class="w3-margin-top">&nbsp;</div> {{ "<!-- Spacer. Clear content from navigation bar. -->" | safeHTML }}
+    </div> {{ "<!-- End header navigation bar -->" | safeHTML -}}
