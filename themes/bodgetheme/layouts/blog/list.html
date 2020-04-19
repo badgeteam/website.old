@@ -14,7 +14,12 @@
 		  <img class="" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
 		  {{ end }}
       <div class="w3-container">
-        <h3><b>{{ .Title }}</b></h3>
+        {{- if .Params.icon_name }}
+          {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
+        <h3 class="w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) }}</h3>
+        {{- else }}
+        <h3 class="w3-text-black"><b><i class="fa fa-suitcase w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) }}</h3>
+        {{- end }}
         <span class="w3-left w3-opacity w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}</span>
       </div>
       <div class="w3-container">
@@ -35,11 +40,11 @@
 
 {{ define "page-header" }}
 <header class="w3-container w3-center">
-  <h3 class="w3-left">Blogs</h3>
+  <h3 class="w3-left w3-text-black"><b><i class="fa fa-suitcase w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "blogs" | default "Blogs") | markdownify }}</h3>
 </header>
 {{ end }}
 
 {{ define "aside-left" }}
 {{ partial "widgets/recent-updates.html" . }}
-{{ partial "widgets/tags-cloud.html" . }}
+{{ partial "widgets/taxo-cloud.html" . }}
 {{ end }}

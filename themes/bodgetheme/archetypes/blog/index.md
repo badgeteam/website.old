@@ -1,5 +1,6 @@
 ---
 date        : {{ .Date }}
+lastmod     : {{ .Date }}
 draft       : true
 title       : "{{ replace .Name "-" " " | title }}"
 author      : "Anonymous"
@@ -13,6 +14,10 @@ tags        : []
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
+
+# Blog icon
+icon_name : fa-pencil
+icon_pack : fa
 
 # Default image related to this blog
 image_src   : "images/mascot.png"

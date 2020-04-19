@@ -1,18 +1,17 @@
 ---
-date        : 2020-03-28T16:14:06+01:00
+date        : 2020-04-19T17:58:57+02:00
 draft       : true
-title       :  "CampZone 2020 project initiated"
-author      : "Anonymous"
-description : "Wooohooo! We started the CampZone 2020 project page!"
+title       : "20200419_shortcodes"
+author      : "Elborro"
+description : ""
 
 # At least one Identifying mnemonic, referring to the project(s) his blog is related to
-projects    : ["CZ2020"]
+projects    : ["Bodgetheme"]
 
 # Identifying tags, searchable/visible to site visitors
 tags        :
-- Badge
-- CZ2020
-- CampZone
+- Website
+- Bodgetheme
 - 2020
 
 # Identifying categories, searchable/visible to site visitors
@@ -41,4 +40,4 @@ gallery:
     exclude : false
 ---
 
-Content goes here.
+Blog content goes here.

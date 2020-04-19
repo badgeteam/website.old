@@ -1,14 +1,43 @@
 ---
-date        : 2001-04-04T13:37:02+01:00
+date        : 2020-04-06T14:21:02+01:00
 draft       : true
 title       : "Blogpage titles and images"
 author      : "Elborro"
 description : "While standard formatting should deliver quite a clean page, someone might want to add additional formatting or images at a later stage."
-tags        : []
-categories  : []
+
+# At least one Identifying mnemonic, referring to the project(s) his blog is related to
 projects    : ["Bodgetheme"]
+
+# Identifying tags, searchable/visible to site visitors
+tags        :
+- Website
+- Bodgetheme
+- 2020
+
+# Identifying categories, searchable/visible to site visitors
+categories  : []
+
+# Blog icon
+icon_name : fa-pencil
+icon_pack : fa
+
+# Default image related to this blog
 image_src   : "images/campzone2019.jpg"
 image_alt   : "Camping"
+thumb_src   : ""
+thumb_alt   : ""
+
+# Photo gallery
+gallery:
+- album   : "images"
+  exclude : true
+  images  :
+  - image   : "imagine.jpg"
+    caption : "Imagine"
+    exclude : false
+  - image   : "people.jpg"
+    caption : "People"
+    exclude : false
 ---
 
 ### Lorem ipsum on the move

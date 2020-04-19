@@ -2,13 +2,31 @@
 date        : 2019-02-11T19:56:02+01:00
 draft       : true
 title       : "Disobey 2019 badge"
-author      : "Anne Jan Brouwer"
+author      : "annejan"
 description : "Disobey 2019 badge"
-tags        : ["2019", "Badge","Disobey","Disobey2019"]
-categories  : []
+
+# At least one Identifying mnemonic, referring to the project(s) his blog is related to
 projects    : ["DISOBEY2019"]
+
+# Identifying tags, searchable/visible to site visitors
+tags        :
+- Badge
+- Disobey2019
+- Disobey
+- 2019
+
+# Identifying categories, searchable/visible to site visitors
+categories  : []
+
+# Blog icon
+icon_name : fa-pencil
+icon_pack : fa
+
+# Default image related to this blog
 image_src   : "images/badge.jpg"
 image_alt   : "Disobey 2019"
+thumb_src   : ""
+thumb_alt   : ""
 
 # Photo gallery
 gallery:

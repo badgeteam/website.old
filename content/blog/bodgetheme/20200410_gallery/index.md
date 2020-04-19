@@ -1,12 +1,27 @@
 ---
-date        : 2010-01-08T13:37:04+01:00
+date        : 2020-04-10T12:59:04+01:00
 draft       : true
 title       : "Gallery test"
 author      : "Elborro"
 description : "Testing gallery shortcode implementation"
-tags        : []
-categories  : []
+
+# At least one Identifying mnemonic, referring to the project(s) his blog is related to
 projects    : ["Bodgetheme"]
+
+# Identifying tags, searchable/visible to site visitors
+tags        :
+- Website
+- Bodgetheme
+- 2020
+
+# Identifying categories, searchable/visible to site visitors
+categories  : []
+
+# Blog icon
+icon_name : fa-pencil
+icon_pack : fa
+
+# Default image related to this blog
 image_src   : "images/voyage-cambodge.jpg"
 image_alt   : "Cambodge"
 thumb_src   : ""

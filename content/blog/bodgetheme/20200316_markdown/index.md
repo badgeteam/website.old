@@ -1,14 +1,43 @@
 ---
-date        : 2000-03-16T13:37:02+01:00
+date        : 2020-03-16T18:42:02+01:00
 draft       : true
 title       : "Blogpage formatting - markdown"
 author      : "Elborro"
 description : "Markdown formatting tests."
-tags        : []
-categories  : []
+
+# At least one Identifying mnemonic, referring to the project(s) his blog is related to
 projects    : ["Bodgetheme"]
+
+# Identifying tags, searchable/visible to site visitors
+tags        :
+- Website
+- Bodgetheme
+- 2020
+
+# Identifying categories, searchable/visible to site visitors
+categories  : []
+
+# Blog icon
+icon_name : fa-pencil
+icon_pack : fa
+
+# Default image related to this blog
 image_src   : "images/sha2017.jpg"
 image_alt   : "Hackerbar"
+thumb_src   : ""
+thumb_alt   : ""
+
+# Photo gallery
+gallery:
+- album   : "images"
+  exclude : true
+  images  :
+  - image   : "imagine.jpg"
+    caption : "Imagine"
+    exclude : false
+  - image   : "people.jpg"
+    caption : "People"
+    exclude : false
 ---
 
 # Testing Markdown
