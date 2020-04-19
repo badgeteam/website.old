@@ -5,7 +5,7 @@
 {{- $tag_count := len $tags }}
 <div class="w3-card w3-margin"> {{ "<!-- Tag cloud -->" | safeHTML -}}
   <div class="w3-container w3-padding">
-    <h4>Tags</h4>
+    <h4 class="w3-left w3-text-black"><b><i class="fa fa-cloud w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n $taxonomy | default $taxonomy) | markdownify | humanize }}</h4>
   </div>
   <div class="w3-container w3-white">
     {{- if ge $tag_count 1 -}}

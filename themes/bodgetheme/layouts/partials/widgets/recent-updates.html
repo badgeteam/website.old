@@ -1,11 +1,10 @@
-
 {{- "<!-- Recent updates -->" | safeHTML }}
 {{- $pages := first 5 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
 {{- $page_count := len $pages }}
 {{- if ge $page_count 1 }}
 <div class="w3-card w3-margin">
   <div class="w3-container w3-padding">
-    <h4>Recent updates</h4>
+    <h4 class="w3-left w3-text-black"><b><i class="fa fa-newspaper-o w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n "recent updates" | default "Recent updates") | markdownify | humanize }}</h4>
   </div>
   <ul class="w3-ul w3-hoverable w3-white">
     {{ range $pages }}

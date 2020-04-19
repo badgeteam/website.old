@@ -1,17 +1,17 @@
 {{ define "main" }}
 {{ "<!-- Index page -->" | safeHTML }}
-{{- if .Content }}
+{{- with .Content }}
 <article> {{ "<!-- Projects -->" | safeHTML }}
   <section> {{ "<!-- Active projects -->" | safeHTML }}
     <div class="w3-row-padding">
-    {{- .Content }}
+    {{- . }}
     </div>
   </section>  {{ "<!-- White bottom -->" | safeHTML }}
   <hr>
 {{- end }}
       <article> {{ "<!-- Projects -->" | safeHTML }}
         <div class="w3-container w3-center">
-          <h3 class="w3-left">Projects</h3>
+          <h3 class="w3-left w3-text-black w3-padding-8"><b><i class="fa fa-suitcase w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "projects" | default "Projects") | markdownify }}</b></h3>
         </div>
 
 	{{- $projects := where .Site.RegularPages "Section" "project" }}
@@ -106,7 +106,7 @@
 {{- $prjs := slice }}
       <article> {{ "<!-- Temporary format samples -->" | safeHTML }}
         <div class="w3-container w3-center">
-          <h3 class="w3-left">Temporary formatting examples</h3>
+          <h3 class="w3-left w3-text-black w3-padding-8"><b><i class="fa fa-suitcase w3-margin-right w3-xlarge w3-text-teal"></i>Temporary formatting examples</b></h3>
         </div>
 
 	{{- $inactive  := where (where .Site.RegularPages "Params.active" false) "Params.archived" false }}

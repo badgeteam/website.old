@@ -110,7 +110,7 @@
 {{- end }}
 
 {{ define "page-header" }}
-<div class="w3-container w3-center">
-  <h3 class="w3-left">{{ humanize .Section }}</h3>
-</div>
+<header class="w3-container w3-center">
+  <h3 class="w3-left w3-text-black"><b><i class="fa fa-camera w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "gallery" | default "Gallery") | markdownify }}</h3>
+</header>
 {{ end }}
