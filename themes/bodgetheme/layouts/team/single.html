@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $page := . }}
 <!-- Profile page -->
 <div class="w3-row">
 
@@ -16,12 +17,17 @@
       <div class="w3-display-container w3-black">
         <img class="w3-image" src="{{ $avatar.RelPermalink }}" alt="{{ .Params.Name | truncate 18 }}" style="width:100%">
         <div class="w3-container w3-display-bottomleft w3-text-white">
-          <h3 class="w3-left">{{ .Params.fullname }}</h3>
+          {{- with .Params.icon_name }}
+          {{- $icon_pack := ($page.Params.icon_pack | default "fa") }}
+          <h3 class="w3-text-white w3-padding-8"><b><i class="{{ $icon_pack }} {{ . }} w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</b></h3>
+          {{- else }}
+          <h3 class="w3-text-white w3-padding-8"><b><i class="fa fa-address-card w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</b></h3>
+          {{- end }}
         </div>
       </div>
   {{- else }}
       <div class="w3-container w3-black">
-        <h3 class="w3-left w3-text-white">{{ .Params.fullname }}</h3>
+        <h3 class="w3-text-white w3-padding-8"><b><i class="fa fa-address-card w3-margin-right w3-xlarge w3-text-white"></i>{{ $page.Params.fullname }}</b></h3>
       </div>
   {{- end }}
 {{- end }}
@@ -65,9 +71,10 @@
       </div>
     </div>
 
+    {{- if (index .Params.organizations 0).name }}
     {{- with .Params.organizations }}
     <div class="w3-container w3-card w3-margin w3-white">
-      <p class="w3-large"><b><i class="fa fa-rebel w3-margin-right w3-text-teal"></i>{{ (i18n "organizations" | default "Organizations") | markdownify }}</b></p>
+      <p class="w3-large"><b><i class="fa fa-university w3-margin-right w3-text-teal"></i>{{ (i18n "organizations" | default "Organizations") | markdownify }}</b></p>
       {{- $separator := false }}
       {{- range . }}
       {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
@@ -78,17 +85,18 @@
       {{- end }}
     </div>
     {{- end }}
+    {{- end }}
 
     {{- with .Params.bio }}
     <div class="w3-container w3-card w3-margin w3-white">
-      <p class="w3-large"><b><i class="fa fa-book w3-margin-right w3-text-teal"></i>{{ (i18n "biography" | default "Biography") | markdownify }}</b></p>
+      <p class="w3-large"><b><i class="fa fa-address-card w3-margin-right w3-text-teal"></i>{{ (i18n "biography" | default "Biography") | markdownify }}</b></p>
       <p>{{ . }}</p>
     </div>
     {{- end }}
 
     {{- with .Params.interests }}
     <div class="w3-container w3-card w3-margin w3-white">
-      <p class="w3-large"><b><i class="fa fa-asterisk w3-margin-right w3-text-teal"></i>{{ (i18n "interests" | default "Interests") | markdownify }}</b></p>
+      <p class="w3-large"><b><i class="fa fa-heart w3-margin-right w3-text-teal"></i>{{ (i18n "interests" | default "Interests") | markdownify }}</b></p>
       <ul class="ul-interests">
         {{ range . }}
         <li>{{ . | markdownify | emojify }}</li>
@@ -97,9 +105,10 @@
     </div>
     {{- end }}
 
+
     {{- with .Params.education }}
     <div class="w3-container w3-card w3-margin w3-white">
-      <p class="w3-large"><b><i class="fa fa-certificate w3-margin-right w3-text-teal"></i>{{ i18n "education" | markdownify }}</b></p>
+      <p class="w3-large"><b><i class="fa fa-graduation-cap w3-margin-right w3-text-teal"></i>{{ i18n "education" | markdownify }}</b></p>
       {{- $separator := false }}
       {{- range .courses }}
       {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
@@ -115,24 +124,28 @@
 
   <!-- Right side column -->
   <div class="w3-col w3-twothird">
+    {{- with .Content }}
     <div class="w3-container w3-card w3-margin w3-white">
       <h3 class="w3-text-black w3-padding-8"><b><i class="fa fa-user-circle w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "about" | default "About") | markdownify }}</b></h3>
-      <div class="w3-container">
-        {{ .Content }}
-      </div>
+      <p>{{ . }}</p>
     </div>
+    {{- end }}
 
-    {{- with .Params.education }}
+    {{- $projects := where (where .Site.RegularPages "Section" "project") ".Params.projects" "intersect" .Params.teams }}
+    {{- $projects_count := len $projects }}
+    {{- if ge $projects_count 1 }}
     <div class="w3-container w3-card w3-margin w3-white">
       <h3 class="w3-text-black w3-padding-8"><b><i class="fa fa-suitcase w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "projects" | default "Projects") | markdownify }}</b></h3>
       {{- $separator := false }}
-      {{- range .courses }}
+      {{- range $projects }}
       {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
-      <div class="w3-container">
-        <h5 class="w3-opacity"><b>Bodgetheme Project</b></h5>
-        <h6 class="w3-text-teal"><i class="fa fa-calendar w3-margin-right"></i>Mar 2020 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-        <p>This is a temporary Bodgetheme test project. Blogs are created to test for the proper behaviour of new functionality.</p>
-      </div>
+        <h5 class="w3-opacity"><b>{{ .Title }}</b></h5>
+        {{- if .Params.active }}
+        <h6 class="w3-text-teal"><i class="fa fa-calendar w3-margin-right"></i>{{ .Date.Format "January 2006" }} - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+        {{- else }}
+        <h6 class="w3-text-teal"><i class="fa fa-calendar w3-margin-right"></i>{{ .Date.Format "January 2006" }} - {{ .Lastmod.Format "January 2006" }}</h6>
+        {{- end }}
+        <p>{{- .Description }}</p>
       {{- end }}
     </div>
     {{- end }}

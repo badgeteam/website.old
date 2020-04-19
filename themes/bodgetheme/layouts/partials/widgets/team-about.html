@@ -4,7 +4,7 @@
   <div class="w3-card w3-margin">
     <a href="{{ .Permalink }}" style="text-decoration:none;">
       <div class="w3-container w3-padding">
-        <h4>{{ .Params.Name }}</h4>
+        <h4 class="w3-left w3-text-black"><b><i class="fa fa-pencil-square-o w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n "about" | default "About") | markdownify }} {{ .Params.Name }}</h4>
       </div>
       <div class="w3-container w3-padding">
         <span class="w3-small">{{ .Params.bio }}</span>

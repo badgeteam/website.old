@@ -14,6 +14,9 @@ teams :
 - Badgeteam
 - Bodgeteam
 - Bodgetheme
+- CZ2019
+- HH2020
+- MCH2021
 
 
 #### Mini profile (Displayed at end of posts, where available)
@@ -28,6 +31,10 @@ bio : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t
 
 # Full name (Shown on personal page only)
 fullname : Rob Verseijden
+
+# Name icon (Shown in front of your name on profile)
+icon_name : fa-rebel fa-spin
+icon_pack : fa
 
 # Role/position (e.g., Professor of Artificial Intelligence)
 role : Bodgenator
@@ -54,36 +61,35 @@ education :
     institution : Bodgenatoric Institute
     year        : 2019 - 2020
 
-# Contact
+# Contact (Listed under personal details)
 # For available icons, see: https://fontawesome.com
 #  For an email link, use "fa" icon pack, "fa-envelope" icon, and a link in the
 #  form "mailto:your-email@example.com" or "#contact" for contact widget.
 contact :
-- title     : elb0rr0
+- title     : E-mail
+  link      : '#contact'  # For a direct email link, use "mailto:test@example.org".
+  icon_pack : fa
+  icon_name : fa-envelope
+- title     : Telegram
   link      : https://t.me/elb0rr0
   icon_pack : fa
   icon_name : fa-telegram
-- title     : elborro
-  link      : https://github.com/elborro
-  icon_pack : fa
-  icon_name : fa-github
 
-
-# Social
+# Social (Listed in social-link bars)
 # For available icons, see: https://fontawesome.com
 #  For an email link, use "fa" icon pack, "envelope" icon, and a link in the
 #  form "mailto:your-email@example.com" or "#contact" for contact widget.
 social :
-- icon_name : fa-envelope
+- title     : LinkedIn
+  icon_name : fa-linkedin
   icon_pack : fa
-  link      : '#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon_name : fa-twitter
+  link      : https://linkedin.com/in/rverseijden
+- title     : Twitter
+  icon_name : fa-twitter
   icon_pack : fa
   link      : https://twitter.com/elborro
-- icon_name : fa-telegram
-  icon_pack : fa
-  link      : https://t.me/elb0rr0
-- icon_name : fa-github
+- title     : Github
+  icon_name : fa-github
   icon_pack : fa
   link      : https://github.com/elborro
 ---

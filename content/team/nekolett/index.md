@@ -12,7 +12,8 @@ nicknames :
 # List the teams you're part of on this site.
 teams :
 - Badgeteam
-
+- HH2020
+- MCH2021
 
 #### Mini profile (Displayed at end of posts, where available)
 
@@ -28,12 +29,17 @@ bio : "I am a freelancer Graphic Designer, Product Designer-in-training & Illust
 # Full name (Shown on personal page only)
 fullname : Nekolett
 
+# Name icon (Shown in front of your name on profile)
+icon_name : fa-bug
+icon_pack : fa
+
 # Role/position (e.g., Professor of Artificial Intelligence)
-role : Craftswoman / Graphic Designer
+role : Craftswoman / Graphical Designer
 
 # Organizations/Affiliations
 organizations :
 - name : Tilde Industries
+  role : Graphical Designer
   url  : "https://tilde.industries"
 
 # List your interests
@@ -48,26 +54,38 @@ education :
     institution : Bodgenatoric Institute
     year        : 2019
 
-# Networking
+# Contact (Listed under personal details)
+# For available icons, see: https://fontawesome.com
+#  For an email link, use "fa" icon pack, "fa-envelope" icon, and a link in the
+#  form "mailto:your-email@example.com" or "#contact" for contact widget.
+contact :
+- title     : Webpage
+  link      : https://ankhaneko.wixsite.com/portfolio
+  icon_pack : fa
+  icon_name : fa-globe
+- title     : E-mail
+  link      : '#contact'  # For a direct email link, use "mailto:test@example.org".
+  icon_pack : fa
+  icon_name : fa-envelope
+- title     : Telegram
+  link      : https://t.me/Ankhate
+  icon_pack : fa
+  icon_name : fa-telegram
+
+# Social (Listed in social-link bars)
 # For available icons, see: https://fontawesome.com
 #  For an email link, use "fa" icon pack, "envelope" icon, and a link in the
 #  form "mailto:your-email@example.com" or "#contact" for contact widget.
 social :
-- icon      : envelope
-  icon_pack : fa
-  link      : '#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon      : twitter
+- title     : Twitter
+  icon_name : fa-twitter
   icon_pack : fa
   link      : https://twitter.com/nekolett
-- icon      : github
+- title     : Github
+  icon_name : fa-github
   icon_pack : fa
   link      : https://github.com/ankhaneko
-- icon      : images
-  icon_pack : fa
-  link      : https://ankhaneko.wixsite.com/portfolio
 ---
-
-# Nikolett :: Ankhaneko ::
 
 I am a freelancer Graphic Designer, Product Designer-in-training & Illustrator, who is always eager to learn something new, and work towards to understand different aspects, and love to explore. Designer of tilde.industries.
 
