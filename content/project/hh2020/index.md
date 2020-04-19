@@ -1,5 +1,6 @@
 ---
 date        : 2020-02-14T13:37:53+01:00
+lastmod     : 2020-02-14T13:37:53+01:00
 draft       : true
 short_title : "HH2020"
 title       : "Hacker Hotel 2020"
@@ -19,6 +20,10 @@ tags        :
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
+
+# Project icon
+icon_name : fa-hotel
+icon_pack : fa
 
 # Project state
 active      : false

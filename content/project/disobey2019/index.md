@@ -1,5 +1,6 @@
 ---
 date        : 2019-04-10T13:14:57+02:00
+lastmod     : 2019-04-10T13:14:57+02:00
 draft       : true
 short_title : "Disobey 2019"
 title       : "Disobey 2019"
@@ -18,6 +19,10 @@ tags        :
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
+
+# Project icon
+icon_name : fa-first-order
+icon_pack : fa
 
 # Default images related to this project
 image_src   : "images/disobey2019.jpg"

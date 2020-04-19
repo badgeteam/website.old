@@ -1,5 +1,6 @@
 ---
 date        : 2019-10-10T13:10:46+02:00
+lastmod     : 2019-10-10T13:10:46+02:00
 draft       : true
 short_title : "ETH0:2019"
 title       : "ETH0:2019"
@@ -18,6 +19,10 @@ tags        :
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
+
+# Project icon
+icon_name : fa-tty
+icon_pack : fa
 
 # Default images related to this project
 image_src   : "images/eth02019.jpg"

@@ -1,5 +1,6 @@
 ---
 date        : 2020-03-28T16:14:06+01:00
+lastmod     : 2020-03-28T16:14:06+01:00
 draft       : true
 short_title : "CZ2020"
 title       : "CampZone 2020 Project"
@@ -17,6 +18,10 @@ tags        :
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
+
+# Project icon
+icon_name : fa-bed
+icon_pack : fa
 
 # Project state
 active      : true

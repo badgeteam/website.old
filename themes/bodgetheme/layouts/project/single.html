@@ -19,7 +19,12 @@
 		  <img class="" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
 		  {{ end }}
       <div class="w3-container">
-        <h3><b>{{ .Title }}</b></h3>
+        {{- if .Params.icon_name }}
+          {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
+        <h3 class="w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) }}</h3>
+        {{- else }}
+        <h3 class="w3-text-black"><b><i class="fa fa-suitcase w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) }}</h3>
+        {{- end }}
         {{- $author := "" }}
         {{- $link   := "" }}
         {{- with .Params.Author }}
@@ -29,7 +34,7 @@
             {{- $link   = .RelPermalink }}
           {{- end }}
         {{- end }}
-        <span class="w3-left w3-opacity w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{ if $link }}<a href="{{ $link }}">{{ end }}{{ $author }}{{ if $link }}</a>{{ end }}{{ end }}</span>
+        <span class="w3-left w3-opacity w3-small">X{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{ if $link }}<a href="{{ $link }}">{{ end }}{{ $author }}{{ if $link }}</a>{{ end }}{{ end }}</span>
       </div>
       <div class="w3-container">
         <p>{{ .Description }}</p>
@@ -50,7 +55,12 @@
 
 {{ define "page-header" }}
 <header class="w3-container w3-center">
-  <h3 class="w3-left">{{ .Title | default .Site.Title }}</h3>
+  {{- if .Params.icon_name }}
+    {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
+  <h3 class="w3-left w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ .Title | default .Site.Title }}</h3>
+  {{- else }}
+  <h3 class="w3-left w3-text-black"><b><i class="fa fa-suitcase w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ .Title | default .Site.Title }}</h3>
+  {{- end }}
 </header>
 {{ end }}
 
@@ -65,11 +75,16 @@
   <img class="" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
   {{ end }}
   <div class="w3-container w3-white">
-    <h4><b>{{ .Title }}</b></h4>
+    {{- if .Params.icon_name }}
+      {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
+    <h4 class="w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) | truncate 20 }}</h4>
+    {{- else }}
+    <h4 class="w3-text-black"><b><i class="fa fa-suitcase w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) | truncate 25 }}</h4>
+    {{- end }}
     <p>{{ .Description }}</p>
   </div>
 </div>
 
 {{ partial "widgets/recent-updates.html" . }}
-{{ partial "widgets/tags-cloud.html" . }}
+{{ partial "widgets/taxo-cloud.html" . }}
 {{ end }}

@@ -1,5 +1,6 @@
 ---
 date        : {{ .Date }}
+lastmod     : {{ .Date }}
 draft       : true
 short_title : "{{ replace .Name "-" " " | title }}"
 title       : "{{ replace .Name "-" " " | title }}"
@@ -18,6 +19,10 @@ tags        :
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
+
+# Project icon
+icon_name : fa-suitcase
+icon_pack : fa
 
 # Default images related to this project
 image_src   : "images/mascot.png"

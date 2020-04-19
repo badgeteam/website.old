@@ -1,5 +1,6 @@
 ---
 date        : 2019-03-28T13:37:02+01:00
+lastmod     : 2019-03-28T13:37:02+01:00
 draft       : true
 short_title : "CZ2019"
 title       : "CampZone 2019"
@@ -17,6 +18,10 @@ tags        :
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
+
+# Project icon
+icon_name : fa-bed
+icon_pack : fa
 
 # Project state
 active      : false

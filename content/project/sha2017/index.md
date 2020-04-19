@@ -1,5 +1,6 @@
 ---
 date        : 2017-03-28T13:37:37+01:00
+lastmod     : 2017-03-28T13:37:37+01:00
 draft       : true
 short_title : "SHA2017"
 title       : "Still Hacking Anyway 2017"
@@ -21,6 +22,10 @@ tags        :
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
+
+# Project icon
+icon_name : fa-tablet
+icon_pack : fa
 
 # Default images related to this project
 image_src   : "images/sha2017.jpg"

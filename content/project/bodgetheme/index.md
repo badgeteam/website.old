@@ -1,23 +1,29 @@
 ---
-date        : 2000-01-01T12:34:56+01:00
+date        : 2020-03-14T12:34:56+01:00
+lastmod     : 2020-05-31T12:34:56+01:00
 draft       : true
 short_title : "Bodgetheme"
-title       : "Bodgetheme Project"
-description : "This is a temporary Bodgetheme test project. Blogs are created to test for the proper behaviour of new functionality."
+title       : "Bodgetheme website"
+description : "Badge.team website development in Hugo. Blogs are created to test for the proper behaviour of new functionality."
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["Bodgetheme"]
 
 # Project state
-active      : false
+active      : true
 archived    : false
 
 # Identifying tags, searchable/visible to site visitors
 tags        :
+- website
 - Bodgetheme
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
+
+# Project icon
+icon_name : fa-bug
+icon_pack : fa
 
 # Default images related to this project
 image_src   : "images/bodge.jpg"

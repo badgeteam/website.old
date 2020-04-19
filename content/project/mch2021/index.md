@@ -1,5 +1,6 @@
 ---
 date        : 2020-03-28T16:14:19+01:00
+lastmod     : 2020-03-28T16:14:19+01:00
 draft       : true
 short_title : "MCH2021"
 title       : "May Contain Hackers 2021"
@@ -21,6 +22,10 @@ tags        :
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
+
+# Project icon
+icon_name : fa-user-secret
+icon_pack : fa
 
 # Default images related to this project
 image_src   : "images/mascot.png"
