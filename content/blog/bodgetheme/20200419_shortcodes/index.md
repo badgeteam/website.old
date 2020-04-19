@@ -40,4 +40,5 @@ gallery:
     exclude : false
 ---
 
-Blog content goes here.
+List teams:
+{{< toc >}}

@@ -1,9 +1,6 @@
 {{- $taxonomy  := .Page.Params.content.taxonomy | default "tags" -}}
-
-{{- /* Font size calculation borrowed from hugo-academy theme. */ -}}
 {{- $fontSmall := .Page.Params.design.font_size_min | default 0.8 -}}
 {{- $fontBig   := .Page.Params.design.font_size_max | default 2.5 -}}
-
 {{- $tags := first 20 (index .Site.Taxonomies $taxonomy).ByCount -}}
 {{- $tag_count := len $tags }}
 <div class="w3-card">

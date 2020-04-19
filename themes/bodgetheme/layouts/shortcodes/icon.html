@@ -1,0 +1,7 @@
+{{- if (.Get "name") -}}
+  {{- $icon_name := .Get "name" -}}
+  {{- $icon_pack := or (.Get "pack") "fa" -}}
+  {{- $icon_class := or (.Get "class") "w3-text-teal" -}}
+  {{- $padding_right := (.Get "padding_right") | default 1 -}}{{/* Defaulting to 1 prevents no spacing when minimizing HTML. */}}
+  <i class="{{ $icon_pack }} {{ $icon_name }} {{ $icon_class }} {{with (.Get "padding_left")}}pl-{{.}}{{end}} {{with $padding_right}}pr-{{.}}{{end}} {{if ne (.Get "fixed_width") "false"}}fa-fw{{end}}"></i>
+{{- end -}}
