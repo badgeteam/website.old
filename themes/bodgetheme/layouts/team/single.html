@@ -1,0 +1,141 @@
+{{ define "main" }}
+<!-- Profile page -->
+<div class="w3-row">
+
+  <!-- Left side column -->
+  <div class="w3-col w3-third w3-left">
+    <!-- Profile image and contact details -->
+    <div class="w3-card w3-margin">
+{{- $avatar := "" }}
+{{- if .Params.avatar }}
+  {{- $image := .Resources.GetMatch .Params.avatar }}
+  {{- if $image }}
+    {{- $avatar = $image.Resize "600x600" }}
+  {{- end }}
+  {{- if $avatar }}
+      <div class="w3-display-container w3-black">
+        <img class="w3-image" src="{{ $avatar.RelPermalink }}" alt="{{ .Params.Name | truncate 18 }}" style="width:100%">
+        <div class="w3-container w3-display-bottomleft w3-text-white">
+          <h3 class="w3-left">{{ .Params.fullname }}</h3>
+        </div>
+      </div>
+  {{- else }}
+      <div class="w3-container w3-black">
+        <h3 class="w3-left w3-text-white">{{ .Params.fullname }}</h3>
+      </div>
+  {{- end }}
+{{- end }}
+      <div class="w3-container">
+        {{ if .Params.role }}<p><i class="fa fa-briefcase w3-large w3-margin-right"></i>{{ .Params.role | markdownify | emojify }}</p>{{ end }}
+        {{ if .Params.location }}<p><i class="fa fa-home w3-large w3-margin-right"></i>{{ .Params.location }}</p>{{ end }}
+        {{- range .Params.contact }}
+          {{- $link_ref    := .link }}
+          {{- $link_target := "" }}
+          {{- $scheme := (urls.Parse $link_ref).Scheme }}
+          {{- if not $scheme }}
+            {{- $link_ref = .link | relLangURL }}
+          {{- else if in (slice "http" "https") $scheme }}
+            {{- $link_target = "target=\"_blank\" rel=\"noopener\"" }}
+          {{- end }}
+          {{- if $link_ref }}
+        <a href="{{ $link_ref | safeURL }}" {{ $link_target | safeHTMLAttr }} style="text-decoration:none;">
+          <p><i class="{{ .icon_pack }} {{ .icon_name }} w3-large w3-margin-right"></i>{{ .title | safeHTML }}</p>
+        </a>
+          {{- else }}
+        <p><i class="{{ .icon_pack }} {{ .icon_name }} w3-large w3-margin-right"></i>{{ .title | safeHTML }}</p>
+          {{- end }}
+        {{- end }}
+      </div>
+      <div class="w3-container w3-padding w3-light-grey">
+        {{- range .Params.social }}
+          {{- $link_ref    := .link }}
+          {{- $link_target := "" }}
+          {{- $scheme := (urls.Parse $link_ref).Scheme }}
+          {{- if not $scheme }}
+            {{- $link_ref = .link | relLangURL }}
+          {{- else if in (slice "http" "https") $scheme }}
+            {{- $link_target = "target=\"_blank\" rel=\"noopener\"" }}
+          {{- end }}
+          {{- if $link_ref }}
+        <a class="w3-bar-item" title="{{ .title | safeHTML }}" alt="{{ .title | safeHTML }}" href="{{ $link_ref | safeURL }}" {{ $link_target | safeHTMLAttr }} style="text-decoration:none;">
+          <i class="{{ .icon_pack }} {{ .icon_name }} w3-large w3-margin-right"></i>
+        </a>
+          {{- end }}
+        {{- end }}
+      </div>
+    </div>
+
+    {{- with .Params.organizations }}
+    <div class="w3-container w3-card w3-margin w3-white">
+      <p class="w3-large"><b><i class="fa fa-rebel w3-margin-right w3-text-teal"></i>{{ (i18n "organizations" | default "Organizations") | markdownify }}</b></p>
+      {{- $separator := false }}
+      {{- range . }}
+      {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
+      {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="text-decoration:none;">{{ end }}
+      <h6 class="w3-opacity"><b>{{ .name }}</b></h6>
+      {{ if .url }}</a>{{ end }}
+      {{ with .role }}<h6 class=""><i class="fa fa-briefcase w3-margin-right"></i><span>{{ . }}</span></h6>{{- end }}
+      {{- end }}
+    </div>
+    {{- end }}
+
+    {{- with .Params.bio }}
+    <div class="w3-container w3-card w3-margin w3-white">
+      <p class="w3-large"><b><i class="fa fa-book w3-margin-right w3-text-teal"></i>{{ (i18n "biography" | default "Biography") | markdownify }}</b></p>
+      <p>{{ . }}</p>
+    </div>
+    {{- end }}
+
+    {{- with .Params.interests }}
+    <div class="w3-container w3-card w3-margin w3-white">
+      <p class="w3-large"><b><i class="fa fa-asterisk w3-margin-right w3-text-teal"></i>{{ (i18n "interests" | default "Interests") | markdownify }}</b></p>
+      <ul class="ul-interests">
+        {{ range . }}
+        <li>{{ . | markdownify | emojify }}</li>
+        {{ end }}
+      </ul>
+    </div>
+    {{- end }}
+
+    {{- with .Params.education }}
+    <div class="w3-container w3-card w3-margin w3-white">
+      <p class="w3-large"><b><i class="fa fa-certificate w3-margin-right w3-text-teal"></i>{{ i18n "education" | markdownify }}</b></p>
+      {{- $separator := false }}
+      {{- range .courses }}
+      {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
+      <h6 class="w3-opacity"><b>{{ .institution }}</b></h6>
+      {{- with .year }}
+      <h7 class=""><i class="fa fa-calendar w3-margin-right"></i>{{ . }}</h7>
+      {{- end }}
+      <p>{{ .course }}</p>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+
+  <!-- Right side column -->
+  <div class="w3-col w3-twothird">
+    <div class="w3-container w3-card w3-margin w3-white">
+      <h3 class="w3-text-black w3-padding-8"><b><i class="fa fa-user-circle w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "about" | default "About") | markdownify }}</b></h3>
+      <div class="w3-container">
+        {{ .Content }}
+      </div>
+    </div>
+
+    {{- with .Params.education }}
+    <div class="w3-container w3-card w3-margin w3-white">
+      <h3 class="w3-text-black w3-padding-8"><b><i class="fa fa-suitcase w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "projects" | default "Projects") | markdownify }}</b></h3>
+      {{- $separator := false }}
+      {{- range .courses }}
+      {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
+      <div class="w3-container">
+        <h5 class="w3-opacity"><b>Bodgetheme Project</b></h5>
+        <h6 class="w3-text-teal"><i class="fa fa-calendar w3-margin-right"></i>Mar 2020 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+        <p>This is a temporary Bodgetheme test project. Blogs are created to test for the proper behaviour of new functionality.</p>
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</div>
+{{- end }}

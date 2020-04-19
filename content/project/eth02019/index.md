@@ -31,7 +31,7 @@ gallery:
   exclude : false
   images  :
   - image   : "eth02019.jpg"
-    caption : "ETH0 2019"
+    caption : "ETH0:2019"
     exclude : false
   - image   : "eth0-tamafoxi-badge.jpg"
     caption : "Tamafoxi"
@@ -49,7 +49,7 @@ gallery:
   exclude : true
   images  :
   - image   : "eth02019.png"
-    caption : "ETH0 2019"
+    caption : "ETH0:2019"
     exclude : false
   - image   : "people.jpg"
     caption : "People"
