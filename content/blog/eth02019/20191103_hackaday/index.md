@@ -1,6 +1,6 @@
 ---
 date        : 2019-11-03T19:56:02+01:00
-draft       : true
+draft       : false
 title       : "Mentioned on Hackaday"
 author      : "jenny"
 description : "Jenny List wrote a nice story on the Autumn 2019 edition of ETH0."

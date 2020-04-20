@@ -1,6 +1,6 @@
 ---
 date        : 2020-04-04T09:24:02+01:00
-draft       : true
+draft       : false
 title       : "Blogpage formatting - built in shortcodes"
 author      : "Elborro"
 description : "Testing Hugo built in shortcodes (and check for requirement to replace any)."

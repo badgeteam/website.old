@@ -1,7 +1,7 @@
 ---
 date        : 2017-03-28T13:37:37+01:00
 lastmod     : 2017-03-28T13:37:37+01:00
-draft       : true
+draft       : false
 short_title : "SHA2017"
 title       : "Still Hacking Anyway 2017"
 description : "Still Hacking Anyway 2017 Badge"

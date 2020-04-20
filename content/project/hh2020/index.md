@@ -1,7 +1,7 @@
 ---
 date        : 2020-02-14T13:37:53+01:00
 lastmod     : 2020-02-14T13:37:53+01:00
-draft       : true
+draft       : false
 short_title : "HH2020"
 title       : "Hacker Hotel 2020"
 description : "Hacker Hotel 2020 Project"

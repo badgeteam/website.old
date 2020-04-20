@@ -1,7 +1,7 @@
 ---
 date        : 2019-02-15T13:37:47+01:00
 lastmod     : 2019-02-15T13:37:47+01:00
-draft       : true
+draft       : false
 short_title : "HH2019"
 title       : "Hacker Hotel 2019"
 description : "Hacker Hotel 2019 Project"

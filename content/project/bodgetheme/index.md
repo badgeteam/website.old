@@ -1,7 +1,7 @@
 ---
 date        : 2020-03-14T12:34:56+01:00
 lastmod     : 2020-05-31T12:34:56+01:00
-draft       : true
+draft       : false
 short_title : "Bodgetheme"
 title       : "Bodgetheme website"
 description : "Badge.team website development in Hugo. Blogs are created to test for the proper behaviour of new functionality."
