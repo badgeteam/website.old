@@ -1,0 +1,20 @@
+{{- if gt .Paginator.TotalPages 1 }}
+{{ $paginator := .Paginator }}
+<div class="w3-bar">
+  {{ if ne $paginator.PageNumber 1 }}
+  <a class="w3-button" href="{{ $paginator.First.URL }}">&laquo;&laquo;</a>
+  {{ end }}
+  {{ if $paginator.HasPrev }}
+  <a class="w3-button" href="{{ $paginator.Prev.URL }}">&laquo;</a>
+  {{ end }}
+  {{ range $paginator.Pagers }}
+  <a class="w3-button" href="{{ .URL }}">{{ if eq .PageNumber $paginator.PageNumber }}<strong>{{ .PageNumber }}</strong>{{ else }}{{ .PageNumber }}{{ end }}</a>
+  {{ end }}
+  {{ if $paginator.HasNext }}
+  <a class="w3-button" href="{{ $paginator.Next.URL }}">&raquo;</a>
+  {{ end }}
+  {{ if ne $paginator.PageNumber $paginator.TotalPages }}
+  <a class="w3-button" href="{{ $paginator.Last.URL }}">&raquo;&raquo;</a>
+  {{ end }}
+</div>
+{{ end -}}

@@ -1,0 +1,63 @@
+{{ define "main" }}
+{{ "<!-- Project list -->" | safeHTML }}
+{{- $maxpaginate := 5 }}
+{{- if .Site.Params.project }}
+{{- $maxpaginate = .Site.Params.project.paginate | default 5 }}
+{{- end }}
+<div class="w3-row">
+  {{ $projects := where .Site.RegularPages "Section" "project" }}
+  {{ $current  := where .Site.RegularPages "Params.archived" false }}
+  {{ $current_projects := $projects | intersect $current }}
+  {{ $current_projects_count := len $current_projects }}
+  {{ if ge $current_projects_count 1 }}
+  {{ "<!-- Projects -->" | safeHTML }}
+  <div class="w3-col">
+    {{/*- $paginator := .Paginate ($current_projects) $maxpaginate */}}
+    {{/*- range $paginator.Pages */}}
+    {{- range $current_projects }}
+      {{- $image := "" }}
+      {{- if .Params.image_src }}
+        {{- $image = .Resources.GetMatch .Params.image_src }}
+      {{- end }}
+    <!-- Blog entry -->
+    <div class="w3-card w3-margin w3-white">
+      {{ if $image }}
+		  <img class="" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
+		  {{ end }}
+      <div class="w3-container">
+        {{- if .Params.icon_name }}
+          {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
+        <h3 class="w3-text-black w3-padding-8"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} w3-margin-right w3-xlarge w3-text-teal"></i>{{ .Title }}</b></h3>
+        {{- else }}
+        <h3 class="w3-text-black w3-padding-8"><b><i class="fa fa-suitcase w3-margin-right w3-xlarge w3-text-teal"></i>{{ .Title }}</b></h3>
+        {{- end }}
+        <span class="w3-left w3-opacity w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}</span>
+      </div>
+      <div class="w3-container">
+        <p>{{ .Description }}</p>
+        <div class="w3-row">
+          <div class="w3-col m8 s12">
+            <p><a class="w3-button w3-padding-large w3-white w3-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><b>READ MORE &raquo;</b></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{- end }}
+    {{/*- template "partials/pagination.html" . */}}
+  </div>
+  {{ "<!-- End projects -->" | safeHTML }}
+  {{ end }}
+</div>
+{{ "<!-- End project list -->" | safeHTML }}
+{{ end }}
+
+{{ define "page-header" }}
+<header class="w3-container w3-center">
+  <h3 class="w3-left w3-text-black w3-padding-8"><b><i class="fa fa-suitcase w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "projects" | default "Projects") | markdownify }}</h3>
+</header>
+{{ end }}
+
+{{ define "aside-left" }}
+{{ partial "widgets/recent-updates.html" . }}
+{{ partial "widgets/taxo-cloud.html" . }}
+{{ end }}

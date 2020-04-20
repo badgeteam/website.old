@@ -1,0 +1,116 @@
+{{ define "main" }}
+      <article> {{ "<!-- Gallery -->" | safeHTML }}
+  {{- range .Pages }}
+  {{- $album := .Page }}
+        <section> {{ printf "<!-- %#v site gallery -->" .Params.title | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">{{ .Params.title }}</h4>
+          </div>
+          <div class="w3-row-padding">
+    {{- if $album.Resources }}
+      {{- range $album.Resources.ByType "image" }}
+        {{- $albumfolder  := (path.Split (trim (path.Split .Name).Dir "/")).File }}
+        {{- $filename     := path.Base .Name }}
+        {{- $albuminclude := true }}
+        {{- $include      := true }}
+        {{- $caption      := "Noname"}}
+        {{- $alt          := "Noname"}}
+        {{- if $album.Params.gallery }}
+          {{- range (where $album.Params.gallery "album" $albumfolder) }}
+            {{- $albuminclude = (not .exclude) }}
+            {{- if .images }}
+              {{- range (where .images "image" $filename) }}
+                {{- $include = (not .exclude) }}
+                {{- $caption = .caption }}
+                {{- if .alt}}{{$alt = .alt}}{{else}}{{$alt = .caption}}{{end}}
+                {{- end }}
+            {{- end }}
+          {{- end }}
+        {{- end }}
+        {{- if and ($albuminclude) ($include) }}
+          {{- $image := .Resize "600x600" }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ $caption }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-card">
+                  <img class="w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
+                  <div class="w3-container w3-center"><h5>{{ $caption | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+        {{- end }}
+      {{- end }}
+    {{- else }}
+            <div class="w3-container w3-center w3-margin-bottom"><h5>Gallery <strong>{{ .Params.title }}</strong> has no resources yet.</h5></div>
+    {{- end }}
+          </div>
+        </section> {{ printf "<!-- End %#v site gallery -->" .Params.title | safeHTML }}
+        <hr>
+  {{- end }}
+
+
+
+
+{{ $projects := where .Site.RegularPages "Section" "project" }}
+{{ $current  := where .Site.RegularPages "Params.archived" false }}
+{{ $current_projects := $projects | intersect $current }}
+{{ $current_projects_count := len $current_projects }}
+{{ if ge $current_projects_count 1 }}
+  {{- range $current_projects }}
+  {{- $album := .Page }}
+    {{- if $album.Resources }}
+      {{- $includedalbums := (where $album.Params.gallery "exclude" false) }}
+      {{- $includedalbum_count := len $includedalbums }}
+      {{- if ge $includedalbum_count 1 }}
+        <section> {{ printf "<!-- %#v project gallery -->" .Params.title | safeHTML }}
+          <div class="w3-container w3-center">
+            <h4 class="w3-left">{{ .Params.title }}</h4>
+          </div>
+          <div class="w3-row-padding">
+        {{- range $album.Resources.ByType "image" }}
+          {{- $albumfolder  := (path.Split (trim (path.Split .Name).Dir "/")).File }}
+          {{- $filename     := path.Base .Name }}
+          {{- $albuminclude := true }}
+          {{- $include      := true }}
+          {{- $caption      := "Noname"}}
+          {{- $alt          := "Noname"}}
+          {{- if $album.Params.gallery }}
+            {{- range (where $album.Params.gallery "album" $albumfolder) }}
+              {{- $albuminclude = (not .exclude) }}
+              {{- if .images }}
+                {{- range (where .images "image" $filename) }}
+                  {{- $include = (not .exclude) }}
+                  {{- $caption = .caption }}
+                  {{- if .alt}}{{$alt = .alt}}{{else}}{{$alt = .caption}}{{end}}
+                  {{- end }}
+              {{- end }}
+            {{- end }}
+          {{- end }}
+          {{- if and ($albuminclude) ($include) }}
+            {{- $image := .Resize "600x600" }}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+              <a title="{{ $caption }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="w3-card">
+                  <img class="w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
+                  <div class="w3-container w3-center"><h5>{{ $caption | truncate 18 }}</h5></div>
+                </div>
+              </a>
+            </div>
+          {{- end }}
+        {{- end }}
+          </div>
+        </section> {{ printf "<!-- End %#v project gallery -->" .Params.title | safeHTML }}
+        <hr>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+
+{{- end }}
+
+      </article> {{ "<!-- End Gallery -->" | safeHTML }}
+{{- end }}
+
+{{ define "page-header" }}
+<header class="w3-container w3-center">
+  <h3 class="w3-left w3-text-black"><b><i class="fa fa-camera w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "gallery" | default "Gallery") | markdownify }}</h3>
+</header>
+{{ end }}

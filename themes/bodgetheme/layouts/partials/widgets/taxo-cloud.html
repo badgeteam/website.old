@@ -1,0 +1,27 @@
+{{- $taxonomy  := .Page.Params.taxonomy | default "tags" }}
+{{- $fontSmall := .Page.Params.design.font_size_min | default 0.8 }}
+{{- $fontBig   := .Page.Params.design.font_size_max | default 2.5 }}
+{{- $tags      := first 20 (index .Site.Taxonomies $taxonomy).ByCount }}
+{{- $tag_count := len $tags }}
+<div class="w3-card w3-margin"> {{ "<!-- Tag cloud -->" | safeHTML -}}
+  <div class="w3-container w3-padding">
+    <h4 class="w3-left w3-text-black"><b><i class="fa fa-cloud w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n $taxonomy | default $taxonomy) | markdownify | humanize }}</h4>
+  </div>
+  <div class="w3-container w3-white">
+    {{- if ge $tag_count 1 -}}
+      {{- $fontDelta := sub $fontBig $fontSmall -}}
+      {{- $max := add (len (index $tags 0).Pages) 1 -}}
+      {{- $min := len (index ($tags).Reverse 0).Pages -}}
+      {{- $delta := sub $max $min -}}
+      {{- $fontStep := div $fontDelta $delta }}
+      {{- range $name, $term := (sort $tags ".Page.Title" "asc") -}}
+        {{- $tagCount := len $term.Pages -}}
+        {{- $weight := div (sub (math.Log $tagCount) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) -}}
+        {{- $fontSize := add $fontSmall (mul (sub $fontBig $fontSmall) $weight) }}
+    <span class="w3-tag w3-white w3-margin-bottom w3-small">
+      <a href="{{ .Page.RelPermalink }}" style="text-decoration:none;font-size:{{ $fontSize }}em">{{ .Page.Title }}</a>
+    </span>
+      {{- end }}
+    {{- end }}
+  </div>
+</div>{{ "<!-- End Tag cloud -->" | safeHTML -}}

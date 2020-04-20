@@ -1,0 +1,8 @@
+# Generated content
+resources/_gen
+
+# Temporary backup files
+*_old*
+
+# Archive directories
+*archive*

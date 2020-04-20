@@ -1,0 +1,29 @@
+{{/* Get reference to team member profile */}}
+{{ $page    := . }}
+{{ $profile := "" }}
+
+{{ $member := "" }}
+{{ if $page.Params.teammember }}
+  {{ $member   = $page.Params.teammember }}
+{{ else if $page.Params.author }}
+  {{ $member   = $page.Params.author }}
+{{ end }}
+
+{{ if $member }}
+  {{ $username := urlize $member }}
+
+  {{/* Try to get reference to team member profile directly */}}
+  {{ $profile = site.GetPage (printf "/%s/%s" "team" $username) }}
+  {{ if (not $profile) }}
+
+    {{/* Search for reference in nicknames */}}
+    {{ $profile = (index (where .Site.RegularPages ".Params.nicknames" "intersect" (slice $member ($member | lower) ($member | upper) ($member | humanize) ($member | title))) 0) }}
+    {{ if (not $profile) }}
+
+      {{/* Search for reference in nicknames (look for urlized name) */}}
+      {{ $profile = (index (where .Site.RegularPages ".Params.nicknames" "intersect" (slice $username ($username | lower) ($username | upper) ($username | humanize) ($username | title))) 0) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $profile }}

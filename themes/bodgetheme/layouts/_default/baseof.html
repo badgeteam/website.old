@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+{{ partial "head/site-head.html" . }}
+  <body>
+{{ partial "header/site-header.html" . }}
+    <div class="w3-content w3-padding w3-margin-top" style="max-width:1500px"> {{ "<!-- Page content -->" | safeHTML }}
+      {{- block "page-header" . }}{{- end }}
+      <aside class="w3-col w3-left m4">{{- block "aside-left" . }}{{- end }}</aside>
+      <aside class="w3-col w3-right m4">{{- block "aside-right" . }}{{- end }}</aside>
+      <div class="w3-rest">{{- block "main" . }}{{- end }}</div>
+      {{- block "page-footer" . }}{{- end }}
+    </div> {{ "<!-- End page content -->" | safeHTML }}
+{{ partial "footer/site-footer.html" . }}
+  </body>
+</html>
