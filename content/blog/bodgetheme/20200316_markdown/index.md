@@ -1,6 +1,6 @@
 ---
 date        : 2020-03-16T18:42:02+01:00
-draft       : true
+draft       : false
 title       : "Blogpage formatting - markdown"
 author      : "Elborro"
 description : "Markdown formatting tests."

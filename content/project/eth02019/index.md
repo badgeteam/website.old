@@ -1,7 +1,7 @@
 ---
 date        : 2019-10-10T13:10:46+02:00
 lastmod     : 2019-10-10T13:10:46+02:00
-draft       : true
+draft       : false
 short_title : "ETH0:2019"
 title       : "ETH0:2019"
 description : "ETH0:2019 Project"

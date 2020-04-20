@@ -1,6 +1,6 @@
 ---
 date        : 2020-04-10T12:59:04+01:00
-draft       : true
+draft       : false
 title       : "Gallery test"
 author      : "Elborro"
 description : "Testing gallery shortcode implementation"

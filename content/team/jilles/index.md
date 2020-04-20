@@ -6,7 +6,7 @@ name : Jilles Groenedijk
 
 # Nicknames (Names you use at articles or online. This allows you to be linked at articles.)
 nicknames :
-- Jilles
+- Jilles, Cybersensei
 
 # List the teams you're part of on this site.
 teams :
@@ -35,7 +35,7 @@ icon_name : fa-magic
 icon_pack : fa
 
 # Role/position (e.g., Professor of Artificial Intelligence)
-role : Bodgenator
+role : Cybersensei
 
 # Organizations/Affiliations
 organizations :

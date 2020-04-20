@@ -1,7 +1,7 @@
 ---
 date        : 2020-04-19T17:58:57+02:00
-draft       : true
-title       : "20200419_shortcodes"
+draft       : false
+title       : "Testing with shortcodes"
 author      : "Elborro"
 description : ""
 

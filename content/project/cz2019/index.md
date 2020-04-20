@@ -1,7 +1,7 @@
 ---
 date        : 2019-03-28T13:37:02+01:00
 lastmod     : 2019-03-28T13:37:02+01:00
-draft       : true
+draft       : false
 short_title : "CZ2019"
 title       : "CampZone 2019"
 description : "CampZone 2019 Project"

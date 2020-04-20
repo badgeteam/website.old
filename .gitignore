@@ -6,3 +6,6 @@ resources/_gen
 
 # Archive directories
 *archive*
+
+# Ignore test team members
+content/team/zz*

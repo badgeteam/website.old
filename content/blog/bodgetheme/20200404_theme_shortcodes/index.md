@@ -1,6 +1,6 @@
 ---
 date        : 2020-04-04T10:31:02+01:00
-draft       : true
+draft       : false
 title       : "Bodgetheme shortcodes"
 author      : "Elborro"
 description : "Testing additional Bodgetheme shortcodes."

@@ -1,7 +1,7 @@
 ---
 date        : 2020-03-28T16:14:06+01:00
 lastmod     : 2020-03-28T16:14:06+01:00
-draft       : true
+draft       : false
 short_title : "CZ2020"
 title       : "CampZone 2020 Project"
 description : "CampZone will be back in 2020 and requires a new flashy new badge!"

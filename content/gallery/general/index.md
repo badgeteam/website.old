@@ -1,6 +1,6 @@
 ---
-date        : 2000-01-01T12:34:56+01:00 
-draft       : true
+date        : 2000-01-01T12:34:56+01:00
+draft       : false
 title       : "General"
 
 # Identifying tags, searchable/visible to site visitors

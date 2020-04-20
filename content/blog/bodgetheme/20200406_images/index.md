@@ -1,6 +1,6 @@
 ---
 date        : 2020-04-06T14:21:02+01:00
-draft       : true
+draft       : false
 title       : "Blogpage images"
 author      : "Elborro"
 description : "While standard formatting should deliver quite a clean page, someone might want to add images at a later stage."
