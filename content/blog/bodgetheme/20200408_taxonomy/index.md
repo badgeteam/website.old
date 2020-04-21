@@ -27,6 +27,10 @@ image_alt   : ""
 thumb_src   : ""
 thumb_alt   : ""
 
+# Author about box
+about_show   : true
+about_inline : true
+
 # Photo gallery
 gallery:
 - album   : "images"

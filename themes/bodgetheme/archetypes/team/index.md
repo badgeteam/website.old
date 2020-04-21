@@ -38,6 +38,9 @@ role :
 # Bodging area (The Hague, NL)
 location :
 
+# E-mail address to forward mail to. (Address not revealed at site)
+email : ""
+
 # Organizations/Affiliations
 organizations :
 - name :
@@ -57,17 +60,11 @@ education :
 
 # Contact (Listed under personal details)
 # For available icons, see: https://fontawesome.com
-#  For an email link, use "fa" icon pack, "fa-envelope" icon, and a link in the
-#  form "mailto:your-email@example.com" or "#contact" for contact widget.
 contact :
 - title     : Webpage
   link      : https://www.my.site
   icon_pack : fa
   icon_name : fa-globe
-- title     : E-mail
-  link      : '#contact'  # For a direct email link, use "mailto:test@example.org".
-  icon_pack : fa
-  icon_name : fa-envelope
 - title     : Telegram
   link      : https://t.me/USERNAME
   icon_pack : fa
@@ -79,13 +76,7 @@ contact :
 
 # Social (Listed in social-link bars)
 # For available icons, see: https://fontawesome.com
-#  For an email link, use "fa" icon pack, "envelope" icon, and a link in the
-#  form "mailto:your-email@example.com" or "#contact" for contact widget.
 social :
-- title     : E-mail
-  icon_name : fa-envelope
-  icon_pack : fa
-  link      : '#contact'  # For a direct email link, use "mailto:test@example.org".
 - title     : LinkedIn
   icon_name : fa-linkedin
   icon_pack : fa

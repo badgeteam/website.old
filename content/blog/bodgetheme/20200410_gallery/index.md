@@ -27,6 +27,10 @@ image_alt   : "Cambodge"
 thumb_src   : ""
 thumb_alt   : ""
 
+# Author about box
+about_show   : true
+about_inline : true
+
 # Photo gallery
 gallery:
 - image   : "bodge00.jpeg"

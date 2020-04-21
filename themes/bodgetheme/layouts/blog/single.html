@@ -35,9 +35,23 @@
         <p>{{ .Description }}</p>
         <hr>
         {{ .Content }}
+        {{- if and (.Params.Author) (.Params.about_show) (.Params.about_inline) }}
+          {{- $profile := partial `functions/get_team_member_profile` . }}
+          {{- with $profile }}
+          <div class="w3-margin-bottom">
+            <hr>
+            <a href="{{ .Permalink }}" style="text-decoration:none;">
+              <div class="w3-display-container">
+                <h4 class="w3-text-black"><b><i class="fa fa-pencil-square-o w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n "about" | default "About") | markdownify }} {{ .Params.Name }}</h4>
+                <span class="w3-small">{{ .Params.bio }}</span>
+              </div>
+            </a>
+          </div>
+          {{- end }}
+        {{- end }}
       </div>
     </div>
-    {{- if .Params.Author }}
+    {{- if and (.Params.Author) (.Params.about_show) (not .Params.about_inline) }}
       {{ partial "widgets/team-about.html" . }}
     {{- end }}
   </div>

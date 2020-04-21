@@ -19,21 +19,26 @@
         <div class="w3-container w3-display-bottomleft w3-text-white">
           {{- with .Params.icon_name }}
           {{- $icon_pack := ($page.Params.icon_pack | default "fa") }}
-          <h3 class="w3-text-white w3-padding-8"><b><i class="{{ $icon_pack }} {{ . }} w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</b></h3>
+          <h3 class="w3-text-white w3-padding-8"><b><i class="{{ $icon_pack }} {{ . }} w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname | truncate 18 }}</b></h3>
           {{- else }}
-          <h3 class="w3-text-white w3-padding-8"><b><i class="fa fa-address-card w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</b></h3>
+          <h3 class="w3-text-white w3-padding-8"><b><i class="fa fa-address-card w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname | truncate 18 }}</b></h3>
           {{- end }}
         </div>
       </div>
   {{- else }}
       <div class="w3-container w3-black">
-        <h3 class="w3-text-white w3-padding-8"><b><i class="fa fa-address-card w3-margin-right w3-xlarge w3-text-white"></i>{{ $page.Params.fullname }}</b></h3>
+        <h3 class="w3-text-white w3-padding-8"><b><i class="fa fa-address-card w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname | truncate 18 }}</b></h3>
       </div>
   {{- end }}
 {{- end }}
       <div class="w3-container">
         {{ if .Params.role }}<p><i class="fa fa-briefcase w3-large w3-margin-right"></i>{{ .Params.role | markdownify | emojify }}</p>{{ end }}
         {{ if .Params.location }}<p><i class="fa fa-home w3-large w3-margin-right"></i>{{ .Params.location }}</p>{{ end }}
+        {{ if .Params.email -}}
+        <a href="#contact" style="text-decoration:none;">
+          <p><i class="fa fa-envelope w3-large w3-margin-right"></i>E-mail</p>
+        </a>
+        {{- end }}
         {{- range .Params.contact }}
           {{- $link_ref    := .link }}
           {{- $link_target := "" }}
