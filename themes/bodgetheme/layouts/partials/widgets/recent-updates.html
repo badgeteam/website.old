@@ -2,13 +2,13 @@
 {{- $pages := first 5 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
 {{- $page_count := len $pages }}
 {{- if ge $page_count 1 }}
-<div class="w3-card w3-margin">
+<div class="bt-recent-updates w3-card w3-margin">
   <div class="w3-container w3-padding">
     <h4 class="w3-left w3-text-black"><b><i class="fa fa-newspaper-o w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n "recent updates" | default "Recent updates") | markdownify | humanize }}</h4>
   </div>
-  <ul class="w3-ul w3-hoverable w3-white">
+  <ul class="bt-ul bt-recent-updates-ul w3-ul w3-hoverable w3-white">
     {{ range $pages }}
-    <li class="w3-padding">
+    <li class="bt-li bt-recent-updates-li w3-padding">
       <a href="{{ .Permalink }}" style="text-decoration:none;">
         <span class="w3-opacity w3-small">{{ humanize .Section }} - {{ .Date.Format "02 January 2006 15:04 MST" }}</span><br>
         <span class="w3-medium">{{ .Title | default .Site.Title | truncate 30 }}</span><br>
