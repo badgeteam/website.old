@@ -1,15 +1,15 @@
 {{ define "main" }}
-  <article> {{ "<!-- Default single -->" | safeHTML }}
-    <div class="w3-container w3-center">
-      <h3 class="w3-left">{{ .Title | default .Site.Title }}</h3><br>
-      <span class="w3-left w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span>
+  <article class="bt-default-single"> {{ "<!-- Default single -->" | safeHTML }}
+    <div class="bt-default-single-title-container w3-container w3-center">
+      <h3 class="bt-default-single-title w3-left">{{ .Title | default .Site.Title }}</h3><br>
+      <span class="bt-default-single-date w3-left w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span>
     </div>
-    <section>
-      <div class="w3-card w3-margin w3-padding">
+    <section class="bt-default-single-section">
+      <div class="bt-default-single-section-card w3-card w3-margin w3-padding">
         {{- if .Params.image_src -}}
-        <img src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" class="w3-image w3-round w3-left w3-margin-right" style="width:75px">
+        <img src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" class="bt-default-single-section-image w3-image w3-round w3-left w3-margin-right" style="width:75px">
         {{- end -}}
-        <span>{{ .Content }}</span>
+        <span class="bt-default-single-section-content">{{ .Content }}</span>
       </div>
     </section>
   </article> {{ "<!-- End Default single -->" | safeHTML }}
