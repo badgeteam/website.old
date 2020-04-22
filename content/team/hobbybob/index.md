@@ -6,12 +6,14 @@ name : Dimitri Modderman
 
 # Nicknames (Names you use at articles or online. This allows you to be linked at articles.)
 nicknames :
-- Dimitri
+- Hobbybob
 
 # List the teams you're part of on this site.
 teams :
 - Badgeteam
 - Bodgeteam
+- HH2019
+- HH2020
 
 
 #### Mini profile (Displayed at end of posts, where available)
