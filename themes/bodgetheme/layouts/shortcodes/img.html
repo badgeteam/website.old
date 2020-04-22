@@ -4,9 +4,9 @@
 {{- $img_class := (.Get "class") | default "w3-round" }}
 {{- $img_title := (.Get "title") }}
 {{- $img_descr := (.Get "descr") }}
-  <div class="w3-white" style="width:{{ $img_width }}">
-    <img class="{{ $img_class }}" src="{{ $img_src }}" alt="{{ $img_alt }}" style="width:100%">
-    <div class="w3-container">
+  <div class="bt-img w3-white" style="width:{{ $img_width }}">
+    <img class="bt-img-img bt-image {{ $img_class }}" src="{{ $img_src }}" alt="{{ $img_alt }}" style="width:100%">
+    <div class="bt-img-caption w3-container">
       {{- if $img_title -}}
       <h4><b>{{ $img_title }}</b></h4>
       {{- end -}}
