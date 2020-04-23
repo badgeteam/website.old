@@ -3,9 +3,9 @@
 {{- if .Site.Params.team }}
 {{- $maxpaginate = .Site.Params.team.paginate | default 12 }}
 {{- end }}
-      <article> {{ "<!-- Team -->" | safeHTML }}
-        <section> {{ printf "<!-- The team -->" | safeHTML }}
-          <div class="w3-row-padding">
+      <article class="bt-team-list"> {{ "<!-- Team -->" | safeHTML }}
+        <section class="bt-team-list-section"> {{ printf "<!-- The team -->" | safeHTML }}
+          <div class="bt-team-list-section-row w3-row-padding">
   {{- range (.Paginator $maxpaginate).Pages.ByParam "name" }}
     {{- $member := .Page }}
     {{- $avatar := "" }}
@@ -15,13 +15,13 @@
         {{- $avatar = $image.Resize "600x600" }}
       {{- end }}
     {{- end }}
-            <div class="w3-col l3 m6 w3-margin-bottom">
-              <a title="{{ $member.Params.Name }}" href="{{ $member.RelPermalink }}" style="text-decoration:none;">
-                <div class="w3-card">
+            <div class="bt-team-list-section-col w3-col l3 m6 w3-margin-bottom">
+              <a class="bt-team-list-link" title="{{ $member.Params.Name }}" href="{{ $member.RelPermalink }}" style="text-decoration:none;">
+                <div class="bt-team-list-card w3-card">
     {{- if $avatar }}
-                  <img class="w3-hover-grayscale" src="{{ $avatar.RelPermalink }}" alt="{{ $member.Params.Name | truncate 18 }}" style="width:100%">
+                  <img class="bt-team-list-image bt-image w3-hover-grayscale" src="{{ $avatar.RelPermalink }}" alt="{{ $member.Params.Name | truncate 18 }}" style="width:100%">
     {{- end }}
-                  <div class="w3-container w3-center"><h5>{{ $member.Params.Name | truncate 18 }}</h5></div>
+                  <div class="bt-team-list-name w3-container w3-center"><h5>{{ $member.Params.Name | truncate 18 }}</h5></div>
                 </div>
               </a>
             </div>
@@ -33,7 +33,7 @@
 {{- end }}
 
 {{ define "page-header" }}
-<header class="w3-container w3-center">
-  <h3 class="w3-left w3-text-black"><b><i class="fa fa-users w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "team" | default "Team") | markdownify }}</h3>
+<header class="bt-page-header w3-container w3-center">
+  <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="fa fa-users w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "team" | default "Team") | markdownify }}</h3>
 </header>
 {{ end }}
