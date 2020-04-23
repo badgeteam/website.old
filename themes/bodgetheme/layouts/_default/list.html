@@ -3,7 +3,6 @@
     <div class="bt-default-list-title-container w3-container w3-center">
       <h3 class="bt-default-list-title w3-left">{{ humanize .Title }}</h3>
     </div>
-    {{- template "partials/pagination.html" . }}
     <section class="bt-default-list-section w3-card w3-margin">
       <ul class="bt-ul bt-default-list-section-ul w3-ul w3-hoverable w3-white">
         {{- if .Content }}{{ .Content }}{{end}}
@@ -30,6 +29,12 @@
         {{- end }}
       </ul>
     </section>
-    {{- template "partials/pagination.html" . }}
+    {{ template "partials/pagination.html" . }}
   </article> {{ "<!-- End default list -->" | safeHTML }}
+{{ end }}
+
+{{ define "page-header" }}
+<header class="bt-page-header w3-container w3-center">
+  <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="fa fa-users bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "team" | default "Team") | markdownify }}</h3>
+</header>
 {{ end }}
