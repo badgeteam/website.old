@@ -38,6 +38,12 @@ icon_pack : fa
 # Role/position (e.g., Professor of Artificial Intelligence)
 role : Software developer
 
+# Bodging area (The Hague, NL)
+location :
+
+# E-mail address to forward mail to. (Address not revealed at site)
+email : ""
+
 # Organizations/Affiliations
 organizations :
 - name : SYN-bit
@@ -58,13 +64,7 @@ education :
 
 # Contact (Listed under personal details)
 # For available icons, see: https://fontawesome.com
-#  For an email link, use "fa" icon pack, "fa-envelope" icon, and a link in the
-#  form "mailto:your-email@example.com" or "#contact" for contact widget.
 contact :
-- title     : E-mail
-  link      : '#contact'  # For a direct email link, use "mailto:test@example.org".
-  icon_pack : fa
-  icon_name : fa-envelope
 - title     : Telegram
   link      : https://t.me/SYNbit
   icon_pack : fa
@@ -72,8 +72,6 @@ contact :
 
 # Social (Listed in social-link bars)
 # For available icons, see: https://fontawesome.com
-#  For an email link, use "fa" icon pack, "envelope" icon, and a link in the
-#  form "mailto:your-email@example.com" or "#contact" for contact widget.
 social :
 - title     : Twitter
   icon_name : fa-twitter

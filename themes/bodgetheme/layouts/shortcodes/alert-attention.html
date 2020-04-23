@@ -1,4 +1,4 @@
-<div class="w3-panel w3-round w3-yellow">
-  {{ if len .Params | ge 1 }}<h3>{{ .Get 0}}</h3>{{ end }}
-  <p>{{ .Inner | markdownify | emojify }}</p>
+<div class="bt-alert bt-alert-attention w3-panel w3-round w3-yellow">
+  {{ if len .Params | ge 1 }}<h3 class="bt-alert-title">{{ .Get 0}}</h3>{{ end }}
+  <p class="bt-alert-text">{{ .Inner | markdownify | emojify }}</p>
 </div>

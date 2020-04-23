@@ -6,12 +6,14 @@ name : Dimitri Modderman
 
 # Nicknames (Names you use at articles or online. This allows you to be linked at articles.)
 nicknames :
-- Dimitri
+- Hobbybob
 
 # List the teams you're part of on this site.
 teams :
 - Badgeteam
 - Bodgeteam
+- HH2019
+- HH2020
 
 
 #### Mini profile (Displayed at end of posts, where available)
@@ -35,6 +37,12 @@ icon_pack : fa
 
 # Role/position (e.g., Professor of Artificial Intelligence)
 role : Hacker Hotel Boss
+
+# Bodging area (The Hague, NL)
+location :
+
+# E-mail address to forward mail to. (Address not revealed at site)
+email : ""
 
 # Organizations/Affiliations
 organizations :
@@ -61,8 +69,6 @@ education :
 
 # Contact (Listed under personal details)
 # For available icons, see: https://fontawesome.com
-#  For an email link, use "fa" icon pack, "fa-envelope" icon, and a link in the
-#  form "mailto:your-email@example.com" or "#contact" for contact widget.
 contact :
 - title     : E-mail
   link      : '#contact'  # For a direct email link, use "mailto:test@example.org".
@@ -75,8 +81,6 @@ contact :
 
 # Social (Listed in social-link bars)
 # For available icons, see: https://fontawesome.com
-#  For an email link, use "fa" icon pack, "envelope" icon, and a link in the
-#  form "mailto:your-email@example.com" or "#contact" for contact widget.
 social :
 - title     : LinkedIn
   icon_name : fa-linkedin

@@ -2,10 +2,15 @@
 resources/_gen
 
 # Temporary backup files
-*_old*
+*_old.*
 
 # Archive directories
 *archive*
+
+# Development files
+*_new.*
+*_dev.*
+*_test.*
 
 # Ignore test team members
 content/team/zz*

@@ -11,8 +11,8 @@ layoutdir  = "layouts"
 publishdir = "public"
 
 # Default pagination settings
-paginate     = 10
-paginatepath = "p"
+paginate       = 10
+paginatepath   = "p"
 
 # Preferences robots.txt
 enableRobotsTXT = true

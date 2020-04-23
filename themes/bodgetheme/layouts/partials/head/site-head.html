@@ -1,11 +1,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Hugo with Badge.team Bodgetheme">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {{- $description := "" }}
+  {{- if .Params.summary }}
+    {{- $description = .Params.summary }}
+  {{- else if .Params.abstract }}
+    {{- $description = .Params.abstract }}
+  {{- else if .IsPage }}
+    {{- $description = .Summary }}
+  {{- else if site.Params.description }}
+    {{- $description = site.Params.description }}
+  {{- else }}
+    {{- $description = "Bodgetheme Badgeteam site" }}
+  {{- end }}
+  <meta name="description" content="{{ $description }}">
 
   <title>{{ block "title" . }}{{ .Site.Title | upper }}{{ end }}</title>
 
   <link rel="canonical" href="{{ .Site.BaseURL | lower }}" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {{- if fileExists "static/css/site.css" }}
+  <link rel="stylesheet" href="/css/site.css">
+  {{- end }}
+  {{- if fileExists (printf "static/css/%s.css" (.Section | lower) ) }}
+  <link rel="stylesheet" href="{{ (printf "/css/%s.css" (.Section | lower)) | relURL }}">
+  {{- end }}
 
   <link rel="icon" type="image/x-icon" sizes="16x16" href="/images/ico/favicon.ico">
   <link rel="icon" type="image/png" sizes="640x640" href="/images/ico/favicon.png">

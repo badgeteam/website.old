@@ -1,12 +1,12 @@
 {{ define "main" }}
-      <article> {{ "<!-- Gallery -->" | safeHTML }}
+      <article class="bt-gallery"> {{ "<!-- Gallery -->" | safeHTML }}
   {{- range .Pages }}
   {{- $album := .Page }}
-        <section> {{ printf "<!-- %#v site gallery -->" .Params.title | safeHTML }}
-          <div class="w3-container w3-center">
-            <h4 class="w3-left">{{ .Params.title }}</h4>
+        <section class="bt-gallery-section"> {{ printf "<!-- %#v site gallery -->" .Params.title | safeHTML }}
+          <div class="bt-gallery-section-title-container w3-container w3-center">
+            <h4 class="bt-gallery-section-title w3-left">{{ .Params.title }}</h4>
           </div>
-          <div class="w3-row-padding">
+          <div class="bt-gallery-section-content-container w3-row-padding">
     {{- if $album.Resources }}
       {{- range $album.Resources.ByType "image" }}
         {{- $albumfolder  := (path.Split (trim (path.Split .Name).Dir "/")).File }}
@@ -29,18 +29,18 @@
         {{- end }}
         {{- if and ($albuminclude) ($include) }}
           {{- $image := .Resize "600x600" }}
-            <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="bt-gallery-image-object w3-col l3 m6 w3-margin-bottom">
               <a title="{{ $caption }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
-                <div class="w3-card">
-                  <img class="w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
-                  <div class="w3-container w3-center"><h5>{{ $caption | truncate 18 }}</h5></div>
+                <div class="bt-gallery-image-card w3-card">
+                  <img class="bt-gallery-image w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
+                  <div class="bt-gallery-caption w3-container w3-center"><h5>{{ $caption | truncate 18 }}</h5></div>
                 </div>
               </a>
             </div>
         {{- end }}
       {{- end }}
     {{- else }}
-            <div class="w3-container w3-center w3-margin-bottom"><h5>Gallery <strong>{{ .Params.title }}</strong> has no resources yet.</h5></div>
+            <div class="bt-gallery-message w3-container w3-center w3-margin-bottom"><h5>Gallery <strong>{{ .Params.title }}</strong> has no resources yet.</h5></div>
     {{- end }}
           </div>
         </section> {{ printf "<!-- End %#v site gallery -->" .Params.title | safeHTML }}
@@ -110,7 +110,7 @@
 {{- end }}
 
 {{ define "page-header" }}
-<header class="w3-container w3-center">
-  <h3 class="w3-left w3-text-black"><b><i class="fa fa-camera w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "gallery" | default "Gallery") | markdownify }}</h3>
+<header class="bt-page-header w3-container w3-center">
+  <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="fa fa-camera bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "gallery" | default "Gallery") | markdownify }}</h3>
 </header>
 {{ end }}

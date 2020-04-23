@@ -28,6 +28,10 @@ image_alt   : "ETH0 2019"
 thumb_src   : ""
 thumb_alt   : ""
 
+# Author about box
+about_show   : true
+about_inline : true
+
 # Photo gallery
 gallery:
 - album   : "images"

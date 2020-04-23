@@ -1,14 +1,13 @@
 {{ define "main" }}
-  <article> {{ "<!-- Default list -->" | safeHTML }}
-    <div class="w3-container w3-center">
-      <h3 class="w3-left">{{ humanize .Title }}</h3>
+  <article class="bt-default-list"> {{ "<!-- Default list -->" | safeHTML }}
+    <div class="bt-default-list-title-container w3-container w3-center">
+      <h3 class="bt-default-list-title w3-left">{{ humanize .Title }}</h3>
     </div>
-    {{- template "partials/pagination.html" . }}
-    <section class="w3-card w3-margin">
-      <ul class="w3-ul w3-hoverable w3-white">
+    <section class="bt-default-list-section w3-card w3-margin">
+      <ul class="bt-ul bt-default-list-section-ul w3-ul w3-hoverable w3-white">
         {{- if .Content }}{{ .Content }}{{end}}
         {{- range .Paginator.Pages }}
-        <li class="w3-padding-16">
+        <li class="bt-li bt-default-list-section-li w3-padding-16">
           <a href="{{ .Permalink }}" style="text-decoration:none;">
           {{- $image := "" }}
           {{- $alt   := "" }}
@@ -20,16 +19,22 @@
             {{- $alt   = .Params.image_alt }}
           {{- end }}
           {{- if $image }}
-            <img class="w3-image w3-round w3-left w3-margin-right" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:75px">
+            <img class="bt-default-list-section-image w3-image w3-round w3-left w3-margin-right" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:75px">
           {{- end }}
-            <span class="w3-small">{{ humanize .Section }} - {{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span><br>
-            <span class="w3-large">{{ .Title | default .Site.Title }}</span><br>
-            <span class="">{{ .Params.description }}</span>
+            <span class="bt-default-list-section-section w3-small">{{ humanize .Section }} - {{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span><br>
+            <span class="bt-default-list-section-title w3-large">{{ .Title | default .Site.Title }}</span><br>
+            <span class="bt-default-list-section-description">{{ .Params.description }}</span>
           </a>
         </li>
         {{- end }}
       </ul>
     </section>
-    {{- template "partials/pagination.html" . }}
+    {{ template "partials/pagination.html" . }}
   </article> {{ "<!-- End default list -->" | safeHTML }}
+{{ end }}
+
+{{ define "page-header" }}
+<header class="bt-page-header w3-container w3-center">
+  <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="fa fa-users bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "team" | default "Team") | markdownify }}</h3>
+</header>
 {{ end }}
