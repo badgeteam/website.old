@@ -28,7 +28,7 @@ teams :
 avatar : "images/sebastius.jpg"
 
 # Short bio
-bio : "Yes, the cloud was named after me :)"
+bio : "Yes, the cloud was named after me. :)"
 
 
 
@@ -42,7 +42,7 @@ icon_name : fa-compass
 icon_pack : fa
 
 # Role/position (e.g., Professor of Artificial Intelligence)
-role : Bodgenatoric Mastermind
+role : Bodginatoric Mastermind
 
 # Bodging area (The Hague, NL)
 location :
@@ -52,7 +52,7 @@ email : ""
 
 # Organizations/Affiliations
 organizations :
-- name : Revspace
+- name : RevSpace
   role : Moral Compass
   url  : "https://revspace.nl"
 
@@ -66,13 +66,13 @@ interests :
 - Bodger
 - Badger
 - Bodger
-- Mushroom
-- Mushroom
+- Shrooms
+- Mushrooms
 
 education :
   courses :
   - course      : Advanced badging and bodging
-    institution : Bodgenatoric Institute
+    institution : Bodginatoric Institute
     year        : 2019
 
 # Contact (Listed under personal details)
