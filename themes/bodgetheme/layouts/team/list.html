@@ -1,12 +1,9 @@
 {{ define "main" }}
-{{- $maxpaginate := 12 }}
-{{- if .Site.Params.team }}
-{{- $maxpaginate = .Site.Params.team.paginate | default 12 }}
-{{- end }}
+{{- $maxpaginate := .Site.Params.team.paginate | default 12 }}
       <article class="bt-team-list"> {{ "<!-- Team -->" | safeHTML }}
         <section class="bt-team-list-section"> {{ printf "<!-- The team -->" | safeHTML }}
           <div class="bt-team-list-section-row w3-row-padding">
-  {{- range (.Paginator $maxpaginate).Pages.ByParam "name" }}
+  {{ range (.Paginate ( .Pages.ByParam "name" ) $maxpaginate).Pages }}
     {{- $member := .Page }}
     {{- $avatar := "" }}
     {{- if $member.Params.avatar }}
