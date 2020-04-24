@@ -27,7 +27,7 @@ enableRobotsTXT = true
 
 [params]
   mainSections = ["blog","project"]
-  defaultImage = "/images/mascot_600x600.png"
+  defaultImage = "/images/mascot_600x600.png" 
 
   [params.blog]
     paginate = 5

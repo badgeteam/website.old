@@ -34,7 +34,7 @@ icon_name : fa-address-card
 icon_pack : fa
 
 # Role/position (e.g., Professor of Artificial Intelligence)
-role :Chieftain for MCH2021 badge
+role : Chieftain for MCH2021 badge
 
 # Bodging area (The Hague, NL)
 location :
