@@ -11,6 +11,7 @@ nicknames :
 # List the teams you're part of on this site.
 teams :
 - Badgeteam
+- MCH2021
 
 
 #### Mini profile (Displayed at end of posts, where available)
@@ -33,7 +34,7 @@ icon_name : fa-address-card
 icon_pack : fa
 
 # Role/position (e.g., Professor of Artificial Intelligence)
-role :
+role :Chieftain for MCH2021 badge
 
 # Bodging area (The Hague, NL)
 location :

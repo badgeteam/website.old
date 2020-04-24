@@ -58,7 +58,7 @@ interests :
 education :
   courses :
   - course      : Advanced badging and bodging
-    institution : Bodgenatoric Institute
+    institution : Bodginator Institute
     year        : 2019
 
 # Contact (Listed under personal details)
