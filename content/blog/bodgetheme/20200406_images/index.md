@@ -8,6 +8,9 @@ description : "While standard formatting should deliver quite a clean page, some
 # At least one Identifying mnemonic, referring to the project(s) his blog is related to
 projects    : ["Bodgetheme"]
 
+# For alternative external reference only
+slugs       : ["bt", "bodgetheme"]
+
 # Identifying tags, searchable/visible to site visitors
 tags        :
 - Website

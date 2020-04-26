@@ -8,6 +8,9 @@ description : "Jenny List wrote a nice story on the Autumn 2019 edition of ETH0.
 # At least one Identifying mnemonic, referring to the project(s) his blog is related to
 projects    : ["ETH02019"]
 
+# For alternative external reference only
+slugs       : []
+
 # Identifying tags, searchable/visible to site visitors
 tags        :
 - Badge
