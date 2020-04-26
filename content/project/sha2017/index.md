@@ -51,3 +51,8 @@ gallery:
     caption : "SHA2017"
     exclude : false
 ---
+
+### {{< icon name="fa-tablet" >}} Still Hacking Anyway 2017 Badge Project
+
+Welcome to the project page of the Still Hacking Anyway 2017 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
+{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}

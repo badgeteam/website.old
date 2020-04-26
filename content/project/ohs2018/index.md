@@ -45,3 +45,8 @@ gallery:
     caption : "People"
     exclude : false
 ---
+
+### {{< icon name="fa-suitcase" >}} Open Hardware Summit 2018 Badge Project
+
+Welcome to the project page of the Open Hardware Summit Badge project. This project page is still a work in progress and we expect to fill it with content soon.
+{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}

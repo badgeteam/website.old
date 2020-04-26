@@ -45,3 +45,8 @@ gallery:
     caption : "People"
     exclude : false
 ---
+
+### {{< icon name="fa-empire" >}} Disobey 2020 Badge Project
+
+Welcome to the project page of the Disobey 2020 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
+{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}
