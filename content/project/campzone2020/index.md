@@ -2,12 +2,15 @@
 date        : 2020-03-28T16:14:06+01:00
 lastmod     : 2020-03-28T16:14:06+01:00
 draft       : false
-short_title : "CZ2020"
-title       : "CampZone 2020 Project"
+short_title : "CampZone 2020"
+title       : "CampZone 2020 Badge Project"
 description : "CampZone will be back in 2020 and requires a new flashy new badge!"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["CZ2020"]
+
+# For alternative external reference only
+slugs       : ["campzone2020"]
 
 # Identifying tags, searchable/visible to site visitors
 tags        :
@@ -32,7 +35,6 @@ image_src   : "images/mascot.png"
 image_alt   : "CZ2020"
 thumb_src   : ""
 thumb_alt   : "CZ2020"
-archived    : false
 
 # Photo gallery
 gallery:

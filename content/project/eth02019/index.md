@@ -3,11 +3,14 @@ date        : 2019-10-10T13:10:46+02:00
 lastmod     : 2019-10-10T13:10:46+02:00
 draft       : false
 short_title : "ETH0:2019"
-title       : "ETH0:2019"
-description : "ETH0:2019 Project"
+title       : "ETH0:2019 Badge Project"
+description : "This is the project page description for the ETH0:2019 Project"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["ETH02019"]
+
+# For alternative external reference only
+slugs       : ["eth02019"]
 
 # Project state
 active      : false

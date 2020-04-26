@@ -1,16 +1,16 @@
 ---
-date        : 2020-03-28T16:14:19+01:00
-lastmod     : 2020-03-28T16:14:19+01:00
+date        : 2020-04-26T09:45:07+02:00
+lastmod     : 2020-04-26T09:45:07+02:00
 draft       : false
-short_title : "MCH 2021"
-title       : "May Contain Hackers 2021 Project"
-description : "This is the project page description for the May Contain Hackers 2021 Project"
+short_title : "Disobey2020"
+title       : "Disobey2020 Badge Project"
+description : "This is the project page description for the Disobey2020 Project"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
-projects    : ["MCH2021"]
+projects    : ["DISOBEY2020"]
 
 # For alternative external reference only
-slugs       : ["mch2021","meh2021"]
+slugs       : ["disobey2020"]
 
 # Project state
 active      : true
@@ -18,36 +18,24 @@ archived    : false
 
 # Identifying tags, searchable/visible to site visitors
 tags        :
-- MCH2021
-- Badge
-- 2021
-- May Contain Hackers
+- DISOBEY2020
 
 # Identifying categories, searchable/visible to site visitors
 categories  : []
 
 # Project icon
-icon_name : fa-user-secret
+icon_name : fa-empire
 icon_pack : fa
 
 # Default images related to this project
 image_src   : "images/mascot.png"
-image_alt   : "MCH2021"
-thumb_src   : ""
-thumb_alt   : "MCH2021"
+image_alt   : "DISOBEY2020"
+thumb_src   : "images/mascot.png"
+thumb_alt   : "DISOBEY2020"
 
 # Photo gallery
 gallery:
 - album   : "images"
-  exclude : true
-  images  :
-  - image   : "imagine.jpg"
-    caption : "Imagine"
-    exclude : false
-  - image   : "people.jpg"
-    caption : "People"
-    exclude : false
-- album   : "thumbs"
   exclude : true
   images  :
   - image   : "imagine.jpg"

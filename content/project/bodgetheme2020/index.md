@@ -1,13 +1,16 @@
 ---
 date        : 2020-03-14T12:34:56+01:00
-lastmod     : 2020-05-31T12:34:56+01:00
+lastmod     : 2020-04-25T12:34:56+01:00
 draft       : false
 short_title : "Bodgetheme"
-title       : "Bodgetheme website"
+title       : "Bodgetheme"
 description : "Badge.team website development in Hugo. Blogs are created to test for the proper behaviour of new functionality."
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["Bodgetheme"]
+
+# External quick references
+slugs       : ["bt", "bodgetheme"]
 
 # Project state
 active      : true

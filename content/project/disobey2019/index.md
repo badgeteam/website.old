@@ -3,11 +3,14 @@ date        : 2019-04-10T13:14:57+02:00
 lastmod     : 2019-04-10T13:14:57+02:00
 draft       : false
 short_title : "Disobey 2019"
-title       : "Disobey 2019"
-description : "Disobey 2019 Project"
+title       : "Disobey 2019 Badge Project"
+description : "This is the project page description for the Disobey 2019 Project"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["DISOBEY2019"]
+
+# For alternative external reference only
+slugs       : ["disobey2019"]
 
 # Project state
 active      : false
@@ -21,7 +24,7 @@ tags        :
 categories  : []
 
 # Project icon
-icon_name : fa-first-order
+icon_name : fa-empire
 icon_pack : fa
 
 # Default images related to this project
