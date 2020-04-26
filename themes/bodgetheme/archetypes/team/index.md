@@ -94,3 +94,7 @@ social :
   icon_pack : fa
   link      : https://github.com/USERNAME
 ---
+
+## Hi there! :)
+
+This could hold a personal story about {{ replace .Name "-" " " | title }}.

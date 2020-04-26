@@ -45,3 +45,8 @@ gallery:
     caption : "People"
     exclude : false
 ---
+
+### {{< icon name="fa-suitcase" >}} {{ replace .Name "-" " " | title }} Project
+
+Welcome to the project page of the {{ replace .Name "-" " " | title }} project. This project page is still a work in progress and we expect to fill it with content soon.
+{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}

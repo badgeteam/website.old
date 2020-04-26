@@ -51,3 +51,8 @@ gallery:
     caption : "HH2019"
     exclude : false
 ---
+
+### {{< icon name="fa-hotel" >}} Hacker Hotel 2019 Badge Project
+
+Welcome to the project page of the Hacker Hotel 2019 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
+{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}

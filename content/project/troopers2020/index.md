@@ -45,3 +45,8 @@ gallery:
     caption : "People"
     exclude : false
 ---
+
+### {{< icon name="fa-shield" >}} Troopers 2020 Badge Project
+
+Welcome to the project page of the Troopers 2020 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
+{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}

@@ -57,3 +57,8 @@ gallery:
     caption : "People"
     exclude : false
 ---
+
+### {{< icon name="fa-user-secret" >}} May Cause Hairpulling 2021 Badge Project
+
+Welcome to the project page of the May Cause Hairpulling 2021 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
+{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}
