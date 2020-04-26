@@ -1,5 +1,10 @@
 {{ define "main" }}
 {{ "<!-- Project single -->" | safeHTML }}
+{{- with .Content }}
+<div class="bt-project-single-about w3-container w3-card w3-margin w3-white">
+  <p class="bt-project-single-about-content">{{ . }}</p>
+</div>
+{{- end }}
 <div class="bt-project-single-row w3-row">
   {{ $blogs := where .Site.RegularPages "Section" "blog" }}
   {{ $project_blogs  := first 10 (where $blogs "Params.projects" "intersect" .Params.projects) }}
@@ -7,6 +12,9 @@
   {{ if ge $project_blogs_count 1 }}
   {{ "<!-- Blogs -->" | safeHTML }}
   <div class="bt-project-single-col w3-col">
+    <div class="bt-index-projects-active-title-container w3-container w3-center">
+      <h4 class="bt-index-projects-active-title w3-left">Blogs</h4>
+    </div>
     {{ range $project_blogs }}
       {{- $blogpage := . }}
       {{- $image := "" }}
