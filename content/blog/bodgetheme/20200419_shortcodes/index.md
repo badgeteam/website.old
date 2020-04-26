@@ -1,5 +1,6 @@
 ---
 date        : 2020-04-19T17:58:57+02:00
+lastmod     : 2020-04-25T22:31:57+02:00
 draft       : false
 title       : "Testing with shortcodes"
 author      : "Elborro"

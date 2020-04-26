@@ -3,11 +3,14 @@ date        : {{ .Date }}
 lastmod     : {{ .Date }}
 draft       : true
 short_title : "{{ replace .Name "-" " " | title }}"
-title       : "{{ replace .Name "-" " " | title }}"
-description : "{{ replace .Name "-" " " | title }} Project"
+title       : "{{ replace .Name "-" " " | title }} Project"
+description : "This is the project page description for the {{ replace .Name "-" " " | title }} Project."
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["{{ replace .Name "-" " " | upper }}"]
+
+# For alternative external reference only
+slugs       : ["{{ replace .Name "-" " " | lower }}"]
 
 # Project state
 active      : true

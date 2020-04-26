@@ -13,10 +13,8 @@
         <div class="bt-index-projects-title-container w3-container w3-center">
           <h3 class="bt-index-projects-title w3-left w3-text-black w3-padding-8"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "projects" | default "Projects") | markdownify }}</b></h3>
         </div>
-
-	{{- $projects := where .Site.RegularPages "Section" "project" }}
-	{{- $current  := where (where .Site.RegularPages "Params.active" true) "Params.archived" false }}
-	{{- $current_projects := $projects | intersect $current }}
+  {{- $projects := where .Site.RegularPages "Section" "project" }}
+  {{- $current_projects := (where (where ($projects) "Params.active" true) "Params.archived" false) }}
 	{{- $current_projects_count := len $current_projects }}
         <section class="bt-index-projects-active"> {{ "<!-- Active projects -->" | safeHTML }}
           <div class="bt-index-projects-active-title-container w3-container w3-center">
@@ -24,7 +22,7 @@
           </div>
 	{{- if ge $current_projects_count 1 }}
 	        <div class="bt-index-projects-active-row w3-row-padding">
-		{{- range $current_projects }}
+		{{- range $current_projects.ByParam "short_title" }}
 			{{- $image_file := "" }}
 			{{- $image_src  := "" }}
 			{{- if .Params.image_src }}
@@ -57,8 +55,7 @@
           </div>
         </section>  {{ "<!-- End Active projects -->" | safeHTML }}
 
-	{{- $inactive  := where (where .Site.RegularPages "Params.active" false) "Params.archived" false }}
-	{{- $inactive_projects := $projects | intersect $inactive }}
+  {{- $inactive_projects := (where (where ($projects) "Params.active" false) "Params.archived" false) }}
 	{{- $inactive_projects_count := len $inactive_projects }}
         <section class="bt-index-projects-finished"> {{ "<!-- Finished projects -->" | safeHTML }}
           <div class="bt-index-projects-finished-title-container w3-container w3-center">
@@ -66,7 +63,7 @@
           </div>
 	{{- if ge $inactive_projects_count 1 }}
 	        <div class="bt-index-projects-finished-row w3-row-padding">
-		{{- range $inactive_projects }}
+		{{- range $inactive_projects.ByParam "short_title" }}
 			{{- $image_file := "" }}
 			{{- $image_src  := "" }}
 			{{- if .Params.image_src }}
