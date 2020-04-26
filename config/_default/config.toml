@@ -20,6 +20,7 @@ enableRobotsTXT = true
 [taxonomies]
   tag      = "tags"
   category = "categories"
+  slug     = "slugs"
   project  = "projects"
   blog     = "blogs"
   team     = "teams"
@@ -27,7 +28,7 @@ enableRobotsTXT = true
 
 [params]
   mainSections = ["blog","project"]
-  defaultImage = "/images/mascot_600x600.png" 
+  defaultImage = "/images/mascot_600x600.png"
 
   [params.blog]
     paginate = 5
@@ -36,7 +37,7 @@ enableRobotsTXT = true
     paginate = 5
 
   [params.team]
-    paginate = 12
+    paginate = 1000
 
   [params.gallery]
     maximage = 4

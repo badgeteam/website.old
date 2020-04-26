@@ -2,12 +2,15 @@
 date        : 2019-03-28T13:37:02+01:00
 lastmod     : 2019-03-28T13:37:02+01:00
 draft       : false
-short_title : "CZ2019"
-title       : "CampZone 2019"
-description : "CampZone 2019 Project"
+short_title : "CampZone 2019"
+title       : "CampZone 2019 Badge Project"
+description : "This is the project page description for the CampZone 2019 Project."
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["CZ2019"]
+
+# For alternative external reference only
+slugs       : ["campzone2019"]
 
 # Identifying tags, searchable/visible to site visitors
 tags        :
@@ -32,7 +35,6 @@ image_src   : "images/campzone2019.jpg"
 image_alt   : "CZ2019"
 thumb_src   : "thumbs/campzone2019.png"
 thumb_alt   : "CZ2019"
-archived    : false
 
 # Photo gallery
 gallery:

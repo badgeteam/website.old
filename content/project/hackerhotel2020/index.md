@@ -1,21 +1,22 @@
 ---
-date        : 2019-02-15T13:37:47+01:00
-lastmod     : 2019-02-15T13:37:47+01:00
+date        : 2020-02-14T13:37:53+01:00
+lastmod     : 2020-02-14T13:37:53+01:00
 draft       : false
-short_title : "HH2019"
-title       : "Hacker Hotel 2019"
-description : "Hacker Hotel 2019 Project"
-tags        : ["2019", "Badge","Hacker Hotel","HH2019"]
-categories  : []
+short_title : "Hacker Hotel 2020"
+title       : "Hacker Hotel 2020 Badge Project"
+description : "This is the project page description for the Hacker Hotel 2020 Project"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
-projects    : ["HH2019"]
+projects    : ["hh2020"]
+
+# For alternative external reference only
+slugs       : ["hackerhotel2020"]
 
 # Identifying tags, searchable/visible to site visitors
 tags        :
-- HH2019
+- HH2020
 - Badge
-- 2019
+- 2020
 - Hacker Hotel
 
 # Identifying categories, searchable/visible to site visitors
@@ -30,23 +31,23 @@ active      : false
 archived    : false
 
 # Default images related to this project
-image_src   : "images/hh2019.jpg"
-image_alt   : "HH2019"
-thumb_src   : "thumbs/hh2019.png"
-thumb_alt   : "HH2019"
+image_src   : "images/hh2020.jpg"
+image_alt   : "HH2020"
+thumb_src   : "thumbs/hh2020.png"
+thumb_alt   : "HH2020"
 
 # Photo gallery
 gallery:
 - album   : "images"
   exclude : true
   images  :
-  - image   : "hh2019.jpg"
-    caption : "HH2019"
+  - image   : "hh2020.jpg"
+    caption : "HH2020"
     exclude : false
 - album   : "thumbs"
   exclude : true
   images  :
-  - image   : "hh2019.png"
-    caption : "HH2019"
+  - image   : "hh2020.png"
+    caption : "HH2020"
     exclude : false
 ---

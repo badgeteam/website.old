@@ -1,5 +1,6 @@
 ---
 date        : 2020-04-19T17:58:57+02:00
+lastmod     : 2020-04-25T22:31:57+02:00
 draft       : false
 title       : "Testing with shortcodes"
 author      : "Elborro"
@@ -7,6 +8,9 @@ description : ""
 
 # At least one Identifying mnemonic, referring to the project(s) his blog is related to
 projects    : ["Bodgetheme"]
+
+# For alternative external reference only
+slugs       : ["bt", "bodgetheme"]
 
 # Identifying tags, searchable/visible to site visitors
 tags        :

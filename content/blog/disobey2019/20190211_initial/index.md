@@ -8,6 +8,9 @@ description : "Disobey 2019 badge"
 # At least one Identifying mnemonic, referring to the project(s) his blog is related to
 projects    : ["DISOBEY2019"]
 
+# For alternative external reference only
+slugs       : []
+
 # Identifying tags, searchable/visible to site visitors
 tags        :
 - Badge

@@ -1,13 +1,16 @@
 ---
 date        : 2020-03-14T12:34:56+01:00
-lastmod     : 2020-05-31T12:34:56+01:00
+lastmod     : 2020-04-25T12:34:56+01:00
 draft       : false
 short_title : "Bodgetheme"
-title       : "Bodgetheme website"
+title       : "Bodgetheme"
 description : "Badge.team website development in Hugo. Blogs are created to test for the proper behaviour of new functionality."
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["Bodgetheme"]
+
+# For alternative external reference only
+slugs       : ["bt", "bodgetheme"]
 
 # Project state
 active      : true
@@ -49,3 +52,9 @@ gallery:
     caption : "Imagine"
     exclude : false
 ---
+
+### {{< icon name="fa-bug" >}} Badge.team website project
+
+The Badge.team decided it was about time to build a new website to properly display our endeavors, challenges and share the fun in designing badges for hacker conferences.
+
+The bodgetheme (inside joke) project is about design and build of this website. Our blogs might contain updates on progress, but might just show a layout/functionality test page as well.

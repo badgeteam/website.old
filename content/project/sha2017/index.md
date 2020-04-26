@@ -2,12 +2,15 @@
 date        : 2017-03-28T13:37:37+01:00
 lastmod     : 2017-03-28T13:37:37+01:00
 draft       : false
-short_title : "SHA2017"
-title       : "Still Hacking Anyway 2017"
-description : "Still Hacking Anyway 2017 Badge"
+short_title : "SHA 2017"
+title       : "Still Hacking Anyway 2017 Badge Project"
+description : "This is the project page description for the Still Hacking Anyway 2017 Badge"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["SHA2017"]
+
+# For alternative external reference only
+slugs       : ["sha2017"]
 
 # Project state
 active      : false

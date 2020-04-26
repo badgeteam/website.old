@@ -25,7 +25,7 @@ teams :
 avatar : "images/sunny.jpg"
 
 # Short bio
-bio : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
+bio : "ICS cyber security specialist. Allergic to injustice. Loves travel, geocaching, ethical hacking. Dreams of honest, transparent caring society with privacy."
 
 #### Additional information for your personal page
 
@@ -71,10 +71,22 @@ contact :
   link      : https://t.me/elb0rr0
   icon_pack : fa
   icon_name : fa-telegram
+- title     : Keybase
+  icon_name : fa-comments
+  icon_pack : fa
+  link      : https://keybase.io/elborro
 
 # Social (Listed in social-link bars)
 # For available icons, see: https://fontawesome.com
 social :
+- title     : Mastodon Social
+  icon_name : fa-comments
+  icon_pack : fa
+  link      : https://mastodon.social/@elborro
+- title     : Mastodon Private
+  icon_name : fa-comments
+  icon_pack : fa
+  link      : https://amity.zone/@rob
 - title     : LinkedIn
   icon_name : fa-linkedin
   icon_pack : fa

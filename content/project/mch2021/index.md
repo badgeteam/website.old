@@ -2,12 +2,15 @@
 date        : 2020-03-28T16:14:19+01:00
 lastmod     : 2020-03-28T16:14:19+01:00
 draft       : false
-short_title : "MCH2021"
-title       : "May Contain Hackers 2021"
-description : "May Contain Hackers 2021 Project"
+short_title : "MCH 2021"
+title       : "May Contain Hackers 2021 Project"
+description : "This is the project page description for the May Contain Hackers 2021 Project"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["MCH2021"]
+
+# For alternative external reference only
+slugs       : ["mch2021","meh2021"]
 
 # Project state
 active      : true
