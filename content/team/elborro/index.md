@@ -57,6 +57,8 @@ interests :
 - Travel
 - Geocaching
 - Ethical hacking
+- Sustainability
+- Science
 
 education :
   courses :

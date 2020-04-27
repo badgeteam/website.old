@@ -3,9 +3,13 @@ date        : 2019-11-03T19:56:02+01:00
 draft       : false
 title       : "Mentioned on Hackaday"
 author      : "jenny"
-description : "Jenny List wrote a nice story on the Autumn 2019 edition of ETH0."
 
-# At least one Identifying mnemonic, referring to the project(s) his blog is related to
+# Description overrides the automated summary of marked-up content
+#  at the bottom of this file.
+description : ""
+
+# Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
+# mnemonic, to refer to the project this blog is related to.
 projects    : ["ETH02019"]
 
 # For alternative external reference only
@@ -19,7 +23,11 @@ tags        :
 - 2019
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Blog icon
 icon_name : fa-pencil

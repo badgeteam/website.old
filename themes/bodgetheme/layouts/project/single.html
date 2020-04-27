@@ -12,9 +12,11 @@
   {{ if ge $project_blogs_count 1 }}
   {{ "<!-- Blogs -->" | safeHTML }}
   <div class="bt-project-single-col w3-col">
+    {{- with .Content }}{{/* Title acts as separator between page default content and blogs. */}}
     <div class="bt-index-projects-active-title-container w3-container w3-center">
       <h4 class="bt-index-projects-active-title w3-left">Blogs</h4>
     </div>
+    {{- end }}
     {{ range $project_blogs }}
       {{- $blogpage := . }}
       {{- $image := "" }}
@@ -45,10 +47,10 @@
         <span class="bt-project-single-date w3-left w3-opacity w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{ if $link }}<a href="{{ $link }}">{{ end }}{{ $author }}{{ if $link }}</a>{{ end }}{{ end }}</span>
       </div>
       <div class="bt-project-single-description w3-container">
-        <p>{{ .Description }}</p>
+        <p>{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}</p>
         <div class="bt-project-single-read-more-row w3-row">
-          <div class="bt-project-single-read-more-col w3-col m8 s12">
-            <p class="bt-project-single-read-more-title"><a class="w3-button w3-padding-large w3-white w3-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><b>READ MORE &raquo;</b></a></p>
+          <div class="bt-project-single-read-more-col w3-col m12 s12">
+            <p class="bt-project-single-read-more-title w3-right"><a class="w3-button w3-padding-large w3-white w3-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><b>READ MORE &Rang;</b></a></p>
           </div>
         </div>
       </div>
@@ -56,7 +58,12 @@
     {{ end }}
   </div>
   {{ "<!-- End blogs -->" | safeHTML }}
-  {{ end }}
+  {{- end }}
+  {{- $projects := (where (where .Site.RegularPages "Section" "project") "Params.archived" false) }}
+  {{- $current_projects := (where ($projects) "Params.active" true).ByParam "short_title" }}
+  {{- $inactive_projects := (where ($projects) "Params.active" false).ByParam "short_title" }}
+  {{- $articles := $inactive_projects | union $current_projects }}
+  {{ partial "article-navigation.html" (dict "label" "project" "context" . "articles" $articles) }}
 </div>
 {{ "<!-- End project single -->" | safeHTML }}
 {{ end }}

@@ -17,6 +17,8 @@ paginatepath   = "p"
 # Preferences robots.txt
 enableRobotsTXT = true
 
+enableEmoji = true
+
 [taxonomies]
   tag      = "tags"
   category = "categories"

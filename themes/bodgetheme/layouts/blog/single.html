@@ -54,6 +54,8 @@
     {{- if and (.Params.Author) (.Params.about_show) (not .Params.about_inline) }}
       {{ partial "widgets/team-about.html" . }}
     {{- end }}
+    {{- $articles := (where (where .Site.RegularPages "Section" "blog") "Params.projects" "intersect" .Params.projects).ByLastmod }}
+    {{ partial "article-navigation.html" (dict "label" "blog" "context" . "articles" $articles) }}
   </div>
   {{ "<!-- End blog -->" | safeHTML }}
 </div>

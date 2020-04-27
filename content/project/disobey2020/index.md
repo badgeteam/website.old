@@ -6,7 +6,8 @@ short_title : "Disobey2020"
 title       : "Disobey2020 Badge Project"
 description : "This is the project page description for the Disobey2020 Project"
 
-# Identifying mnemonics, to refer to this project from other items like blogs, etc.
+# Identifying mnemonics, INTERNAL use only.
+# This refers to this project from other items like blogs, teams, etc.
 projects    : ["DISOBEY2020"]
 
 # For alternative external reference only
@@ -21,7 +22,11 @@ tags        :
 - DISOBEY2020
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Project icon
 icon_name : fa-empire

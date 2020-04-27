@@ -5,7 +5,12 @@ title       : "Blogpage formatting - built in shortcodes"
 author      : "Elborro"
 description : "Testing Hugo built in shortcodes (and check for requirement to replace any)."
 
-# At least one Identifying mnemonic, referring to the project(s) his blog is related to
+# Description overrides the automated summary of marked-up content
+#  at the bottom of this file.
+description : ""
+
+# Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
+# mnemonic, to refer to the project this blog is related to.
 projects    : ["Bodgetheme"]
 
 # For alternative external reference only
@@ -13,12 +18,13 @@ slugs       : ["bt", "bodgetheme"]
 
 # Identifying tags, searchable/visible to site visitors
 tags        :
-- Website
+- website
 - Bodgetheme
 - 2020
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Website design
 
 # Blog icon
 icon_name : fa-pencil

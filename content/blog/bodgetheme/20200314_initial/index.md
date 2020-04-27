@@ -3,9 +3,13 @@ date        : 2020-03-14T13:37:02+01:00
 draft       : false
 title       : "Blogpage clean formatting"
 author      : "Elborro"
+
+# Description overrides the automated summary of marked-up content
+#  at the bottom of this file.
 description : "Clean content should be properly formatted into paragraphs."
 
-# At least one Identifying mnemonic, referring to the project(s) his blog is related to
+# Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
+# mnemonic, to refer to the project this blog is related to.
 projects    : ["Bodgetheme"]
 
 # For alternative external reference only
@@ -13,12 +17,13 @@ slugs       : ["bt", "bodgetheme"]
 
 # Identifying tags, searchable/visible to site visitors
 tags        :
-- Website
+- website
 - Bodgetheme
 - 2020
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Website design
 
 # Blog icon
 icon_name : fa-pencil

@@ -6,7 +6,8 @@ short_title : "CampZone 2019"
 title       : "CampZone 2019 Badge Project"
 description : "This is the project page description for the CampZone 2019 Project."
 
-# Identifying mnemonics, to refer to this project from other items like blogs, etc.
+# Identifying mnemonics, INTERNAL use only.
+# This refers to this project from other items like blogs, teams, etc.
 projects    : ["CZ2019"]
 
 # For alternative external reference only
@@ -20,7 +21,11 @@ tags        :
 - CampZone
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Project icon
 icon_name : fa-bed

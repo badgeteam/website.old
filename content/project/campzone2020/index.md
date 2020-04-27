@@ -6,7 +6,8 @@ short_title : "CampZone 2020"
 title       : "CampZone 2020 Badge Project"
 description : "CampZone will be back in 2020 and requires a new flashy new badge!"
 
-# Identifying mnemonics, to refer to this project from other items like blogs, etc.
+# Identifying mnemonics, INTERNAL use only.
+# This refers to this project from other items like blogs, teams, etc.
 projects    : ["CZ2020"]
 
 # For alternative external reference only
@@ -20,7 +21,11 @@ tags        :
 - CampZone
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Project icon
 icon_name : fa-bed
