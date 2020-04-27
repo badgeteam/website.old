@@ -6,7 +6,8 @@ short_title : "{{ replace .Name "-" " " | title }}"
 title       : "{{ replace .Name "-" " " | title }} Project"
 description : "This is the project page description for the {{ replace .Name "-" " " | title }} Project."
 
-# Identifying mnemonics, to refer to this project from other items like blogs, etc.
+# Identifying mnemonics, INTERNAL use only.
+# This refers to this project from other items like blogs, teams, etc.
 projects    : ["{{ replace .Name "-" " " | upper }}"]
 
 # For alternative external reference only
@@ -21,7 +22,11 @@ tags        :
 - {{ replace .Name "-" " " | upper }}
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Project icon
 icon_name : fa-suitcase
