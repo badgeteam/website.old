@@ -2,12 +2,10 @@
 {{ "<!-- Project list -->" | safeHTML }}
 {{- $maxpaginate := .Site.Params.project.paginate | default 5 }}
 <div class="bt-project-list-row w3-row">
-  {{ $projects := where .Site.RegularPages "Section" "project" }}
-  {{ $current  := where .Site.RegularPages "Params.archived" false }}
-  {{ $current_projects := $projects | intersect $current }}
-  {{ $current_projects_count := len $current_projects }}
-  {{ if ge $current_projects_count 1 }}
-  {{ "<!-- Projects -->" | safeHTML }}
+  {{- $current_projects := (where (where .Site.RegularPages "Section" "project") "Params.archived" false) }}
+  {{- $current_projects_count := len $current_projects }}
+  {{- if ge $current_projects_count 1 }}
+  {{- "<!-- Projects -->" | safeHTML }}
   <div class="bt-project-list-col w3-col">
     {{- range (.Paginate ( $current_projects.ByLastmod.Reverse ) $maxpaginate).Pages }}
       {{- $image := "" }}
@@ -31,8 +29,8 @@
       <div class="bt-project-list-read-more w3-container">
         <p>{{ .Description }}</p>
         <div class="bt-project-list-read-more-row w3-row">
-          <div class="bt-project-list-read-more-col w3-col m8 s12">
-            <p><a class="bt-project-list-read-more-title w3-button w3-padding-large w3-white w3-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><b>READ MORE &raquo;</b></a></p>
+          <div class="bt-project-list-read-more-col w3-col m12 s12">
+            <p class="w3-right"><a class="bt-project-list-read-more-title w3-button w3-padding-large w3-white w3-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><b>READ MORE &Rang;</b></a></p>
           </div>
         </div>
       </div>
