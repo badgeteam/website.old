@@ -29,6 +29,7 @@ categories  :
 - Embedded software
 
 # Project icon
+# For available icons, see: https://fontawesome.com
 icon_name : fa-suitcase
 icon_pack : fa
 

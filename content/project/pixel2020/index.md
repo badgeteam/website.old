@@ -1,7 +1,7 @@
 ---
 date        : 2020-01-24T09:21:42+01:00
 lastmod     : 2020-01-24T09:21:42+01:00
-draft       : true
+draft       : false
 short_title : "Pixel Badge"
 title       : "Pixel Badge Project"
 description : "Let's take the CampZone 2019 badge to the next level."

@@ -29,6 +29,7 @@ bio : ""
 fullname : {{ replace .Name "-" " " | title }}
 
 # Name icon (Shown in front of your name on profile)
+# For available icons, see: https://fontawesome.com
 icon_name : fa-address-card
 icon_pack : fa
 

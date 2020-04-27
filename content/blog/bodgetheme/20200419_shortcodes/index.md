@@ -4,7 +4,6 @@ lastmod     : 2020-04-25T22:31:57+02:00
 draft       : false
 title       : "Testing with shortcodes"
 author      : "Elborro"
-description : ""
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.

@@ -32,7 +32,7 @@ icon_name : fa-pencil
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : "images/mascot.png"
+image_src   : ""
 image_alt   : ""
 thumb_src   : ""
 thumb_alt   : ""
@@ -54,7 +54,8 @@ gallery:
     exclude : false
 ---
 
-### {{< icon name="fa-suitcase" >}} 20200426_herewego Project
+Welcome to this blog page of the 20200426_herewego project. This page is work in progress and should be filled with new content soon.
 
-Welcome to the project page of the 20200426_herewego project. This project page is still a work in progress and we expect to fill it with content soon.
-{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}
+<!--more-->
+
+This part of the text will show up on the blog page only, not in the previews of the project page.
