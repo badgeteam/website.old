@@ -56,11 +56,14 @@
       </div>
     </div>
     {{ end }}
-    {{- $articles := (where .Site.RegularPages "Section" "project").ByLastmod }}
-    {{ partial "article-navigation.html" (dict "label" "project" "context" . "articles" $articles) }}
   </div>
   {{ "<!-- End blogs -->" | safeHTML }}
-  {{ end }}
+  {{- end }}
+  {{- $projects := (where (where .Site.RegularPages "Section" "project") "Params.archived" false) }}
+  {{- $current_projects := (where ($projects) "Params.active" true).ByParam "short_title" }}
+  {{- $inactive_projects := (where ($projects) "Params.active" false).ByParam "short_title" }}
+  {{- $articles := $inactive_projects | union $current_projects }}
+  {{ partial "article-navigation.html" (dict "label" "project" "context" . "articles" $articles) }}
 </div>
 {{ "<!-- End project single -->" | safeHTML }}
 {{ end }}
