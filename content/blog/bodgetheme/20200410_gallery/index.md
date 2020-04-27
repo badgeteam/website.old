@@ -3,7 +3,6 @@ date        : 2020-04-10T12:59:04+01:00
 draft       : false
 title       : "Gallery test"
 author      : "Elborro"
-description : "Testing gallery shortcode implementation"
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
@@ -55,5 +54,9 @@ gallery:
   caption : "Cambodge"
   exclude : false
 ---
+
+##### Testing gallery shortcode implementation
+
+<!--more-->
 
 {{< gallery >}}

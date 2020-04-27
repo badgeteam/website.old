@@ -1,7 +1,7 @@
 ---
 date        : 2020-04-19T13:38:33+02:00
 lastmod     : 2020-04-19T13:38:33+02:00
-draft       : true
+draft       : false
 title       : "Cool new app!"
 author      : "tom"
 

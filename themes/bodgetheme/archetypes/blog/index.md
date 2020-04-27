@@ -27,6 +27,7 @@ categories  :
 - Embedded software
 
 # Blog icon
+# For available icons, see: https://fontawesome.com
 icon_name : fa-pencil
 icon_pack : fa
 
@@ -51,6 +52,16 @@ gallery:
   - image   : "people.jpg"
     caption : "People"
     exclude : false
+
+# Write the content of this blog page below in markup language.
+# An emoji cheat sheet can be found here:
+#  https://www.webfx.com/tools/emoji-cheat-sheet/
 ---
 
-Welcome to the project page of the {{ replace .Name "-" " " | title }} project. This project page is still a work in progress and we expect to fill it with content soon.
+##### {{ replace .Name "-" " " | title }} project blog page.
+
+Welcome to this blog page of the {{ replace .Name "-" " " | title }} project. This page is work in progress and should be filled with new content soon.
+
+<!--more-->
+
+This part of the text will show up on the blog page only, not in the previews of the project page.

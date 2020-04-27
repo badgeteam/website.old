@@ -3,7 +3,6 @@ date        : 2020-04-04T10:31:02+01:00
 draft       : false
 title       : "Bodgetheme shortcodes"
 author      : "Elborro"
-description : "Testing additional Bodgetheme shortcodes."
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
@@ -52,6 +51,10 @@ gallery:
     caption : "People"
     exclude : false
 ---
+
+Testing additional Bodgetheme shortcodes.
+
+<!--more-->
 
 ## Additional Bodgetheme shortcodes
 

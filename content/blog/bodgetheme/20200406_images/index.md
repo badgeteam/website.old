@@ -3,7 +3,6 @@ date        : 2020-04-06T14:21:02+01:00
 draft       : false
 title       : "Blogpage images"
 author      : "Elborro"
-description : "While standard formatting should deliver quite a clean page, someone might want to add images at a later stage."
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
@@ -31,8 +30,8 @@ icon_name : fa-pencil
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : "images/bodgeteam.jpg"
-image_alt   : "Bodgenators"
+image_src   : ""
+image_alt   : ""
 thumb_src   : ""
 thumb_alt   : ""
 
@@ -52,6 +51,10 @@ gallery:
     caption : "People"
     exclude : false
 ---
+
+While standard formatting should deliver quite a clean page, someone might want to add images at a later stage. This shows how to share nice pictures in your blog-posts.
+
+<!--more-->
 
 ## Inserting images in text
 

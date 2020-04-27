@@ -3,11 +3,10 @@ date        : 2020-03-16T18:42:02+01:00
 draft       : false
 title       : "Blogpage formatting - markdown"
 author      : "Elborro"
-description : "Markdown formatting tests."
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
-description : ""
+description : "Markdown formatting tests."
 
 # Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
 # mnemonic, to refer to the project this blog is related to.

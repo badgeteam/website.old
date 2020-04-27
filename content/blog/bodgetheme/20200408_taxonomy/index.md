@@ -3,7 +3,6 @@ date        : 2020-04-08T23:29:02+01:00
 draft       : false
 title       : "Taxonomy tests"
 author      : "Elborro"
-description : "Test for taxonomies and related shortcodes to display them in blog posts. Just a simplified overview for now. Polishing can be done later."
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
@@ -53,17 +52,21 @@ gallery:
     exclude : false
 ---
 
-## List teams
+Taxonomies allow to inventory all teammembers, projects in progress, etc. Test for taxonomies and related shortcodes to display them in blog posts. Just a simplified overview for now. Polishing can be done later.
+
+<!--more-->
+
+#### List teams
 {{< list-teams >}}
 
-## List projects
+#### List projects
 {{< list-projects >}}
 
-## List categories
+#### List categories
 {{< list-categories >}}
 
-## List tags
+#### List tags
 {{< list-tags >}}
 
-## Tag cloud
+#### Tag cloud
 {{< taxo-cloud >}}

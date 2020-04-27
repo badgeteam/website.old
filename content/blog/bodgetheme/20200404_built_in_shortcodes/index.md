@@ -3,11 +3,10 @@ date        : 2020-04-04T09:24:02+01:00
 draft       : false
 title       : "Blogpage formatting - built in shortcodes"
 author      : "Elborro"
-description : "Testing Hugo built in shortcodes (and check for requirement to replace any)."
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
-description : ""
+description : "Testing Hugo built in shortcodes (and check for requirement to replace any)."
 
 # Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
 # mnemonic, to refer to the project this blog is related to.

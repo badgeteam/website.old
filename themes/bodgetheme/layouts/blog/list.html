@@ -23,12 +23,14 @@
         <span class="bt-blog-list-date w3-left w3-opacity w3-small">{{ .Lastmod.Format "Monday, 02 January 2006 15:04 MST" }}</span>
       </div>
       <div class="bt-blog-list-description w3-container">
-        <p>{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}</p>
+        <p>{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary | plainify | emojify }}{{ end }}</p>
+        {{- if or (.Description) (.Truncated) }}
         <div class="bt-blog-list-description-read-more-row w3-row">
           <div class="bt-blog-list-description-read-more-col w3-col m8 s12">
             <p class="bt-blog-list-description-read-more-title"><a class="bt-blog-list-description-read-more-link w3-button w3-padding-large w3-white w3-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><b>READ MORE &raquo;</b></a></p>
           </div>
         </div>
+        {{- end }}
       </div>
     </div>
     {{- end }}
