@@ -1,12 +1,16 @@
 ---
-date        : 2020-02-14T13:37:53+01:00
+date        : 2017-03-28T13:37:37+01:00
 draft       : false
-title       :  "Hacker Hotel 2020 preps"
+title       :  "Still Hacking Anyway project yah!"
 author      : "Anonymous"
-description : "We started the awesome work on this badge."
 
-# At least one Identifying mnemonic, referring to the project(s) his blog is related to
-projects    : ["hackerhotel2020"]
+# Description overrides the automated summary of marked-up content
+#  at the bottom of this file.
+description : ""
+
+# Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
+# mnemonic, to refer to the project this blog is related to.
+projects    : ["SHA2017"]
 
 # For alternative external reference only
 slugs       : []
@@ -14,12 +18,16 @@ slugs       : []
 # Identifying tags, searchable/visible to site visitors
 tags        :
 - Badge
-- HH2020
-- Hacker Hotel
-- 2020
+- SHA2017
+- Still Hacking Anyway
+- 2017
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Blog icon
 icon_name : fa-pencil
@@ -48,4 +56,4 @@ gallery:
     exclude : false
 ---
 
-Content goes here.
+Project page and first blog created.

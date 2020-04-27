@@ -1,25 +1,33 @@
 ---
-date        : 2020-03-28T16:14:19+01:00
+date        : 2019-02-15T13:37:47+01:00
 draft       : false
-title       :  "MCH2021 badge project started"
+title       :  "Hacker Hotel 2019 on the move"
 author      : "Anonymous"
-description : "Work on the May Contain Hackers (meh) has started. Nothing meh about that! :)"
 
-# At least one Identifying mnemonic, referring to the project(s) his blog is related to
-projects    : ["MCH2021"]
+# Description overrides the automated summary of marked-up content
+#  at the bottom of this file.
+description : ""
+
+# Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
+# mnemonic, to refer to the project this blog is related to.
+projects    : ["HH2019"]
 
 # For alternative external reference only
-slugs       : []
+slugs       : ["hackerhotel2019"]
 
 # Identifying tags, searchable/visible to site visitors
 tags        :
 - Badge
-- MCH2021
-- May Contain Hackers
-- 2021
+- HH2019
+- Hacker Hotel
+- 2019
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Blog icon
 icon_name : fa-pencil
@@ -48,4 +56,4 @@ gallery:
     exclude : false
 ---
 
-Content goes here.
+We finally started fiddling on the new Hacker Hotel badge.

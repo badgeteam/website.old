@@ -20,7 +20,7 @@ teams :
 #### Mini profile (Displayed at end of posts, where available)
 
 # Avatar shown
-avatar : "images/noor.jpg"
+avatar : "images/candace.png"
 
 # Short bio
 bio : ""

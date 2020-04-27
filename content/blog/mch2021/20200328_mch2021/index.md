@@ -1,12 +1,16 @@
 ---
-date        : 2020-03-28T16:14:06+01:00
+date        : 2020-03-28T16:14:19+01:00
 draft       : false
-title       :  "CampZone 2020 project initiated"
+title       :  "MCH2021 badge project started"
 author      : "Anonymous"
-description : "Wooohooo! We started the CampZone 2020 project page!"
 
-# At least one Identifying mnemonic, referring to the project(s) his blog is related to
-projects    : ["CZ2020"]
+# Description overrides the automated summary of marked-up content
+#  at the bottom of this file.
+description : ""
+
+# Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
+# mnemonic, to refer to the project this blog is related to.
+projects    : ["MCH2021"]
 
 # For alternative external reference only
 slugs       : []
@@ -14,12 +18,16 @@ slugs       : []
 # Identifying tags, searchable/visible to site visitors
 tags        :
 - Badge
-- CZ2020
-- CampZone
-- 2020
+- MCH2021
+- May Contain Hackers
+- 2021
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Blog icon
 icon_name : fa-pencil
@@ -48,4 +56,4 @@ gallery:
     exclude : false
 ---
 
-Content goes here.
+Work on the May Contain Hackers (meh) has started. Nothing meh about that! :)

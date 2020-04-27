@@ -6,7 +6,8 @@ short_title : "SHA 2017"
 title       : "Still Hacking Anyway 2017 Badge Project"
 description : "This is the project page description for the Still Hacking Anyway 2017 Badge"
 
-# Identifying mnemonics, to refer to this project from other items like blogs, etc.
+# Identifying mnemonics, INTERNAL use only.
+# This refers to this project from other items like blogs, teams, etc.
 projects    : ["SHA2017"]
 
 # For alternative external reference only
@@ -24,7 +25,11 @@ tags        :
 - Still Hacking Anyway
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Project icon
 icon_name : fa-tablet

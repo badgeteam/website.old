@@ -6,8 +6,9 @@ short_title : "Hacker Hotel 2020"
 title       : "Hacker Hotel 2020 Badge Project"
 description : "This is the project page description for the Hacker Hotel 2020 Project"
 
-# Identifying mnemonics, to refer to this project from other items like blogs, etc.
-projects    : ["hh2020"]
+# Identifying mnemonics, INTERNAL use only.
+# This refers to this project from other items like blogs, teams, etc.
+projects    : ["HH2020"]
 
 # For alternative external reference only
 slugs       : ["hackerhotel2020"]
@@ -20,7 +21,11 @@ tags        :
 - Hacker Hotel
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Project icon
 icon_name : fa-hotel

@@ -6,7 +6,8 @@ short_title : "Card10"
 title       : "Card10 Watch Project"
 description : "This is the project page description for the Card10 Project"
 
-# Identifying mnemonics, to refer to this project from other items like blogs, etc.
+# Identifying mnemonics, INTERNAL use only.
+# This refers to this project from other items like blogs, teams, etc.
 projects    : ["CARD10"]
 
 # For alternative external reference only
@@ -21,7 +22,11 @@ tags        :
 - CARD10
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Smart watch
+- Hardware design
+- Software development
+- Embedded software
 
 # Project icon
 icon_name : fa-clock-o

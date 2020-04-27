@@ -6,7 +6,8 @@ short_title : "OHS 2018"
 title       : "Open Hardware Summit 2018 Badge Project"
 description : "This is the project page description for the Open Hardware Summit 2018 Project"
 
-# Identifying mnemonics, to refer to this project from other items like blogs, etc.
+# Identifying mnemonics, INTERNAL use only.
+# This refers to this project from other items like blogs, teams, etc.
 projects    : ["OHS2018"]
 
 # For alternative external reference only
@@ -21,7 +22,11 @@ tags        :
 - OHS2018
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Project icon
 icon_name : fa-suitcase

@@ -1,12 +1,16 @@
 ---
-date        : 2019-03-28T13:37:02+01:00
+date        : 2020-03-28T16:14:06+01:00
 draft       : false
-title       : "CampZone 2019 project started"
+title       :  "CampZone 2020 project initiated"
 author      : "Anonymous"
-description : "Finally we created the CampZone 2019 project page!"
 
-# At least one Identifying mnemonic, referring to the project(s) his blog is related to
-projects    : ["CZ2019"]
+# Description overrides the automated summary of marked-up content
+#  at the bottom of this file.
+description : ""
+
+# Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
+# mnemonic, to refer to the project this blog is related to.
+projects    : ["CZ2020"]
 
 # For alternative external reference only
 slugs       : []
@@ -14,12 +18,16 @@ slugs       : []
 # Identifying tags, searchable/visible to site visitors
 tags        :
 - Badge
-- CZ2019
+- CZ2020
 - CampZone
-- 2019
+- 2020
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Blog icon
 icon_name : fa-pencil
@@ -47,3 +55,5 @@ gallery:
     caption : "People"
     exclude : false
 ---
+
+Wooohooo! We started the CampZone 2020 project page!

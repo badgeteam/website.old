@@ -6,7 +6,8 @@ short_title : "Hacktivity 2019"
 title       : "Hacktivity 2019 Badge Project"
 description : "This is the project page description for the Hacktivity 2019 Project"
 
-# Identifying mnemonics, to refer to this project from other items like blogs, etc.
+# Identifying mnemonics, INTERNAL use only.
+# This refers to this project from other items like blogs, teams, etc.
 projects    : ["HACKTIVITY2019"]
 
 # For alternative external reference only
@@ -21,7 +22,11 @@ tags        :
 - HACKTIVITY2019
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Project icon
 icon_name : fa-suitcase
