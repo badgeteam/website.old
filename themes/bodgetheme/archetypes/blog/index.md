@@ -4,9 +4,13 @@ lastmod     : {{ .Date }}
 draft       : true
 title       : "{{ replace .Name "-" " " | title }}"
 author      : "Anonymous"
+
+# Description overrides the automated summary of marked-up content
+#  at the bottom of this file.
 description : ""
 
-# At least one Identifying mnemonic, referring to the project(s) his blog is related to
+# Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
+# mnemonic, to refer to the project this blog is related to.
 projects    : ["ReplaceThisWithTheCorrectProjectID"]
 
 # For alternative external reference only
@@ -16,7 +20,11 @@ slugs       : []
 tags        : []
 
 # Identifying categories, searchable/visible to site visitors
-categories  : []
+categories  :
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Blog icon
 icon_name : fa-pencil
