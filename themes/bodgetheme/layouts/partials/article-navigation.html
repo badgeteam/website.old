@@ -18,15 +18,15 @@
     {{- end }}
   {{- end }}
 <div class="bt-article-navigation w3-container">
-  <div class="bt-project-single-read-more-row w3-row">
+  <div class="bt-article-nav-row w3-row">
     {{- with $article_prev }}
-    <div class="bt-project-single-read-more-col w3-col m5 s12 w3-left">
-      <p class="bt-project-single-read-more-title"><a class="w3-button w3-padding-large w3-white w3-border" title="{{ .Title }}" alt="Previous {{ $label }}" href="{{ .Permalink }}"><b>&Lang; PREVIOUS {{ $label | upper }}</b></a></p>
+    <div class="bt-article-nav-prev-col w3-col m5 s12 w3-left">
+      <p class="bt-article-nav-prev-title"><a class="w3-button w3-padding-large w3-white w3-border" title="{{ .Title }}" alt="Previous {{ $label }}" href="{{ .Permalink }}"><b>&Lang; PREVIOUS {{ $label | upper }}</b></a></p>
     </div>
     {{- end }}
     {{- with $article_next }}
-    <div class="bt-project-single-read-more-col w3-col m5 s12 w3-right">
-      <p class="bt-project-single-read-more-title w3-right"><a class="w3-button w3-padding-large w3-white w3-border" title="{{ .Title }}" alt="Next {{ $label }}" href="{{ .Permalink }}"><b>NEXT {{ $label | upper }} &Rang;</b></a></p>
+    <div class="bt-article-nav-next-col w3-col m5 s12 w3-right">
+      <p class="bt-article-nav-next-title w3-right"><a class="w3-button w3-padding-large w3-white w3-border" title="{{ .Title }}" alt="Next {{ $label }}" href="{{ .Permalink }}"><b>NEXT {{ $label | upper }} &Rang;</b></a></p>
     </div>
     {{- end }}
   </div>

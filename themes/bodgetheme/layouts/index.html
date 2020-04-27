@@ -1,13 +1,14 @@
 {{ define "main" }}
 {{ "<!-- Index page -->" | safeHTML }}
 {{- with .Content }}
-<article class="bt-index"> {{ "<!-- Projects -->" | safeHTML }}
-  <section class="bt-index-section"> {{ "<!-- Active projects -->" | safeHTML }}
-    <div class="bt-index-section-content w3-row-padding">
-    {{- . }}
-    </div>
-  </section>  {{ "<!-- White bottom -->" | safeHTML }}
-  <hr>
+      <article class="bt-index"> {{ "<!-- Site page content -->" | safeHTML }}
+        <section class="bt-index-section">
+          <div class="bt-index-section-content w3-row-padding">
+          {{- . -}}
+          </div>
+        </section>
+        <hr>
+      </article> {{ "<!-- End site page content -->" | safeHTML }}
 {{- end }}
       <article class="bt-index-projects"> {{ "<!-- Projects -->" | safeHTML }}
         <div class="bt-index-projects-title-container w3-container w3-center">
@@ -319,5 +320,10 @@
 {{ end }}
 
 {{ define "page-header"}}
+{{ end }}
 
+{{ define "aside-left" }}
+{{ end }}
+
+{{ define "aside-right" }}
 {{ end }}
