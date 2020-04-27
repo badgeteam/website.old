@@ -1,13 +1,13 @@
 ---
 date        : 2020-04-27T22:32:07+02:00
 lastmod     : 2020-04-27T22:32:07+02:00
-draft       : true
-title       : "Emf2022"
+draft       : false
+title       : "emf2022"
 author      : "Anonymous"
 description : ""
 
 # At least one Identifying mnemonic, referring to the project(s) his blog is related to
-projects    : ["ReplaceThisWithTheCorrectProjectID"]
+projects    : ["emf2022"]
 
 # Identifying tags, searchable/visible to site visitors
 tags        : []

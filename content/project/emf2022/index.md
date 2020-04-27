@@ -1,10 +1,10 @@
 ---
 date        : 2020-04-27T22:31:30+02:00
 lastmod     : 2020-04-27T22:31:30+02:00
-draft       : true
-short_title : "EMF2022"
-title       : "EMF2022"
-description : "EMF2022 Project"
+draft       : false
+short_title : "emf2022"
+title       : "emf2022"
+description : "emf2022 Project"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["EMF2022"]
@@ -26,9 +26,9 @@ icon_pack : fa
 
 # Default images related to this project
 image_src   : "images/mascot.png"
-image_alt   : "EMF2022"
+image_alt   : "emf2022"
 thumb_src   : "images/mascot.png"
-thumb_alt   : "EMF2022"
+thumb_alt   : "emf2022"
 
 # Photo gallery
 gallery:
