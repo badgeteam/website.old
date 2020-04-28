@@ -58,5 +58,25 @@ gallery:
 #  https://www.webfx.com/tools/emoji-cheat-sheet/
 ---
 
-{{< tweet 1224084891559759872 >}}
-{{< tweet 1224084929623023624 >}}
+{{< tweet-single 1224084891559759872 >}}
+{{< tweet-single 1224084929623023624 >}}
+{{< tweet-single 1224084963852783620 >}}
+{{< tweet-single 1224084997059096576 >}}
+{{< tweet-single 1224085031074836480 >}}
+{{< tweet-single 1224085075610030080 >}}
+{{< tweet-single 1224085135081058305 >}}
+{{< tweet-single 1224085186469560320 >}}
+{{< tweet-single 1224085221370363905 >}}
+{{< tweet-single 1224085254572511239 >}}
+{{< tweet-single 1224085292266725378 >}}
+{{< tweet-single 1224085331999326216 >}}
+{{< tweet-single 1224085361200070656 >}}
+{{< tweet-single 1224085399745769472 >}}
+{{< tweet-single 1224085436320092162 >}}
+{{< tweet-single 1224085467324387329 >}}
+{{< tweet-single 1224085471531323392 >}}
+{{< tweet-single 1224085474123374594 >}}
+{{< tweet-single 1224085496902692864 >}}
+{{< tweet-single 1224085500857913344 >}}
+{{< tweet-single 1224085540703756294 >}}
+{{< tweet-single 1224085568130293760 >}}
