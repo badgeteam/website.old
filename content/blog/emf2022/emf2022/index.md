@@ -2,7 +2,7 @@
 date        : 2020-04-27T22:32:07+02:00
 lastmod     : 2020-04-27T22:32:07+02:00
 draft       : false
-title       : "emf2022"
+title       : "EMF2022"
 author      : "Anonymous"
 description : ""
 

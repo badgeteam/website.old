@@ -2,9 +2,9 @@
 date        : 2020-04-27T22:31:30+02:00
 lastmod     : 2020-04-27T22:31:30+02:00
 draft       : false
-short_title : "emf2022"
-title       : "emf2022"
-description : "emf2022 Project"
+short_title : "EMF 2022"
+title       : "EMF 2022"
+description : "EMF2022 Project"
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["EMF2022"]
