@@ -28,6 +28,29 @@ categories  :
 - Software development
 - Embedded software
 
+# Contact e-mail
+email : ""
+
+# Contact (Listed under personal details)
+# For available icons, see: https://fontawesome.com
+contact :
+- title     : Webpage
+  link      : https://www.my.site
+  icon_pack : fa
+  icon_name : fa-globe
+
+# Social (Listed in social-link bars)
+# For available icons, see: https://fontawesome.com
+social :
+- title     : Twitter
+  icon_name : fa-twitter
+  icon_pack : fa
+  link      : https://twitter.com/USERNAME
+- title     : Github
+  icon_name : fa-github
+  icon_pack : fa
+  link      : https://github.com/USERNAME
+
 # Project icon
 # For available icons, see: https://fontawesome.com
 icon_name : fa-suitcase

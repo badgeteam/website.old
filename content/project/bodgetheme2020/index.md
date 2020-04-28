@@ -26,6 +26,25 @@ tags        :
 categories  :
 - Website design
 
+# Contact e-mail
+email : ""
+
+# Contact (Listed under personal details)
+# For available icons, see: https://fontawesome.com
+contact :
+- title     : Badge.team
+  link      : https://badge.team/
+  icon_pack : fa
+  icon_name : fa-globe
+
+# Social (Listed in social-link bars)
+# For available icons, see: https://fontawesome.com
+social :
+- title     : Twitter
+  icon_name : fa-twitter
+  icon_pack : fa
+  link      : https://twitter.com/SHA2017Badge
+
 # Project icon
 icon_name : fa-bug
 icon_pack : fa

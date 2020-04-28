@@ -27,6 +27,33 @@ categories  :
 - Software development
 - Embedded software
 
+# Contact e-mail
+email : ""
+
+# Contact (Listed under personal details)
+# For available icons, see: https://fontawesome.com
+contact :
+- title     : Hackerhotel
+  link      : https://hackerhotel.nl/
+  icon_pack : fa
+  icon_name : fa-globe
+- title     : Badge.team
+  link      : https://badge.team/
+  icon_pack : fa
+  icon_name : fa-globe
+
+# Social (Listed in social-link bars)
+# For available icons, see: https://fontawesome.com
+social :
+- title     : Twitter
+  icon_name : fa-twitter
+  icon_pack : fa
+  link      : https://twitter.com/HotelHacker
+- title     : Twitter Badge Support
+  icon_name : fa-twitter
+  icon_pack : fa
+  link      : https://twitter.com/hh2020badge
+
 # Project icon
 icon_name : fa-hotel
 icon_pack : fa
@@ -60,4 +87,4 @@ gallery:
 ### {{< icon name="fa-hotel" >}} Hacker Hotel 2020 Badge Project
 
 Welcome to the project page of the Hacker Hotel 2020 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
-{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}
+{{< img src="/images/wip.png" alt="Work in progress." iwidth="50%">}}

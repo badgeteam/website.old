@@ -28,6 +28,45 @@ categories  :
 - Software development
 - Embedded software
 
+# Contact e-mail
+email : ""
+
+# Contact (Listed under personal details)
+# For available icons, see: https://fontawesome.com
+contact :
+- title     : Disobey
+  link      : https://disobey.fi/2020/
+  icon_pack : fa
+  icon_name : fa-globe
+
+# Social (Listed in social-link bars)
+# For available icons, see: https://fontawesome.com
+social :
+- title     : Twitter
+  icon_name : fa-twitter
+  icon_pack : fa
+  link      : http://twitter.com/disobey_fi
+- title     : Facebook
+  icon_name : fa-facebook
+  icon_pack : fa
+  link      : http://facebook.com/disobeyfi
+- title     : Instagram
+  icon_name : fa-instagram
+  icon_pack : fa
+  link      : http://instagram.com/disobey_fi
+- title     : YouTube
+  icon_name : fa-youtube
+  icon_pack : fa
+  link      : https://www.youtube.com/channel/UCOtuVFYdy-Bu0zQ0rRyhQzg
+- title     : IRC
+  icon_name : fa-hashtag
+  icon_pack : fa
+  link      : irc://#disobey.fi@IRCnet
+- title     : Shop
+  icon_name : fa-shop
+  icon_pack : fa
+  link      : https://holvi.com/shop/Disobey/
+
 # Project icon
 icon_name : fa-empire
 icon_pack : fa
@@ -54,4 +93,4 @@ gallery:
 ### {{< icon name="fa-empire" >}} Disobey 2020 Badge Project
 
 Welcome to the project page of the Disobey 2020 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
-{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}
+{{< img src="/images/wip.png" alt="Work in progress." iwidth="50%">}}

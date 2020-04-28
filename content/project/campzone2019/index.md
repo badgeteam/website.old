@@ -27,6 +27,37 @@ categories  :
 - Software development
 - Embedded software
 
+# Contact e-mail
+email : ""
+
+# Contact (Listed under personal details)
+# For available icons, see: https://fontawesome.com
+contact :
+- title     : CampZone
+  link      : https://twitter.com/CampZone
+  icon_pack : fa
+  icon_name : fa-globe
+- title     : HackZone
+  link      : https://hack-zone.nl/
+  icon_pack : fa
+  icon_name : fa-globe
+- title     : Badge.team
+  link      : https://badge.team/
+  icon_pack : fa
+  icon_name : fa-globe
+
+# Social (Listed in social-link bars)
+# For available icons, see: https://fontawesome.com
+social :
+- title     : Twitter
+  icon_name : fa-twitter
+  icon_pack : fa
+  link      : https://twitter.com/HackZoneNL
+- title     : Github
+  icon_name : fa-github
+  icon_pack : fa
+  link      : https://github.com/USERNAME
+
 # Project icon
 icon_name : fa-bed
 icon_pack : fa
@@ -60,4 +91,4 @@ gallery:
 ### {{< icon name="fa-bed" >}} CampZone 2019 Badge Project
 
 Welcome to the project page of the CampZone 2019 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
-{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}
+{{< img src="/images/wip.png" alt="Work in progress." iwidth="50%">}}
