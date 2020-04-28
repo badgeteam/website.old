@@ -185,3 +185,13 @@ Testing additional Bodgetheme shortcodes.
 {{</ highlight>}}
 
 {{< alert-danger "Dangerous" >}}This is a red alert!{{< /alert-danger >}}
+
+----
+
+### Twitter
+
+{{< highlight html >}}
+{{</* tweet-single 1224084891559759872 */>}}
+{{</ highlight>}}
+
+{{< tweet-single 1224084891559759872 >}}

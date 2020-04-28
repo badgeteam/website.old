@@ -13,6 +13,12 @@ projects    : ["HH2020"]
 # For alternative external reference only
 slugs       : ["hackerhotel2020"]
 
+# Project state
+active      : false
+archived    : false
+external    : false
+featured    : false
+
 # Identifying tags, searchable/visible to site visitors
 tags        :
 - HH2020
@@ -57,10 +63,6 @@ social :
 # Project icon
 icon_name : fa-hotel
 icon_pack : fa
-
-# Project state
-active      : false
-archived    : false
 
 # Default images related to this project
 image_src   : "images/hh2020.jpg"

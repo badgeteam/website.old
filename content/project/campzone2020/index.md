@@ -13,6 +13,12 @@ projects    : ["CZ2020"]
 # For alternative external reference only
 slugs       : ["campzone2020"]
 
+# Project state
+active      : true
+archived    : false
+external    : false
+featured    : false
+
 # Identifying tags, searchable/visible to site visitors
 tags        :
 - CZ2020
@@ -61,10 +67,6 @@ social :
 # Project icon
 icon_name : fa-bed
 icon_pack : fa
-
-# Project state
-active      : true
-archived    : false
 
 # Default images related to this project
 image_src   : "images/mascot.png"

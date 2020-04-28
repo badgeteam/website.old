@@ -16,6 +16,8 @@ slugs       : ["fri3d2020"]
 # Project state
 active      : true
 archived    : false
+external    : true
+featured    : true
 
 # Identifying tags, searchable/visible to site visitors
 tags        : []

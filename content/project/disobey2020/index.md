@@ -16,6 +16,8 @@ slugs       : ["disobey2020"]
 # Project state
 active      : true
 archived    : false
+external    : false
+featured    : false
 
 # Identifying tags, searchable/visible to site visitors
 tags        :

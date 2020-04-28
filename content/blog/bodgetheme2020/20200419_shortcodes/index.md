@@ -53,6 +53,48 @@ gallery:
     exclude : false
 ---
 
-### Lorem
+##### Development tests with shortcodes
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<!--more-->
+
+{{< highlight html >}}
+{{</* tweet 1224084891559759872 */>}}
+{{</ highlight>}}
+
+{{< tweet 1224084891559759872 >}}
+
+{{< highlight html >}}
+{{</* tweet-single 1224084891559759872 */>}}
+{{</ highlight>}}
+
+{{< tweet-single 1224084891559759872 >}}
+
+
+
+
+{{< highlight html >}}
+{{</* tweet 1224084929623023624 */>}}
+{{</ highlight>}}
+
+{{< tweet 1224084929623023624 >}}
+
+{{< highlight html >}}
+{{</* tweet-single 1224084929623023624 */>}}
+{{</ highlight>}}
+
+{{< tweet-single 1224084929623023624 >}}
+
+
+
+
+{{< highlight html >}}
+{{</* tweet 1224084963852783620 */>}}
+{{</ highlight>}}
+
+{{< tweet 1224084963852783620 >}}
+
+{{< highlight html >}}
+{{</* tweet-single 1224084963852783620 */>}}
+{{</ highlight>}}
+
+{{< tweet-single 1224084963852783620 >}}
