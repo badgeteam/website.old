@@ -2,13 +2,13 @@
 date        : 2019-10-10T13:10:46+02:00
 lastmod     : 2019-10-10T13:10:46+02:00
 draft       : false
-short_title : "ETH0:2019"
-title       : "ETH0:2019 Badge Project"
-description : "This is the project page description for the ETH0:2019 Project"
+short_title : "eth0:2019"
+title       : "eth0:2019 Badge Project"
+description : "This is the project page description for the eth0:2019 Project"
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
-projects    : ["ETH02019"]
+projects    : ["eth02019"]
 
 # For alternative external reference only
 slugs       : ["eth02019"]
@@ -36,8 +36,8 @@ email : ""
 # Contact (Listed under personal details)
 # For available icons, see: https://fontawesome.com
 contact :
-- title     : ETH0
-  link      : https://hackerhotel.nl/
+- title     : eth0
+  link      : https://eth0.nl/
   icon_pack : fa
   icon_name : fa-globe
 - title     : Badge.team
@@ -62,7 +62,7 @@ icon_name : fa-tty
 icon_pack : fa
 
 # Default images related to this project
-image_src   : "images/eth02019.jpg"
+image_src   : "thumbs/eth02019.png"
 image_alt   : "ETH02019"
 thumb_src   : "thumbs/eth02019.png"
 thumb_alt   : "ETH02019"

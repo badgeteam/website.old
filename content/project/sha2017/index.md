@@ -57,7 +57,7 @@ icon_name : fa-tablet
 icon_pack : fa
 
 # Default images related to this project
-image_src   : "images/sha2017.jpg"
+image_src   : "thumbs/sha2017.png"
 image_alt   : "SHA2017"
 thumb_src   : "thumbs/sha2017.png"
 thumb_alt   : "SHA2017"

@@ -17,7 +17,7 @@ teams :
 #### Mini profile (Displayed at end of posts, where available)
 
 # Avatar shown
-avatar : "images/pwuts.png"
+avatar : "images/pwuts.jpg"
 
 # Short bio
 bio : ""
@@ -40,7 +40,7 @@ role : Chieftain for MCH2021 badge
 location :
 
 # E-mail address to forward mail to. (Address not revealed at site)
-email : "me@pwuts.nl"
+email : "pwuts@badge.team"
 
 # Organizations/Affiliations
 organizations :
@@ -50,14 +50,20 @@ organizations :
 
 # List your interests
 interests :
-- Interest 1
-- Interest 2
+- Electronics, especially 'vintage' electronics
+- Stars and other visible things in space
+- People
 
 education :
   courses :
-  - course      : Advanced badging and bodging
-    institution : Bodgenatoric Institute
-    year        : 2019
+  - course      : BSc Electrical Engineering
+    institution : TU Delft
+    year        : 2018 - present
+
+  - course      : Bodgery, people skills, safe tinkering
+    institution : RevSpace
+    year        : 2015 - present
+
 
 # Contact (Listed under personal details)
 # For available icons, see: https://fontawesome.com
