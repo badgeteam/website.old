@@ -2,7 +2,7 @@
 date        : 2020-04-26T09:45:07+02:00
 lastmod     : 2020-04-26T09:45:07+02:00
 draft       : false
-short_title : "Disobey2020"
+short_title : "Disobey 2020"
 title       : "Disobey2020 Badge Project"
 description : "This is the project page description for the Disobey2020 Project"
 
