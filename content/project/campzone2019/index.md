@@ -13,6 +13,12 @@ projects    : ["CZ2019"]
 # For alternative external reference only
 slugs       : ["campzone2019"]
 
+# Project state
+active      : false
+archived    : false
+external    : false
+featured    : false
+
 # Identifying tags, searchable/visible to site visitors
 tags        :
 - CZ2019
@@ -61,10 +67,6 @@ social :
 # Project icon
 icon_name : fa-bed
 icon_pack : fa
-
-# Project state
-active      : false
-archived    : false
 
 # Default images related to this project
 image_src   : "images/campzone2019.jpg"

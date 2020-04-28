@@ -13,9 +13,11 @@ projects    : ["{{ replace .Name "-" " " | upper }}"]
 # For alternative external reference only
 slugs       : ["{{ replace .Name "-" " " | lower }}"]
 
-# Project state
+# Project state and type
 active      : true
 archived    : false
+external    : false
+featured    : false
 
 # Identifying tags, searchable/visible to site visitors
 tags        :

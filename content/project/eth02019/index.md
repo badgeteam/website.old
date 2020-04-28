@@ -16,6 +16,8 @@ slugs       : ["eth02019"]
 # Project state
 active      : false
 archived    : false
+external    : false
+featured    : false
 
 # Identifying tags, searchable/visible to site visitors
 tags        :

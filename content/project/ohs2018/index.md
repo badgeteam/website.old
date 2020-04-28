@@ -16,6 +16,8 @@ slugs       : ["ohs2018"]
 # Project state
 active      : false
 archived    : false
+external    : true
+featured    : true
 
 # Identifying tags, searchable/visible to site visitors
 tags        : []
