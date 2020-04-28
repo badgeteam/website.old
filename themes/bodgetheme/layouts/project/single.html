@@ -101,7 +101,7 @@
     <p class="bt-project-about-project-description ">{{ .Description }}</p>
   </div>
 </div>
-
+{{ partial "widgets/project-contact.html" (dict "context" . "project" . ) }}
 {{ partial "widgets/recent-updates.html" . }}
 {{ partial "widgets/taxo-cloud.html" . }}
 {{ end }}

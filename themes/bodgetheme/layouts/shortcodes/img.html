@@ -1,11 +1,15 @@
-{{- $img_src := (.Get "src") }}
-{{- $img_alt := (.Get "alt") }}
-{{- $img_width := (.Get "width") | default "100%" }}
-{{- $img_class := (.Get "class") | default "w3-round" }}
-{{- $img_title := (.Get "title") }}
-{{- $img_descr := (.Get "descr") }}
-  <div class="bt-img w3-white" style="width:{{ $img_width }}">
-    <img class="bt-img-img bt-image {{ $img_class }}" src="{{ $img_src }}" alt="{{ $img_alt }}" style="width:100%">
+{{- $img_src    := (.Get "src") }}
+{{- $img_alt    := (.Get "alt") }}
+{{- $img_width  := (.Get "width")  | default "100%" }}
+{{- $img_owidth := (.Get "owidth") | default $img_width }}
+{{- $img_iwidth := (.Get "iwidth") | default "100%" }}
+{{- $img_class  := (.Get "class") | default "w3-round" }}
+{{- $img_title  := (.Get "title") }}
+{{- $img_descr  := (.Get "descr") }}
+  <div class="bt-img w3-display-container" style="width:{{ $img_owidth }}">
+    <div class="w3-center">
+      <img class="bt-img-img bt-image {{ $img_class }}" src="{{ $img_src }}" alt="{{ $img_alt }}" style="width:{{ $img_iwidth }}">
+    </div>
     <div class="bt-img-caption w3-container">
       {{- if $img_title -}}
       <h4><b>{{ $img_title }}</b></h4>

@@ -31,6 +31,25 @@ categories  :
 - Software development
 - Embedded software
 
+# Contact e-mail
+email : ""
+
+# Contact (Listed under personal details)
+# For available icons, see: https://fontawesome.com
+contact :
+- title     : Badge.team
+  link      : https://badge.team/
+  icon_pack : fa
+  icon_name : fa-globe
+
+# Social (Listed in social-link bars)
+# For available icons, see: https://fontawesome.com
+social :
+- title     : Twitter
+  icon_name : fa-twitter
+  icon_pack : fa
+  link      : https://twitter.com/mch2021
+
 # Project icon
 icon_name : fa-user-secret
 icon_pack : fa
@@ -66,4 +85,4 @@ gallery:
 ### {{< icon name="fa-user-secret" >}} May Cause Hairpulling 2021 Badge Project
 
 Welcome to the project page of the May Cause Hairpulling 2021 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
-{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}
+{{< img src="/images/wip.png" alt="Work in progress." iwidth="50%">}}

@@ -18,8 +18,7 @@ active      : true
 archived    : false
 
 # Identifying tags, searchable/visible to site visitors
-tags        :
-- FRI3D2020
+tags        : []
 
 # Identifying categories, searchable/visible to site visitors
 categories  :
@@ -27,6 +26,33 @@ categories  :
 - Hardware design
 - Software development
 - Embedded software
+
+# Contact e-mail
+email : ""
+
+# Contact (Listed under personal details)
+# For available icons, see: https://fontawesome.com
+contact :
+- title     : Fri3D Camp
+  link      : https://www.fri3d.be/
+  icon_pack : fa
+  icon_name : fa-globe
+
+# Social (Listed in social-link bars)
+# For available icons, see: https://fontawesome.com
+social :
+- title     : Twitter
+  icon_name : fa-twitter
+  icon_pack : fa
+  link      : https://twitter.com/fri3dcamp
+- title     : Facebook
+  icon_name : fa-facebook
+  icon_pack : fa
+  link      : http://www.facebook.com/Fri3dCamp
+- title     : Instagram
+  icon_name : fa-instagram
+  icon_pack : fa
+  link      : http://www.instagram.com/fri3dcamp
 
 # Project icon
 icon_name : fa-suitcase
@@ -53,5 +79,7 @@ gallery:
 
 ### {{< icon name="fa-suitcase" >}} Fri3D 2020 Badge Project
 
+{{< alert-attention "PLEASE NOTE" >}}This project is developed by a different team than badge.team and we do NOT claim it's ours. This project has been added during this development stage for reference only. Soon we'll decide on if we remove it immediately or contact the rightful project owners if they would like it to stay.{{< /alert-attention >}}
+
 Welcome to the project page of the Fri3D 2020 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
-{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}
+{{< img src="/images/wip.png" alt="Work in progress." iwidth="50%">}}
