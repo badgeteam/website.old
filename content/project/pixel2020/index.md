@@ -38,10 +38,6 @@ email : ""
 # Contact (Listed under personal details)
 # For available icons, see: https://fontawesome.com
 contact :
-- title     : Pixel Badge
-  link      : https://pixel.tomclement.nl
-  icon_pack : fa
-  icon_name : fa-globe
 - title     : HackZone
   link      : https://hack-zone.nl/
   icon_pack : fa
@@ -54,10 +50,6 @@ social :
   icon_name : fa-twitter
   icon_pack : fa
   link      : https://twitter.com/HackZoneNL
-- title     : Github
-  icon_name : fa-github
-  icon_pack : fa
-  link      : https://github.com/USERNAME
 
 # Project icon
 icon_name : fa-braille
