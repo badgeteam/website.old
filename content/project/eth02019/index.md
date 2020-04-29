@@ -8,7 +8,7 @@ description : "This is the project page description for the eth0:2019 Project"
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
-projects    : ["eth02019"]
+projects    : ["ETH02019"]
 
 # For alternative external reference only
 slugs       : ["eth02019"]

@@ -14,6 +14,7 @@ teams :
 - Badgeteam
 - HH2020
 - MCH2021
+- ETH02019
 
 #### Mini profile (Displayed at end of posts, where available)
 
