@@ -37,7 +37,7 @@ icon_name : fa-camera
 icon_pack : fa
 
 # Role/position (e.g., Professor of Artificial Intelligence)
-role : Shutterbug / Wonder Woman
+role : Shutterbug
 
 # Bodging area (The Hague, NL)
 location :

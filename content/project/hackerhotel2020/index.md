@@ -65,7 +65,7 @@ icon_name : fa-hotel
 icon_pack : fa
 
 # Default images related to this project
-image_src   : "images/hh2020.jpg"
+image_src   : "thumbs/hh2020.png"
 image_alt   : "HH2020"
 thumb_src   : "thumbs/hh2020.png"
 thumb_alt   : "HH2020"
