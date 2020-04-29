@@ -23,7 +23,7 @@ teams :
 avatar : "images/candace.png"
 
 # Short bio
-bio : ""
+bio : "Shuts bugs. Shoots hackers. Kills badgers."
 
 
 
