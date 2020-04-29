@@ -11,7 +11,7 @@ description : ""
 
 # Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
 # mnemonic, to refer to the project this blog is related to.
-projects    : ["ReplaceThisWithTheCorrectProjectID"]
+projects    : ["HH2020"]
 
 # For alternative external reference only
 slugs       : []
