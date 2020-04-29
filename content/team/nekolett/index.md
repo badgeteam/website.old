@@ -18,10 +18,10 @@ teams :
 #### Mini profile (Displayed at end of posts, where available)
 
 # Avatar shown
-avatar : "images/prism.jpg"
+avatar : "images/klsUYxgpcsvhlgCDxytrMahT.jpg"
 
 # Short bio
-bio : "I am a freelancer Graphic Designer, Product Designer-in-training & Illustrator, who is always eager to learn something new, and work towards to understand different aspects, and love to explore."
+bio : "I am a freelancer graphic designer, product designer-in-training & illustrator, who is always eager to learn something new, works towards understanding different aspects, and loves to explore."
 
 
 #### Additional information for your personal page
@@ -34,7 +34,7 @@ icon_name : fa-bug
 icon_pack : fa
 
 # Role/position (e.g., Professor of Artificial Intelligence)
-role : Craftswoman / Graphical Designer
+role : Craftswoman / Graphical Designer / Artist
 
 # Bodging area (The Hague, NL)
 location :
@@ -85,8 +85,8 @@ social :
   link      : https://github.com/ankhaneko
 ---
 
-I am a freelancer Graphic Designer, Product Designer-in-training & Illustrator, who is always eager to learn something new, and work towards to understand different aspects, and love to explore. Designer of tilde.industries.
+I am a freelancer graphic designer, product designer-in-training & illustrator, who is always eager to learn something new, works towards understanding different aspects, and loves to explore. Designer of tilde.industries.
 
-At the present, I am developing my skills in Digital Graphic softwares, Product and Package Design, 3D modeling softwares in both organic sculpting and engineering categories, and I keep on working with traditional art techniques, such as watercolour & other types of painting.
+At the present, I am developing my skills in digital graphic software, product and package design, 3D modeling software for both organic sculpting and engineering. I also continue to work with traditional art techniques, such as watercolour & other types of painting.
 
-My main inspiration comes by observing our environment, thus my core way of illustrating will always look organic, naturalistic.I love to combine Old and New: most of my digital paintings and drawings have a pencil lineart as their skeleton. I am fond of Art History, and Ancient Times.
+My main inspiration comes from observing our environment, thus my core way of illustrating will always look organic and naturalistic. I love to combine old and new; most of my digital paintings and drawings have pencil line art as their skeletons. I am fond of art history and ancient times.
