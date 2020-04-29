@@ -1,9 +1,9 @@
 ---
-date        : 2020-04-28T02:59:17+02:00
-lastmod     : 2020-04-28T02:59:17+02:00
-draft       : true
-title       : "20200208_sweatshop2"
-author      : "Anonymous"
+date        : 2020-02-08T00:00:00+01:00
+lastmod     : 2020-02-08T00:00:00+01:00
+draft       : false
+title       : "Sweatshop 2"
+author      : "noor"
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
