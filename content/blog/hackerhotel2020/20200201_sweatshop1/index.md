@@ -1,9 +1,9 @@
 ---
-date        : 2020-04-28T02:59:44+02:00
-lastmod     : 2020-04-28T02:59:44+02:00
-draft       : true
-title       : "20200201_sweatshop1"
-author      : "Anonymous"
+date        : 2020-02-01T00:00:00+01:00
+lastmod     : 2020-02-01T00:00:00+01:00
+draft       : false
+title       : "Sweatshop 1"
+author      : "noor"
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
@@ -32,7 +32,7 @@ icon_name : fa-pencil
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : "images/mascot.png"
+image_src   : ""
 image_alt   : ""
 thumb_src   : ""
 thumb_alt   : ""
