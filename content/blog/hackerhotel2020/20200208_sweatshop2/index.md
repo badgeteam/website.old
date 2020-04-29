@@ -32,7 +32,7 @@ icon_name : fa-pencil
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : "images/mascot.png"
+image_src   : ""
 image_alt   : ""
 thumb_src   : ""
 thumb_alt   : ""
