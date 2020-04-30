@@ -29,7 +29,11 @@
   {{/*- Stylesheet links */}}
   <link rel="canonical" href="{{ .Site.BaseURL | lower }}" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  {{- if .Params.fontawesome }}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {{- else }}
+  <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css">
+  {{- end }}
   {{- if fileExists "static/css/site.css" }}
   <link rel="stylesheet" href="/css/site.css">
   {{- end }}

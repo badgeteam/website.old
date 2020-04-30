@@ -34,7 +34,7 @@ categories  :
 email : ""
 
 # Contact (Listed under personal details)
-# For available icons, see: https://fontawesome.com
+# For available icons, see: https://forkaweso.me
 contact :
 - title     : Webpage
   link      : https://www.my.site
@@ -42,7 +42,7 @@ contact :
   icon_name : fa-globe
 
 # Social (Listed in social-link bars)
-# For available icons, see: https://fontawesome.com
+# For available icons, see: https://forkaweso.me
 social :
 - title     : Twitter
   icon_name : fa-twitter
@@ -54,7 +54,7 @@ social :
   link      : https://github.com/USERNAME
 
 # Project icon
-# For available icons, see: https://fontawesome.com
+# For available icons, see: https://forkaweso.me
 icon_name : fa-suitcase
 icon_pack : fa
 
@@ -80,4 +80,4 @@ gallery:
 ### {{< icon name="fa-suitcase" >}} {{ replace .Name "-" " " | title }} Project
 
 Welcome to the project page of the {{ replace .Name "-" " " | title }} project. This project page is still a work in progress and we expect to fill it with content soon.
-{{< img src="/images/wip.png" alt="Work in progress." width="50%"  >}}
+{{< img src="/images/wip.png" alt="Work in progress." iwidth="50%">}}

@@ -15,19 +15,19 @@
   {{- end }}
   {{- if $avatar }}
       <div class="bt-team-single-container w3-display-container w3-black">
-        <img class="bt-team-single-image bt-image w3-image" src="{{ $avatar.RelPermalink }}" alt="{{ .Params.Name | truncate 18 }}" style="width:100%">
+        <img class="bt-team-single-image bt-image w3-image" src="{{ $avatar.RelPermalink }}" alt="{{ .Params.Name }}" style="width:100%">
         <div class="w3-container w3-display-bottomleft w3-text-white">
           {{- with .Params.icon_name }}
           {{- $icon_pack := ($page.Params.icon_pack | default "fa") }}
-          <h3 class="bt-team-single-name w3-text-white w3-padding-8"><b><i class="{{ $icon_pack }} {{ . }} bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname | truncate 18 }}</b></h3>
+          <h3 class="bt-team-single-name w3-text-white w3-padding-8"><b><i class="{{ $icon_pack }} {{ . }} bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</b></h3>
           {{- else }}
-          <h3 class="bt-team-single-name w3-text-white w3-padding-8"><b><i class="fa fa-address-card bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname | truncate 18 }}</b></h3>
+          <h3 class="bt-team-single-name w3-text-white w3-padding-8"><b><i class="fa fa-address-card bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</b></h3>
           {{- end }}
         </div>
       </div>
   {{- else }}
       <div class="bt-team-single-container w3-container w3-black">
-        <h3 class="bt-team-single-name w3-text-white w3-padding-8"><b><i class="fa fa-address-card bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname | truncate 18 }}</b></h3>
+        <h3 class="bt-team-single-name w3-text-white w3-padding-8"><b><i class="fa fa-address-card bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</b></h3>
       </div>
   {{- end }}
 {{- end }}

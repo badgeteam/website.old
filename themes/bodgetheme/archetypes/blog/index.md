@@ -27,15 +27,15 @@ categories  :
 - Embedded software
 
 # Blog icon
-# For available icons, see: https://fontawesome.com
+# For available icons, see: https://forkaweso.me
 icon_name : fa-pencil
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : "images/mascot.png"
-image_alt   : ""
-thumb_src   : ""
-thumb_alt   : ""
+#image_src   : "images/mascot.png"
+#image_alt   : ""
+#thumb_src   : ""
+#thumb_alt   : ""
 
 # Author about box
 about_show   : true
