@@ -16,9 +16,9 @@
               <a class="bt-team-list-link" title="{{ $member.Params.Name }}" href="{{ $member.RelPermalink }}" style="text-decoration:none;">
                 <div class="bt-team-list-card w3-card">
     {{- if $avatar }}
-                  <img class="bt-team-list-image bt-image w3-hover-grayscale" src="{{ $avatar.RelPermalink }}" alt="{{ $member.Params.Name | truncate 18 }}" style="width:100%">
+                  <img class="bt-team-list-image bt-image w3-hover-grayscale" src="{{ $avatar.RelPermalink }}" alt="{{ $member.Params.Name }}" style="width:100%">
     {{- end }}
-                  <div class="bt-team-list-name w3-container w3-center"><h5>{{ $member.Params.Name | truncate 18 }}</h5></div>
+                  <div class="bt-team-list-name w3-container w3-center"><h5>{{ $member.Params.Name }}</h5></div>
                 </div>
               </a>
             </div>

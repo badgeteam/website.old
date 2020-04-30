@@ -37,6 +37,9 @@
   {{- if fileExists "static/css/site.css" }}
   <link rel="stylesheet" href="/css/site.css">
   {{- end }}
+  {{- if fileExists "static/css/site_dev.css" }}
+  <link rel="stylesheet" href="/css/site.css">
+  {{- end }}
   {{- if fileExists (printf "static/css/%s.css" (.Section | lower) ) }}
   <link rel="stylesheet" href="{{ (printf "/css/%s.css" (.Section | lower)) | relURL }}">
   {{- end }}
