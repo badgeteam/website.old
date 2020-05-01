@@ -11,7 +11,12 @@ description : ""
 
 # Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
 # mnemonic, to refer to the project this blog is related to.
-projects    : ["ReplaceThisWithTheCorrectProjectID"]
+{{- $tailsearcher := printf "[^/]+/%s/index.md" .Name | lower }}
+{{- $tails        := findRE $tailsearcher (.File.Path | lower) }}
+{{- $tail         := index $tails 0 }}
+{{- $projects     := findRE "[^/]+" $tail }}
+{{- $project      := index $projects 0 }}
+projects    : ["{{ $project | upper }}"]
 
 # For alternative external reference only
 slugs       : []
