@@ -1,6 +1,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ hugo.Generator }}
   <meta name="generator" content="Hugo with Badge.team Bodgetheme">
   <meta name="author" content="Noor Draconia, Rob Verseijden">
   {{- $keywords := slice }}
@@ -34,10 +35,10 @@
   {{- else }}
   <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css">
   {{- end }}
-  {{- if fileExists "static/css/site.css" }}
-  <link rel="stylesheet" href="/css/site.css">
+  {{- with resources.Get "css/bodgetheme.css" | minify }}
+  <link rel="stylesheet" href="{{ .Permalink }}">
   {{- end }}
-  {{- if fileExists "static/css/site_dev.css" }}
+  {{- if fileExists "static/css/site.css" }}
   <link rel="stylesheet" href="/css/site.css">
   {{- end }}
   {{- if fileExists (printf "static/css/%s.css" (.Section | lower) ) }}
