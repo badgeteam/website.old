@@ -1,28 +1,21 @@
     <div class="bi-footer bt-bottom bt-black bt-opacity bt-hover-opacity-off"> {{ "<!-- Footer navigation bar -->" | safeHTML }}
       <div class="bi-footer-navbar bt-bar bt-wide bt-padding">
         <a class="bi-button bi-footer-home-button bt-bar-item bt-button bt-round" title="Home" href="/"><strong>{{ .Site.Title | title }}</strong></a>
-
-
         <div class="bi-button-container bt-right bt-hide-small">
-
-
-
-
-
-          <a class="bi-button bi-footer-button bt-bar-item" title="Documentation" alt="Documentation" href="https://docs.badge.team/" target="_blank"><i class="fa fa-file-text bt-hover-opacity"></i></a>
-          <a class="bi-button bi-footer-button bt-bar-item" title="Wiki" alt="Wiki" href="https://wiki.badge.team/" target="_blank"><i class="fa fa-wikipedia-w bt-hover-opacity"></i></a>
-          <a class="bi-button bi-footer-button bt-bar-item" title="Github" alt="Github" href="https://github.com/badgeteam/" target="_blank"><i class="fa fa-github bt-hover-opacity"></i></a>
-          <a class="bi-button bi-footer-button bt-bar-item" title="Twitter" alt="Twitter" href="https://twitter.com/SHA2017Badge" target="_blank"><i class="fa fa-twitter bt-hover-opacity"></i></a>
-          <a class="bi-button bi-footer-button bt-bar-item" title="IRC" alt="IRC" href="ircs://irc.oftc.net:6697/badgeteam" target="_blank"><i class="fa fa-hashtag bt-hover-opacity"></i></a>
-          <a class="bi-button bi-footer-button bt-bar-item" title="Matrix" alt="Matrix" href="https://matrix.to/#/#oftc_#badgeteam:pixie.town" target="_blank"><i class="fa fa-matrix-org bt-hover-opacity"></i></a>
-          <a class="bi-button bi-footer-button bt-bar-item" title="Telegram" alt="Telegram" href="https://t.me/joinchat/AMG-ZhQQ9cE1KAAbQozy5Q" target="_blank"><i class="fa fa-telegram bt-hover-opacity"></i></a>
-
-
-
-
-
-
-
+          {{- with .Site.Menus }}
+            {{- range .navbar_bottom }}
+            <a class="bi-button bi-footer-button bt-bar-item bt-button bt-round" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" target="_blank">
+              {{ .Pre }}{{ .Name }}{{ .Post }}
+            </a>
+            {{- end }}
+          {{- end }}
+          {{- with .Site.Params.navbar }}
+            {{- range sort .bottom "weight" }}
+            <a class="bi-button bi-footer-button bt-bar-item" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" target="{{ .Target }}">
+              <i class="{{ .icon_pack }} {{ .icon_name }} bt-hover-opacity"></i>
+            </a>
+            {{- end }}
+          {{- end }}
         </div>
       </div>
     </div> {{ "<!-- End footer navigation bar -->" | safeHTML -}}

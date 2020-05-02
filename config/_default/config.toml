@@ -27,24 +27,3 @@ enableEmoji = true
   blog     = "blogs"
   team     = "teams"
   nickname = "nicknames"
-
-[params]
-  mainSections = ["blog","project"]
-  defaultImage = "/images/mascot_600x600.png"
-
-  [params.blog]
-    paginate = 5
-
-  [params.project]
-    paginate = 5
-
-  [params.team]
-    paginate = 1000
-
-  [params.gallery]
-    maximage = 4
-    paginate = 12
-
-    [params.gallery.project]
-      maximage = 4
-      paginate = 12

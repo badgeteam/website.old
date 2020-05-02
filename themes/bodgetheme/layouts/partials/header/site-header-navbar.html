@@ -1,20 +1,53 @@
+{{- $currentPage := . }}
 {{- $logo := resources.Get "images/logo.png" }}
     <div class="bi-header bt-top"> {{ "<!-- Header navigation bar -->" | safeHTML }}
-      <div class="bi-header-navbar bt-bar bt-white bt-wide bt-padding bt-card">
+      <div class="bt-bar bt-white bt-padding bt-card">
         <a class="bi-button bi-header-home-button bt-bar-item bt-button bt-round" title="Home" href="/">{{ if $logo }}<img class="" alt="" style="height:1.2em" src="{{ $logo.Permalink }}"> {{ end }}{{ .Site.Title | upper }}</a>
-
-{{- if site.Menus.main }}
-        <div class="bi-button-container bt-right"> {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}
-          <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="Gallery" alt="Gallery" href="/gallery"><i class="fa fa-bars bt-hover-opacity"></i></a>
-        </div>
-{{- end }}
-
         <div class="bi-button-container bt-right bt-hide-small"> {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}
-          <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="Projects" alt="Projects" href="/project"><i class="fa fa-cogs bt-hover-opacity"></i>Projects</a>
-          <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="Team" alt="Team" href="/team"><i class="fa fa-users bt-hover-opacity"></i>Team</a>
-          <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="Gallery" alt="Gallery" href="/gallery"><i class="fa fa-camera bt-hover-opacity"></i>Gallery</a>
+          {{- with .Site.Params.navbar }}
+            {{- range sort .top "weight" }}
+            <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" target="{{ .Target }}">
+              <i class="{{ .icon_pack }} {{ .icon_name }} bt-hover-opacity"></i> {{ .Title | default .Name }}
+            </a>
+            {{- end }}
+          {{- end }}
+          {{- with .Site.Menus }}
+            {{- range .navbar_top }}
+              {{- if .HasChildren }}
+            <div class="bt-dropdown-hover">
+              <button class="bt-button {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">{{ .Pre }}{{ .Name }}{{ .Post }}</button>
+              <div class="bt-dropdown-content bt-bar-block bt-card-4">
+                {{- range .Children }}
+                <a href="{{ .URL }}" class="bt-bar-item bt-button {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">{{ .Pre }}{{ .Name }}{{ .Post }}</a>
+                {{- end }}
+              </div>
+            </div>
+              {{- else }}
+            <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}">
+              {{ .Pre }}{{ .Name }}{{ .Post }}
+            </a>
+              {{- end }}
+            {{- end }}
+          {{- end }}
+          {{- with .Site.Menus }}
+            {{- if .main }}
+          <div class="bt-dropdown-hover bt-right">
+            <button class="bt-button"><i class="fa fa-bars bt-hover-opacity"></i></button>
+            <div class="bt-dropdown-content bt-bar-block bt-border" style="right:0">
+              {{- range .main }}
+                {{- if .HasChildren }}
+                  {{- range .Children}}
+                  {{- end }}
+                {{- else }}
+              <a class="bi-button bt-bar-item bt-button" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}">
+                {{ .Pre }}{{ .Name }}{{ .Post }}
+              </a>
+                {{- end }}
+              {{- end }}
+            </div>
+          </div>
+            {{- end }}
+          {{- end }}
         </div>
-
-
       </div>
     </div> {{ "<!-- End header navigation bar -->" | safeHTML -}}

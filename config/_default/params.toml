@@ -1,0 +1,112 @@
+mainSections = ["blog","project"]
+defaultImage = "/images/mascot_600x600.png"
+
+[blog]
+  paginate = 5
+
+[project]
+  paginate = 5
+
+[team]
+  paginate = 8
+
+[gallery]
+  maximage = 4
+  paginate = 12
+
+  [gallery.project]
+    maximage = 4
+    paginate = 12
+
+[navbar]
+  [navbar.top]
+    [navbar.top.projects]
+      name      = "Projects"
+      title     = "Projects"
+      url       = "/project/"
+      weight    = 10
+      target    = ""
+      icon_pack = "fa"
+      icon_name = "fa-cogs"
+
+    [navbar.top.team]
+      name      = "Team"
+      title     = "Team"
+      url       = "/team/"
+      weight    = 20
+      target    = ""
+      icon_pack = "fa"
+      icon_name = "fa-users"
+
+    [navbar.top.gallery]
+      name      = "Gallery"
+      title     = "Gallery"
+      url       = "/gallery/"
+      weight    = 30
+      target    = ""
+      icon_pack = "fa"
+      icon_name = "fa-github"
+
+  [navbar.bottom]
+    [navbar.bottom.documentation]
+      name      = "Documentation"
+      title     = "Documentation"
+      url       = "https://docs.badge.team/"
+      weight    = 10
+      target    = "_blank"
+      icon_pack = "fa"
+      icon_name = "fa-file-text"
+
+    [navbar.bottom.wiki]
+      name      = "Wiki"
+      title     = "Wiki"
+      url       = "https://wiki.badge.team/"
+      weight    = 20
+      target    = "_blank"
+      icon_pack = "fa"
+      icon_name = "fa-wikipedia-w"
+
+    [navbar.bottom.github]
+      name      = "Github"
+      title     = "Github"
+      url       = "https://github.com/badgeteam/"
+      weight    = 30
+      target    = "_blank"
+      icon_pack = "fa"
+      icon_name = "fa-github"
+
+    [navbar.bottom.twitter]
+      name      = "Twitter"
+      title     = "Twitter"
+      url       = "https://twitter.com/SHA2017Badge"
+      weight    = 40
+      target    = "_blank"
+      icon_pack = "fa"
+      icon_name = "fa-twitter"
+
+    [navbar.bottom.irc]
+      name      = "IRC"
+      title     = "IRC"
+      url       = "ircs://irc.oftc.net:6697/badgeteam"
+      weight    = 50
+      target    = "_blank"
+      icon_pack = "fa"
+      icon_name = "fa-hashtag"
+
+    [navbar.bottom.matrix]
+      name      = "Matrix"
+      title     = "Matrix"
+      url       = "https://matrix.to/#/#oftc_#badgeteam:pixie.town"
+      weight    = 60
+      target    = "_blank"
+      icon_pack = "fa"
+      icon_name = "fa-matrix-org"
+
+    [navbar.bottom.telegram]
+      name      = "Telegram"
+      title     = "Telegram"
+      url       = "https://t.me/joinchat/AMG-ZhQQ9cE1KAAbQozy5Q"
+      weight    = 70
+      target    = "_blank"
+      icon_pack = "fa"
+      icon_name = "fa-telegram"
