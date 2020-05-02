@@ -4,6 +4,7 @@
       <div class="bt-bar bt-white bt-padding bt-card">
         <a class="bi-button bi-header-home-button bt-bar-item bt-button bt-round" title="Home" href="/">{{ if $logo }}<img class="" alt="" style="height:1.2em" src="{{ $logo.Permalink }}"> {{ end }}{{ .Site.Title | upper }}</a>
         <div class="bi-button-container bt-right bt-hide-small"> {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}
+          {{- /* Params navbar.top */}}
           {{- with .Site.Params.navbar }}
             {{- range sort .top "weight" }}
             <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" target="{{ .Target }}">
@@ -11,11 +12,20 @@
             </a>
             {{- end }}
           {{- end }}
+          {{- /* Menus navbar_top */}}
           {{- with .Site.Menus }}
             {{- range .navbar_top }}
               {{- if .HasChildren }}
             <div class="bt-dropdown-hover">
-              <button class="bt-button {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">{{ .Pre }}{{ .Name }}{{ .Post }}</button>
+              <button class="bt-button bt-round {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+                {{- if .URL }}
+                <a title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" style="text-decoration:none">
+                  {{ .Pre }}{{ .Name }}{{ .Post }}
+                </a>
+                {{- else }}
+                {{ .Pre }}{{ .Name }}{{ .Post }}
+                {{- end }}
+              </button>
               <div class="bt-dropdown-content bt-bar-block bt-card-4">
                 {{- range .Children }}
                 <a href="{{ .URL }}" class="bt-bar-item bt-button {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">{{ .Pre }}{{ .Name }}{{ .Post }}</a>
@@ -29,6 +39,7 @@
               {{- end }}
             {{- end }}
           {{- end }}
+          {{- /* Menus main */}}
           {{- with .Site.Menus }}
             {{- if .main }}
           <div class="bt-dropdown-hover bt-right">

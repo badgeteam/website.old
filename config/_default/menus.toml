@@ -49,25 +49,25 @@
 #         the navbar structure in the Params-configuration, which allows
 #         for a bit more flexibility and less html screw-ups.
 
-[[navbar_top]]
-  identifier = "projects"
-  name       = "Projects"
-  title      = "Projects"
-  url        = "/project/"
-  parent     = ""
-  weight     = 10
-  pre        = "<i class='fa fa-cogs bt-hover-opacity'></i> "
-  post       = ""
-
-[[navbar_top]]
-  identifier = ""
-  name       = "Bodgetheme"
-  title      = "Bodgetheme"
-  url        = "/bodgetheme2020/"
-  parent     = "projects"
-  weight     = 10
-  pre        = "<i class='fa fa-hackaday bt-hover-opacity'></i> "
-  post       = ""
+# [[navbar_top]]
+#   identifier = "projects"
+#   name       = "Projects"
+#   title      = "Projects"
+#   url        = "/project/"
+#   parent     = ""
+#   weight     = 10
+#   pre        = "<i class='fa fa-cogs bt-hover-opacity'></i> "
+#   post       = ""
+#
+# [[navbar_top]]
+#   identifier = ""
+#   name       = "Bodgetheme"
+#   title      = "Bodgetheme"
+#   url        = "/project/bodgetheme2020/"
+#   parent     = "projects"
+#   weight     = 10
+#   pre        = "<i class='fa fa-hackaday bt-hover-opacity'></i> "
+#   post       = ""
 #
 # [[navbar_top]]
 #   identifier = "team"

@@ -2,6 +2,7 @@
       <div class="bi-footer-navbar bt-bar bt-wide bt-padding">
         <a class="bi-button bi-footer-home-button bt-bar-item bt-button bt-round" title="Home" href="/"><strong>{{ .Site.Title | title }}</strong></a>
         <div class="bi-button-container bt-right bt-hide-small">
+          {{- /* Menus navbar_bottom */}}
           {{- with .Site.Menus }}
             {{- range .navbar_bottom }}
             <a class="bi-button bi-footer-button bt-bar-item bt-button bt-round" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" target="_blank">
@@ -9,6 +10,7 @@
             </a>
             {{- end }}
           {{- end }}
+          {{- /* Params navbar.bottom */}}
           {{- with .Site.Params.navbar }}
             {{- range sort .bottom "weight" }}
             <a class="bi-button bi-footer-button bt-bar-item" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" target="{{ .Target }}">
