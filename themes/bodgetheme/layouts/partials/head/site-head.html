@@ -25,20 +25,26 @@
   {{- range $lastmod }}
   <meta name="revision" content="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}" />
   {{- end }}
-  {{/*- Page title */}}
+
+  {{- /*- Page title */}}
   <title>{{ block "title" . }}{{ .Site.Title | upper }}{{ end }}</title>
-  {{/*- Stylesheet links */}}
+
+  {{- /* Stylesheet links */}}
   <link rel="canonical" href="{{ .Site.BaseURL | lower }}" />
-  {{- with resources.Get "css/bodgetheme.css" | minify }}
-  <link rel="stylesheet" href="{{ .Permalink }}">
+  {{- $bodge_css := resources.Get "css/bodgetheme.css" }}
+  {{- if $bodge_css }}
+    {{- $bodge_css = $bodge_css | minify }}
+  <link rel="stylesheet" href="{{ $bodge_css.Permalink }}">
+  {{- end }}
+  {{- $proto_css := resources.Get "css/bodgetheme_proto.css" }}
+  {{- if $proto_css }}
+    {{- $proto_css = $proto_css | minify }}
+  <link rel="stylesheet" href="{{ $proto_css.Permalink }}">
   {{- end }}
   {{- if .Params.fontawesome }}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   {{- else }}
   <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css">
-  {{- end }}
-  {{- with resources.Get "css/bodgetheme_proto.css" | minify }}
-  <link rel="stylesheet" href="{{ .Permalink }}">
   {{- end }}
   {{- if fileExists "static/css/site.css" }}
   <link rel="stylesheet" href="/css/site.css">
@@ -46,7 +52,8 @@
   {{- if fileExists (printf "static/css/%s.css" (.Section | lower) ) }}
   <link rel="stylesheet" href="{{ (printf "/css/%s.css" (.Section | lower)) | relURL }}">
   {{- end }}
-  {{/*- Icons */}}
+  
+  {{- /* Icons */}}
   <link rel="icon" type="image/x-icon" sizes="16x16" href="/images/ico/favicon.ico">
   <link rel="icon" type="image/png" sizes="640x640" href="/images/ico/favicon.png">
   <link rel="apple-touch-icon" sizes="640x640" href="/images/ico/favicon.png">

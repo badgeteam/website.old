@@ -20,32 +20,32 @@ defaultImage = "/images/mascot_600x600.png"
 
 [navbar]
   [navbar.top]
-    [navbar.top.projects]
-      name      = "Projects"
-      title     = "Projects"
-      url       = "/project/"
-      weight    = 10
-      target    = ""
-      icon_pack = "fa"
-      icon_name = "fa-cogs"
-
-    [navbar.top.team]
-      name      = "Team"
-      title     = "Team"
-      url       = "/team/"
-      weight    = 20
-      target    = ""
-      icon_pack = "fa"
-      icon_name = "fa-users"
-
-    [navbar.top.gallery]
-      name      = "Gallery"
-      title     = "Gallery"
-      url       = "/gallery/"
-      weight    = 30
-      target    = ""
-      icon_pack = "fa"
-      icon_name = "fa-github"
+    # [navbar.top.projects]
+    #   name      = "Projects"
+    #   title     = "Projects"
+    #   url       = "/project/"
+    #   weight    = 10
+    #   target    = ""
+    #   icon_pack = "fa"
+    #   icon_name = "fa-cogs"
+    #
+    # [navbar.top.team]
+    #   name      = "Team"
+    #   title     = "Team"
+    #   url       = "/team/"
+    #   weight    = 20
+    #   target    = ""
+    #   icon_pack = "fa"
+    #   icon_name = "fa-users"
+    #
+    # [navbar.top.gallery]
+    #   name      = "Gallery"
+    #   title     = "Gallery"
+    #   url       = "/gallery/"
+    #   weight    = 30
+    #   target    = ""
+    #   icon_pack = "fa"
+    #   icon_name = "fa-camera"
 
   [navbar.bottom]
     [navbar.bottom.documentation]
