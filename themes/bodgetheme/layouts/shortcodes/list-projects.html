@@ -1,7 +1,7 @@
-<ul class="bt-project-list bt-ul w3-ul w3-card" style="width:50%">
-  <li class="bt-project-list-title bt-li"><h3>Projects</h3></li>
+<ul class="bi-project-list bi-ul bt-ul bt-card" style="width:50%">
+  <li class="bi-project-list-title bi-li"><h3>Projects</h3></li>
   {{ range site.Taxonomies.projects }}
-  <li class="bt-project-list-item bt-li w3-padding-small">
+  <li class="bi-project-list-item bi-li bt-padding-small">
     <a href="{{ .Page.RelPermalink}}">{{ .Page.Title }}</a>
   </li>
   {{ end }}

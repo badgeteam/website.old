@@ -1,18 +1,18 @@
 {{- $logo := resources.Get "images/logo.png" }}
-    <div class="bt-header w3-top"> {{ "<!-- Header navigation bar -->" | safeHTML }}
-      <div class="bt-header-navbar w3-bar w3-white w3-wide w3-padding w3-card">
-        <a class="bt-button bt-header-home-button w3-bar-item w3-button w3-round" title="Home" href="/">{{ if $logo }}<img class="" alt="" style="height:1.2em" src="{{ $logo.Permalink }}"> {{ end }}{{ .Site.Title | upper }}</a>
+    <div class="bi-header bt-top"> {{ "<!-- Header navigation bar -->" | safeHTML }}
+      <div class="bi-header-navbar bt-bar bt-white bt-wide bt-padding bt-card">
+        <a class="bi-button bi-header-home-button bt-bar-item bt-button bt-round" title="Home" href="/">{{ if $logo }}<img class="" alt="" style="height:1.2em" src="{{ $logo.Permalink }}"> {{ end }}{{ .Site.Title | upper }}</a>
 
 {{- if site.Menus.main }}
-        <div class="bt-button-container w3-right"> {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}
-          <a class="bt-button bt-header-button w3-bar-item w3-button w3-round" title="Gallery" alt="Gallery" href="/gallery"><i class="fa fa-bars w3-hover-opacity"></i></a>
+        <div class="bi-button-container bt-right"> {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}
+          <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="Gallery" alt="Gallery" href="/gallery"><i class="fa fa-bars bt-hover-opacity"></i></a>
         </div>
 {{- end }}
 
-        <div class="bt-button-container w3-right w3-hide-small"> {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}
-          <a class="bt-button bt-header-button w3-bar-item w3-button w3-round" title="Projects" alt="Projects" href="/project"><i class="fa fa-cogs w3-hover-opacity"></i>Projects</a>
-          <a class="bt-button bt-header-button w3-bar-item w3-button w3-round" title="Team" alt="Team" href="/team"><i class="fa fa-users w3-hover-opacity"></i>Team</a>
-          <a class="bt-button bt-header-button w3-bar-item w3-button w3-round" title="Gallery" alt="Gallery" href="/gallery"><i class="fa fa-camera w3-hover-opacity"></i>Gallery</a>
+        <div class="bi-button-container bt-right bt-hide-small"> {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}
+          <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="Projects" alt="Projects" href="/project"><i class="fa fa-cogs bt-hover-opacity"></i>Projects</a>
+          <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="Team" alt="Team" href="/team"><i class="fa fa-users bt-hover-opacity"></i>Team</a>
+          <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="Gallery" alt="Gallery" href="/gallery"><i class="fa fa-camera bt-hover-opacity"></i>Gallery</a>
         </div>
 
 

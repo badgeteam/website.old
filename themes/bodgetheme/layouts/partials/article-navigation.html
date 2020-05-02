@@ -17,16 +17,16 @@
       {{- $article_prev = . }}
     {{- end }}
   {{- end }}
-<div class="bt-article-navigation w3-container">
-  <div class="bt-article-nav-row w3-row">
+<div class="bi-article-navigation bt-container">
+  <div class="bi-article-nav-row bt-row">
     {{- with $article_prev }}
-    <div class="bt-article-nav-prev-col w3-col m5 s12 w3-left">
-      <p class="bt-article-nav-prev-title"><a class="w3-button w3-padding-large w3-white w3-border" title="{{ .Title }}" alt="Previous {{ $label }}" href="{{ .Permalink }}"><strong>&Lang; PREVIOUS {{ $label | upper }}</strong></a></p>
+    <div class="bi-article-nav-prev-col bt-col m5 s12 bt-left">
+      <p class="bi-article-nav-prev-title"><a class="bt-button bt-padding-large bt-white bt-border" title="{{ .Title }}" alt="Previous {{ $label }}" href="{{ .Permalink }}"><strong>&Lang; PREVIOUS {{ $label | upper }}</strong></a></p>
     </div>
     {{- end }}
     {{- with $article_next }}
-    <div class="bt-article-nav-next-col w3-col m5 s12 w3-right">
-      <p class="bt-article-nav-next-title w3-right"><a class="w3-button w3-padding-large w3-white w3-border" title="{{ .Title }}" alt="Next {{ $label }}" href="{{ .Permalink }}"><strong>NEXT {{ $label | upper }} &Rang;</strong></a></p>
+    <div class="bi-article-nav-next-col bt-col m5 s12 bt-right">
+      <p class="bi-article-nav-next-title bt-right"><a class="bt-button bt-padding-large bt-white bt-border" title="{{ .Title }}" alt="Next {{ $label }}" href="{{ .Permalink }}"><strong>NEXT {{ $label | upper }} &Rang;</strong></a></p>
     </div>
     {{- end }}
   </div>

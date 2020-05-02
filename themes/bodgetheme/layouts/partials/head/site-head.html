@@ -29,20 +29,13 @@
   <title>{{ block "title" . }}{{ .Site.Title | upper }}{{ end }}</title>
   {{/*- Stylesheet links */}}
   <link rel="canonical" href="{{ .Site.BaseURL | lower }}" />
-  {{- $sheet := resources.Get "css/bow3c_dev.css" }}
-  {{- if $sheet }}
-  {{- $sheet = $sheet | minify }}
-  <link rel="stylesheet" href="{{ $sheet.Permalink }}">
-  {{- else }}
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  {{- with resources.Get "css/bodgetheme.css" | minify }}
+  <link rel="stylesheet" href="{{ .Permalink }}">
   {{- end }}
   {{- if .Params.fontawesome }}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   {{- else }}
   <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css">
-  {{- end }}
-  {{- with resources.Get "css/bodgetheme.css" | minify }}
-  <link rel="stylesheet" href="{{ .Permalink }}">
   {{- end }}
   {{- with resources.Get "css/bodgetheme_proto.css" | minify }}
   <link rel="stylesheet" href="{{ .Permalink }}">

@@ -1,4 +1,4 @@
-<div class="bt-alert bt-note w3-panel w3-round w3-note w3-pale-yellow">
+<div class="bi-alert bi-note bt-panel bt-round bt-note bt-pale-yellow">
   {{ if len .Params | ge 1 }}<h3>{{ .Get 0}}</h3>{{ end }}
-  <p class="bt-alert-text bt-note-text">{{ .Inner | markdownify | emojify }}</p>
+  <p class="bi-alert-text bi-note-text">{{ .Inner | markdownify | emojify }}</p>
 </div>

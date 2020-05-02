@@ -1,7 +1,7 @@
-<ul class="bt-tags-list bt-ul w3-ul w3-card" style="width:50%">
-  <li class="bt-tags-list-title bt-li"><h3>Tags</h3></li>
+<ul class="bi-tags-list bi-ul bt-ul bt-card" style="width:50%">
+  <li class="bi-tags-list-title bi-li"><h3>Tags</h3></li>
   {{ range site.Taxonomies.tags }}
-  <li class="bt-tags-list-item bt-li">
+  <li class="bi-tags-list-item bi-li">
     <a href="{{ .Page.RelPermalink}}">{{ .Page.Title }}</a>
   </li>
   {{ end }}

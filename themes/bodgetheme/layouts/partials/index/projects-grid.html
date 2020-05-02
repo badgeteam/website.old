@@ -1,17 +1,17 @@
-      <article class="bt-index-projects"> {{ "<!-- Projects -->" | safeHTML }}
-        <div class="bt-index-projects-title-container w3-container w3-center">
-          <h3 class="bt-index-projects-title w3-left w3-text-black w3-padding-8"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "projects" | default "Projects") | markdownify }}</strong></h3>
+      <article class="bi-index-projects"> {{ "<!-- Projects -->" | safeHTML }}
+        <div class="bi-index-projects-title-container bt-container bt-center">
+          <h3 class="bi-index-projects-title bt-left bt-text-black bt-padding-8"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-xlarge bt-text-teal"></i>{{ (i18n "projects" | default "Projects") | markdownify }}</strong></h3>
         </div>
   {{- $internal_projects := (where (where (where .Site.RegularPages "Section" "project") "Params.archived" false) "Params.external" false) }}
   {{- $legacy_projects := (where (where (where .Site.RegularPages "Section" "project") "Params.archived" false) "Params.external" "==" nil) }}
   {{- $projects := $internal_projects | union $legacy_projects }}
   {{- $current_projects := (where ($projects) "Params.active" true) }}
 	{{- $current_projects_count := len $current_projects }}
-        <section class="bt-index-projects-active"> {{ "<!-- Active projects -->" | safeHTML }}
-          <div class="bt-index-projects-active-title-container w3-container w3-center">
-            <h4 class="bt-index-projects-active-title w3-left">Active Projects</h4>
+        <section class="bi-index-projects-active"> {{ "<!-- Active projects -->" | safeHTML }}
+          <div class="bi-index-projects-active-title-container bt-container bt-center">
+            <h4 class="bi-index-projects-active-title bt-left">Active Projects</h4>
           </div>
-          <div class="bt-index-projects-active-row w3-row-padding">
+          <div class="bi-index-projects-active-row bt-row-padding">
 	{{- if ge $current_projects_count 1 }}
 		{{- range $current_projects.ByParam "short_title" }}
 			{{- $image_file := "" }}
@@ -26,33 +26,33 @@
 				  {{- $image_src = "/images/mascot_600x600.png" }}
 				{{ end }}
 			{{- end }}
-            <div class="bt-index-projects-active-col w3-col l3 m6 w3-margin-bottom">
-              <a class="bt-index-projects-active-link" title="{{ .Params.Short_Title | default .Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
-                <div class="bt-index-projects-active-card w3-card">
+            <div class="bi-index-projects-active-col bt-col l3 m6 bt-margin-bottom">
+              <a class="bi-index-projects-active-link" title="{{ .Params.Short_Title | default .Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="bi-index-projects-active-card bt-card">
       {{- if $image_file }}
   			{{- $image := $image_file.Resize "600x600" }}
-									<img class="bt-index-projects-active-title w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+									<img class="bi-index-projects-active-title bt-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- else }}
-			            <img class="bt-index-projects-active-title w3-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			            <img class="bi-index-projects-active-title bt-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- end }}
-                  <div class="bt-index-projects-active-title w3-container w3-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
+                  <div class="bi-index-projects-active-title bt-container bt-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
                 </div>
               </a>
             </div>
     {{- end }}
   {{- else }}
-            <div class="bt-index-projects-active-title w3-container w3-center w3-margin-bottom"><h5>There are currently no active projects.</h5></div>
+            <div class="bi-index-projects-active-title bt-container bt-center bt-margin-bottom"><h5>There are currently no active projects.</h5></div>
   {{- end }}
           </div>
         </section>  {{ "<!-- End Active projects -->" | safeHTML }}
 
   {{- $inactive_projects := (where ($projects) "Params.active" false) }}
 	{{- $inactive_projects_count := len $inactive_projects }}
-        <section class="bt-index-projects-finished"> {{ "<!-- Finished projects -->" | safeHTML }}
-          <div class="bt-index-projects-finished-title-container w3-container w3-center">
-            <h4 class="bt-index-projects-finished-title w3-left">Finished Projects</h4>
+        <section class="bi-index-projects-finished"> {{ "<!-- Finished projects -->" | safeHTML }}
+          <div class="bi-index-projects-finished-title-container bt-container bt-center">
+            <h4 class="bi-index-projects-finished-title bt-left">Finished Projects</h4>
           </div>
-          <div class="bt-index-projects-finished-row w3-row-padding">
+          <div class="bi-index-projects-finished-row bt-row-padding">
 	{{- if ge $inactive_projects_count 1 }}
 
 		{{- range $inactive_projects.ByParam "short_title" }}
@@ -68,22 +68,22 @@
 				  {{- $image_src = "/images/mascot_600x600.png" }}
 				{{ end }}
 			{{- end }}
-            <div class="bt-index-projects-finished-col w3-col l3 m6 w3-margin-bottom">
-              <a class="bt-index-projects-finished-link" title="{{ .Params.Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
-                <div class="bt-index-projects-finished-card w3-card">
+            <div class="bi-index-projects-finished-col bt-col l3 m6 bt-margin-bottom">
+              <a class="bi-index-projects-finished-link" title="{{ .Params.Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="bi-index-projects-finished-card bt-card">
       {{- if $image_file }}
   			{{- $image := $image_file.Resize "600x600" }}
-									<img class="bt-index-projects-finished-title w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+									<img class="bi-index-projects-finished-title bt-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- else }}
-			            <img class="bt-index-projects-finished-title w3-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			            <img class="bi-index-projects-finished-title bt-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- end }}
-                  <div class="bt-index-projects-finished-title w3-container w3-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
+                  <div class="bi-index-projects-finished-title bt-container bt-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
                 </div>
               </a>
             </div>
     {{- end }}
   {{- else }}
-            <div class="bt-index-projects-finished-title w3-container w3-center w3-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
+            <div class="bi-index-projects-finished-title bt-container bt-center bt-margin-bottom"><h5>There are currently no project finished yet.</h5></div>
   {{- end }}
           </div>
         </section>  {{ "<!-- End Finished projects -->" | safeHTML }}
@@ -91,11 +91,11 @@
   {{- $external_projects := (where (where (where .Site.RegularPages "Section" "project") "Params.archived" false) "Params.external" true) }}
 	{{- $external_projects_count := len $external_projects }}
   {{- if ge $external_projects_count 1 }}
-        <section class="bt-index-projects-finished"> {{ "<!-- Other projects -->" | safeHTML }}
-          <div class="bt-index-projects-finished-title-container w3-container w3-center">
-            <h4 class="bt-index-projects-finished-title w3-left">Other interesting developments</h4>
+        <section class="bi-index-projects-finished"> {{ "<!-- Other projects -->" | safeHTML }}
+          <div class="bi-index-projects-finished-title-container bt-container bt-center">
+            <h4 class="bi-index-projects-finished-title bt-left">Other interesting developments</h4>
           </div>
-	        <div class="bt-index-projects-finished-row w3-row-padding">
+	        <div class="bi-index-projects-finished-row bt-row-padding">
 		{{- range $external_projects.ByParam "short_title" }}
 			{{- $image_file := "" }}
 			{{- $image_src  := "" }}
@@ -109,16 +109,16 @@
 				  {{- $image_src = "/images/mascot_600x600.png" }}
 				{{ end }}
 			{{- end }}
-            <div class="bt-index-projects-finished-col w3-col l3 m6 w3-margin-bottom">
-              <a class="bt-index-projects-finished-link" title="{{ .Params.Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
-                <div class="bt-index-projects-finished-card w3-card">
+            <div class="bi-index-projects-finished-col bt-col l3 m6 bt-margin-bottom">
+              <a class="bi-index-projects-finished-link" title="{{ .Params.Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+                <div class="bi-index-projects-finished-card bt-card">
       {{- if $image_file }}
   			{{- $image := $image_file.Resize "600x600" }}
-									<img class="bt-index-projects-finished-title w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+									<img class="bi-index-projects-finished-title bt-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- else }}
-			            <img class="bt-index-projects-finished-title w3-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			            <img class="bi-index-projects-finished-title bt-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- end }}
-                  <div class="bt-index-projects-finished-title w3-container w3-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
+                  <div class="bi-index-projects-finished-title bt-container bt-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
                 </div>
               </a>
             </div>

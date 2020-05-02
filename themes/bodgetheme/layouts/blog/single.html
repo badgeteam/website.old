@@ -3,22 +3,22 @@
 {{- $page := . }}
 {{- $projects := where .Site.RegularPages "Section" "project" }}
 {{- $project  := first 1 (where $projects "Params.projects" "intersect" .Params.projects) }}
-<div class="bt-blog-single-row w3-row">
+<div class="bi-blog-single-row bt-row">
   {{ "<!-- Blog -->" | safeHTML }}
-  <div class="bt-blog-single-col w3-col">
+  <div class="bi-blog-single-col bt-col">
     <!-- Blog entry -->
-    <div class="bt-blog-single-entry w3-card w3-margin w3-white">
+    <div class="bi-blog-single-entry bt-card bt-margin bt-white">
       {{ if .Params.image_src }}
-		  <img class="bt-blog-single-entry-image bt-image" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
+		  <img class="bi-blog-single-entry-image bi-image" src="{{ .Params.image_src }}" alt="{{ .Params.image_alt }}" style="width:100%">
 		  {{ else if .Params.thumb_src }}
-		  <img class="bt-blog-single-entry-image bt-image" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
+		  <img class="bi-blog-single-entry-image bi-image" src="{{ .Params.thumb_src }}" alt="{{ .Params.thumb_alt }}" style="width:100%">
 		  {{ end }}
-      <div class="bt-blog-single-title-container w3-container">
+      <div class="bi-blog-single-title-container bt-container">
         {{- if .Params.icon_name }}
           {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-        <h3 class="bt-blog-single-title w3-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) }}</h3>
+        <h3 class="bi-blog-single-title bt-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (.Title | default .Site.Title) }}</h3>
         {{- else }}
-        <h3 class="bt-blog-single-title w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) }}</h3>
+        <h3 class="bi-blog-single-title bt-text-black"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (.Title | default .Site.Title) }}</h3>
         {{- end }}
         {{- $author := "" }}
         {{- $link   := "" }}
@@ -29,21 +29,21 @@
             {{- $link   = .RelPermalink }}
           {{- end }}
         {{- end }}
-        <span class="bt-blog-single-date w3-left w3-opacity w3-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{ if $link }}<a href="{{ $link }}">{{ end }}{{ $author }}{{ if $link }}</a>{{ end }}{{ end }}</span>
+        <span class="bi-blog-single-date bt-left bt-opacity bt-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{ if $link }}<a href="{{ $link }}">{{ end }}{{ $author }}{{ if $link }}</a>{{ end }}{{ end }}</span>
       </div>
-      <div class="bt-blog-single-description w3-container">
+      <div class="bi-blog-single-description bt-container">
         <p>{{ .Description }}</p>
         <hr>
         {{ .Content }}
         {{- if and (.Params.Author) (.Params.about_show) (.Params.about_inline) }}
           {{- $profile := partial `functions/get_team_member_profile` . }}
           {{- with $profile }}
-          <div class="bt-blog-about w3-margin-bottom">
+          <div class="bi-blog-about bt-margin-bottom">
             <hr>
-            <a class="bt-blog-about-link" href="{{ .Permalink }}" style="text-decoration:none;">
-              <div class="bt-blog-about-title-container">
-                <h4 class="bt-blog-about-title w3-text-black"><strong><i class="fa fa-pencil-square-o bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (i18n "about" | default "About") | markdownify }} {{ .Params.Name }}</h4>
-                <span class="bt-blog-about-bio w3-small">{{ .Params.bio }}</span>
+            <a class="bi-blog-about-link" href="{{ .Permalink }}" style="text-decoration:none;">
+              <div class="bi-blog-about-title-container">
+                <h4 class="bi-blog-about-title bt-text-black"><strong><i class="fa fa-pencil-square-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "about" | default "About") | markdownify }} {{ .Params.Name }}</h4>
+                <span class="bi-blog-about-bio bt-small">{{ .Params.bio }}</span>
               </div>
             </a>
           </div>
@@ -68,18 +68,18 @@
   {{- $projects := where .Site.RegularPages "Section" "project" }}
   {{- $project  := first 1 (where $projects "Params.projects" "intersect" .Params.projects) }}
   {{- $project_count := len $project }}
-<header class="bt-page-header w3-container w3-center">
+<header class="bi-page-header bt-container bt-center">
   {{- if ge $project_count 1 }}
     {{- range $project }}
       {{- if .Params.icon_name }}
         {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-    <h3 class="bt-page-header-title w3-left w3-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></strong>{{ .Title | default "Unknown project" }}</h3>
+    <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ .Title | default "Unknown project" }}</h3>
       {{- else }}
-    <h3 class="bt-page-header-title w3-left w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></strong>{{ .Title | default "Unknown project" }}</h3>
+    <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ .Title | default "Unknown project" }}</h3>
       {{- end }}
     {{- end }}
   {{- else }}
-  <h3 class="bt-page-header-title w3-left w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></strong>Unknown project</h3>
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>Unknown project</h3>
   {{- end }}
 </header>
 {{ end }}
@@ -97,19 +97,19 @@
         {{- $image = .Resources.GetMatch .Params.image_src }}
       {{- end }}
 <!-- About Project -->
-<div class="bt-blog-about-project w3-card w3-margin w3-margin-top">
-  <a class="bt-blog-about-project-link" href="{{ .Permalink }}" style="text-decoration:none;">
+<div class="bi-blog-about-project bt-card bt-margin bt-margin-top">
+  <a class="bi-blog-about-project-link" href="{{ .Permalink }}" style="text-decoration:none;">
       {{ if $image }}
-    <img class="bt-blog-about-project-image bt-image" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
+    <img class="bi-blog-about-project-image bi-image" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
       {{ end }}
-    <div class="bt-blog-about-project-title-container w3-container w3-white">
+    <div class="bi-blog-about-project-title-container bt-container bt-white">
       {{- if .Params.icon_name }}
         {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-      <h4 class="bt-blog-about-project-title w3-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) | truncate 20 }}</h4>
+      <h4 class="bi-blog-about-project-title bt-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (.Title | default .Site.Title) | truncate 20 }}</h4>
       {{- else }}
-      <h4 class="bt-blog-about-project-title w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) | truncate 25 }}</h4>
+      <h4 class="bi-blog-about-project-title bt-text-black"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (.Title | default .Site.Title) | truncate 25 }}</h4>
       {{- end }}
-      <p class="bt-blog-about-project-description">{{ .Description }}</p>
+      <p class="bi-blog-about-project-description">{{ .Description }}</p>
     </div>
   </a>
 </div>

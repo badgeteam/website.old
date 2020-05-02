@@ -10,7 +10,7 @@
   {{- $album = .Page }}
 {{- end }}
 <div class="gallery">
-  <div class="w3-row-padding">
+  <div class="bt-row-padding">
   {{- $images := ($album.Resources.ByType "image").Match $album_path }}
   {{- if $images }}
     {{- range $images }}
@@ -27,11 +27,11 @@
       {{- end }}
       {{- if $include }}
         {{- $image := .Resize "600x400" }}
-    <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="bt-col l3 m6 bt-margin-bottom">
   		<a title="{{ $caption }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
-  			<div class="w3-card">
-  				<img class="w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
-  				<div class="w3-container w3-center"><h6>{{ $caption | truncate 18 }}</h6></div>
+  			<div class="bt-card">
+  				<img class="bt-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
+  				<div class="bt-container bt-center"><h6>{{ $caption | truncate 18 }}</h6></div>
   			</div>
   		</a>
   	</div>
