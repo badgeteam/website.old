@@ -4,7 +4,7 @@
 {{- if ge $page_count 1 }}
 <div class="bt-recent-updates w3-card w3-margin">
   <div class="t-recent-updates-title-container w3-container w3-padding">
-    <h4 class="bt-recent-updates-title w3-left w3-text-black"><b><i class="fa fa-newspaper-o bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n "recent updates" | default "Recent updates") | markdownify | humanize }}</h4>
+    <h4 class="bt-recent-updates-title w3-left w3-text-black"><strong><i class="fa fa-newspaper-o bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (i18n "recent updates" | default "Recent updates") | markdownify | humanize }}</h4>
   </div>
   <ul class="bt-ul bt-recent-updates-ul w3-ul w3-hoverable w3-white">
     {{ range $pages }}

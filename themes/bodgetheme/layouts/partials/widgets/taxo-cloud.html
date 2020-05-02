@@ -5,7 +5,7 @@
 {{- $tag_count := len $tags }}
 <div class="bt-taxo-cloud bt-taxo-{{ $taxonomy }}-cloud w3-card w3-margin"> {{ "<!-- Tag cloud -->" | safeHTML -}}
   <div class="bt-taxo-cloud-title-container w3-container w3-padding">
-    <h4 class="bt-taxo-cloud-title w3-left w3-text-black"><b><i class="fa fa-cloud bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n $taxonomy | default $taxonomy) | markdownify | humanize }}</h4>
+    <h4 class="bt-taxo-cloud-title w3-left w3-text-black"><strong><i class="fa fa-cloud bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (i18n $taxonomy | default $taxonomy) | markdownify | humanize }}</h4>
   </div>
   <div class="bt-taxo-item-container w3-container w3-white">
     {{- if ge $tag_count 1 -}}

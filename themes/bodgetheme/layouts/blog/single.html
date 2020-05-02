@@ -16,9 +16,9 @@
       <div class="bt-blog-single-title-container w3-container">
         {{- if .Params.icon_name }}
           {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-        <h3 class="bt-blog-single-title w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) }}</h3>
+        <h3 class="bt-blog-single-title w3-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) }}</h3>
         {{- else }}
-        <h3 class="bt-blog-single-title w3-text-black"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) }}</h3>
+        <h3 class="bt-blog-single-title w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) }}</h3>
         {{- end }}
         {{- $author := "" }}
         {{- $link   := "" }}
@@ -42,7 +42,7 @@
             <hr>
             <a class="bt-blog-about-link" href="{{ .Permalink }}" style="text-decoration:none;">
               <div class="bt-blog-about-title-container">
-                <h4 class="bt-blog-about-title w3-text-black"><b><i class="fa fa-pencil-square-o bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n "about" | default "About") | markdownify }} {{ .Params.Name }}</h4>
+                <h4 class="bt-blog-about-title w3-text-black"><strong><i class="fa fa-pencil-square-o bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (i18n "about" | default "About") | markdownify }} {{ .Params.Name }}</h4>
                 <span class="bt-blog-about-bio w3-small">{{ .Params.bio }}</span>
               </div>
             </a>
@@ -73,13 +73,13 @@
     {{- range $project }}
       {{- if .Params.icon_name }}
         {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-    <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ .Title | default "Unknown project" }}</h3>
+    <h3 class="bt-page-header-title w3-left w3-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></strong>{{ .Title | default "Unknown project" }}</h3>
       {{- else }}
-    <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ .Title | default "Unknown project" }}</h3>
+    <h3 class="bt-page-header-title w3-left w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></strong>{{ .Title | default "Unknown project" }}</h3>
       {{- end }}
     {{- end }}
   {{- else }}
-  <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>Unknown project</h3>
+  <h3 class="bt-page-header-title w3-left w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></strong>Unknown project</h3>
   {{- end }}
 </header>
 {{ end }}
@@ -105,9 +105,9 @@
     <div class="bt-blog-about-project-title-container w3-container w3-white">
       {{- if .Params.icon_name }}
         {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-      <h4 class="bt-blog-about-project-title w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) | truncate 20 }}</h4>
+      <h4 class="bt-blog-about-project-title w3-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) | truncate 20 }}</h4>
       {{- else }}
-      <h4 class="bt-blog-about-project-title w3-text-black"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) | truncate 25 }}</h4>
+      <h4 class="bt-blog-about-project-title w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) | truncate 25 }}</h4>
       {{- end }}
       <p class="bt-blog-about-project-description">{{ .Description }}</p>
     </div>

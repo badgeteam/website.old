@@ -4,7 +4,7 @@
 {{- if or (.Params.email) (.Params.contact) (.Params.social) }}
 <div class="bt-project-about-project w3-card w3-margin w3-margin-top">
   <div class="t-recent-updates-title-container w3-container w3-padding">
-    <h4 class="bt-recent-updates-title w3-left w3-text-black"><b><i class="fa fa-address-card-o bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n "references" | default "References") | markdownify | humanize }}</h4>
+    <h4 class="bt-recent-updates-title w3-left w3-text-black"><strong><i class="fa fa-address-card-o bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (i18n "references" | default "References") | markdownify | humanize }}</h4>
   </div>
   {{- if or (.Params.email) (.Params.contact) }}
   <div class="bt-team-single-contact w3-container">

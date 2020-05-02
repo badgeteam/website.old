@@ -1,6 +1,7 @@
+{{- $logo := resources.Get "images/logo.png" }}
     <div class="bt-header w3-top"> {{ "<!-- Header navigation bar -->" | safeHTML }}
       <div class="bt-header-navbar w3-bar w3-white w3-wide w3-padding w3-card">
-        <a class="bt-button bt-header-home-button w3-bar-item w3-button w3-round" title="Home" href="/"><img class="" alt="" style="height:1.2em" src="/images/logo.png"> {{ .Site.Title | upper }}</a>
+        <a class="bt-button bt-header-home-button w3-bar-item w3-button w3-round" title="Home" href="/">{{ if $logo }}<img class="" alt="" style="height:1.2em" src="{{ $logo.Permalink }}"> {{ end }}{{ .Site.Title | upper }}</a>
 
 {{- if site.Menus.main }}
         <div class="bt-button-container w3-right"> {{ "<!-- Float links to the right. Hide them on small screens. -->" | safeHTML }}

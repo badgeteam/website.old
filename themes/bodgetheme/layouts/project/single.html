@@ -31,9 +31,9 @@
       <div class="bt-project-single-title-container w3-container">
         {{- if .Params.icon_name }}
           {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-        <h3 class="bt-project-single-title w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) }}</h3>
+        <h3 class="bt-project-single-title w3-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) }}</h3>
         {{- else }}
-        <h3 class="bt-project-single-title w3-text-black"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) }}</h3>
+        <h3 class="bt-project-single-title w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) }}</h3>
         {{- end }}
         {{- $author := "" }}
         {{- $link   := "" }}
@@ -51,7 +51,7 @@
         {{- if or (.Description) (.Truncated) }}
         <div class="bt-project-single-read-more-row w3-row">
           <div class="bt-project-single-read-more-col w3-col m12 s12">
-            <p class="bt-project-single-read-more-title w3-right"><a class="w3-button w3-padding-large w3-white w3-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><b>READ MORE &Rang;</b></a></p>
+            <p class="bt-project-single-read-more-title w3-right"><a class="w3-button w3-padding-large w3-white w3-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><strong>READ MORE &Rang;</strong></a></p>
           </div>
         </div>
         {{- end }}
@@ -75,9 +75,9 @@
 <header class="bt-page-header w3-container w3-center">
   {{- if .Params.icon_name }}
     {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-  <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ .Title | default .Site.Title }}</h3>
+  <h3 class="bt-page-header-title w3-left w3-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></strong>{{ .Title | default .Site.Title }}</h3>
   {{- else }}
-  <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ .Title | default .Site.Title }}</h3>
+  <h3 class="bt-page-header-title w3-left w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></strong>{{ .Title | default .Site.Title }}</h3>
   {{- end }}
 </header>
 {{ end }}
@@ -95,9 +95,9 @@
   <div class="bt-project-about-project-title-container w3-container w3-white">
     {{- if .Params.icon_name }}
       {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-    <h4 class="bt-project-about-project-title w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) | truncate 20 }}</h4>
+    <h4 class="bt-project-about-project-title w3-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) | truncate 20 }}</h4>
     {{- else }}
-    <h4 class="bt-project-about-project-title w3-text-black"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) | truncate 25 }}</h4>
+    <h4 class="bt-project-about-project-title w3-text-black"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></strong>{{ (.Title | default .Site.Title) | truncate 25 }}</h4>
     {{- end }}
     <p class="bt-project-about-project-description ">{{ .Description }}</p>
   </div>

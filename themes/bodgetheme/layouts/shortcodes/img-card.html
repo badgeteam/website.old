@@ -4,11 +4,12 @@
   {{- $img_class := (.Get "class") | default "" }}
   {{- $img_title := (.Get "title") }}
   {{- $img_descr := (.Get "descr") }}
+  {{- $image     := (partial `functions/get_image` (dict "context" . "src" $img_src)) }}
     <div class="bt-img-card w3-card w3-white" style="width:{{ $img_width }}">
-      <img class="bt-img-card-img bt-image {{ $img_class }}" src="{{ $img_src }}" alt="{{ $img_alt }}" style="width:100%">
+      <img class="bt-img-card-img bt-image {{ $img_class }}" src="{{ if $image }}{{ $image.RelPermalink }}{{ else }}{{ $img_src }}{{ end }}" alt="{{ $img_alt }}" style="width:100%">
       <div class="bt-img-card-caption w3-container">
         {{- if $img_title -}}
-        <h4><b>{{ $img_title }}</b></h4>
+        <h4><strong>{{ $img_title }}</strong></h4>
         {{- end -}}
         {{- if $img_descr -}}
         <p>{{ $img_descr }}</p>

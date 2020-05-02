@@ -16,18 +16,18 @@
   {{- if $avatar }}
       <div class="bt-team-single-container w3-display-container w3-black">
         <img class="bt-team-single-image bt-image w3-image" src="{{ $avatar.RelPermalink }}" alt="{{ .Params.Name }}" style="width:100%">
-        <div class="w3-container w3-display-bottomleft w3-text-white">
+        <div class="w3-container w3-display-bottomleft w3-text-blue">
           {{- with .Params.icon_name }}
           {{- $icon_pack := ($page.Params.icon_pack | default "fa") }}
-          <h3 class="bt-team-single-name w3-text-white w3-padding-8"><b><i class="{{ $icon_pack }} {{ . }} bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</b></h3>
+          <h3 class="bt-team-single-name w3-padding-8"><strong><i class="{{ $icon_pack }} {{ . }} bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</strong></h3>
           {{- else }}
-          <h3 class="bt-team-single-name w3-text-white w3-padding-8"><b><i class="fa fa-address-card bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</b></h3>
+          <h3 class="bt-team-single-name w3-padding-8"><strong><i class="fa fa-address-card bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</strong></h3>
           {{- end }}
         </div>
       </div>
   {{- else }}
-      <div class="bt-team-single-container w3-container w3-black">
-        <h3 class="bt-team-single-name w3-text-white w3-padding-8"><b><i class="fa fa-address-card bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</b></h3>
+      <div class="bt-team-single-container w3-container w3-black w3-text-white">
+        <h3 class="bt-team-single-name w3-padding-8"><strong><i class="fa fa-address-card bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ $page.Params.fullname }}</strong></h3>
       </div>
   {{- end }}
 {{- end }}
@@ -79,12 +79,12 @@
     {{- if (index .Params.organizations 0).name }}
     {{- with .Params.organizations }}
     <div class="bt-team-single-organizations w3-container w3-card w3-margin w3-white">
-      <p class="bt-team-single-organizations-title w3-large"><b><i class="fa fa-university bt-icon w3-margin-right w3-text-teal"></i>{{ (i18n "organizations" | default "Organizations") | markdownify }}</b></p>
+      <p class="bt-team-single-organizations-title w3-large"><strong><i class="fa fa-university bt-icon w3-margin-right w3-text-teal"></i>{{ (i18n "organizations" | default "Organizations") | markdownify }}</strong></p>
       {{- $separator := false }}
       {{- range . }}
       {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
       {{ with .url }}<a class="bt-team-single-organizations-link" href="{{ . }}" target="_blank" rel="noopener" style="text-decoration:none;">{{ end }}
-      <h6 class="bt-team-single-organizations-name w3-opacity"><b>{{ .name }}</b></h6>
+      <h6 class="bt-team-single-organizations-name w3-opacity"><strong>{{ .name }}</strong></h6>
       {{ if .url }}</a>{{ end }}
       {{ with .role }}<h6 class=""><i class="fa fa-briefcase bt-team-single-organizations-role bt-icon w3-margin-right"></i><span>{{ . }}</span></h6>{{- end }}
       {{- end }}
@@ -94,14 +94,14 @@
 
     {{- with .Params.bio }}
     <div class="bt-team-single-bio w3-container w3-card w3-margin w3-white">
-      <p class="bt-team-single-bio-title w3-large"><b><i class="fa fa-address-card bt-icon w3-margin-right w3-text-teal"></i>{{ (i18n "biography" | default "Biography") | markdownify }}</b></p>
+      <p class="bt-team-single-bio-title w3-large"><strong><i class="fa fa-address-card bt-icon w3-margin-right w3-text-teal"></i>{{ (i18n "biography" | default "Biography") | markdownify }}</strong></p>
       <p class="bt-team-single-bio-content">{{ . }}</p>
     </div>
     {{- end }}
 
     {{- with .Params.interests }}
     <div class="bt-team-single-interests w3-container w3-card w3-margin w3-white">
-      <p class="bt-team-single-interests-title w3-large"><b><i class="fa fa-heart bt-icon w3-margin-right w3-text-teal"></i>{{ (i18n "interests" | default "Interests") | markdownify }}</b></p>
+      <p class="bt-team-single-interests-title w3-large"><strong><i class="fa fa-heart bt-icon w3-margin-right w3-text-teal"></i>{{ (i18n "interests" | default "Interests") | markdownify }}</strong></p>
       <ul class="bt-team-single-interests-ul bt-ul ul-interests">
         {{ range . }}
         <li class="bt-team-single-interests-li bt-li">{{ . | markdownify | emojify }}</li>
@@ -112,11 +112,11 @@
 
     {{- with .Params.education }}
     <div class="bt-team-single-education w3-container w3-card w3-margin w3-white">
-      <p class="bt-team-single-education-title w3-large"><b><i class="fa fa-graduation-cap bt-icon w3-margin-right w3-text-teal"></i>{{ i18n "education" | markdownify }}</b></p>
+      <p class="bt-team-single-education-title w3-large"><strong><i class="fa fa-graduation-cap bt-icon w3-margin-right w3-text-teal"></i>{{ i18n "education" | markdownify }}</strong></p>
       {{- $separator := false }}
       {{- range .courses }}
       {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
-      <h6 class="bt-team-single-education-institution w3-opacity"><b>{{ .institution }}</b></h6>
+      <h6 class="bt-team-single-education-institution w3-opacity"><strong>{{ .institution }}</strong></h6>
       {{- with .year }}
       <h7 class="bt-team-single-education-year"><i class="fa fa-calendar bt-icon w3-margin-right"></i>{{ . }}</h7>
       {{- end }}
@@ -130,7 +130,7 @@
   <div class="w3-col w3-twothird">
     {{- with .Content }}
     <div class="bt-team-single-about w3-container w3-card w3-margin w3-white">
-      <h3 class="bt-team-single-about-title w3-text-black w3-padding-8"><b><i class="fa fa-user-circle bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "about" | default "About") | markdownify }}</b></h3>
+      <h3 class="bt-team-single-about-title w3-text-black w3-padding-8"><strong><i class="fa fa-user-circle bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "about" | default "About") | markdownify }}</strong></h3>
       <p class="bt-team-single-about-content">{{ . }}</p>
     </div>
     {{- end }}
@@ -139,11 +139,11 @@
     {{- $projects_count := len $projects }}
     {{- if ge $projects_count 1 }}
     <div class="bt-team-single-projects w3-container w3-card w3-margin w3-white">
-      <h3 class="bt-team-single-projects-title w3-text-black w3-padding-8"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "projects" | default "Projects") | markdownify }}</b></h3>
+      <h3 class="bt-team-single-projects-title w3-text-black w3-padding-8"><strong><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i>{{ (i18n "projects" | default "Projects") | markdownify }}</strong></h3>
       {{- $separator := false }}
       {{- range $projects }}
       {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
-        <h5 class="bt-team-single-projects-project-title w3-opacity"><b>{{ .Title }}</b></h5>
+        <h5 class="bt-team-single-projects-project-title w3-opacity"><strong>{{ .Title }}</strong></h5>
         {{- if .Params.active }}
         <h6 class="bt-team-single-projects-project-date w3-text-teal"><i class="fa fa-calendar bt-icon w3-margin-right"></i>{{ .Date.Format "January 2006" }} - <span class="w3-tag w3-teal w3-round">Current</span></h6>
         {{- else }}
