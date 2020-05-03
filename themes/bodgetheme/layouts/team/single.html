@@ -14,9 +14,9 @@
     {{- $avatar = $image.Resize "600x600" }}
   {{- end }}
   {{- if $avatar }}
-      <div class="bi-team-single-container bt-display-container bt-black">
+      <div class="bi-team-single-container bt-display-container bt-white">
         <img class="bi-team-single-image bi-image bt-image" src="{{ $avatar.RelPermalink }}" alt="{{ .Params.Name }}" style="width:100%">
-        <div class="bt-container bt-display-bottomleft bt-text-blue">
+        <div class="bt-container bt-display-bottom bt-text-black">
           {{- with .Params.icon_name }}
           {{- $icon_pack := ($page.Params.icon_pack | default "fa") }}
           <h3 class="bi-team-single-name bt-padding-8"><strong><i class="{{ $icon_pack }} {{ . }} bi-icon bt-margin-right bt-xlarge bt-text-teal"></i>{{ $page.Params.fullname }}</strong></h3>
