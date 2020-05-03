@@ -18,6 +18,19 @@ teams :
 - HH2020
 - MCH2021
 
+#projects :
+#- project     : Bodgetheme
+#  role        : developer
+#  description :
+#- project     : CZ2019
+#  role        :
+#  description :
+#- project     : HH2020
+#  role        :
+#  description :
+#- project     : MCH2021
+#  role        :
+#  description :
 
 #### Mini profile (Displayed at end of posts, where available)
 
