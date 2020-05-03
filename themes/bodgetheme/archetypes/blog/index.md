@@ -16,7 +16,7 @@ description : ""
 {{- $tail         := index $tails 0 }}
 {{- $projects     := findRE "[^/]+" $tail }}
 {{- $project      := index $projects 0 }}
-projects    : ["{{ $project | upper }}"]
+projects    : ["{{ $project | upper | default "ReplaceThisWithTheCorrectProjectID" }}"]
 
 # For alternative external reference only
 slugs       : []

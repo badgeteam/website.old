@@ -2,8 +2,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {{ hugo.Generator }}
-  <meta name="generator" content="Hugo with Badge.team Bodgetheme">
-  <meta name="author" content="Noor Draconia, Rob Verseijden">
+  <meta name="theme:generator" content="Hugo with Badge.team Bodgetheme">
+  <meta name="theme:author" content="Noor Draconia, Rob Verseijden">
   {{- $keywords := slice }}
   {{- range (index .Site.Taxonomies "tags").ByCount -}}{{ $keywords = $keywords | append .Page.Title }}{{- end }}
   <meta name="keywords" content="{{ delimit ($keywords) "," }}">
@@ -25,12 +25,26 @@
   {{- range $lastmod }}
   <meta name="revision" content="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}" />
   {{- end }}
+  {{- if .IsPage }}
+    {{- if not .PublishDate.IsZero }}
+  <meta property="article:published_time" content="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+    {{- else if not .Date.IsZero }}
+  <meta property="article:published_time" content="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+    {{- end }}
+    {{- if not .Lastmod.IsZero }}
+  <meta property="article:modified_time" content="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+    {{- end }}
+  {{- else }}
+    {{- if not .Date.IsZero }}
+  <meta property="og:updated_time" content="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+    {{- end }}
+  {{- end }}
 
   {{- /*- Page title */}}
-  <title>{{ block "title" . }}{{ .Site.Title | upper }}{{ end }}</title>
+  <title>{{ block "title" . }}{{ if not .IsHome }}{{ .Params.name | default .Title }} - {{ end }}{{ .Site.Title | upper }}{{ end }}</title>
 
   {{- /* Stylesheet links */}}
-  <link rel="canonical" href="{{ .Site.BaseURL | lower }}" />
+  <link rel="canonical" href="{{ .Permalink }}" />
   {{- $bodge_css := resources.Get "css/bodgetheme.css" }}
   {{- if $bodge_css }}
     {{- $bodge_css = $bodge_css | minify }}
@@ -52,8 +66,24 @@
   {{- if fileExists (printf "static/css/%s.css" (.Section | lower) ) }}
   <link rel="stylesheet" href="{{ (printf "/css/%s.css" (.Section | lower)) | relURL }}">
   {{- end }}
-  
+
+  {{- /* Alternative languages */}}
+  {{- with .Translations }}
+    {{ range . }}
+  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+    {{ end }}
+  {{- else }}
+  <link rel="alternate" hreflang="{{ site.LanguageCode | default "en-us" }}" href="{{ .Permalink }}">
+  {{- end }}
+
+  {{- /* Alternative output formats */}}
+  {{- range .AlternativeOutputFormats }}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title | safeHTML }}">
+  {{- end }}
+
   {{- /* Icons */}}
   <link rel="icon" type="image/x-icon" sizes="16x16" href="/images/ico/favicon.ico">
   <link rel="icon" type="image/png" sizes="640x640" href="/images/ico/favicon.png">
   <link rel="apple-touch-icon" sizes="640x640" href="/images/ico/favicon.png">
+
+  {

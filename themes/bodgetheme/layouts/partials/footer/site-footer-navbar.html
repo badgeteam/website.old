@@ -1,7 +1,8 @@
     <div class="bi-footer bt-bottom bt-black bt-opacity bt-hover-opacity-off"> {{ "<!-- Footer navigation bar -->" | safeHTML }}
       <div class="bi-footer-navbar bt-bar bt-wide bt-padding">
-        <a class="bi-button bi-footer-home-button bt-bar-item bt-button bt-round" title="Home" href="/"><strong>{{ .Site.Title | title }}</strong></a>
-        <div class="bi-button-container bt-right bt-hide-small">
+        <a class="bi-button bi-footer-home-button bt-bar-item bt-button bt-round bt-hide-small" title="Home" href="/"><strong>{{ .Site.Title | title }}</strong></a>
+        <div class="bi-button-container bt-right">
+
           {{- /* Menus navbar_bottom */}}
           {{- with .Site.Menus }}
             {{- range .navbar_bottom }}
@@ -10,6 +11,7 @@
             </a>
             {{- end }}
           {{- end }}
+
           {{- /* Params navbar.bottom */}}
           {{- with .Site.Params.navbar }}
             {{- range sort .bottom "weight" }}
@@ -17,6 +19,13 @@
               <i class="{{ .icon_pack }} {{ .icon_name }} bt-hover-opacity"></i>
             </a>
             {{- end }}
+          {{- end }}
+
+          {{- /* Links to other output formats */}}
+          {{- with  .OutputFormats.Get "rss" }}
+            <a class="bi-button bi-footer-button bt-bar-item" title="RSS" alt="RSS" href="{{ .Permalink }}">
+              <i class="fa fa-rss bt-hover-opacity"></i>
+            </a>
           {{- end }}
         </div>
       </div>

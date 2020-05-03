@@ -75,6 +75,17 @@ gallery:
   - image   : "people.jpg"
     caption : "People"
     exclude : false
+
+# Menu reference
+#  PLEASE use sparse and wisely!
+#menu:
+#  navbar_top:
+#    name   : "{{ replace .Name "-" " " | title }}"
+#    parent : "projects"
+#    url    : "/project/{{ .Name | lower }}/"
+#    weight : 1000
+#    pre    : "<i class='fa fa-suitcase'></i> "
+#    post   : ""
 ---
 
 ### {{< icon name="fa-suitcase" >}} {{ replace .Name "-" " " | title }} Project
