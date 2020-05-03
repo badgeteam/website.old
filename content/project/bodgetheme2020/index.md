@@ -74,6 +74,15 @@ gallery:
   - image   : "bodge.jpg"
     caption : "Imagine"
     exclude : false
+
+#menu:
+#  navbar_top:
+#    name   : "Bodgetheme"
+#    parent : "projects"
+#    url    : "/project/bodgetheme2020/"
+#    weight : 100
+#    pre    : "<i class='fa fa-bug'></i> "
+#    post   : ""
 ---
 
 ### {{< icon name="fa-bug" >}} Badge.team website project
