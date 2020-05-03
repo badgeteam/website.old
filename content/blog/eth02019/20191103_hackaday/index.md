@@ -6,7 +6,7 @@ author      : "jenny"
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
-description : ""
+description : "ETH0 has been mentioned in a nice story at Hackaday."
 
 # Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
 # mnemonic, to refer to the project this blog is related to.
@@ -62,6 +62,6 @@ gallery:
     exclude : false
 ---
 
-# Hackaday
+# ETH0 at Hackaday
 
-ETH0 has been mentioned in a nice story at [Hackaday](https://hackaday.com/2019/11/03/eth0-autumn-2019-tiny-camp-creative-badge/)
+Hackaday has a really nice post about the ETH0 event held this year. You can read it [here](https://hackaday.com/2019/11/03/eth0-autumn-2019-tiny-camp-creative-badge/) at Hackaday.

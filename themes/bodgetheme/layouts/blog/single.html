@@ -32,7 +32,7 @@
         <span class="bi-blog-single-date bt-left bt-opacity bt-small">{{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{ if $link }}<a href="{{ $link }}">{{ end }}{{ $author }}{{ if $link }}</a>{{ end }}{{ end }}</span>
       </div>
       <div class="bi-blog-single-description bt-container">
-        <p>{{ .Description }}</p>
+        {{- if .Params.showdescription }}<p>{{ .Description }}</p>{{ end }}
         <hr>
         {{ .Content }}
         {{- if and (.Params.Author) (.Params.about_show) (.Params.about_inline) }}
