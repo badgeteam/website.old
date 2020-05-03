@@ -19,7 +19,7 @@ defaultImage = "/images/mascot_600x600.png"
     paginate = 10
 
 [team]
-  paginate = 8
+  paginate = 1000
 
 [gallery]
   maximage = 4
