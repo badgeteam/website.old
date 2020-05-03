@@ -3,6 +3,7 @@ baseurl      = "https://bodge.team"
 languageCode = "en-us"
 title        = "badge.team"
 theme        = "bodgetheme"
+copyright    = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 
 # File locations
 contentdir = "content"
@@ -17,7 +18,9 @@ paginatepath   = "p"
 # Preferences robots.txt
 enableRobotsTXT = true
 
+# Miscellaneous item (until we find a better place)
 enableEmoji = true
+rssLimit    = 10
 
 [taxonomies]
   tag      = "tags"
@@ -27,3 +30,32 @@ enableEmoji = true
   blog     = "blogs"
   team     = "teams"
   nickname = "nicknames"
+
+[outputs]
+  home = [ "HTML", "RSS" ]
+  section = [ "HTML", "RSS" ]
+
+[minify]
+  disableCSS   = false
+  disableHTML  = false
+  disableJS    = false
+  disableJSON  = false
+  disableSVG   = false
+  disableXML   = false
+  minifyOutput = false
+  [minify.tdewolff]
+    [minify.tdewolff.css]
+      decimals = -1
+      keepCSS2 = true
+    [minify.tdewolff.html]
+      keepConditionalComments = true
+      keepDefaultAttrVals     = true
+      keepDocumentTags        = true
+      keepEndTags             = true
+      keepWhitespace          = false
+    [minify.tdewolff.js]
+    [minify.tdewolff.json]
+    [minify.tdewolff.svg]
+      decimals = -1
+    [minify.tdewolff.xml]
+      keepWhitespace = false

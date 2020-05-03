@@ -1,11 +1,22 @@
 mainSections = ["blog","project"]
 defaultImage = "/images/mascot_600x600.png"
 
+[theme]
+  generator = "Badge.team Bodgetheme"
+  revision  = 2020-05-03T13:37:42Z
+  author    = "Noor Draconia, Rob Verseijden"
+
 [blog]
   paginate = 5
 
+  [blog.blogs]
+    paginate = 10
+
 [project]
   paginate = 5
+
+  [project.blogs]
+    paginate = 10
 
 [team]
   paginate = 8

@@ -2,8 +2,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {{ hugo.Generator }}
-  <meta name="theme:generator" content="Hugo with Badge.team Bodgetheme">
-  <meta name="theme:author" content="Noor Draconia, Rob Verseijden">
+  {{- with $.Site.Params.theme }}
+  <meta name="theme:generator" content="{{ .generator }}">
+  <meta name="theme:revision" content="{{ .revision.UTC.Format "2006-01-02T15:04:05Z07:00" }}" />
+  <meta name="theme:author" content="{{ .author }}">
+  {{- end }}
   {{- $keywords := slice }}
   {{- range (index .Site.Taxonomies "tags").ByCount -}}{{ $keywords = $keywords | append .Page.Title }}{{- end }}
   <meta name="keywords" content="{{ delimit ($keywords) "," }}">
@@ -78,12 +81,10 @@
 
   {{- /* Alternative output formats */}}
   {{- range .AlternativeOutputFormats }}
-  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title | safeHTML }}">
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{- end }}
 
   {{- /* Icons */}}
   <link rel="icon" type="image/x-icon" sizes="16x16" href="/images/ico/favicon.ico">
   <link rel="icon" type="image/png" sizes="640x640" href="/images/ico/favicon.png">
   <link rel="apple-touch-icon" sizes="640x640" href="/images/ico/favicon.png">
-
-  {
