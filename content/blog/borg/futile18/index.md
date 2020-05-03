@@ -1,8 +1,8 @@
 ---
-date        : {{ .Date }}
-lastmod     : {{ .Date }}
+date        : 2020-05-03T07:28:10+02:00
+lastmod     : 2020-05-03T07:28:10+02:00
 draft       : true
-title       : "{{ replace .Name "-" " " | title }}"
+title       : "Futile18"
 author      : "Anonymous"
 
 # Description overrides the automated summary of marked-up content
@@ -11,12 +11,7 @@ description : ""
 
 # Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
 # mnemonic, to refer to the project this blog is related to.
-{{- $tailsearcher := printf "[^/]+/%s/index.md" .Name | lower }}
-{{- $tails        := findRE $tailsearcher (.File.Path | lower) }}
-{{- $tail         := index $tails 0 }}
-{{- $projects     := findRE "[^/]+" $tail }}
-{{- $project      := index $projects 0 }}
-projects    : ["{{ $project | upper | default "ReplaceThisWithTheCorrectProjectID" }}"]
+projects    : ["BORG"]
 
 # For alternative external reference only
 slugs       : []
@@ -51,23 +46,21 @@ gallery:
 - album   : "images"
   exclude : true
   images  :
-  - image        : "imagine.jpg"
-    caption      : "Imagine"
-    exclude      : false
-    external_url : ""
-  - image        : "people.jpg"
-    caption      : "People"
-    exclude      : false
-    external_url : ""
+  - image   : "imagine.jpg"
+    caption : "Imagine"
+    exclude : false
+  - image   : "people.jpg"
+    caption : "People"
+    exclude : false
 
 # Write the content of this blog page below in markup language.
 # An emoji cheat sheet can be found here:
 #  https://www.webfx.com/tools/emoji-cheat-sheet/
 ---
 
-##### {{ replace .Name "-" " " | title }} project blog page.
+##### Futile18 project blog page.
 
-Welcome to this blog page of the {{ replace .Name "-" " " | title }} project. This page is work in progress and should be filled with new content soon.
+Welcome to this blog page of the Futile18 project. This page is work in progress and should be filled with new content soon.
 
 <!--more-->
 

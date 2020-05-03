@@ -13,8 +13,15 @@ categories  :
 
 # Photo gallery
 gallery:
-- image   : "image1.jpg"
-  caption : "Imagine One"
-- image   : "image2.jpg"
-  caption : "Imagine Two"
+- album   : "images"
+  exclude : false
+  images  :
+  - image        : "image1.jpg"
+    caption      : "Imagine One"
+    exclude      : false
+    external_url : ""
+  - image        : "image2.jpg"
+    caption      : "Imagine Two"
+    exclude      : false
+    external_url : ""
 ---

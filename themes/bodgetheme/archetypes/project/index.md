@@ -69,12 +69,14 @@ gallery:
 - album   : "images"
   exclude : true
   images  :
-  - image   : "imagine.jpg"
-    caption : "Imagine"
-    exclude : false
-  - image   : "people.jpg"
-    caption : "People"
-    exclude : false
+  - image        : "imagine.jpg"
+    caption      : "Imagine"
+    exclude      : false
+    external_url : ""
+  - image        : "people.jpg"
+    caption      : "People"
+    exclude      : false
+    external_url : ""
 
 # Menu reference
 #  PLEASE use sparse and wisely!
