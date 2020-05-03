@@ -1,16 +1,16 @@
 {{ define "main" }}
 {{ "<!-- Project single -->" | safeHTML }}
+{{- $maxpaginate := .Site.Params.project.blogs.paginate | default 10 }}
 {{- with .Content }}
 <div class="bi-project-single-about bt-container bt-card bt-margin bt-white">
   <p class="bi-project-single-about-content">{{ . }}</p>
 </div>
 {{- end }}
 <div class="bi-project-single-row bt-row">
-  {{ $blogs := where .Site.RegularPages "Section" "blog" }}
-  {{ $project_blogs  := first 10 (where $blogs "Params.projects" "intersect" .Params.projects) }}
-  {{ $project_blogs_count := len $project_blogs }}
-  {{ if ge $project_blogs_count 1 }}
-  {{ "<!-- Blogs -->" | safeHTML }}
+  {{- $project_blogs := first $maxpaginate (where (where .Site.RegularPages "Section" "blog") "Params.projects" "intersect" .Params.projects) }}
+  {{- $project_blogs_count := len $project_blogs }}
+  {{- if ge $project_blogs_count 1 }}
+  {{- "<!-- Blogs -->" | safeHTML }}
   <div class="bi-project-single-col bt-col">
     {{- with .Content }}{{/* Title acts as separator between page default content and blogs. */}}
     <div class="bi-index-projects-active-title-container bt-container bt-center">

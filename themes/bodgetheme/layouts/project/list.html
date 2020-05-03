@@ -36,7 +36,11 @@
       </div>
     </div>
     {{- end }}
-    {{- template "partials/pagination.html" . }}
+    <div class="bi-article-navigation bt-container">
+      <div class="bi-article-nav-row bt-row bt-center">
+        {{- template "partials/pagination.html" . }}
+      </div>
+    </div>
   </div>
   {{ "<!-- End projects -->" | safeHTML }}
   {{ end }}
