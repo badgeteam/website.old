@@ -5,9 +5,8 @@
 {{ partial "header/site-header.html" . }}
     <div class="bi-page-wrapper bt-content bt-padding bt-margin-top" style="max-width:1500px"> {{ "<!-- Page content -->" | safeHTML }}
       {{- block "page-header" . }}{{- end }}
-      <aside class="bi-aside-left bt-col bt-left m4">{{- block "aside-left" . }}{{- end }}</aside>
-      <aside class="bi-aside-right bt-col bt-right m4">{{- block "aside-right" . }}{{- end }}</aside>
-      <div class="bi-main bt-col bt-rest">{{- block "main" . }}{{- end }}</div>
+      <aside class="bi-aside-left bt-col bt-third bt-left">{{- block "aside-left" . }}{{- end }}</aside>
+      <div class="bi-main bt-col bt-twothird">{{- block "main" . }}{{- end }}</div>
       {{- block "page-footer" . }}{{- end }}
     </div> {{ "<!-- End page content -->" | safeHTML }}
 {{ partial "footer/site-footer.html" . }}
