@@ -48,6 +48,26 @@
   pre        = "<i class='fa fa-camera bt-hover-opacity'></i> "
   post       = ""
 
+# [[navbar_top]]
+#   identifier = "calendar"
+#   name       = "Calendar"
+#   title      = "Calendar"
+#   url        = "/calendar/"
+#   parent     = ""
+#   weight     = 400
+#   pre        = "<i class='fa fa-calendar bt-hover-opacity'></i> "
+#   post       = ""
+#
+# [[navbar_top]]
+#   identifier = "archive"
+#   name       = "Archive"
+#   title      = "Archive"
+#   url        = "/archive/"
+#   parent     = ""
+#   weight     = 500
+#   pre        = "<i class='fa fa-archive bt-hover-opacity'></i> "
+#   post       = ""
+
 
 # Bottom navigation bar items
 #   This allows you to add an additional button to the bottom navigation bar,

@@ -85,6 +85,12 @@ gallery:
 #    weight : 100
 #    pre    : "<i class='fa fa-bug'></i> "
 #    post   : ""
+
+calendar:
+  - title    : "HH 2020"
+    start    : 2020-03-14T13:37:00+01:00
+    end      : 2020-03-16T20:00:00+01:00
+    location : "Westcord Hotel De Veluwe"
 ---
 
 ### {{< icon name="fa-bug" >}} Badge.team website project
