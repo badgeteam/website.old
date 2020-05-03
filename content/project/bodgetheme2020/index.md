@@ -75,6 +75,8 @@ gallery:
     caption : "Imagine"
     exclude : false
 
+# Menu reference
+#  PLEASE use wisely!
 #menu:
 #  navbar_top:
 #    name   : "Bodgetheme"
