@@ -29,7 +29,7 @@ bio : ""
 fullname : {{ replace .Name "-" " " | title }}
 
 # Name icon (Shown in front of your name on profile)
-# For available icons, see: https://fontawesome.com
+# For available icons, see: https://forkaweso.me
 icon_name : fa-address-card
 icon_pack : fa
 
@@ -60,7 +60,7 @@ education :
     year        : 2019
 
 # Contact (Listed under personal details)
-# For available icons, see: https://fontawesome.com
+# For available icons, see: https://forkaweso.me
 contact :
 - title     : Webpage
   link      : https://www.my.site
@@ -76,7 +76,7 @@ contact :
   icon_name : fa-skype
 
 # Social (Listed in social-link bars)
-# For available icons, see: https://fontawesome.com
+# For available icons, see: https://forkaweso.me
 social :
 - title     : LinkedIn
   icon_name : fa-linkedin

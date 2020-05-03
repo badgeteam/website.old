@@ -1,33 +1,33 @@
 {{ define "main" }}
 {{ "<!-- Blogs list -->" | safeHTML }}
-<div class="bt-blog-list-row w3-row">
+<div class="bi-blog-list-row bt-row">
   {{ "<!-- Projects -->" | safeHTML }}
-  <div class="bt-blog-list-col w3-col">
+  <div class="bi-blog-list-col bt-col">
     {{ range .Paginator.Pages.ByLastmod.Reverse }}
       {{- $image := "" }}
       {{- if .Params.image_src }}
         {{- $image = .Resources.GetMatch .Params.image_src }}
       {{- end }}
     <!-- Blog entry -->
-    <div class="bt-blog-list w3-card w3-margin w3-white">
+    <div class="bi-blog-list bt-card bt-margin bt-white">
       {{ if $image }}
-		  <img class="bt-blog-list-image bt-image" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
+		  <img class="bi-blog-list-image bi-image" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
 		  {{ end }}
-      <div class="bt-blog-list-title-container w3-container">
+      <div class="bi-blog-list-title-container bt-container">
         {{- if .Params.icon_name }}
           {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-        <h3 class="bt-blog-list-title w3-text-black"><b><i class="{{ $icon_pack }} {{ .Params.icon_name }} bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) }}</h3>
+        <h3 class="bi-blog-list-title bt-text-black"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (.Title | default .Site.Title) }}</h3>
         {{- else }}
-        <h3 class="bt-blog-list-title w3-text-black"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (.Title | default .Site.Title) }}</h3>
+        <h3 class="bi-blog-list-title bt-text-black"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (.Title | default .Site.Title) }}</h3>
         {{- end }}
-        <span class="bt-blog-list-date w3-left w3-opacity w3-small">{{ .Lastmod.Format "Monday, 02 January 2006 15:04 MST" }}</span>
+        <span class="bi-blog-list-date bt-left bt-opacity bt-small">{{ .Lastmod.Format "Monday, 02 January 2006 15:04 MST" }}</span>
       </div>
-      <div class="bt-blog-list-description w3-container">
+      <div class="bi-blog-list-description bt-container">
         <p>{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary | plainify | emojify }}{{ end }}</p>
         {{- if or (.Description) (.Truncated) }}
-        <div class="bt-blog-list-description-read-more-row w3-row">
-          <div class="bt-blog-list-description-read-more-col w3-col m8 s12">
-            <p class="bt-blog-list-description-read-more-title"><a class="bt-blog-list-description-read-more-link w3-button w3-padding-large w3-white w3-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><b>READ MORE &raquo;</b></a></p>
+        <div class="bi-blog-list-description-read-more-row bt-row">
+          <div class="bi-blog-list-description-read-more-col bt-col m8 s12">
+            <p class="bi-blog-list-description-read-more-title"><a class="bi-blog-list-description-read-more-link bt-button bt-padding-large bt-white bt-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><strong>READ MORE &raquo;</strong></a></p>
           </div>
         </div>
         {{- end }}
@@ -42,8 +42,8 @@
 {{ end }}
 
 {{ define "page-header" }}
-<header class="bt-page-header w3-container w3-center">
-  <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="fa fa-suitcase bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "blogs" | default "Blogs") | markdownify }}</h3>
+<header class="bi-page-header bt-container bt-center">
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n "blogs" | default "Blogs") | markdownify }}</h3>
 </header>
 {{ end }}
 

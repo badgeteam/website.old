@@ -7,7 +7,7 @@ author      : "Anonymous"
 description : ""
 
 # At least one Identifying mnemonic, referring to the project(s) his blog is related to
-projects    : ["emf2022"]
+projects    : ["EMF2022"]
 
 # Identifying tags, searchable/visible to site visitors
 tags        : []

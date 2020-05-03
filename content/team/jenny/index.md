@@ -76,8 +76,8 @@ social :
   icon_name : fa-twitter
   icon_pack : fa
   link      : https://twitter.com/Jenny_Alto
-- title     : Github
-  icon_name : fa-github
+- title     : Hackaday
+  icon_name : fa-hackaday
   icon_pack : fa
-  link      : https://github.com/USERNAME
+  link      : https://hackaday.com/author/jennylist/
 ---

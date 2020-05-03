@@ -62,18 +62,38 @@ gallery:
 - album   : "images"
   exclude : false
   images  :
-  - image   : "bodge.jpg"
-    caption : "Bodge"
-    exclude : false
-  - image   : "bodgeteam.jpg"
-    caption : "Bodgeteam"
-    exclude : false
+  - image        : "bodge.jpg"
+    caption      : "Bodge"
+    exclude      : false
+    external_url : ""
+  - image        : "bodgeteam.jpg"
+    caption      : "Bodgeteam"
+    exclude      : false
+    external_url : "https://d2tjqtyh71h1pt.cloudfront.net/eda5377d-14ee-44ec-b300-3ab40e197a58/2bb72d7cb0a393a7c9e83b72a84fab9f.png"
 - album   : "thumbs"
   exclude : true
   images  :
-  - image   : "bodge.jpg"
-    caption : "Imagine"
-    exclude : false
+  - image        : "bodge.jpg"
+    caption      : "Imagine"
+    exclude      : false
+    external_url : ""
+
+# Menu reference
+#  PLEASE use wisely!
+#menu:
+#  navbar_top:
+#    name   : "Bodgetheme"
+#    parent : "projects"
+#    url    : "/project/bodgetheme2020/"
+#    weight : 100
+#    pre    : "<i class='fa fa-bug'></i> "
+#    post   : ""
+
+calendar:
+  - title    : "HH 2020"
+    start    : 2020-03-14T13:37:00+01:00
+    end      : 2020-03-16T20:00:00+01:00
+    location : "Westcord Hotel De Veluwe"
 ---
 
 ### {{< icon name="fa-bug" >}} Badge.team website project

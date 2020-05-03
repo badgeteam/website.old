@@ -1,13 +1,13 @@
 {{- "<!-- Team about widget -->" | safeHTML }}
 {{- $profile := partial `functions/get_team_member_profile` . }}
 {{- with $profile }}
-  <div class="bt-team-about w3-card w3-margin">
+  <div class="bi-team-about bt-card bt-margin">
     <a href="{{ .Permalink }}" style="text-decoration:none;">
-      <div class="bt-team-about-title-container w3-container w3-padding">
-        <h4 class="bt-team-about-title w3-left w3-text-black"><b><i class="fa fa-pencil-square-o bt-icon w3-margin-right w3-large w3-text-teal"></i></b>{{ (i18n "about" | default "About") | markdownify }} {{ .Params.Name }}</h4>
+      <div class="bi-team-about-title-container bt-container bt-padding">
+        <h4 class="bi-team-about-title bt-left bt-text-black"><strong><i class="fa fa-pencil-square-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "about" | default "About") | markdownify }} {{ .Params.Name }}</h4>
       </div>
-      <div class="bt-team-about-bio-container w3-container w3-padding">
-        <span class="bt-team-about-bio w3-small">{{ .Params.bio }}</span>
+      <div class="bi-team-about-bio-container bt-container bt-padding">
+        <span class="bi-team-about-bio bt-small">{{ .Params.bio }}</span>
       </div>
     </a>
   </div>

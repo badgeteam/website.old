@@ -1,0 +1,87 @@
+# Hamburger menu items
+#   Configure additional menu items in the 'Hamburger' menu.
+#   The weight parameter defines the order that the links will appear in.
+
+# [[main]]
+#   identifier = ""
+#   name       = "Main01"
+#   title      = "Main01"
+#   url        = "/"
+#   parent     = ""
+#   weight     = 100
+#   pre        = ""
+#   post       = ""
+
+# Top navigation bar items
+#   This allows you to add an additional button to the top navigation bar,
+#   in a Hugo-menu-item manner.
+#   NOTE: You can configure additional items in the navbar structure of
+#         the Params-configuration as well.
+
+[[navbar_top]]
+  identifier = "projects"
+  name       = "Projects"
+  title      = "Projects"
+  url        = "/project/"
+  parent     = ""
+  weight     = 100
+  pre        = "<i class='fa fa-cogs bt-hover-opacity'></i> "
+  post       = ""
+
+[[navbar_top]]
+  identifier = "team"
+  name       = "Team"
+  title      = "Team"
+  url        = "/team/"
+  parent     = ""
+  weight     = 200
+  pre        = "<i class='fa fa-users bt-hover-opacity'></i> "
+  post       = ""
+
+[[navbar_top]]
+  identifier = "gallery"
+  name       = "Gallery"
+  title      = "Gallery"
+  url        = "/gallery/"
+  parent     = ""
+  weight     = 300
+  pre        = "<i class='fa fa-camera bt-hover-opacity'></i> "
+  post       = ""
+
+# [[navbar_top]]
+#   identifier = "calendar"
+#   name       = "Calendar"
+#   title      = "Calendar"
+#   url        = "/calendar/"
+#   parent     = ""
+#   weight     = 400
+#   pre        = "<i class='fa fa-calendar bt-hover-opacity'></i> "
+#   post       = ""
+#
+# [[navbar_top]]
+#   identifier = "archive"
+#   name       = "Archive"
+#   title      = "Archive"
+#   url        = "/archive/"
+#   parent     = ""
+#   weight     = 500
+#   pre        = "<i class='fa fa-archive bt-hover-opacity'></i> "
+#   post       = ""
+
+
+# Bottom navigation bar items
+#   This allows you to add an additional button to the bottom navigation bar,
+#   in a Hugo-menu-item manner.
+#   NOTE: You are strongly encouraged to configure additional items in
+#         the navbar structure in the Params-configuration, which allows
+#         for a bit more flexibility and less html screw-ups.
+
+# [[navbar_bottom]]
+#   identifier = "ident01"
+#   name       = "Name01"
+#   title      = "Title01"
+#   url        = "/"
+#   parent     = ""
+#   weight     = 100
+#   pre        = "<i class='fa fa-hackaday bt-hover-opacity'></i>"
+#   post       = ""

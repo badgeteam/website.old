@@ -1,8 +1,8 @@
 {{ define "main" }}
 {{- $maxpaginate := .Site.Params.team.paginate | default 12 }}
-      <article class="bt-team-list"> {{ "<!-- Team -->" | safeHTML }}
-        <section class="bt-team-list-section"> {{ printf "<!-- The team -->" | safeHTML }}
-          <div class="bt-team-list-section-row w3-row-padding">
+      <article class="bi-team-list"> {{ "<!-- Team -->" | safeHTML }}
+        <section class="bi-team-list-section"> {{ printf "<!-- The team -->" | safeHTML }}
+          <div class="bi-team-list-section-row bt-row-padding">
   {{ range (.Paginate ( .Pages.ByParam "name" ) $maxpaginate).Pages }}
     {{- $member := .Page }}
     {{- $avatar := "" }}
@@ -12,25 +12,29 @@
         {{- $avatar = $image.Resize "600x600" }}
       {{- end }}
     {{- end }}
-            <div class="bt-team-list-section-col w3-col l3 m6 w3-margin-bottom">
-              <a class="bt-team-list-link" title="{{ $member.Params.Name }}" href="{{ $member.RelPermalink }}" style="text-decoration:none;">
-                <div class="bt-team-list-card w3-card">
+            <div class="bi-team-list-section-col bt-col l3 m6 bt-margin-bottom">
+              <a class="bi-team-list-link" title="{{ $member.Params.Name }}" href="{{ $member.RelPermalink }}" style="text-decoration:none;">
+                <div class="bi-team-list-card bt-card">
     {{- if $avatar }}
-                  <img class="bt-team-list-image bt-image w3-hover-grayscale" src="{{ $avatar.RelPermalink }}" alt="{{ $member.Params.Name | truncate 18 }}" style="width:100%">
+                  <img class="bi-team-list-image bi-image bt-hover-grayscale" src="{{ $avatar.RelPermalink }}" alt="{{ $member.Params.Name }}" style="width:100%">
     {{- end }}
-                  <div class="bt-team-list-name w3-container w3-center"><h5>{{ $member.Params.Name | truncate 18 }}</h5></div>
+                  <div class="bi-team-list-name bt-container bt-center"><h5>{{ $member.Params.Name }}</h5></div>
                 </div>
               </a>
             </div>
   {{- end }}
           </div>
         </section> {{ printf "<!-- End The team -->" | safeHTML }}
-        {{- template "partials/pagination.html" . }}
+        <div class="bi-article-navigation bt-container">
+          <div class="bi-article-nav-row bt-row bt-center">
+            {{- template "partials/pagination.html" . }}
+          </div>
+        </div>
       </article> {{ "<!-- End Team -->" | safeHTML }}
 {{- end }}
 
 {{ define "page-header" }}
-<header class="bt-page-header w3-container w3-center">
-  <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="fa fa-users bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "team" | default "Team") | markdownify }}</h3>
+<header class="bi-page-header bt-container bt-center">
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-users bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n "team" | default "Team") | markdownify }}</h3>
 </header>
 {{ end }}

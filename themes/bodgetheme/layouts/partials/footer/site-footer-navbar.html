@@ -1,28 +1,32 @@
-    <div class="bt-footer w3-bottom w3-black w3-opacity w3-hover-opacity-off"> {{ "<!-- Footer navigation bar -->" | safeHTML }}
-      <div class="bt-footer-navbar w3-bar w3-wide w3-padding">
-        <a class="bt-button bt-footer-home-button w3-bar-item w3-button w3-round" title="Home" href="/"><b>{{ .Site.Title | title }}</b></a>
+    <div class="bi-footer bt-bottom bt-black bt-opacity bt-hover-opacity-off"> {{ "<!-- Footer navigation bar -->" | safeHTML }}
+      <div class="bi-footer-navbar bt-bar bt-wide bt-padding">
+        <a class="bi-button bi-footer-home-button bt-bar-item bt-button bt-round bt-hide-small" title="Home" href="/"><strong>{{ .Site.Title | title }}</strong></a>
+        <div class="bi-button-container bt-right">
 
+          {{- /* Menus navbar_bottom */}}
+          {{- with .Site.Menus }}
+            {{- range .navbar_bottom }}
+            <a class="bi-button bi-footer-button bt-bar-item bt-button bt-round" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" target="_blank">
+              {{ .Pre }}{{ .Name }}{{ .Post }}
+            </a>
+            {{- end }}
+          {{- end }}
 
-        <div class="bt-button-container w3-right w3-hide-small">
+          {{- /* Params navbar.bottom */}}
+          {{- with .Site.Params.navbar }}
+            {{- range sort .bottom "weight" }}
+            <a class="bi-button bi-footer-button bt-bar-item" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" target="{{ .Target }}">
+              <i class="{{ .icon_pack }} {{ .icon_name }} bt-hover-opacity"></i>
+            </a>
+            {{- end }}
+          {{- end }}
 
-
-
-
-
-          <a class="bt-button bt-footer-button w3-bar-item" title="Documentation" alt="Documentation" href="https://docs.badge.team/" target="_blank"><i class="fa fa-file-text w3-hover-opacity"></i></a>
-          <a class="bt-button bt-footer-button w3-bar-item" title="Wiki" alt="Wiki" href="https://wiki.badge.team/" target="_blank"><i class="fa fa-wikipedia-w w3-hover-opacity"></i></a>
-          <a class="bt-button bt-footer-button w3-bar-item" title="Github" alt="Github" href="https://github.com/badgeteam/" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
-          <a class="bt-button bt-footer-button w3-bar-item" title="Twitter" alt="Twitter" href="https://twitter.com/SHA2017Badge" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-          <a class="bt-button bt-footer-button w3-bar-item" title="IRC" alt="IRC" href="ircs://irc.oftc.net:6697/badgeteam" target="_blank"><i class="fa fa-hashtag w3-hover-opacity"></i></a>
-          <a class="bt-button bt-footer-button w3-bar-item" title="Matrix" alt="Matrix" href="https://matrix.to/#/#oftc_#badgeteam:pixie.town" target="_blank"><i class="fa fa-table w3-hover-opacity"></i></a>
-          <a class="bt-button bt-footer-button w3-bar-item" title="Telegram" alt="Telegram" href="https://t.me/joinchat/AMG-ZhQQ9cE1KAAbQozy5Q" target="_blank"><i class="fa fa-telegram w3-hover-opacity"></i></a>
-
-
-
-
-
-
-
+          {{- /* Links to other output formats */}}
+          {{- with  .OutputFormats.Get "rss" }}
+            <a class="bi-button bi-footer-button bt-bar-item" title="RSS" alt="RSS" href="{{ .Permalink }}">
+              <i class="fa fa-rss bt-hover-opacity"></i>
+            </a>
+          {{- end }}
         </div>
       </div>
     </div> {{ "<!-- End footer navigation bar -->" | safeHTML -}}

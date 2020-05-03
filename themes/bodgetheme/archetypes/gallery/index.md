@@ -17,10 +17,12 @@ gallery:
 - album   : "images"
   exclude : false
   images  :
-  - image   : "imagine.jpg"
-    caption : "Imagine"
-    exclude : false
-  - image   : "people.jpg"
-    caption : "People"
-    exclude : false
+  - image        : "imagine.jpg"
+    caption      : "Imagine"
+    exclude      : false
+    external_url : ""
+  - image        : "people.jpg"
+    caption      : "People"
+    exclude      : false
+    external_url : ""
 ---

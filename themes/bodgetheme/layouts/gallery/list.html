@@ -1,18 +1,19 @@
 {{ define "main" }}
-      <article class="bt-gallery"> {{ "<!-- Gallery -->" | safeHTML }}
+      <article class="bi-gallery"> {{ "<!-- Gallery -->" | safeHTML }}
   {{- range .Pages }}
   {{- $album := .Page }}
-        <section class="bt-gallery-section"> {{ printf "<!-- %#v site gallery -->" .Params.title | safeHTML }}
-          <div class="bt-gallery-section-title-container w3-container w3-center">
-            <h4 class="bt-gallery-section-title w3-left">{{ .Params.title }}</h4>
+        <section class="bi-gallery-section"> {{ printf "<!-- %#v site gallery -->" .Params.title | safeHTML }}
+          <div class="bi-gallery-section-title-container bt-container bt-center">
+            <h4 class="bi-gallery-section-title bt-left">{{ .Params.title }}</h4>
           </div>
-          <div class="bt-gallery-section-content-container w3-row-padding">
+          <div class="bi-gallery-section-content-container bt-row-padding">
     {{- if $album.Resources }}
       {{- range $album.Resources.ByType "image" }}
         {{- $albumfolder  := (path.Split (trim (path.Split .Name).Dir "/")).File }}
         {{- $filename     := path.Base .Name }}
         {{- $albuminclude := true }}
         {{- $include      := true }}
+        {{- $extnurl      := ""      }}
         {{- $caption      := "Noname"}}
         {{- $alt          := "Noname"}}
         {{- if $album.Params.gallery }}
@@ -21,6 +22,7 @@
             {{- if .images }}
               {{- range (where .images "image" $filename) }}
                 {{- $include = (not .exclude) }}
+                {{- $extnurl = .external_url }}
                 {{- $caption = .caption }}
                 {{- if .alt}}{{$alt = .alt}}{{else}}{{$alt = .caption}}{{end}}
                 {{- end }}
@@ -29,18 +31,18 @@
         {{- end }}
         {{- if and ($albuminclude) ($include) }}
           {{- $image := .Resize "600x600" }}
-            <div class="bt-gallery-image-object w3-col l3 m6 w3-margin-bottom">
-              <a title="{{ $caption }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
-                <div class="bt-gallery-image-card w3-card">
-                  <img class="bt-gallery-image w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
-                  <div class="bt-gallery-caption w3-container w3-center"><h5>{{ $caption | truncate 18 }}</h5></div>
+            <div class="bi-gallery-image-object bt-col l3 m6 bt-margin-bottom">
+              <a title="{{ $caption }}" href="{{ if $extnurl }}{{ $extnurl }}{{ else }}{{ .RelPermalink }}{{ end }}" style="text-decoration:none;">
+                <div class="bi-gallery-image-card bt-card">
+                  <img class="bi-gallery-image bt-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
+                  <div class="bi-gallery-caption bt-container bt-center"><h5>{{ $caption | truncate 18 }}</h5></div>
                 </div>
               </a>
             </div>
         {{- end }}
       {{- end }}
     {{- else }}
-            <div class="bt-gallery-message w3-container w3-center w3-margin-bottom"><h5>Gallery <strong>{{ .Params.title }}</strong> has no resources yet.</h5></div>
+            <div class="bi-gallery-message bt-container bt-center bt-margin-bottom"><h5>Gallery <strong>{{ .Params.title }}</strong> has no resources yet.</h5></div>
     {{- end }}
           </div>
         </section> {{ printf "<!-- End %#v site gallery -->" .Params.title | safeHTML }}
@@ -62,15 +64,16 @@
       {{- $includedalbum_count := len $includedalbums }}
       {{- if ge $includedalbum_count 1 }}
         <section> {{ printf "<!-- %#v project gallery -->" .Params.title | safeHTML }}
-          <div class="w3-container w3-center">
-            <h4 class="w3-left">{{ .Params.title }}</h4>
+          <div class="bt-container bt-center">
+            <h4 class="bt-left">{{ .Params.title }}</h4>
           </div>
-          <div class="w3-row-padding">
+          <div class="bt-row-padding">
         {{- range $album.Resources.ByType "image" }}
           {{- $albumfolder  := (path.Split (trim (path.Split .Name).Dir "/")).File }}
           {{- $filename     := path.Base .Name }}
           {{- $albuminclude := true }}
           {{- $include      := true }}
+          {{- $extnurl      := ""      }}
           {{- $caption      := "Noname"}}
           {{- $alt          := "Noname"}}
           {{- if $album.Params.gallery }}
@@ -79,6 +82,7 @@
               {{- if .images }}
                 {{- range (where .images "image" $filename) }}
                   {{- $include = (not .exclude) }}
+                  {{- $extnurl = .external_url }}
                   {{- $caption = .caption }}
                   {{- if .alt}}{{$alt = .alt}}{{else}}{{$alt = .caption}}{{end}}
                   {{- end }}
@@ -87,11 +91,11 @@
           {{- end }}
           {{- if and ($albuminclude) ($include) }}
             {{- $image := .Resize "600x600" }}
-            <div class="w3-col l3 m6 w3-margin-bottom">
-              <a title="{{ $caption }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
-                <div class="w3-card">
-                  <img class="w3-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
-                  <div class="w3-container w3-center"><h5>{{ $caption | truncate 18 }}</h5></div>
+            <div class="bt-col l3 m6 bt-margin-bottom">
+              <a title="{{ $caption }}" href="{{ if $extnurl }}{{ $extnurl }}{{ else }}{{ .RelPermalink }}{{ end }}" style="text-decoration:none;">
+                <div class="bt-card">
+                  <img class="bt-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:100%">
+                  <div class="bt-container bt-center"><h5>{{ $caption | truncate 18 }}</h5></div>
                 </div>
               </a>
             </div>
@@ -110,7 +114,7 @@
 {{- end }}
 
 {{ define "page-header" }}
-<header class="bt-page-header w3-container w3-center">
-  <h3 class="bt-page-header-title w3-left w3-text-black"><b><i class="fa fa-camera bt-icon w3-margin-right w3-xlarge w3-text-teal"></i></b>{{ (i18n "gallery" | default "Gallery") | markdownify }}</h3>
+<header class="bi-page-header bt-container bt-center">
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-camera bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n "gallery" | default "Gallery") | markdownify }}</h3>
 </header>
 {{ end }}

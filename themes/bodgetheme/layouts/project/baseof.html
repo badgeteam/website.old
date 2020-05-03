@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+{{ partial "head/site-head.html" . }}
+  <body>
+{{ partial "header/site-header.html" . }}
+    <div class="bi-page-wrapper bt-content bt-padding bt-margin-top" style="max-width:1500px"> {{ "<!-- Page content -->" | safeHTML }}
+      {{- block "page-header" . }}{{- end }}
+      <aside class="bi-aside-left bt-col bt-third bt-left">{{- block "aside-left" . }}{{- end }}</aside>
+      <div class="bi-main bt-col bt-twothird">{{- block "main" . }}{{- end }}</div>
+      {{- block "page-footer" . }}{{- end }}
+    </div> {{ "<!-- End page content -->" | safeHTML }}
+{{ partial "footer/site-footer.html" . }}
+  </body>
+</html>
