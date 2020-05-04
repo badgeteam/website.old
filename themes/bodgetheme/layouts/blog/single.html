@@ -1,8 +1,7 @@
 {{ define "main" }}
 {{ "<!-- Blogs single -->" | safeHTML }}
 {{- $page := . }}
-{{- $projects := where .Site.RegularPages "Section" "project" }}
-{{- $project  := first 1 (where $projects "Params.projects" "intersect" .Params.projects) }}
+{{- $project  := first 1 (where (where .Site.RegularPages "Section" "project") "Params.projects" "intersect" .Params.projects) }}
 <div class="bi-blog-single-row bt-row">
   {{ "<!-- Blog -->" | safeHTML }}
   <div class="bi-blog-single-col bt-col">
@@ -65,8 +64,7 @@
 {{ end }}
 
 {{ define "page-header" }}
-  {{- $projects := where .Site.RegularPages "Section" "project" }}
-  {{- $project  := first 1 (where $projects "Params.projects" "intersect" .Params.projects) }}
+  {{- $project  := first 1 (where (where .Site.RegularPages "Section" "project") "Params.projects" "intersect" .Params.projects) }}
   {{- $project_count := len $project }}
 <header class="bi-page-header bt-container bt-center">
   {{- if ge $project_count 1 }}
@@ -85,10 +83,8 @@
 {{ end }}
 
 {{ define "aside-left" }}
-  {{- $projects := where .Site.RegularPages "Section" "project" }}
-  {{- $project  := first 1 (where $projects "Params.projects" "intersect" .Params.projects) }}
+  {{- $project  := first 1 (where (where .Site.RegularPages "Section" "project") "Params.projects" "intersect" .Params.projects) }}
   {{- $project_count := len $project }}
-
   <!-- About Project -->
   {{- if ge $project_count 1 }}
     {{- range $project }}
@@ -114,8 +110,9 @@
   </a>
 </div>
     {{- end }}
+
+    {{ partial "widgets/project-recent-updates.html" (dict "context" . "project" (index $project 0) ) }}
   {{- end }}
 
-{{ partial "widgets/recent-updates.html" . }}
 {{ partial "widgets/taxo-cloud.html" . }}
 {{ end }}
