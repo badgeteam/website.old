@@ -62,4 +62,4 @@ gallery:
 
 ##### 20200216_badgeteamtalk project blog page.
 
-(<< youtube tQkBal95aCQ >>)
+https://www.youtube.com/embed/w7Ft2ymGmfc
