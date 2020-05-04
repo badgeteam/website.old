@@ -25,7 +25,7 @@ teams :
 #### Mini profile (Displayed at end of posts, where available)
 
 # Avatar shown
-avatar : "images/sebastius.jpg"
+avatar : "images/doof.jpg"
 
 # Short bio
 bio : "Yes, the cloud was named after me. :)"
