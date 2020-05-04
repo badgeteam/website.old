@@ -1,5 +1,14 @@
 mainSections = ["blog","project"]
-defaultImage = "/images/mascot_600x600.png"
+mainImage    = "/images/bodgeteam.jpg"
+defaultImage = "/images/mascot2.jpg"
+
+# [webmaster]
+#   name  = "Renze Nicolai"
+#   email = "r.nicolai@ergenshuizen.nl"
+#
+# [managingeditor]
+#   name  = "Noor Draconia"
+#   email = "n.draconia@somewhere.eu"
 
 [theme]
   generator = "Badge.team Bodgetheme"
