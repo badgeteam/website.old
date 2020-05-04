@@ -1,10 +1,18 @@
 {{ define "main" }}
-  <article class="bi-default-list"> {{ "<!-- Default list -->" | safeHTML }}
+  <article class="bi-default-list"> {{ "<!-- Default terms -->" | safeHTML }}
+    {{- if .Content }}{{ .Content }}{{end}}
+    {{- range $key, $value := .Data.Terms }}
     <section class="bi-default-list-section bt-card bt-margin">
-      <ul class="bi-ul bi-default-list-section-ul bt-ul bt-hoverable bt-white">
-        {{- if .Content }}{{ .Content }}{{end}}
-        {{- range .Paginator.Pages }}
-        <li class="bi-li bi-default-list-section-li bt-padding-16">
+      <div class="bt-title bt-padding bt-wide bt-white">
+        <a class="bt-margin-top bt-margin-bottom" href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="link blue hover-black" style="text-decoration:none">
+          <strong><i class="fa fa-hashtag bi-icon bt-margin-right bt-xlarge bt-text-teal"></i>{{ (i18n $key | default (humanize $key)) | markdownify }}</strong>
+        </a>
+      </div>
+      <ul class="bi-ul bi-default-list-section-ul bt-ul bt-hoverable">
+        {{- /* range $value.Paginator.Pages */}}
+        {{- /* range (.Paginator $value.Pages 10) */}}
+        {{- range $value.Pages }}
+        <li class="bi-li bi-default-list-section-li bt-li bt-padding-16">
           <a href="{{ .Permalink }}" style="text-decoration:none;">
           {{- $image := "" }}
           {{- $alt   := "" }}
@@ -20,22 +28,23 @@
           {{- end }}
             <span class="bi-default-list-section-section bt-small">{{ humanize .Section }} - {{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span><br>
             <span class="bi-default-list-section-title bt-large">{{ .Title | default .Site.Title }}</span><br>
-            <span class="bi-default-list-section-description">{{ .Params.description }}</span>
+            <span class="bi-default-list-section-description">{{ .Summary }}</span>
           </a>
         </li>
         {{- end }}
       </ul>
     </section>
+    {{- end }}
     <div class="bi-article-navigation bt-container">
       <div class="bi-article-nav-row bt-row bt-center">
-        {{- template "partials/pagination.html" . }}
+        {{- /* template "partials/pagination.html" . */}}
       </div>
     </div>
-  </article> {{ "<!-- End default list -->" | safeHTML }}
+  </article> {{ "<!-- End default terms -->" | safeHTML }}
 {{ end }}
 
 {{ define "page-header" }}
 <header class="bi-page-header bt-container bt-center">
-  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-list bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n .Title | default (humanize .Title)) | markdownify }}</h3>
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-hashtag bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n .Title | default (humanize .Title)) | markdownify }}</h3>
 </header>
 {{ end }}
