@@ -25,11 +25,12 @@ rssLimit    = 10
 [taxonomies]
   tag      = "tags"
   category = "categories"
-  slug     = "slugs"
+  event    = "events"
   project  = "projects"
   blog     = "blogs"
   team     = "teams"
   nickname = "nicknames"
+  slug     = "slugs"
 
 [outputs]
   home = [ "HTML", "RSS" ]

@@ -18,6 +18,24 @@ teams :
 - HH2020
 - MCH2021
 
+#teams :
+#- name        : Badgeteam
+#  project     : Bodgeteam
+#  role        :
+#  description :
+#- name        : Badgeteam
+#  project     : CZ2019
+#  role        :
+#  description :
+#- name        : Badgeteam
+#  project     : HH2020
+#  role        :
+#  description :
+#- name        : Badgeteam
+#  project     : MCH2021
+#  role        :
+#  description :
+
 #projects :
 #- project     : Bodgetheme
 #  role        : developer
@@ -70,8 +88,9 @@ interests :
 - Travel
 - Geocaching
 - Ethical hacking
-- Sustainability
+- Electronics
 - Science
+- Sustainability
 
 education :
   courses :

@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <article class="bi-default-list"> {{ "<!-- Default list -->" | safeHTML }}
+  <article class="bi-default-list"> {{ "<!-- Default taxonomy -->" | safeHTML }}
     <section class="bi-default-list-section bt-card bt-margin">
       <ul class="bi-ul bi-default-list-section-ul bt-ul bt-hoverable bt-white">
         {{- if .Content }}{{ .Content }}{{end}}
@@ -20,7 +20,7 @@
           {{- end }}
             <span class="bi-default-list-section-section bt-small">{{ humanize .Section }} - {{ .Date.Format "Monday, 02 January 2006 15:04 MST" }}{{if .Params.Author}} - {{.Params.Author}}{{end}}</span><br>
             <span class="bi-default-list-section-title bt-large">{{ .Title | default .Site.Title }}</span><br>
-            <span class="bi-default-list-section-description">{{ .Params.description }}</span>
+            <span class="bi-default-list-section-description">{{ .Summary }}</span>
           </a>
         </li>
         {{- end }}
@@ -31,11 +31,12 @@
         {{- template "partials/pagination.html" . }}
       </div>
     </div>
-  </article> {{ "<!-- End default list -->" | safeHTML }}
+  </article> {{ "<!-- End default taxonomy -->" | safeHTML }}
 {{ end }}
 
 {{ define "page-header" }}
 <header class="bi-page-header bt-container bt-center">
-  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-list bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n .Title | default (humanize .Title)) | markdownify }}</h3>
+  {{ $title := (printf "%s taxonomy term '%s'" (.Section | humanize) .Title) }}
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-hashtag bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n $title | default ($title)) | markdownify }}</h3>
 </header>
 {{ end }}

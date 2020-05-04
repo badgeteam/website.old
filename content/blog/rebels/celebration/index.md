@@ -68,3 +68,9 @@ gallery:
 ---
 
 Happy very May the Fourth to you all. A cyberawesome day wishing you. Stay rebel!
+
+<!--more-->
+
+{{< img src="images/may4.jpg" alt="May 4th" iwidth="100%">}}
+
+Safe distance to keep, remember you must!
