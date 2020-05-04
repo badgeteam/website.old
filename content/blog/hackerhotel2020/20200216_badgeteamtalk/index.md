@@ -63,3 +63,7 @@ gallery:
 ##### 20200216_badgeteamtalk project blog page.
 
 https://www.youtube.com/embed/w7Ft2ymGmfc
+
+<!--more-->
+
+{{< youtube w7Ft2ymGmfc >}}
