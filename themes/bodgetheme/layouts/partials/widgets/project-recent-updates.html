@@ -1,0 +1,26 @@
+{{- $page    := .context }}
+{{- $project := .project }}
+{{- with $project }}
+  {{- "<!-- Project recent updates -->" | safeHTML }}
+  {{- $pages := first 5 ((where (where site.RegularPages "Type" "in" site.Params.mainSections) "Params.projects" "intersect" .Params.projects).ByLastmod.Reverse ) }}
+  {{- $page_count := len $pages }}
+  {{- if ge $page_count 1 }}
+  <div class="bi-recent-updates bt-card bt-margin">
+    <div class="t-recent-updates-title-container bt-container bt-padding">
+      <h4 class="bi-recent-updates-title bt-left bt-text-black"><strong><i class="fa fa-newspaper-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "recent updates" | default "Recent updates") | markdownify | humanize }}</h4>
+    </div>
+    <ul class="bi-ul bi-recent-updates-ul bt-ul bt-hoverable bt-white">
+      {{- range $pages }}
+      <li class="bi-li bi-recent-updates-li bt-padding">
+        <a href="{{ .Permalink }}" style="text-decoration:none;">
+          <span class="bi-recent-updates-section bt-opacity bt-small">{{ humanize .Section }} - {{ .Lastmod.Format "02 January 2006 15:04 MST" }}</span><br>
+          <span class="bi-recent-updates-title bt-medium">{{ .Title | default .Site.Title | truncate 30 }}</span><br>
+          <span class="bi-recent-updates-description bt-small">{{ .Params.description }}</span>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+  {{- end }}
+  {{ "<!-- Project recent updates -->" | safeHTML -}}
+{{- end }}

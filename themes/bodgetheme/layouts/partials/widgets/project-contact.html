@@ -1,20 +1,43 @@
 {{- $page    := .context }}
 {{- $project := .project }}
 {{- with $project }}
-{{- if or (.Params.email) (.Params.contact) (.Params.social) }}
-<div class="bi-project-about-project bt-card bt-margin bt-margin-top">
-  <div class="t-recent-updates-title-container bt-container bt-padding">
-    <h4 class="bi-recent-updates-title bt-left bt-text-black"><strong><i class="fa fa-address-card-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "references" | default "References") | markdownify | humanize }}</h4>
-  </div>
-  {{- if or (.Params.email) (.Params.contact) }}
-  <div class="bi-team-single-contact bt-container">
-    {{ if .Params.email -}}
-    <a href="#contact" style="text-decoration:none;">
-      <p><i class="fa fa-envelope bi-team-single-contact-email bi-icon bt-large bt-margin-right"></i>E-mail</p>
-    </a>
+  {{- "<!-- Project contact -->" | safeHTML }}
+  {{- if or (.Params.email) (.Params.contact) (.Params.social) }}
+  <div class="bi-project-about-project bt-card bt-margin bt-margin-top">
+    <div class="t-recent-updates-title-container bt-container bt-padding">
+      <h4 class="bi-recent-updates-title bt-left bt-text-black"><strong><i class="fa fa-address-card-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "references" | default "References") | markdownify | humanize }}</h4>
+    </div>
+    {{- if or (.Params.email) (.Params.contact) }}
+    <div class="bi-team-single-contact bt-container">
+      {{ if .Params.email -}}
+      <a href="#contact" style="text-decoration:none;">
+        <p><i class="fa fa-envelope bi-team-single-contact-email bi-icon bt-large bt-margin-right"></i>E-mail</p>
+      </a>
+      {{- end }}
+      {{- if .Params.contact }}
+        {{- range .Params.contact }}
+          {{- $link_ref    := .link }}
+          {{- $link_target := "" }}
+          {{- $scheme := (urls.Parse $link_ref).Scheme }}
+          {{- if not $scheme }}
+            {{- $link_ref = .link | relLangURL }}
+          {{- else if in (slice "http" "https") $scheme }}
+            {{- $link_target = "target=\"_blank\" rel=\"noopener\"" }}
+          {{- end }}
+          {{- if $link_ref }}
+      <a class="bi-team-single-contact-link" href="{{ $link_ref | safeURL }}" {{ $link_target | safeHTMLAttr }} style="text-decoration:none;">
+        <p><i class="{{ .icon_pack }} {{ .icon_name }} bi-team-single-contact-title bi-icon bt-large bt-margin-right"></i>{{ .title | safeHTML }}</p>
+      </a>
+          {{- else }}
+      <p><i class="{{ .icon_pack }} {{ .icon_name }} bi-team-single-contact-title bi-icon bt-large bt-margin-right"></i>{{ .title | safeHTML }}</p>
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    </div>
     {{- end }}
-    {{- if .Params.contact }}
-      {{- range .Params.contact }}
+    {{- if .Params.social }}
+    <div class="bi-team-single-social bt-container bt-padding bt-light-grey">
+      {{- range .Params.social }}
         {{- $link_ref    := .link }}
         {{- $link_target := "" }}
         {{- $scheme := (urls.Parse $link_ref).Scheme }}
@@ -24,35 +47,14 @@
           {{- $link_target = "target=\"_blank\" rel=\"noopener\"" }}
         {{- end }}
         {{- if $link_ref }}
-    <a class="bi-team-single-contact-link" href="{{ $link_ref | safeURL }}" {{ $link_target | safeHTMLAttr }} style="text-decoration:none;">
-      <p><i class="{{ .icon_pack }} {{ .icon_name }} bi-team-single-contact-title bi-icon bt-large bt-margin-right"></i>{{ .title | safeHTML }}</p>
-    </a>
-        {{- else }}
-    <p><i class="{{ .icon_pack }} {{ .icon_name }} bi-team-single-contact-title bi-icon bt-large bt-margin-right"></i>{{ .title | safeHTML }}</p>
+      <a class="bi-team-single-social-link bt-bar-item" title="{{ .title | safeHTML }}" alt="{{ .title | safeHTML }}" href="{{ $link_ref | safeURL }}" {{ $link_target | safeHTMLAttr }} style="text-decoration:none;">
+        <i class="{{ .icon_pack }} {{ .icon_name }} bi-team-single-social-title bi-icon bt-large bt-margin-right"></i>
+      </a>
         {{- end }}
       {{- end }}
+    </div>
     {{- end }}
   </div>
   {{- end }}
-  {{- if .Params.social }}
-  <div class="bi-team-single-social bt-container bt-padding bt-light-grey">
-    {{- range .Params.social }}
-      {{- $link_ref    := .link }}
-      {{- $link_target := "" }}
-      {{- $scheme := (urls.Parse $link_ref).Scheme }}
-      {{- if not $scheme }}
-        {{- $link_ref = .link | relLangURL }}
-      {{- else if in (slice "http" "https") $scheme }}
-        {{- $link_target = "target=\"_blank\" rel=\"noopener\"" }}
-      {{- end }}
-      {{- if $link_ref }}
-    <a class="bi-team-single-social-link bt-bar-item" title="{{ .title | safeHTML }}" alt="{{ .title | safeHTML }}" href="{{ $link_ref | safeURL }}" {{ $link_target | safeHTMLAttr }} style="text-decoration:none;">
-      <i class="{{ .icon_pack }} {{ .icon_name }} bi-team-single-social-title bi-icon bt-large bt-margin-right"></i>
-    </a>
-      {{- end }}
-    {{- end }}
-  </div>
-  {{- end }}
-</div>
-{{- end }}
+  {{- "<!-- End project contact -->" | safeHTML }}
 {{- end }}

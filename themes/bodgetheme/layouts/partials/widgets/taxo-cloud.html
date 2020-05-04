@@ -3,7 +3,7 @@
 {{- $fontBig   := .Page.Params.design.font_size_max | default 2.5 }}
 {{- $tags      := first 20 (index .Site.Taxonomies $taxonomy).ByCount }}
 {{- $tag_count := len $tags }}
-<div class="bi-taxo-cloud bi-taxo-{{ $taxonomy }}-cloud bt-card bt-margin"> {{ "<!-- Tag cloud -->" | safeHTML -}}
+<div class="bi-taxo-cloud bi-taxo-{{ $taxonomy }}-cloud bt-card bt-margin bt-hide-small"> {{ "<!-- Tag cloud -->" | safeHTML -}}
   <div class="bi-taxo-cloud-title-container bt-container bt-padding">
     <h4 class="bi-taxo-cloud-title bt-left bt-text-black"><strong><i class="fa fa-cloud bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n $taxonomy | default $taxonomy) | markdownify | humanize }}</h4>
   </div>
