@@ -3,7 +3,7 @@ defaultImage = "/images/mascot_600x600.png"
 
 [theme]
   generator = "Badge.team Bodgetheme"
-  revision  = 2020-05-03T13:37:42Z
+  revision  = 2020-05-04T13:37:42Z
   author    = "Noor Draconia, Rob Verseijden"
 
 [blog]
