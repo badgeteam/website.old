@@ -3,7 +3,11 @@
 {{- $maxpaginate := .Site.Params.project.blogs.paginate | default 10 }}
 {{- with .Content }}
 <div class="bi-project-single-about bt-container bt-card bt-margin bt-white">
-  <p class="bi-project-single-about-content">{{ . }}</p>
+  <div class="bi-project-single-about-content bt-row bt-margin-bottom">
+    <div class="bt-col">
+      {{ . }}
+    </div>
+  </div>
 </div>
 {{- end }}
 <div class="bi-project-single-row bt-row">
