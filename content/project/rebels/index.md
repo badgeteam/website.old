@@ -1,7 +1,7 @@
 ---
-date        : 2020-05-04T00:00:00+02:00
-publishDate : 2020-05-04T00:00:00+02:00
-expiryDate  : 2020-05-05T00:00:00+02:00
+date        : 2021-05-04T00:00:00+02:00
+publishDate : 2021-05-04T00:00:00+02:00
+expiryDate  : 2021-05-05T00:00:00+02:00
 draft       : false
 short_title : "Rebels"
 title       : "Rebels Base"
@@ -11,8 +11,8 @@ description : "May the fourth be with you!"
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["REBELS"]
 
-# For alternative external reference only
-slugs       : ["rebels"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "rebels"
 
 # Project state and type
 active      : true

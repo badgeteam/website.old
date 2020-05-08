@@ -10,8 +10,8 @@ description : "The Troopers 2020 badge is an external development and not develo
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["TROOPERS2020"]
 
-# For alternative external reference only
-slugs       : ["troopers2020"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "troopers2020"
 
 # Project state
 active      : true

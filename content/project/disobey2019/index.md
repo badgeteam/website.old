@@ -10,8 +10,8 @@ description : "This is the project page description for the Disobey 2019 Project
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["DISOBEY2019"]
 
-# For alternative external reference only
-slugs       : ["disobey2019"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "disobey2019"
 
 # Project state
 active      : false

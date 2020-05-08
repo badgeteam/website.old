@@ -10,8 +10,8 @@ description : "This is the project page description for the eth0:2019 Project"
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["ETH02019"]
 
-# For alternative external reference only
-slugs       : ["eth02019"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "eth02019"
 
 # Project state
 active      : false

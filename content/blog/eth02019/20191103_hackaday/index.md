@@ -12,8 +12,8 @@ description : "ETH0 has been mentioned in a nice story at Hackaday."
 # mnemonic, to refer to the project this blog is related to.
 projects    : ["ETH02019"]
 
-# For alternative external reference only
-slugs       : []
+# External reference name (i.e. https://bodge.theme/blog/slug)
+slug        : ""
 
 # Identifying tags, searchable/visible to site visitors
 tags        :

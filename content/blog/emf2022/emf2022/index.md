@@ -9,6 +9,9 @@ description : ""
 # At least one Identifying mnemonic, referring to the project(s) his blog is related to
 projects    : ["EMF2022"]
 
+# External reference name (i.e. https://bodge.theme/blog/slug)
+slug        : ""
+
 # Identifying tags, searchable/visible to site visitors
 tags        : []
 

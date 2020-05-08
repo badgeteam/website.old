@@ -10,8 +10,8 @@ description : "HackZone takes the CampZone 2019 badge to the next level."
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["PIXEL2020"]
 
-# For alternative external reference only
-slugs       : ["pixelbadge","pixel2020"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "pixel2020"
 
 # Project state
 active      : true

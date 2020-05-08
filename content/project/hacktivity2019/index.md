@@ -10,8 +10,8 @@ description : "This is the project page description for the Hacktivity 2019 Proj
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["HACKTIVITY2019"]
 
-# For alternative external reference only
-slugs       : ["hacktivity2019"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "hacktivity2019"
 
 # Project state
 active      : false

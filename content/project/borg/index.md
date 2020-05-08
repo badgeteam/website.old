@@ -10,8 +10,8 @@ description : "Resistance is futile."
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["BORG"]
 
-# For alternative external reference only
-slugs       : ["borg"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "borg"
 
 # Project state and type
 active      : true

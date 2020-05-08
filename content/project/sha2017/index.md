@@ -10,8 +10,8 @@ description : "This is the project page description for the Still Hacking Anyway
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["SHA2017"]
 
-# For alternative external reference only
-slugs       : ["sha2017"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "sha2017"
 
 # Project state
 active      : false

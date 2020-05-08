@@ -10,8 +10,8 @@ description : "This is the project page description for the May Contain Hackers 
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["MCH2021"]
 
-# For alternative external reference only
-slugs       : ["mch2021","meh2021"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "mch2021"
 
 # Project state
 active      : true

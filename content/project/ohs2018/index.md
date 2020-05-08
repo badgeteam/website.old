@@ -10,8 +10,8 @@ description : "This is the project page description for the Open Hardware Summit
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["OHS2018"]
 
-# For alternative external reference only
-slugs       : ["ohs2018"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "ohs2018"
 
 # Project state
 active      : false

@@ -10,8 +10,8 @@ description : "This is the project page description for the Fri3d2020 Project"
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["FRI3D2020"]
 
-# For alternative external reference only
-slugs       : ["fri3d2020"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "fri3d2020"
 
 # Project state
 active      : true

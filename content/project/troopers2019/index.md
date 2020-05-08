@@ -10,8 +10,8 @@ description : "This is the project page description for the Troopers 2019 Projec
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["TROOPERS2019"]
 
-# For alternative external reference only
-slugs       : ["troopers2019"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "troopers2019"
 
 # Project state
 active      : false

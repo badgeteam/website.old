@@ -9,6 +9,9 @@ description : "EMF2022 Project"
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["EMF2022"]
 
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "emf2022"
+
 # Project state
 active      : true
 archived    : false

@@ -10,8 +10,8 @@ description : "This is the project page description for the Hacker Hotel 2020 Pr
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["HH2020"]
 
-# For alternative external reference only
-slugs       : ["hackerhotel2020"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "hackerhotel2020"
 
 # Project state
 active      : false

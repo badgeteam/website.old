@@ -10,8 +10,8 @@ description : "Badge.team website development in Hugo. Blogs are created to test
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["Bodgetheme"]
 
-# For alternative external reference only
-slugs       : ["bt", "bodgetheme"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "bt"
 
 # Project state
 active      : true

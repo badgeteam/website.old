@@ -10,8 +10,8 @@ description : "This is the project page description for the Card10 Project"
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["CARD10"]
 
-# For alternative external reference only
-slugs       : ["card10"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "card10"
 
 # Project state
 active      : false

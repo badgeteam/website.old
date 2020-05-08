@@ -10,8 +10,8 @@ description : "This is the project page description for the CampZone 2019 Projec
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["CZ2019"]
 
-# For alternative external reference only
-slugs       : ["campzone2019"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "cz2019"
 
 # Project state
 active      : false

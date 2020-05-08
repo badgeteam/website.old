@@ -10,8 +10,8 @@ description : "CampZone will be back in 2020 and requires a new flashy new badge
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["CZ2020"]
 
-# For alternative external reference only
-slugs       : ["campzone2020"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "campzone2020"
 
 # Project state
 active      : true

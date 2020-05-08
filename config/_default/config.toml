@@ -30,7 +30,6 @@ rssLimit    = 25
   blog     = "blogs"
   team     = "teams"
   nickname = "nicknames"
-  slug     = "slugs"
 
 [outputs]
   home = [ "HTML", "RSS" ]

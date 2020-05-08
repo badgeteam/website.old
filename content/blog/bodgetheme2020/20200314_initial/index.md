@@ -12,8 +12,8 @@ description : "Clean content should be properly formatted into paragraphs."
 # mnemonic, to refer to the project this blog is related to.
 projects    : ["Bodgetheme"]
 
-# For alternative external reference only
-slugs       : ["bt", "bodgetheme"]
+# External reference name (i.e. https://bodge.theme/blog/slug)
+slug        : ""
 
 # Identifying tags, searchable/visible to site visitors
 tags        :

@@ -1,7 +1,7 @@
 ---
-date        : 2020-05-04T00:00:00+02:00
-publishDate : 2020-05-04T00:00:00+02:00
-expiryDate  : 2020-05-05T00:00:00+02:00
+date        : 2021-05-04T00:00:00+02:00
+publishDate : 2021-05-04T00:00:00+02:00
+expiryDate  : 2021-05-05T00:00:00+02:00
 draft       : false
 title       : "Celebration time it is!!"
 author      : "Yoda"
@@ -14,8 +14,8 @@ description : ""
 # mnemonic, to refer to the project this blog is related to.
 projects    : ["REBELS"]
 
-# For alternative external reference only
-slugs       : []
+# External reference name (i.e. https://bodge.theme/blog/slug)
+slug        : ""
 
 # Identifying tags, searchable/visible to site visitors
 tags        : []
