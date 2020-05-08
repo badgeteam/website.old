@@ -14,7 +14,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     {{- with $.Site.Params.theme }}
-    <generator>{{ .generator }} - {{ hugo.Generator -}}</generator>
+    <generator>{{ .generator }}{{ hugo.Generator -}}</generator>
     {{- else }}
     <generator>{{- hugo.Generator -}}</generator>
     {{- end }}
