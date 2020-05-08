@@ -10,8 +10,8 @@ description : "This is the project page description for the {{ replace .Name "-"
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["{{ replace .Name "-" " " | upper }}"]
 
-# For alternative external reference only
-slugs       : ["{{ replace .Name "-" " " | lower }}"]
+# External reference name (i.e. https://bodge.theme/project/slug)
+slug        : "{{ replace .Name "-" " " | lower }}"
 
 # Project state and type
 active      : true
