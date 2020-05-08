@@ -1,6 +1,5 @@
 {{ define "main" }}
-{{- $maxpaginate := .Site.Params.paginate | default 12 }}
-  <article class="bi-default-list"> {{ "<!-- Default taxonomy -->" | safeHTML }}
+  <article class="bi-default-list"> {{ "<!-- Blog taxonomy -->" | safeHTML }}
     <section class="bi-default-list-section bt-card bt-margin">
       <ul class="bi-ul bi-default-list-section-ul bt-ul bt-hoverable bt-white">
         {{- if .Content }}{{ .Content }}{{end}}
@@ -32,12 +31,12 @@
         {{- template "partials/pagination.html" . }}
       </div>
     </div>
-  </article> {{ "<!-- End default taxonomy -->" | safeHTML }}
+  </article> {{ "<!-- End blog taxonomy -->" | safeHTML }}
 {{ end }}
 
 {{ define "page-header" }}
 <header class="bi-page-header bt-container bt-center">
-  {{ $title := (printf "%s:%s" (.Section | lower) (.Title | lower)) }}
+  {{ $title := (printf "%s taxonomy term '%s'" (.Section | humanize) .Title) }}
   <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-hashtag bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n $title | default ($title)) | markdownify }}</h3>
 </header>
 {{ end }}

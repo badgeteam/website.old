@@ -1,0 +1,43 @@
+{{ define "main" }}
+  {{- $maxpaginate := .Site.Params.team.paginate | default 12 }}
+  {{- if .Content }}{{ .Content }}{{end}}
+  {{- range $key, $value := .Data.Terms }}
+      <article class="bi-team-list"> {{ "<!-- Teams terms -->" | safeHTML }}
+        <div class="bt-title bt-padding bt-white">
+          <a class="bt-margin-top bt-margin-bottom" href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="link blue hover-black" style="text-decoration:none">
+            <strong><i class="fa fa-users bi-icon bt-margin-right bt-large bt-text-teal"></i>{{ (i18n $key | default (humanize $key)) | markdownify }}</strong>
+          </a>
+        </div>
+        <section class="bi-team-list-section"> {{ printf "<!-- The team -->" | safeHTML }}
+          <div class="bi-team-list-section-row bt-row-padding">
+    {{- range $value.Pages.ByParam "name" }}
+      {{- $member := .Page }}
+      {{- $avatar := "" }}
+      {{- if $member.Params.avatar }}
+        {{- $image := $member.Resources.GetMatch $member.Params.avatar }}
+        {{- if $image }}
+          {{- $avatar = $image.Resize "300x300" }}
+        {{- end }}
+      {{- end }}
+            <div class="bi-team-list-section-col bt-col l2 m3 s6 bt-margin-bottom">
+              <a class="bi-team-list-link" title="{{ $member.Params.Name }}" href="{{ $member.RelPermalink }}" style="text-decoration:none;">
+                <div class="bi-team-list-card bt-card">
+      {{- if $avatar }}
+                  <img class="bi-team-list-image bi-image bt-hover-grayscale" src="{{ $avatar.RelPermalink }}" alt="{{ $member.Params.Name }}" style="width:100%">
+      {{- end }}
+                  <div class="bi-team-list-name bt-center bt-small">{{ $member.Params.Name }}</div>
+                </div>
+              </a>
+            </div>
+    {{- end }}
+          </div>
+        </section> {{ printf "<!-- End The team -->" | safeHTML }}
+      </article> {{ "<!-- End teams terms -->" | safeHTML }}
+  {{- end }}
+{{- end }}
+
+{{ define "page-header" }}
+<header class="bi-page-header bt-container bt-center">
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-users bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n "teams" | default "Teams") | markdownify }}</h3>
+</header>
+{{ end }}
