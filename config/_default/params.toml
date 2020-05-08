@@ -12,7 +12,7 @@ defaultImage = "/images/mascot2.jpg"
 
 [theme]
   generator = "Badge.team Bodgetheme"
-  revision  = 2020-05-05T13:37:42Z
+  revision  = 2020-05-08T13:37:42Z
   author    = "Noor Draconia, Rob Verseijden"
 
 [robots]
