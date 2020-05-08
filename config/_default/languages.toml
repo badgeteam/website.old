@@ -1,0 +1,11 @@
+# Languages
+[en]
+  languageCode = "en-us"
+  # contentDir = "content/en"
+  #  title = "English website title..."
+  #  [en.params]
+  #    description = "Site description in English..."
+  #  [[en.menu.main]]
+  #    name = "EN"
+  #    url = "#about"
+  #    weight = 1
