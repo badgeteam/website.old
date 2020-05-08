@@ -1,0 +1,6 @@
+{{/* Get day number Monday 0 ... Sunday 6 */}}
+{{ $date    := . }}
+{{ $daymap  := dict "monday" 0 "tuesday" 1 "wednesday" 2 "thursday" 3 "friday" 4 "saturday" 5 "sunday" 6 }}
+{{ $dayname := partial `functions/get_weekday_name` $date }}
+{{ $weekday := index $daymap ($dayname | lower) }}
+{{ return $weekday }}

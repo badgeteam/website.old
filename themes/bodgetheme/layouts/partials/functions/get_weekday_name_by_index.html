@@ -1,0 +1,6 @@
+{{/* Get day name by index 0 Monday ... 6 Sunday */}}
+{{ $dayindex := . }}
+{{ $daymap   := slice "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday" }}
+{{ $dayindex  = mod $dayindex 7 }}
+{{ $dayname  := index $daymap $dayindex }}
+{{ return $dayname }}
