@@ -12,7 +12,7 @@
       <a href="{{ .Permalink }}" style="text-decoration:none;">
         <span class="bi-recent-updates-section bt-opacity bt-small">{{ humanize .Section }} - {{ .Lastmod.Format "02 January 2006 15:04 MST" }}</span><br>
         <span class="bi-recent-updates-title bt-medium">{{ .Title | default .Site.Title | truncate 30 }}</span><br>
-        <span class="bi-recent-updates-description bt-small">{{ .Params.description }}</span>
+        <span class="bi-recent-updates-description bt-small">{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Summary }}{{ end }}</span>
       </a>
     </li>
     {{- end }}
