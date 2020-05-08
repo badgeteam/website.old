@@ -7,6 +7,7 @@ name : Sake Blok
 # Nicknames (Names you use at articles or online. This allows you to be linked at articles.)
 nicknames :
 - Sake
+- Kolbekas
 
 # List the teams you're part of on this site.
 teams :
