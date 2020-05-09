@@ -1,16 +1,106 @@
 ---
-RevSpace:
-  name    : RevSpace
+AckSpace:
+  name    : ACKspace
+  nick    : ACKspace
   country : Netherlands
-  city    : The Hague
-  postal :
-    address :
-  capital: Montgomery
-  lat: '32.361538'
-  long: "-86.279118"
-AK:
-  name: Alaska
-  capital: Juneau
-  lat: '58.301935'
-  long: "-134.419740"
+  city    : Heerlen
+  visit   : "Kloosterweg 1,6412 CN,Heerlen,Netherlands"
+  postal  : "Kloosterweg 1,6412 CN,Heerlen,Netherlands"
+  website : https://ackspace.nl
+Bitlair:
+  name    : Bitlair
+  nick    : Bitlair
+  country : Netherlands
+  city    : Amersfoort
+  visit   : "Computerweg 20a,3821 AB,Amersfoort,Netherlands"
+  postal  : "Computerweg 20a,3821 AB,Amersfoort,Netherlands"
+  website : https://bitlair.nl
+Frack:
+  name    : Frack
+  nick    : Frack
+  country : Netherlands
+  city    : Leeuwarden
+  visit   : "Blokhuisplein 40,8911 LJ,Leeuwarden,Netherlands"
+  postal  : "Blokhuisplein 40,8911 LJ,Leeuwarden,Netherlands"
+  website : https://frack.nl
+Hack42:
+  name    : Hack42
+  nick    : Hack42
+  country : Netherlands
+  city    : Arnhem
+  visit   : "Koningsweg 31a,6816 TG,Arnhem,Netherlands"
+  postal  : "Koningsweg 31a,6816 TG,Arnhem,Netherlands"
+  website : https://hack42.nl
+Hackalot:
+  name    : Hackalot
+  nick    : Hackalot
+  country : Netherlands
+  city    : Eindhoven
+  visit   : "Ruysdaelbaan 106,5613 DL,Eindhoven,Netherlands"
+  postal  : "Ruysdaelbaan 106,5613 DL,Eindhoven,Netherlands"
+  website : https://hackalot.nl
+HackerspaceNijmegen:
+  name    : Hackerspace Nijmegen
+  nick    : Hackerspace Nijmegen
+  country : Netherlands
+  city    : Nijmegen
+  visit   : "Elzenstraat 4a,6523 EV,Nijmegen,Netherlands"
+  postal  : "Elzenstraat 4a,6523 EV,Nijmegen,Netherlands"
+  website : https://www.hackerspacenijmegen.nl
+NurdSpace:
+  name    : NURDspace
+  nick    : NURDspace
+  country : Netherlands
+  city    : Wageningen
+  visit   : "Vergersweg 22-24,6707 HT,Wageningen,Netherlands"
+  postal  : "Vergersweg 22-24,6707 HT,Wageningen,Netherlands"
+  website : https://nurdspace.nl
+Pixelbar:
+  name    : Pixelbar
+  nick    : Pixelbar
+  country : Netherlands
+  city    : Rotterdam
+  visit   : "Vierhavensstraat 56,3029 BG,Rotterdam,Netherlands"
+  postal  : "Vierhavensstraat 56,3029 BG,Rotterdam,Netherlands"
+  website : https://www.pixelbar.nl
+RandomData:
+  name    : RandomData
+  nick    : RandomData
+  country : Netherlands
+  city    : Utrecht
+  visit   : "Parkstraat 40,3581 PL,Utrecht,Netherlands"
+  postal  : "Parkstraat 40,3581 PL,Utrecht,Netherlands"
+  website : http://randomdata.nl
+RevSpace:
+  name    : Revelation Space
+  nick    : RevSpace
+  country : Netherlands
+  city    : Leidschendam
+  visit   : "Overgoo 1,2266 JZ,Leidschendam,Netherlands"
+  postal  : "Vlietweg 15,2266 KA,Leidschendam,Netherlands"
+  website : https://revspace.nl
+TDvenlo:
+  name    : TDvenlo
+  nick    : TDvenlo
+  country : Netherlands
+  city    : Venlo
+  visit   : "Begijnengang 2,5911 JL,Venlo,Netherlands"
+  postal  : "Begijnengang 2,5911 JL,Venlo,Netherlands"
+  website : https://tdvenlo.nl
+TechInc:
+  name    : TechInc
+  nick    : TechInc
+  country : Netherlands
+  city    : Amsterdam
+  visit   : "Louwesweg 1,1066 EA,Amsterdam,Netherlands"
+  postal  : "Louwesweg 1,1066 EA,Amsterdam,Netherlands"
+  website : https://techinc.nl
+TkkrLab:
+  name    : TkkrLab
+  nick    : TkkrLab
+  country : Netherlands
+  city    : Enschede
+  visit   : "Rigtersbleek Zandvoort 10,7521 BE,Enschede,Netherlands"
+  postal  : "Rigtersbleek Zandvoort 10,7521 BE,Enschede,Netherlands"
+  website : https://tkkrlab.nl
 ---
