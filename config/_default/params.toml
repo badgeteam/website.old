@@ -2,6 +2,22 @@ mainSections = ["blog","project"]
 mainImage    = "/images/bodgeteam.jpg"
 defaultImage = "/images/mascot2.jpg"
 
+# Recent updates configuration
+updateSections = ["blog","project"]
+
+[updates]
+  sections = ["blog","project"]
+  paginate = 10
+
+  [updates.widget]
+    sections = ["blog","project"]
+    paginate = 5
+
+  [updates.project]
+    sections = ["blog","project"]
+    paginate = 5
+
+
 # [webmaster]
 #   name  = "Renze Nicolai"
 #   email = "r.nicolai@ergenshuizen.nl"

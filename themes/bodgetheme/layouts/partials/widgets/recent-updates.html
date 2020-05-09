@@ -1,5 +1,16 @@
 {{- "<!-- Recent updates -->" | safeHTML }}
-{{- $pages := first 5 ((where site.RegularPages "Type" "in" site.Params.mainSections).ByLastmod.Reverse ) }}
+{{- $maxpaginate := 5 }}
+{{- $sections    := slice }}
+{{- if site.Params.updates.widget }}
+  {{- $maxpaginate = site.Params.updates.widget.paginate | default $maxpaginate }}
+  {{- $sections    = site.Params.updates.widget.sections }}
+{{- else if site.Params.updates }}
+  {{- $maxpaginate = site.Params.updates.paginate | default $maxpaginate }}
+  {{- $sections    = site.Params.updates.sections }}
+{{- else if site.Params.mainSections }}
+  {{- $sections    = site.Params.mainSections }}
+{{- end }}
+{{- $pages := first $maxpaginate ((where site.RegularPages "Type" "in" $sections).ByLastmod.Reverse ) }}
 {{- $page_count := len $pages }}
 {{- if ge $page_count 1 }}
 <div class="bi-recent-updates bt-card bt-margin">

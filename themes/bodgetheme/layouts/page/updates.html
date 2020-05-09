@@ -1,0 +1,38 @@
+{{ define "main" }}
+{{- $maxpaginate := 10 }}
+{{- $sections    := slice }}
+{{- if site.Params.updates }}
+  {{- $maxpaginate = site.Params.updates.paginate | default $maxpaginate }}
+  {{- $sections    = site.Params.updates.sections }}
+{{- else if site.Params.mainSections }}
+  {{- $sections    = site.Params.mainSections }}
+{{- end }}
+{{- $pages := "" }}
+{{- if $sections }}
+  {{- $pages = first $maxpaginate ((where site.RegularPages "Type" "in" $sections).ByLastmod.Reverse ) }}
+{{- else }}
+  {{- $pages = first $maxpaginate ((site.RegularPages).ByLastmod.Reverse ) }}
+{{- end }}
+  <article class="bi-default-list"> {{ "<!-- Recent updates -->" | safeHTML }}
+    {{- if .Content }}{{ .Content }}{{end}}
+    <section class="bi-default-list-section bt-card bt-margin">
+      <ul class="bi-ul bi-recent-updates-ul bt-ul bt-hoverable bt-white">
+        {{- range $pages }}
+        <li class="bi-li bi-recent-updates-li bt-padding">
+          <a href="{{ .Permalink }}" style="text-decoration:none;">
+            <span class="bi-recent-updates-section bt-opacity bt-small">{{ humanize .Section }} - {{ .Lastmod.Format "02 January 2006 15:04 MST" }}</span><br>
+            <span class="bi-recent-updates-title bt-medium">{{ .Title | default .Site.Title | truncate 30 }}</span><br>
+            <span class="bi-recent-updates-description bt-small">{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Summary }}{{ end }}</span>
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+    </section>
+  </article> {{ "<!-- End recent updates -->" | safeHTML }}
+{{ end }}
+
+{{ define "page-header" }}
+<header class="bi-page-header bt-container bt-center">
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-newspaper-o bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n .Title | default (humanize .Title)) | markdownify }}</h3>
+</header>
+{{ end }}
