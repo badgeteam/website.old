@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
-{{ partialCached "head/site-head.html" . }}
+{{ partial "head/site-head.html" . }}
   <body>
 {{ partial "header/site-header.html" . }}
     <div class="bi-page-wrapper bt-content bt-padding bt-margin-top" style="max-width:1500px"> {{ "<!-- Page content -->" | safeHTML }}
