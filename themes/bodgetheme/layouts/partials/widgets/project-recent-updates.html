@@ -23,7 +23,7 @@
   {{- if ge $page_count 1 }}
   <div class="bi-recent-updates bt-card bt-margin">
     <div class="t-recent-updates-title-container bt-container bt-padding">
-      <h4 class="bi-recent-updates-title bt-left bt-text-black"><strong><i class="fa fa-newspaper-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "recent updates" | default "Recent updates") | markdownify | humanize }}</h4>
+      <h4 class="bi-recent-updates-title bt-left bt-text-black"><a href="/updates/" style="text-decoration:none;"><strong><i class="fa fa-newspaper-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "recent updates" | default "Recent updates") | markdownify | humanize }}</a></h4>
     </div>
     <ul class="bi-ul bi-recent-updates-ul bt-ul bt-hoverable bt-white">
       {{- range $pages }}
