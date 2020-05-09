@@ -1,0 +1,16 @@
+---
+RevSpace:
+  name    : RevSpace
+  country : Netherlands
+  city    : The Hague
+  postal :
+    address :
+  capital: Montgomery
+  lat: '32.361538'
+  long: "-86.279118"
+AK:
+  name: Alaska
+  capital: Juneau
+  lat: '58.301935'
+  long: "-134.419740"
+---
