@@ -19,7 +19,7 @@ description : ""
 projects    : ["{{ $project | upper | default "ReplaceThisWithTheCorrectProjectID" }}"]
 
 # External reference name (i.e. https://bodge.theme/blog/slug)
-slug        : "{{ replace .Name "-" " " | title }}"
+slug        : ""
 
 # Identifying tags, searchable/visible to site visitors
 tags        : []

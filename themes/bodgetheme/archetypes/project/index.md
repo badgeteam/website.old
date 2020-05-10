@@ -11,7 +11,7 @@ description : "This is the project page description for the {{ replace .Name "-"
 projects    : ["{{ replace .Name "-" " " | upper }}"]
 
 # External reference name (i.e. https://bodge.theme/project/slug)
-slug        : "{{ replace .Name "-" " " | lower }}"
+slug        : ""
 
 # Project state and type
 active      : true
