@@ -18,37 +18,20 @@ teams :
 - HH2020
 - MCH2021
 
-#teams :
-#- name        : Badgeteam
-#  project     : Bodgeteam
-#  role        :
-#  description :
-#- name        : Badgeteam
-#  project     : CZ2019
-#  role        :
-#  description :
-#- name        : Badgeteam
-#  project     : HH2020
-#  role        :
-#  description :
-#- name        : Badgeteam
-#  project     : MCH2021
-#  role        :
-#  description :
+participation :
+- project     : CZ2019
+  role        : Sweatshopper
+  description : Flashing, testing and packaging.
+- project     : HH2020
+  role        : Bodgenator
+  description : Fixing the HackerHotel 2020 badge.
+- project     : Bodgetheme
+  role        : Webdeveloper
+  description : Design and built new Badge.team website
+- project     : MCH2021
+  role        : Mysterian
+  description : Radiated some brainwaves at brainstorm phase.
 
-#projects :
-#- project     : Bodgetheme
-#  role        : developer
-#  description :
-#- project     : CZ2019
-#  role        :
-#  description :
-#- project     : HH2020
-#  role        :
-#  description :
-#- project     : MCH2021
-#  role        :
-#  description :
 
 #### Mini profile (Displayed at end of posts, where available)
 
