@@ -1,8 +1,7 @@
 {{ define "main" }}
 {{- $maxpaginate := .Site.Params.team.paginate | default 12 }}
-      <article class="bi-team-list"> {{ "<!-- Team -->" | safeHTML }}
-        {{- if .Content }}{{ .Content }}{{end}}
-        <section class="bi-team-list-section"> {{ printf "<!-- The team -->" | safeHTML }}
+      <article class="bi-team-list"> {{ "<!-- TeamS -->" | safeHTML }}
+        <section class="bi-team-list-section"> {{ printf "<!-- The teamS -->" | safeHTML }}
           <div class="bi-team-list-section-row bt-row-padding">
   {{ range (.Paginate ( .Pages.ByParam "name" ) $maxpaginate).Pages }}
     {{- $member := .Page }}

@@ -1,7 +1,7 @@
 {{ define "main" }}
   <article class="bi-default-list"> {{ "<!-- Default list -->" | safeHTML }}
     {{- if .Content }}{{ .Content }}{{end}}
-    <section class="bi-default-list-section bt-card bt-margin">
+    <section class="bi-default-list-section bt-card bt-margin">  
       <ul class="bi-ul bi-default-list-section-ul bt-ul bt-hoverable bt-white">
         {{- range .Paginator.Pages }}
           {{/* if (fileExists "partials/li/li_default.html") */}}

@@ -1,5 +1,6 @@
 {{ define "main" }}
       <article class="bi-gallery"> {{ "<!-- Gallery -->" | safeHTML }}
+        {{- if .Content }}{{ .Content }}{{end}}
   {{- range .Pages }}
   {{- $album := .Page }}
         <section class="bi-gallery-section"> {{ printf "<!-- %#v site gallery -->" .Params.title | safeHTML }}
