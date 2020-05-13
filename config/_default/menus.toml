@@ -25,8 +25,8 @@
   url        = "/project/"
   parent     = ""
   weight     = 100
-  pre        = "<i class='fa fa-cogs bt-hover-opacity'></i> "
-  post       = ""
+  pre        = "<i class='fa fa-cogs bt-hover-opacity'></i><x class='bt-hide-small'> "
+  post       = "</x>"
 
 [[navbar_top]]
   identifier = "team"
@@ -35,8 +35,8 @@
   url        = "/team/"
   parent     = ""
   weight     = 200
-  pre        = "<i class='fa fa-users bt-hover-opacity'></i> "
-  post       = ""
+  pre        = "<i class='fa fa-users bt-hover-opacity'></i><x class='bt-hide-small'> "
+  post       = "</x>"
 
 [[navbar_top]]
   identifier = "gallery"
@@ -45,19 +45,29 @@
   url        = "/gallery/"
   parent     = ""
   weight     = 300
-  pre        = "<i class='fa fa-camera bt-hover-opacity'></i> "
-  post       = ""
+  pre        = "<i class='fa fa-camera bt-hover-opacity'></i><x class='bt-hide-small'> "
+  post       = "</x>"
+
+[[navbar_top]]
+  identifier = "photos"
+  name       = "Photos"
+  title      = "Photos"
+  url        = "https://gallery.bodge.team/"
+  parent     = "gallery"
+  weight     = 300
+  pre        = "<i class='fa fa-camera-retro bt-hover-opacity'></i><x class='bt-hide-small'> "
+  post       = "</x>"
 
 # [[navbar_top]]
-#   identifier = "calendar"
-#   name       = "Calendar"
-#   title      = "Calendar"
-#   url        = "/calendar/"
+#   identifier = "events"
+#   name       = "Events"
+#   title      = "Events"
+#   url        = "/event/"
 #   parent     = ""
 #   weight     = 400
-#   pre        = "<i class='fa fa-calendar bt-hover-opacity'></i> "
-#   post       = ""
-#
+#   pre        = "<i class='fa fa-calendar bt-hover-opacity'></i><x class='bt-hide-small'> "
+#   post       = "</x>"
+
 # [[navbar_top]]
 #   identifier = "archive"
 #   name       = "Archive"
@@ -65,8 +75,8 @@
 #   url        = "/archive/"
 #   parent     = ""
 #   weight     = 500
-#   pre        = "<i class='fa fa-archive bt-hover-opacity'></i> "
-#   post       = ""
+#   pre        = "<i class='fa fa-archive bt-hover-opacity'></i><x class='bt-hide-small'> "
+#   post       = "</x>"
 
 
 # Bottom navigation bar items
