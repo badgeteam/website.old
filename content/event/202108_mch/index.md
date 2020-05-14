@@ -25,4 +25,6 @@ projects    : ["MCH2021"]
 slug        : "mch2021"
 ---
 
-A nice description about this event could go there.
+MCH2021 is a non profit outdoor Hacker camp taking place in The Netherlands in 2021 on August 6th to 10th.
+[Official MCH2021 website](https://mch2021.org)
+[MCH2021 Badge project](/mch2021/)

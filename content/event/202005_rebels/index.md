@@ -6,13 +6,13 @@ title       : "Rebels Base"
 date        : 2021-05-04T00:00:00+02:00
 
 # Event end date
-endDate     : 2021-05-04T00:00:00+02:00
+endDate     : 2021-05-05T00:00:00+02:00
 
 # Event gets published on the calendar on or after this date
-publishDate : 2020-05-03T00:00:00+02:00
+publishDate : 2021-05-03T00:00:00+02:00
 
 # Event gets removed from the calendar on or after this date
-#expiryDate  : 2020-05-05T00:00:00+02:00
+expiryDate  : 2021-05-05T00:00:00+02:00
 
 # Event status (drafts do NOT show!)
 draft       : false
@@ -28,4 +28,4 @@ country  : Netherlands
 city     : Garderen
 ---
 
-A nice description about this event could go there.
+May the 4th be with you!

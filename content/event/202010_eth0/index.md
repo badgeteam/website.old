@@ -28,4 +28,6 @@ country  : Netherlands
 city     : Lievelde
 ---
 
-A nice description about this event could go there.
+Eth0 is a high-tech geek conference. It aims toward sharing knowledge on technology/IT related fields including security, networks, programming, privacy, new (open) technologies, ethics and hacking. There are [talks](https://wiki.eth0.nl/index.php/Eth0:2020_autumn_talks) on these subjects, and we'll have a fully equipped [lounge](https://wiki.eth0.nl/index.php/Lounge) (with bar) and an overload of hackerspace activity. Maybe someone brings along lasers and there is room to party.
+
+[Official Eth0 website](https://wiki.eth0.nl)
