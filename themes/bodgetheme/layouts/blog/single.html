@@ -114,6 +114,7 @@
     {{- end }}
 
     {{ partial "widgets/project-recent-updates.html" (dict "context" . "project" (index $project 0) ) }}
+    {{ partial "widgets/project-participants.html" (dict "context" . "project" (index $project 0) ) }}
   {{- end }}
 
 {{ partial "widgets/taxo-cloud.html" . }}

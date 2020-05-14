@@ -1931,3 +1931,36 @@ a {
 .bt-hover-border-pale-blue:hover {
     border-color: #e7ffff!important
 }
+
+.bt-ul-none {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+.bt-ul-none li {
+    padding: 0px 8px;
+}
+
+.bt-ul-none li:last-child {
+    padding: 0px 8px 8px;
+}
+
+.bt-ul-dash {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+.bt-ul-dash li {
+    padding: 0px 8px;
+}
+
+.bt-ul-dash li:before {
+    content : "-";
+    padding-right : 8px;
+}
+
+.bt-ul-dash li:last-child {
+    padding: 0px 8px 8px;
+}

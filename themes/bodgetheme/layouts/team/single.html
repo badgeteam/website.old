@@ -102,7 +102,7 @@
     {{- with .Params.interests }}
     <div class="bi-team-single-interests bt-container bt-card bt-margin bt-white">
       <p class="bi-team-single-interests-title bt-large"><strong><i class="fa fa-heart bi-icon bt-margin-right bt-text-teal"></i>{{ (i18n "interests" | default "Interests") | markdownify }}</strong></p>
-      <ul class="bi-team-single-interests-ul bi-ul ul-interests">
+      <ul class="bi-team-single-interests-ul bi-ul ul-interests bt-ul-dash">
         {{ range . }}
         <li class="bi-team-single-interests-li bi-li">{{ . | markdownify | emojify }}</li>
         {{ end }}
@@ -143,7 +143,7 @@
       {{- $separator := false }}
       {{- range $projects }}
       {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
-        <h5 class="bi-team-single-projects-project-title bt-opacity"><strong>{{ .Title }}</strong></h5>
+        <h5 class="bi-team-single-projects-project-title bt-opacity"><a href="{{ .RelPermalink }}" style="text-decoration:none;"><strong>{{ .Title }}</strong></a></h5>
         {{- if .Params.endDate }}
         <h6 class="bi-team-single-projects-project-date bt-text-teal"><i class="fa fa-calendar bi-icon bt-margin-right"></i>{{ .Date.Format "January 2006" }} - {{ dateFormat "January 2006" .Params.endDate }}</h6>
         {{- else }}
