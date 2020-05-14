@@ -1,16 +1,24 @@
 ---
-date        : {{ .Date }}
-lastmod     : {{ .Date }}
-draft       : true
-short_title : "{{ replace .Name "-" " " | title }}"
 title       : "{{ replace .Name "-" " " | title }} Project"
+short_title : "{{ replace .Name "-" " " | title }}"
 description : "This is the project page description for the {{ replace .Name "-" " " | title }} Project."
+draft       : true
+
+# Project start date
+date        : {{ .Date }}
+
+# Project end date (commented out means no end date yet)
+#endDate     : {{ .Date }}
+
+# Project gets published on the website after this date
+publishDate : {{ .Date }}
+
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["{{ replace .Name "-" " " | upper }}"]
 
-# External reference name (i.e. https://bodge.theme/project/slug)
+# External reference name (i.e. https://bodge.theme/slug)
 slug        : ""
 
 # Project state and type

@@ -1,16 +1,24 @@
 ---
-date        : 2020-05-03T00:12:18+02:00
-lastmod     : 2020-05-03T00:12:18+02:00
-draft       : true
-short_title : "Borg"
 title       : "Borg Assimilation"
+short_title : "Borg"
 description : "Resistance is futile."
+draft       : true
+
+# Project start date
+date        : 2020-05-03T00:12:18+02:00
+#lastmod     : 2020-05-03T00:12:18+02:00
+
+# Project end date (commenting out, means no end date yet)
+#endDate     : 2021-08-10T23:00:00+02:00
+
+# Project gets published on the website after this date
+publishDate : 2020-05-03T00:12:18+02:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["BORG"]
 
-# External reference name (i.e. https://bodge.theme/project/slug)
+# External reference name (i.e. https://bodge.theme/slug)
 slug        : "borg"
 
 # Project state and type

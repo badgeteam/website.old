@@ -1,16 +1,23 @@
 ---
-date        : 2020-03-28T16:14:19+01:00
-lastmod     : 2020-03-28T16:14:19+01:00
-draft       : false
+title       : "May Contain Hackers"
 short_title : "MCH 2021"
-title       : "May Contain Hackers 2021 Project"
 description : "This is the project page description for the May Contain Hackers 2021 Project"
+draft       : false
+
+# Project start date
+date        : 2020-02-19T15:27:19+01:00
+
+# Project end date (commenting out, means no end date yet)
+#endDate     : 2021-08-10T23:00:00+02:00
+
+# Project gets published on the website after this date
+publishDate : 2020-02-19T15:27:19+01:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["MCH2021"]
 
-# External reference name (i.e. https://bodge.theme/project/slug)
+# External reference name (i.e. https://bodge.theme/slug)
 slug        : "mch2021"
 
 # Project state
@@ -39,8 +46,8 @@ email : ""
 # Contact (Listed under personal details)
 # For available icons, see: https://fontawesome.com
 contact :
-- title     : Badge.team
-  link      : https://badge.team/
+- title     : MCH2021
+  link      : https://mch2021.org/
   icon_pack : fa
   icon_name : fa-globe
 

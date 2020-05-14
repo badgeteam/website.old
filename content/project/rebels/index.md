@@ -1,17 +1,25 @@
 ---
+title       : "Rebels Base"
+short_title : "Rebels"
+description : "May the fourth be with you!"
+draft       : false
+
+# Project start date
 date        : 2021-05-04T00:00:00+02:00
+#lastmod     : 2021-05-04T00:00:00+02:00
+
+# Project end date (commenting out, means no end date yet)
+#endDate     : 2021-08-10T23:00:00+02:00
+
+# Project gets published on the website after this date
 publishDate : 2021-05-04T00:00:00+02:00
 expiryDate  : 2021-05-05T00:00:00+02:00
-draft       : false
-short_title : "Rebels"
-title       : "Rebels Base"
-description : "May the fourth be with you!"
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["REBELS"]
 
-# External reference name (i.e. https://bodge.theme/project/slug)
+# External reference name (i.e. https://bodge.theme/slug)
 slug        : "rebels"
 
 # Project state and type

@@ -1,16 +1,24 @@
 ---
-date        : 2020-01-24T09:21:42+01:00
-lastmod     : 2020-01-24T09:21:42+01:00
-draft       : false
-short_title : "Pixel Badge"
 title       : "Pixel Badge Project"
+short_title : "Pixel Badge"
 description : "HackZone takes the CampZone 2019 badge to the next level."
+draft       : false
+
+# Project start date
+date        : 2020-01-24T09:21:42+01:00
+#lastmod     : 2020-01-24T09:21:42+01:00
+
+# Project end date (commenting out, means no end date yet)
+#endDate     : 2021-08-10T23:00:00+02:00
+
+# Project gets published on the website after this date
+publishDate : 2020-01-24T09:21:42+01:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["PIXEL2020"]
 
-# External reference name (i.e. https://bodge.theme/project/slug)
+# External reference name (i.e. https://bodge.theme/slug)
 slug        : "pixel2020"
 
 # Project state

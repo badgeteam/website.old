@@ -1,15 +1,23 @@
 ---
-date        : 2020-04-27T22:31:30+02:00
-lastmod     : 2020-04-27T22:31:30+02:00
-draft       : false
-short_title : "EMF 2022"
 title       : "EMF 2022"
+short_title : "EMF 2022"
 description : "EMF2022 Project"
+draft       : false
+
+# Project start date
+date        : 2020-04-27T22:31:30+02:00
+#lastmod     : 2020-04-27T22:31:30+02:00
+
+# Project end date (commenting out, means no end date yet)
+#endDate     : 2021-08-10T23:00:00+02:00
+
+# Project gets published on the website after this date
+publishDate : 2020-04-27T22:31:30+02:00
 
 # Identifying mnemonics, to refer to this project from other items like blogs, etc.
 projects    : ["EMF2022"]
 
-# External reference name (i.e. https://bodge.theme/project/slug)
+# External reference name (i.e. https://bodge.theme/slug)
 slug        : "emf2022"
 
 # Project state
