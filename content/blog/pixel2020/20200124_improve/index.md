@@ -13,8 +13,8 @@ description : ""
 #  this blog is related to.
 projects    : ["PIXEL2020"]
 
-# For alternative external reference only
-slugs       : ["pixelbadge","pixel2020"]
+# External reference name (i.e. https://bodge.theme/blog/slug)
+slug        : ""
 
 # Identifying tags, searchable/visible to site visitors
 tags        :

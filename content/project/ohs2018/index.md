@@ -1,17 +1,25 @@
 ---
-date        : 2020-04-26T09:44:35+02:00
-lastmod     : 2020-04-26T09:44:35+02:00
-draft       : false
-short_title : "OHS 2018"
 title       : "Open Hardware Summit 2018 Badge Project"
+short_title : "OHS 2018"
 description : "This is the project page description for the Open Hardware Summit 2018 Project"
+draft       : false
+
+# Project start date
+date        : 2020-04-26T09:44:35+02:00
+#lastmod     : 2020-04-26T09:44:35+02:00
+
+# Project end date (commenting out, means no end date yet)
+#endDate     : 2021-08-10T23:00:00+02:00
+
+# Project gets published on the website after this date
+publishDate : 2020-04-26T09:44:35+02:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["OHS2018"]
 
-# For alternative external reference only
-slugs       : ["ohs2018"]
+# External reference name (i.e. https://bodge.theme/slug)
+slug        : "ohs2018"
 
 # Project state
 active      : false

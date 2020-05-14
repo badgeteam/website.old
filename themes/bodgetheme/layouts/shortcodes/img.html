@@ -3,11 +3,11 @@
 {{- $img_width  := (.Get "width")  | default "100%" }}
 {{- $img_owidth := (.Get "owidth") | default $img_width }}
 {{- $img_iwidth := (.Get "iwidth") | default "100%" }}
-{{- $img_class  := (.Get "class") | default "bt-round" }}
+{{- $img_class  := (.Get "class") }}
 {{- $img_title  := (.Get "title") }}
 {{- $img_descr  := (.Get "descr") }}
 {{- $image      := (partial `functions/get_image` (dict "context" . "src" $img_src)) }}
-  <div class="bi-img bt-display-container" style="width:{{ $img_owidth }}">
+  <div class="bi-img bt-display-container bt-right" style="width:{{ $img_owidth }}">
     <div class="bt-center">
       <img class="bi-img-img bi-image {{ $img_class }}" src="{{ if $image }}{{ $image.RelPermalink }}{{ else }}{{ $img_src }}{{ end }}" alt="{{ $img_alt }}" title="{{ $img_alt }}" style="width:{{ $img_iwidth }}">
     </div>

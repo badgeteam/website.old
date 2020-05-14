@@ -1,17 +1,25 @@
 ---
-date        : 2020-04-26T09:45:07+02:00
-lastmod     : 2020-04-26T09:45:07+02:00
-draft       : false
-short_title : "Disobey 2020"
 title       : "Disobey2020 Badge Project"
+short_title : "Disobey 2020"
 description : "This is the project page description for the Disobey2020 Project"
+draft       : false
+
+# Project start date
+date        : 2020-04-26T09:45:07+02:00
+#lastmod     : 2020-04-26T09:45:07+02:00
+
+# Project end date (commenting out, means no end date yet)
+#endDate     : 2021-08-10T23:00:00+02:00
+
+# Project gets published on the website after this date
+publishDate : 2020-04-26T09:45:07+02:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["DISOBEY2020"]
 
-# For alternative external reference only
-slugs       : ["disobey2020"]
+# External reference name (i.e. https://bodge.theme/slug)
+slug        : "disobey2020"
 
 # Project state
 active      : true

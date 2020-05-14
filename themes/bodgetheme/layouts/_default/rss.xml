@@ -1,0 +1,77 @@
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+  {{- $pages = (where $pctx.RegularPages "Type" "in" site.Params.updateSections) -}} 
+{{- else -}}
+  {{- $pages = (where $pctx.Pages "Type" "in" site.Params.updateSections) -}}
+{{- end -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+  {{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    {{- with $.Site.Params.theme }}
+    <generator>{{ .generator }}{{ hugo.Generator -}}</generator>
+    {{- else }}
+    <generator>{{- hugo.Generator -}}</generator>
+    {{- end }}
+    <title>
+      {{- if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end -}}
+    </title>
+    <link>{{- .Permalink -}}</link>
+    <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
+    {{- with .Site.LanguageCode }}<language>{{.}}</language>{{- end }}
+    {{- with .Site.Copyright }}<copyright>{{.}}</copyright>{{- end }}
+    {{- with .Site.Params.managingeditor }}
+    <managingEditor>
+      {{- .email }}{{ with .name }} ({{.}}){{ end -}}
+    </managingEditor>
+    {{- end -}}
+    {{- with .Site.Params.webmaster -}}
+    <webMaster>
+      {{- .email }}{{ with .name }} ({{.}}){{ end -}}
+    </webMaster>
+    {{- end }}
+    <lastBuildDate>{{- now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML -}}</lastBuildDate>
+    {{- with .OutputFormats.Get "RSS" -}}
+      {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end -}}
+    {{- with $.Site.Params.mainimage -}}
+      {{- $image := (partial `functions/get_image` (dict "context" . "src" . )) }}
+      {{- with $image }}
+        <image>
+          <title>{{ $.Site.Title }}</title>
+          <url>{{ $image.Permalink }}</url>
+          <link>{{ $.Site.BaseURL }}</link>
+        </image>
+      {{- end -}}
+    {{- end -}}
+    {{- range $pages -}}
+      {{- $page := . }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      {{- with .Section }}
+      <category domain="{{ $.Site.BaseURL }}{{ (. | lower) }}">{{ . | humanize }}</category>
+      {{- end -}}
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{- with .Params.author -}}
+        {{- $author  := (partial `functions/get_team_member_displayname` $page) }}
+        <author>{{ $author }}</author>
+      {{- else -}}
+        {{- with .Site.Author.email -}}
+        <author>
+          {{.}}
+          {{- with $.Site.Author.name -}} ({{.}}){{- end -}}
+        </author>
+        {{- end -}}
+      {{- end -}}
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Summary | html }}</description>
+    </item>
+    {{- end -}}
+  </channel>
+</rss>

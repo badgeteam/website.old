@@ -4,7 +4,7 @@
   <div class="bi-team-about bt-card bt-margin">
     <a href="{{ .Permalink }}" style="text-decoration:none;">
       <div class="bi-team-about-title-container bt-container bt-padding">
-        <h4 class="bi-team-about-title bt-left bt-text-black"><strong><i class="fa fa-pencil-square-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "about" | default "About") | markdownify }} {{ .Params.Name }}</h4>
+        <h4 class="bi-team-about-title bt-left bt-text-black"><strong><i class="fa fa-pencil-square-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "about author" | default "About author") | markdownify }} - {{ .Params.Name }}</h4>
       </div>
       <div class="bi-team-about-bio-container bt-container bt-padding">
         <span class="bi-team-about-bio bt-small">{{ .Params.bio }}</span>

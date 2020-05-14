@@ -8,7 +8,7 @@
           {{- /* Params navbar.top */}}
           {{- with .Site.Params.navbar }}
             {{- range sort .top "weight" }}
-            <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" target="{{ .Target }}">
+            <a class="bi-button bi-header-button bt-bar-item bt-button bt-round" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" {{ if in .URL "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>
               <i class="{{ .icon_pack }} {{ .icon_name }} bt-hover-opacity"></i> <x class="bt-hide-small">{{ .Title | default .Name }}</x>
             </a>
             {{- end }}
@@ -21,8 +21,8 @@
             <div class="bt-dropdown-hover">
               <button class="bt-button bt-white{{ if $currentPage.HasMenuCurrent "navbar_top" . }} active{{ end }}">
                 {{- if .URL }}
-                <a title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" style="text-decoration:none">
-                  {{ .Pre }}{{ if .Name }}<x class="bt-hide-small">{{ .Name }}</x>{{ end }}{{ .Post }}
+                <a title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" {{ if in .URL "http" }} target="_blank" rel="noopener noreferrer"{{ end }} style="text-decoration:none">
+                  {{ .Pre }}{{ .Name }}{{ .Post }}
                 </a>
                 {{- else }}
                 {{ .Pre }}{{ .Name }}{{ .Post }}
@@ -30,13 +30,13 @@
               </button>
               <div class="bt-dropdown-content bt-bar-block bt-card-4">
                 {{- range .Children }}
-                <a href="{{ .URL }}" class="bt-bar-item bt-button{{ if $currentPage.IsMenuCurrent "navbar_top" . }} active{{ end }}">{{ .Pre }}{{ .Name }}{{ .Post }}</a>
+                <a href="{{ .URL }}" {{ if in .URL "http" }} target="_blank" rel="noopener noreferrer"{{ end }} class="bt-bar-item bt-button{{ if $currentPage.IsMenuCurrent "navbar_top" . }} active{{ end }}">{{ .Pre }}{{ .Name }}{{ .Post }}</a>
                 {{- end }}
               </div>
             </div>
               {{- else }}
-            <a class="bi-button bi-header-button bt-bar-item bt-button bt-round{{ if $currentPage.IsMenuCurrent "navbar_top" . }} active{{ end }}" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}">
-              {{ .Pre }}{{ if .Name }}<x class="bt-hide-small">{{ .Name }}</x>{{ end }}{{ .Post }}
+            <a class="bi-button bi-header-button bt-bar-item bt-button bt-round{{ if $currentPage.IsMenuCurrent "navbar_top" . }} active{{ end }}" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" {{ if in .URL "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>
+              {{ .Pre }}{{ .Name }}{{ .Post }}
             </a>
               {{- end }}
             {{- end }}
@@ -53,7 +53,7 @@
                   {{- range .Children}}
                   {{- end }}
                 {{- else }}
-              <a class="bi-button bt-bar-item bt-button" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}">
+              <a class="bi-button bt-bar-item bt-button" title="{{ .Title | default .Name }}" alt="{{ .Name }}" href="{{ .URL }}" {{ if in .URL "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>
                 {{ .Pre }}{{ .Name }}{{ .Post }}
               </a>
                 {{- end }}

@@ -33,7 +33,9 @@
       <div class="bi-blog-single-description bt-container">
         {{- if .Params.showdescription }}<p>{{ .Description }}</p>{{ end }}
         <hr>
-        {{ .Content }}
+        <div class="bi-blog-content bt-row">
+          <div class="bt-col">{{ .Content }}</div>
+        </div>
         {{- if and (.Params.Author) (.Params.about_show) (.Params.about_inline) }}
           {{- $profile := partial `functions/get_team_member_profile` . }}
           {{- with $profile }}
@@ -41,7 +43,7 @@
             <hr>
             <a class="bi-blog-about-link" href="{{ .Permalink }}" style="text-decoration:none;">
               <div class="bi-blog-about-title-container">
-                <h4 class="bi-blog-about-title bt-text-black"><strong><i class="fa fa-pencil-square-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "about" | default "About") | markdownify }} {{ .Params.Name }}</h4>
+                <h4 class="bi-blog-about-title bt-text-black"><strong><i class="fa fa-pencil-square-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "about author" | default "About author") | markdownify }} - {{ .Params.Name }}</h4>
                 <span class="bi-blog-about-bio bt-small">{{ .Params.bio }}</span>
               </div>
             </a>
@@ -112,6 +114,7 @@
     {{- end }}
 
     {{ partial "widgets/project-recent-updates.html" (dict "context" . "project" (index $project 0) ) }}
+    {{ partial "widgets/project-participants.html" (dict "context" . "project" (index $project 0) ) }}
   {{- end }}
 
 {{ partial "widgets/taxo-cloud.html" . }}

@@ -1,0 +1,4 @@
+{{/* Get day name Monday ... Sunday */}}
+{{ $date    := . }}
+{{ $weekday := (time $date).Format "Monday" }}
+{{ return $weekday }}

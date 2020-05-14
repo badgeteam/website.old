@@ -1,0 +1,23 @@
+{{- $page    := .context }}
+{{- $project := .project }}
+{{- with $project }}
+  {{- /* $team := where (where .Site.RegularPages "Section" "team") ".Params.teams" "intersect" $project.Params.projects */}}
+  {{- $team := (where (where .Site.RegularPages "Section" "team") ".Params.teams" "intersect" $project.Params.projects).ByParam "name" }}
+  {{- $member_count := len $team }}
+  {{- if ge $member_count 1 }}
+  {{- "<!-- Project team -->" | safeHTML }}
+  <div class="bi-project-about-project bt-card bt-margin">
+    <div class="t-recent-updates-title-container bt-container bt-padding">
+      <h4 class="bi-recent-updates-title bt-left bt-text-black"><strong><i class="fa fa-users bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "team" | default "Team") | markdownify | humanize }}</h4>
+    </div>
+    <div class="bt-padding-small">
+      <ul class="bi-team-single-interests-ul bi-ul ul-interests bt-ul-none">
+        {{ range $team }}
+        <li class="bi-team-single-interests-li bi-li"><a href="{{ .RelPermalink }}" style="text-decoration:none">{{ .Params.Name | markdownify | emojify }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+  {{- "<!-- End project team -->" | safeHTML }}
+  {{- end }}
+{{- end }}

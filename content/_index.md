@@ -1,6 +1,6 @@
 ---
 date        : 2020-04-13T05:38:15+02:00
-title       : "Badge.Team"
+title       : "Badge Team"
 ---
 
 ### {{< icon name="fa-shield" >}}Badge.team

@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{- $maxpaginate := .Site.Params.team.paginate | default 12 }}
+          <article class="bi-default-list"> {{ "<!-- Teams taxonomy -->" | safeHTML }}
+            <section class="bi-default-list-section bt-card bt-margin">
+              <ul class="bi-ul bi-default-list-section-ul bt-ul bt-card">
+                {{- if .Content }}{{ .Content }}{{end}}
+                {{- range (.Paginate ( .Pages.ByParam "name" ) $maxpaginate).Pages }}
+                <li class="bi-li bi-default-list-section-li bt-bar">
+                  <div class="bt-bar-item">
+                    <a href="{{ .Permalink }}" style="text-decoration:none;">
+                    {{- $image := "" }}
+                    {{- $alt   := "" }}
+                    {{- if .Params.avatar }}
+                      {{- $image = .Resources.GetMatch .Params.avatar }}
+                      {{- $alt   = .Params.Name }}
+                    {{- end }}
+                    {{- if $image }}
+                      <img class="bi-default-list-section-image bt-image bt-round bt-left bt-margin-right" src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="width:75px">
+                    {{- end }}
+                      <span class="bi-default-list-section-section bt-large">{{ if .Params.Name }}{{ .Params.Name }}{{ end }}</span><br>
+                      <span class="bi-default-list-section-title bt-small">{{ if .Params.Role }}{{ .Params.Role }}{{ end }}</span><br>
+                      <span class="bi-default-list-section-description">{{ .Summary }}</span>
+                    </a>
+                  </div>
+                </li>
+                {{- end }}
+              </ul>
+            </section>
+            <div class="bi-article-navigation bt-container">
+              <div class="bi-article-nav-row bt-row bt-center">
+                {{- template "partials/pagination.html" . }}
+              </div>
+            </div>
+          </article> {{ "<!-- End teams taxonomy -->" | safeHTML }}
+{{ end }}
+
+{{ define "page-header" }}
+      <header class="bi-page-header bt-container bt-center">
+        <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-users bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n (.Title | lower ) | default .Title ) | markdownify }}</h3>
+      </header>
+{{ end }}

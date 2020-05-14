@@ -18,8 +18,8 @@ description : ""
 {{- $project      := index $projects 0 }}
 projects    : ["{{ $project | upper | default "ReplaceThisWithTheCorrectProjectID" }}"]
 
-# For alternative external reference only
-slugs       : []
+# External reference name (i.e. https://bodge.theme/blog/slug)
+slug        : ""
 
 # Identifying tags, searchable/visible to site visitors
 tags        : []

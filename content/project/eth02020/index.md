@@ -1,17 +1,25 @@
 ---
-date        : 2020-05-04T01:38:43+02:00
-lastmod     : 2020-05-04T01:38:43+02:00
-draft       : true
-short_title : "Eth02020"
 title       : "Eth02020 Project"
+short_title : "Eth02020"
 description : "This is the project page description for the Eth02020 Project."
+draft       : false
+
+# Project start date
+date        : 2020-05-04T01:38:43+02:00
+#lastmod     : 2020-05-04T01:38:43+02:00
+
+# Project end date (commenting out, means no end date yet)
+#endDate     : 2021-08-10T23:00:00+02:00
+
+# Project gets published on the website after this date
+publishDate : 2020-05-04T01:38:43+02:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["ETH02020"]
 
-# For alternative external reference only
-slugs       : ["eth02020"]
+# External reference name (i.e. https://bodge.theme/slug)
+slug        : "eth02020"
 
 # Project state and type
 active      : true
@@ -36,8 +44,8 @@ email : ""
 # Contact (Listed under personal details)
 # For available icons, see: https://forkaweso.me
 contact :
-- title     : Webpage
-  link      : https://www.my.site
+- title     : eth0
+  link      : https://wiki.eth0.nl
   icon_pack : fa
   icon_name : fa-globe
 

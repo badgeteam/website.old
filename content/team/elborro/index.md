@@ -18,37 +18,21 @@ teams :
 - HH2020
 - MCH2021
 
-#teams :
-#- name        : Badgeteam
-#  project     : Bodgeteam
-#  role        :
-#  description :
-#- name        : Badgeteam
-#  project     : CZ2019
-#  role        :
-#  description :
-#- name        : Badgeteam
-#  project     : HH2020
-#  role        :
-#  description :
-#- name        : Badgeteam
-#  project     : MCH2021
-#  role        :
-#  description :
+# Describe your participation in the projects
+participation :
+- project     : CZ2019
+  role        : Sweatshopper
+  description : Helping hand with flashing firmware, quality control and packaging.
+- project     : HH2020
+  role        : Bodgenator
+  description : Fixing the HackerHotel 2020 badge.
+- project     : Bodgetheme
+  role        : Webdeveloper
+  description : Design and built new Badge.team website
+- project     : MCH2021
+  role        : Mysterian
+  description : Radiated some brainwaves at brainstorm phase.
 
-#projects :
-#- project     : Bodgetheme
-#  role        : developer
-#  description :
-#- project     : CZ2019
-#  role        :
-#  description :
-#- project     : HH2020
-#  role        :
-#  description :
-#- project     : MCH2021
-#  role        :
-#  description :
 
 #### Mini profile (Displayed at end of posts, where available)
 
@@ -56,7 +40,7 @@ teams :
 avatar : "images/sunny.jpg"
 
 # Short bio
-bio : "ICS cyber security specialist. Allergic to injustice. Loves travel, geocaching, ethical hacking. Dreams of honest, transparent caring society with privacy."
+bio : "ICS cyber security specialist. Allergic to injustice. Loves travel, geocaching, ethical hacking. Interested in (weird) science and sustainable solutions. Dreams of honest, transparent caring society with privacy."
 
 #### Additional information for your personal page
 
@@ -143,11 +127,3 @@ social :
 ## Hi there! :)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae tempus quam pellentesque nec nam aliquam sem et. Condimentum lacinia quis vel eros donec ac odio. Urna nec tincidunt praesent semper feugiat. Aliquet risus feugiat in ante metus dictum at tempor. Nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus. Imperdiet dui accumsan sit amet nulla. Sit amet porttitor eget dolor morbi non arcu risus quis. Sed euismod nisi porta lorem mollis aliquam ut porttitor. Eu mi bibendum neque egestas congue quisque egestas diam. Non pulvinar neque laoreet suspendisse interdum consectetur libero id. Dignissim suspendisse in est ante in nibh mauris. Pharetra diam sit amet nisl suscipit adipiscing bibendum est. Donec et odio pellentesque diam volutpat.
-
-Facilisis magna etiam tempor orci eu lobortis elementum nibh tellus. Adipiscing diam donec adipiscing tristique. Neque egestas congue quisque egestas diam in arcu cursus euismod. Semper risus in hendrerit gravida rutrum quisque non. Sem viverra aliquet eget sit amet tellus. Amet consectetur adipiscing elit ut. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in. Pulvinar elementum integer enim neque volutpat ac tincidunt. Bibendum est ultricies integer quis. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Turpis egestas integer eget aliquet nibh praesent. Nibh praesent tristique magna sit amet purus gravida. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Facilisis volutpat est velit egestas dui. Vitae elementum curabitur vitae nunc sed velit dignissim sodales ut. Imperdiet nulla malesuada pellentesque elit.
-
-# Link to website
-[Hugo Website](https://www.gohugo.io "Title")
-
-# Link to image
-![Hugo Image](https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg "Title")

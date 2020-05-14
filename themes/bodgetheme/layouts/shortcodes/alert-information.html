@@ -1,0 +1,4 @@
+<div class="bi-alert bi-alert-attention bt-panel bt-round bt-pale-blue">
+  {{ if len .Params | ge 1 }}<h3 class="bi-alert-title">{{ .Get 0}}</h3>{{ end }}
+  <p class="bi-alert-text">{{ .Inner | markdownify | emojify }}</p>
+</div>

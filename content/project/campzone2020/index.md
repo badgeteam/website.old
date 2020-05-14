@@ -1,17 +1,25 @@
 ---
-date        : 2020-03-28T16:14:06+01:00
-lastmod     : 2020-03-28T16:14:06+01:00
-draft       : false
-short_title : "CampZone 2020"
 title       : "CampZone 2020 Badge Project"
+short_title : "CampZone 2020"
 description : "CampZone will be back in 2020 and requires a new flashy new badge!"
+draft       : false
+
+# Project start date
+date        : 2020-03-28T16:14:06+01:00
+#lastmod     : 2020-03-28T16:14:06+01:00
+
+# Project end date (commenting out, means no end date yet)
+#endDate     : 2021-08-10T23:00:00+02:00
+
+# Project gets published on the website after this date
+publishDate : 2020-03-28T16:14:06+01:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["CZ2020"]
 
-# For alternative external reference only
-slugs       : ["campzone2020"]
+# External reference name (i.e. https://bodge.theme/slug)
+slug        : "campzone2020"
 
 # Project state
 active      : true

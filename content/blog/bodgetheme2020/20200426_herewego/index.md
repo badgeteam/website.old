@@ -14,8 +14,8 @@ description : ""
 # mnemonic, to refer to the project this blog is related to.
 projects    : ["Bodgetheme"]
 
-# For alternative external reference only
-slugs       : ["bt", "bodgetheme"]
+# External reference name (i.e. https://bodge.theme/blog/slug)
+slug        : ""
 
 # Identifying tags, searchable/visible to site visitors
 tags        :
@@ -59,3 +59,5 @@ Welcome to this blog page of the 20200426_herewego project. This page is work in
 <!--more-->
 
 This part of the text will show up on the blog page only, not in the previews of the project page.
+
+{{< img src="/images/bodgeteam.jpg" alt="May 4th" iwidth="100%">}}

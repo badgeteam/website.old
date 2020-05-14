@@ -13,8 +13,8 @@ description : ""
 # mnemonic, to refer to the project this blog is related to.
 projects    : ["ETH02020"]
 
-# For alternative external reference only
-slugs       : []
+# External reference name (i.e. https://bodge.theme/blog/slug)
+slug        : ""
 
 # Identifying tags, searchable/visible to site visitors
 tags        : []

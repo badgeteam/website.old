@@ -1,7 +1,7 @@
 # Site settings
 baseurl      = "https://bodge.team"
 languageCode = "en-us"
-title        = "badge.team"
+title        = "Badge Team"
 theme        = "bodgetheme"
 copyright    = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 
@@ -20,7 +20,7 @@ enableRobotsTXT = true
 
 # Miscellaneous item (until we find a better place)
 enableEmoji = true
-rssLimit    = 10
+rssLimit    = 25
 
 [taxonomies]
   tag      = "tags"
@@ -30,7 +30,6 @@ rssLimit    = 10
   blog     = "blogs"
   team     = "teams"
   nickname = "nicknames"
-  slug     = "slugs"
 
 [outputs]
   home = [ "HTML", "RSS" ]
@@ -60,3 +59,7 @@ rssLimit    = 10
       decimals = -1
     [minify.tdewolff.xml]
       keepWhitespace = false
+
+[permalinks]
+  project = "/:slug/"
+  #blog    = "/:year/:month/:title/"

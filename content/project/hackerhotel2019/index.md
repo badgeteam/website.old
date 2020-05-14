@@ -1,17 +1,25 @@
 ---
-date        : 2019-02-15T13:37:47+01:00
-lastmod     : 2019-02-15T13:37:47+01:00
-draft       : false
-short_title : "Hacker Hotel 2019"
 title       : "Hacker Hotel 2019 Badge Project"
+short_title : "Hacker Hotel 2019"
 description : "This is the project page description for the Hacker Hotel 2019 Project"
+draft       : false
+
+# Project start date
+date        : 2019-02-15T13:37:47+01:00
+#lastmod     : 2019-02-15T13:37:47+01:00
+
+# Project end date (commenting out, means no end date yet)
+endDate     : 2019-02-17T20:00:00+01:00
+
+# Project gets published on the website after this date
+publishDate : 2019-02-15T13:37:47+01:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["HH2019"]
 
-# For alternative external reference only
-slugs       : ["hackerhotel2019"]
+# External reference name (i.e. https://bodge.theme/slug)
+slug        : "hackerhotel2019"
 
 # Project state
 active      : false

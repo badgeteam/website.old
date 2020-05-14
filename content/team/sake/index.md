@@ -7,6 +7,7 @@ name : Sake Blok
 # Nicknames (Names you use at articles or online. This allows you to be linked at articles.)
 nicknames :
 - Sake
+- Kolbekas
 
 # List the teams you're part of on this site.
 teams :
@@ -14,6 +15,15 @@ teams :
 - Bodgeteam
 - HH2020
 - MCH2021
+
+# Describe your participation in the projects
+participation :
+- project     : XY4242
+  role        : Sweatshopper
+  description : Helping hand flashing firmware, quality control and packaging.
+- project     : XY4242
+  role        : Bodgenator
+  description : Bodging the badge.
 
 
 #### Mini profile (Displayed at end of posts, where available)
