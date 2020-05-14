@@ -14,6 +14,15 @@ teams :
 - Bodgeteam
 - HH2020
 
+# Describe your participation in the projects
+participation :
+- project     : XY4242
+  role        : Sweatshopper
+  description : Helping hand flashing firmware, quality control and packaging.
+- project     : XY4242
+  role        : Bodgenator
+  description : Bodging the badge.
+
 
 #### Mini profile (Displayed at end of posts, where available)
 

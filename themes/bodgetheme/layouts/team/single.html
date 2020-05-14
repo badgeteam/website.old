@@ -144,12 +144,24 @@
       {{- range $projects }}
       {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
         <h5 class="bi-team-single-projects-project-title bt-opacity"><strong>{{ .Title }}</strong></h5>
-        {{- if .Params.active }}
-        <h6 class="bi-team-single-projects-project-date bt-text-teal"><i class="fa fa-calendar bi-icon bt-margin-right"></i>{{ .Date.Format "January 2006" }} - <span class="bt-tag bt-teal bt-round">Current</span></h6>
+        {{- if .Params.endDate }}
+        <h6 class="bi-team-single-projects-project-date bt-text-teal"><i class="fa fa-calendar bi-icon bt-margin-right"></i>{{ .Date.Format "January 2006" }} - {{ dateFormat "January 2006" .Params.endDate }}</h6>
         {{- else }}
+          {{- if .Params.active }}
+        <h6 class="bi-team-single-projects-project-date bt-text-teal"><i class="fa fa-calendar bi-icon bt-margin-right"></i>{{ .Date.Format "January 2006" }} - <span class="bt-tag bt-teal bt-round">Current</span></h6>
+          {{- else }}
         <h6 class="bi-team-single-projects-project-date bt-text-teal"><i class="fa fa-calendar bi-icon bt-margin-right"></i>{{ .Date.Format "January 2006" }} - {{ .Lastmod.Format "January 2006" }}</h6>
+          {{- end }}
         {{- end }}
-        <p>{{- .Description }}</p>
+        {{- if $page.Params.participation }}
+          {{- range (where $page.Params.participation "project" "in" .Params.projects) }}
+            <p>{{ .role }} - {{ .description }}</p>
+          {{- else }}
+          <p>{{ .Description }}</p>
+          {{- end }}
+        {{- else }}
+        <p>{{ .Description }}</p>
+        {{- end }}
       {{- end }}
     </div>
     {{- end }}
