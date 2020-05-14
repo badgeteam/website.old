@@ -28,7 +28,7 @@ updateSections = ["blog","project"]
 
 [theme]
   generator = "Badge.team Bodgetheme"
-  revision  = 2020-05-10T13:37:42Z
+  revision  = 2020-05-15T13:37:42Z
   author    = "Noor Draconia, Rob Verseijden"
 
 [robots]
