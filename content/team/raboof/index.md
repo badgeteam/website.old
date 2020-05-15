@@ -7,20 +7,23 @@ name : Arnout Engelen
 # Nicknames (Names you use at articles or online. This allows you to be linked at articles.)
 nicknames :
 - Raboof
-- Lightbend
 
 # List the teams you're part of on this site.
 teams :
 - Badgeteam
+- SHA2017
 
 # Describe your participation in the projects
 participation :
-- project     : XY4242
+- project     : SHA2017
+  role        : Software
+  description : Various, notably hooking up uGFX to the low-level drivers and to the Python bindings
+- project     : SHA2017
+  role        : Game
+  description : https://github.com/raboof/SHA2017Game#sha2017game
+- project     : SHA2017
   role        : Sweatshopper
   description : Helping hand flashing firmware, quality control and packaging.
-- project     : XY4242
-  role        : Bodgenator
-  description : Bodging the badge.
 
 
 #### Mini profile (Displayed at end of posts, where available)
@@ -53,6 +56,9 @@ email : ""
 
 # Organizations/Affiliations
 organizations :
+- name : Hack42
+  role :
+  url  : "https://hack42.nl/wiki/Raboof"
 - name : Private
   role :
   url  : "https://arnout.engelen.eu"
@@ -83,10 +89,10 @@ contact :
 # Social (Listed in social-link bars)
 # For available icons, see: https://fontawesome.com
 social :
-- title     : Twitter
-  icon_name : fa-twitter
+- title     : Mastodon
+  icon_name : fa-mastodon
   icon_pack : fa
-  link      : https://twitter.com/raboof
+  link      : https://quey.org/@raboof
 - title     : Github
   icon_name : fa-github
   icon_pack : fa
