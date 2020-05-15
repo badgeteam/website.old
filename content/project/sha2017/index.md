@@ -5,14 +5,14 @@ description : "This is the project page description for the Still Hacking Anyway
 draft       : false
 
 # Project start date
-date        : 2017-03-28T13:37:37+01:00
+date        : 2017-08-04T13:37:37+01:00
 #lastmod     : 2017-03-28T13:37:37+01:00
 
 # Project end date (commenting out, means no end date yet)
-#endDate     : 2021-08-10T23:00:00+02:00
+endDate     : 2017-08-08T23:00:00+02:00
 
 # Project gets published on the website after this date
-publishDate : 2017-03-28T13:37:37+01:00
+publishDate : 2017-08-04T13:37:37+01:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.

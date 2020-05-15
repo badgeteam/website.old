@@ -34,7 +34,7 @@ tags        :
 categories  : []
 
 # Project icon
-icon_name : fa-suitcase
+icon_name : fa-wifi
 icon_pack : fa
 
 # Default images related to this project

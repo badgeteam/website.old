@@ -26,11 +26,11 @@ categories  :
 - Website design
 
 # Blog icon
-icon_name : fa-pencil
+icon_name : fa-bug
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : "images/sha2017.jpg"
+image_src   : "images/markdown.png"
 image_alt   : "Hackerbar"
 thumb_src   : ""
 thumb_alt   : ""

@@ -3,11 +3,11 @@
 {{ partialCached "head/site-head.html" . }}
   <body>
 {{ partialCached "header/site-header.html" . }}
-    <div class="bi-page-wrapper bt-content bt-padding bt-margin-top" style="max-width:1500px"> {{ "<!-- Page content -->" | safeHTML }}
+    <div class="bi-page-wrapper bt-content bt-padding bt-margin-top" style="max-width:100%"> {{ "<!-- Page content -->" | safeHTML }}
       {{- block "page-header" . }}{{- end }}
       <div class="bt-row">
-        <aside class="bi-aside-left bt-col bt-third bt-left">{{- block "aside-left" . }}{{- end }}</aside>
-        <div class="bi-main bt-col bt-twothird">{{- block "main" . }}{{- end }}</div>
+        <aside class="bi-aside-left bt-col bt-quarter bt-left">{{- block "aside-left" . }}{{- end }}</aside>
+        <div class="bi-main bt-col bt-threequarter">{{- block "main" . }}{{- end }}</div>
       </div>
       {{- block "page-footer" . }}{{- end }}
     </div> {{ "<!-- End page content -->" | safeHTML }}

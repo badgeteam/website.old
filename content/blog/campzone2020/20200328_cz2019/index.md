@@ -1,7 +1,7 @@
 ---
 date        : 2020-03-28T16:14:06+01:00
 draft       : false
-title       :  "CampZone 2020 project initiated"
+title       : "Project started"
 author      : "Anonymous"
 
 # Description overrides the automated summary of marked-up content
@@ -30,7 +30,7 @@ categories  :
 - Embedded software
 
 # Blog icon
-icon_name : fa-pencil
+icon_name : fa-bed
 icon_pack : fa
 
 # Default image related to this blog

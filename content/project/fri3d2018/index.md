@@ -5,14 +5,14 @@ description : "This is the project page description for the Fri3d2018 Project"
 draft       : false
 
 # Project start date
-date        : 2020-04-26T09:44:48+02:00
-#lastmod     : 2020-04-26T09:44:48+02:00
+date        : 2018-03-26T09:44:48+02:00
+#lastmod     : 2018-03-26T09:44:48+02:00
 
 # Project end date (commenting out, means no end date yet)
-#endDate     : 2021-08-10T23:00:00+02:00
+#endDate     : 2021-03-10T23:00:00+02:00
 
 # Project gets published on the website after this date
-publishDate : 2020-04-26T09:44:48+02:00
+publishDate : 2018-03-26T09:44:48+02:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.

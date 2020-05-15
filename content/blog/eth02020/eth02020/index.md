@@ -28,7 +28,7 @@ categories  :
 
 # Blog icon
 # For available icons, see: https://forkaweso.me
-icon_name : fa-pencil
+icon_name : fa-tty
 icon_pack : fa
 
 # Default image related to this blog
@@ -59,8 +59,6 @@ gallery:
 # An emoji cheat sheet can be found here:
 #  https://www.webfx.com/tools/emoji-cheat-sheet/
 ---
-
-##### Eth02020 project blog page.
 
 Welcome to this blog page of the Eth02020 project. This page is work in progress and should be filled with new content soon.
 

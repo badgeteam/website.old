@@ -14,26 +14,22 @@
       {{- end }}
     <!-- Blog entry -->
     <div class="bi-project-list-entry bt-card bt-margin bt-white">
-      {{ if $image }}
-		  <img class="bi-project-list-entry-image" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:100%">
-		  {{ end }}
-      <div class="bi-project-list-title-container bt-container">
-        {{- if .Params.icon_name }}
-          {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
-        <h3 class="bi-project-list-title bt-text-black bt-padding-8"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bi-icon bt-margin-right bt-xlarge bt-text-teal"></i>{{ .Title }}</strong></h3>
-        {{- else }}
-        <h3 class="bi-project-list-title bt-text-black bt-padding-8"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-xlarge bt-text-teal"></i>{{ .Title }}</strong></h3>
-        {{- end }}
-        <span class="bi-project-list-date bt-left bt-opacity bt-small">{{ .Lastmod.Format "Monday, 02 January 2006 15:04 MST" }}</span>
-      </div>
-      <div class="bi-project-list-read-more bt-container">
-        <p>{{ .Description }}</p>
-        <div class="bi-project-list-read-more-row bt-row">
-          <div class="bi-project-list-read-more-col bt-col m12 s12">
-            <p class="bt-right"><a class="bi-project-list-read-more-title bt-button bt-padding-large bt-white bt-border" title="Read More" alt="Read More" href="{{ .Permalink }}"><strong>READ MORE &Rang;</strong></a></p>
-          </div>
+      <a title="{{ .Title }}" alt="{{ .Title }}" href="{{ .Permalink }}" style="text-decoration:none;">
+        <div class="bi-project-list-title-container bt-container">
+          {{- if .Params.icon_name }}
+            {{- $icon_pack := ( .Params.icon_pack | default "fa") }}
+          <h3 class="bi-project-list-title bt-text-black bt-padding-8"><strong><i class="{{ $icon_pack }} {{ .Params.icon_name }} bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ .Title }}</h3>
+          {{- else }}
+          <h3 class="bi-project-list-title bt-text-black bt-padding-8"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ .Title }}</h3>
+          {{- end }}
         </div>
-      </div>
+        <div class="bi-project-list-read-more bt-container">
+          {{ if $image }}
+    		  <img class="bi-project-list-entry-image bt-margin-bottom bt-margin-right bt-margin-top bt-left" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:150px;">
+    		  {{ end }}
+          <p>{{ .Description }}</p>
+        </div>
+      </a>
     </div>
     {{- end }}
     <div class="bi-article-navigation bt-container">
@@ -50,7 +46,7 @@
 
 {{ define "page-header" }}
 <header class="bi-page-header bt-container bt-center">
-  <h3 class="bi-page-header-title bt-left bt-text-black bt-padding-8"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n "projects" | default "Projects") | markdownify }}</h3>
+  <h3 class="bi-page-header-title bt-left bt-text-black bt-padding-8"><strong><i class="fa fa-cogs bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n "projects" | default "Projects") | markdownify }}</h3>
 </header>
 {{ end }}
 

@@ -4,7 +4,7 @@
 <div class="bi-team-single-row bt-row">
 
   <!-- Left side column -->
-  <div class="bi-team-single-col bt-col bt-third bt-left">
+  <div class="bi-team-single-col bt-col bt-quarter bt-left">
     <!-- Profile image and contact details -->
     <div class="bi-team-single-card bt-card bt-margin">
 {{- $avatar := "" }}
@@ -127,7 +127,7 @@
   </div>
 
   <!-- Right side column -->
-  <div class="bt-col bt-twothird">
+  <div class="bt-col bt-threequarter">
     {{- with .Content }}
     <div class="bi-team-single-about bt-container bt-card bt-margin bt-white">
       <h3 class="bi-team-single-about-title bt-text-black bt-padding-8"><strong><i class="fa fa-user-circle bi-icon bt-margin-right bt-xlarge bt-text-teal"></i>{{ (i18n "about" | default "About") | markdownify }}</strong></h3>
@@ -144,18 +144,19 @@
       {{- range $projects }}
       {{ if $separator }}<hr>{{- else }}{{- $separator = true }}{{- end }}
         <h5 class="bi-team-single-projects-project-title bt-opacity"><a href="{{ .RelPermalink }}" style="text-decoration:none;"><strong>{{ .Title }}</strong></a></h5>
+        {{- $startDate := dateFormat "January 2006" .Date }}
+        {{- $endDate   := "" }}
         {{- if .Params.endDate }}
-        <h6 class="bi-team-single-projects-project-date bt-text-teal"><i class="fa fa-calendar bi-icon bt-margin-right"></i>{{ .Date.Format "January 2006" }} - {{ dateFormat "January 2006" .Params.endDate }}</h6>
+          {{- $endDate = dateFormat "January 2006" .Params.endDate }}
+        {{- else if .Params.active }}
+          {{- $endDate = "<span class='bt-tag bt-teal bt-round'>Current</span>" | safeHTML }}
         {{- else }}
-          {{- if .Params.active }}
-        <h6 class="bi-team-single-projects-project-date bt-text-teal"><i class="fa fa-calendar bi-icon bt-margin-right"></i>{{ .Date.Format "January 2006" }} - <span class="bt-tag bt-teal bt-round">Current</span></h6>
-          {{- else }}
-        <h6 class="bi-team-single-projects-project-date bt-text-teal"><i class="fa fa-calendar bi-icon bt-margin-right"></i>{{ .Date.Format "January 2006" }} - {{ .Lastmod.Format "January 2006" }}</h6>
-          {{- end }}
+          {{- $endDate = dateFormat "January 2006" .Lastmod }}
         {{- end }}
+        <h6 class="bi-team-single-projects-project-date bt-text-teal"><i class="fa fa-calendar bi-icon bt-margin-right"></i>{{ $startDate }}{{ if ne $startDate $endDate }} - {{ $endDate }}{{ end }}</h6>
         {{- if $page.Params.participation }}
           {{- range (where $page.Params.participation "project" "in" .Params.projects) }}
-            <p>{{ .role }} - {{ .description }}</p>
+            <p>{{ .role }} : {{ .description }}</p>
           {{- else }}
           <p>{{ .Description }}</p>
           {{- end }}

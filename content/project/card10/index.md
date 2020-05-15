@@ -5,11 +5,11 @@ description : "This is the project page description for the Card10 Project"
 draft       : false
 
 # Project start date
-date        : 2020-04-26T09:45:25+02:00
+date        : 2020-02-02T09:45:25+02:00
 #lastmod     : 2020-04-26T09:45:25+02:00
 
 # Project end date (commenting out, means no end date yet)
-#endDate     : 2021-08-10T23:00:00+02:00
+endDate     : 2020-02-02T23:00:00+02:00
 
 # Project gets published on the website after this date
 publishDate : 2020-04-26T09:45:25+02:00

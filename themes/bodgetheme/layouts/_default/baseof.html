@@ -3,7 +3,7 @@
 {{ partial "head/site-head.html" . }}
   <body>
 {{ partial "header/site-header.html" . }}
-    <div class="bi-page-wrapper bt-content bt-padding bt-margin-top" style="max-width:1500px"> {{ "<!-- Page content -->" | safeHTML }}
+    <div class="bi-page-wrapper bt-content bt-padding bt-margin-top" style="max-width:100%"> {{ "<!-- Page content -->" | safeHTML }}
       {{- block "page-header" . }}{{- end }}
       <div class="bt-row">
         <aside class="bi-aside-left bt-col bt-left m4">{{- block "aside-left" . }}{{- end }}</aside>

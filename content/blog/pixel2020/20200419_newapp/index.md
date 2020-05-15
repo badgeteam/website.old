@@ -30,11 +30,11 @@ categories  :
 - Embedded software
 
 # Blog icon
-icon_name : fa-pencil
+icon_name : fa-braille
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : ""
+image_src   : "images/thebadge.jpg"
 image_alt   : ""
 thumb_src   : ""
 thumb_alt   : ""

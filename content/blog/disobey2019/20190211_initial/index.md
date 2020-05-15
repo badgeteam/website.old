@@ -30,7 +30,7 @@ categories  :
 - Embedded software
 
 # Blog icon
-icon_name : fa-pencil
+icon_name : fa-empire
 icon_pack : fa
 
 # Default image related to this blog

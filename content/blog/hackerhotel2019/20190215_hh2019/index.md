@@ -1,7 +1,7 @@
 ---
 date        : 2019-02-15T13:37:47+01:00
 draft       : false
-title       :  "Hacker Hotel 2019 on the move"
+title       : "On the move"
 author      : "Anonymous"
 
 # Description overrides the automated summary of marked-up content
@@ -30,11 +30,11 @@ categories  :
 - Embedded software
 
 # Blog icon
-icon_name : fa-pencil
+icon_name : fa-hotel
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : ""
+image_src   : "images/hh2019.jpg"
 image_alt   : ""
 thumb_src   : ""
 thumb_alt   : ""

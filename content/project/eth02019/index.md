@@ -1,5 +1,5 @@
 ---
-title       : "eth0:2019 Badge Project"
+title       : "eth0:2019"
 short_title : "eth0:2019"
 description : "This is the project page description for the eth0:2019 Project"
 draft       : false

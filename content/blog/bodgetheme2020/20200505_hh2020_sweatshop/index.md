@@ -3,7 +3,7 @@ date        : 2020-05-05T00:00:00+01:00
 lastmod     : 2020-05-05T00:00:00+01:00
 draft       : false
 title       : "Blog page rewrite test"
-author      : "noor"
+author      : "elborro"
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
@@ -24,11 +24,11 @@ categories  : []
 
 # Blog icon
 # For available icons, see: https://fontawesome.com
-icon_name : fa-pencil
+icon_name : fa-bug
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : ""
+image_src   : "images/sweat.png"
 image_alt   : ""
 thumb_src   : ""
 thumb_alt   : ""
