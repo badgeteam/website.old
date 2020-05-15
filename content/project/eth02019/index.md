@@ -89,8 +89,8 @@ gallery:
   - image   : "eth0-kartoffel-badge.jpg"
     caption : "Kartoffel"
     exclude : false
-  - image   : "eth0-bernadski-badge.jpg"
-    caption : "Bernadski"
+  - image   : "eth0-benadski-badge.jpg"
+    caption : "Benadski"
     exclude : false
   - image   : "ef997a4941a8a2e5c9e4acb0cd9eee43.jpg"
     caption : "Mystery"
@@ -108,5 +108,6 @@ gallery:
 
 ### {{< icon name="fa-tty" >}} ETH0:2019 Badge Project
 
-Welcome to the project page of the ETH0:2019 Badge project. This project page is still a work in progress and we expect to fill it with content soon.
-{{< img src="/images/wip.png" alt="Work in progress." iwidth="50%">}}
+This was a small, simple and most of all very fun badge to make. It’s a protoboard for building your own circuits: a true DIY badge!
+
+The artwork has been made by Nikolett, the quickly-thrown-together PCB design was made by Renze and the prototyping board layout was found on the internet. It’s an amazing protoboard design made especially for working with SMD components, put online under the CC-BY license by Electronic Eel.
