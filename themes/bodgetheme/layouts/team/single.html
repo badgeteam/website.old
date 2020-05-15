@@ -4,7 +4,7 @@
 <div class="bi-team-single-row bt-row">
 
   <!-- Left side column -->
-  <div class="bi-team-single-col bt-col bt-third bt-left">
+  <div class="bi-team-single-col bt-col bt-quarter bt-left">
     <!-- Profile image and contact details -->
     <div class="bi-team-single-card bt-card bt-margin">
 {{- $avatar := "" }}
@@ -127,7 +127,7 @@
   </div>
 
   <!-- Right side column -->
-  <div class="bt-col bt-twothird">
+  <div class="bt-col bt-threequarter">
     {{- with .Content }}
     <div class="bi-team-single-about bt-container bt-card bt-margin bt-white">
       <h3 class="bi-team-single-about-title bt-text-black bt-padding-8"><strong><i class="fa fa-user-circle bi-icon bt-margin-right bt-xlarge bt-text-teal"></i>{{ (i18n "about" | default "About") | markdownify }}</strong></h3>

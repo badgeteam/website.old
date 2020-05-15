@@ -29,12 +29,22 @@
   post       = "</x>"
 
 [[navbar_top]]
+  identifier = "blogs"
+  name       = "Blogs"
+  title      = "Blogs"
+  url        = "/blog/"
+  parent     = ""
+  weight     = 200
+  pre        = "<i class='fa fa-pencil bt-hover-opacity'></i><x class='bt-hide-small'> "
+  post       = "</x>"
+
+[[navbar_top]]
   identifier = "team"
   name       = "Team"
   title      = "Team"
   url        = "/team/"
   parent     = ""
-  weight     = 200
+  weight     = 300
   pre        = "<i class='fa fa-users bt-hover-opacity'></i><x class='bt-hide-small'> "
   post       = "</x>"
 
@@ -44,7 +54,7 @@
   title      = "Gallery"
   url        = "/gallery/"
   parent     = ""
-  weight     = 300
+  weight     = 400
   pre        = "<i class='fa fa-camera bt-hover-opacity'></i><x class='bt-hide-small'> "
   post       = "</x>"
 
@@ -54,7 +64,7 @@
   title      = "Photos"
   url        = "https://gallery.bodge.team/"
   parent     = "gallery"
-  weight     = 300
+  weight     = 400
   pre        = "<i class='fa fa-camera-retro bt-hover-opacity'></i><x class='bt-hide-small'> "
   post       = "</x>"
 
@@ -64,7 +74,7 @@
 #   title      = "Events"
 #   url        = "/event/"
 #   parent     = ""
-#   weight     = 400
+#   weight     = 500
 #   pre        = "<i class='fa fa-calendar bt-hover-opacity'></i><x class='bt-hide-small'> "
 #   post       = "</x>"
 
@@ -74,7 +84,7 @@
 #   title      = "Archive"
 #   url        = "/archive/"
 #   parent     = ""
-#   weight     = 500
+#   weight     = 600
 #   pre        = "<i class='fa fa-archive bt-hover-opacity'></i><x class='bt-hide-small'> "
 #   post       = "</x>"
 

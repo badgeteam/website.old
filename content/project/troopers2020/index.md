@@ -5,14 +5,14 @@ description : "The Troopers 2020 badge is an external development and not develo
 draft       : false
 
 # Project start date
-date        : 2020-04-26T09:44:15+02:00
-#lastmod     : 2020-04-26T09:44:15+02:00
+date        : 2020-03-16T09:44:15+02:00
+#lastmod     : 2020-03-16T09:44:15+02:00
 
 # Project end date (commenting out, means no end date yet)
-#endDate     : 2021-08-10T23:00:00+02:00
+endDate     : 2020-03-20T23:00:00+02:00
 
 # Project gets published on the website after this date
-publishDate : 2020-04-26T09:44:56+02:00
+publishDate : 2020-03-16T09:44:56+02:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.

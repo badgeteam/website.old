@@ -1,6 +1,6 @@
 ---
-title       : "Eth02020 Project"
-short_title : "Eth02020"
+title       : "eth0:2020"
+short_title : "eth0:2020"
 description : "This is the project page description for the Eth02020 Project."
 draft       : false
 
@@ -63,7 +63,7 @@ social :
 
 # Project icon
 # For available icons, see: https://forkaweso.me
-icon_name : fa-suitcase
+icon_name : fa-tty
 icon_pack : fa
 
 # Default images related to this project

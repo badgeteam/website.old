@@ -1,12 +1,12 @@
 ---
 date        : 2020-03-14T13:37:02+01:00
 draft       : false
-title       : "Blogpage clean formatting"
+title       : "First blog! :)"
 author      : "Elborro"
 
 # Description overrides the automated summary of marked-up content
 #  at the bottom of this file.
-description : "Clean content should be properly formatted into paragraphs."
+description : "<Hello World/>"
 
 # Identifying mnemonics, INTERNAL use only. Fill AT LEAST one identifying
 # mnemonic, to refer to the project this blog is related to.
@@ -26,11 +26,11 @@ categories  :
 - Website design
 
 # Blog icon
-icon_name : fa-pencil
+icon_name : fa-bug
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : ""
+image_src   : "images/hello.png"
 image_alt   : ""
 thumb_src   : ""
 thumb_alt   : ""

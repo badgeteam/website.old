@@ -3,7 +3,7 @@ date        : 2020-04-27T22:32:07+02:00
 lastmod     : 2020-04-27T22:32:07+02:00
 draft       : false
 title       : "EMF2022"
-author      : "Anonymous"
+author      : "noor"
 description : ""
 
 # At least one Identifying mnemonic, referring to the project(s) his blog is related to

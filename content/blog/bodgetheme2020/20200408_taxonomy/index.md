@@ -26,11 +26,11 @@ categories  :
 - Website design
 
 # Blog icon
-icon_name : fa-pencil
+icon_name : fa-bug
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : ""
+image_src   : "images/taxonomies.png"
 image_alt   : ""
 thumb_src   : ""
 thumb_alt   : ""
