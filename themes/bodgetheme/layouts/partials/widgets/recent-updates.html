@@ -13,7 +13,7 @@
 {{- $pages := first $maxpaginate ((where site.RegularPages "Type" "in" $sections).ByLastmod.Reverse ) }}
 {{- $page_count := len $pages }}
 {{- if ge $page_count 1 }}
-<div class="bi-recent-updates bt-card bt-margin">
+<div class="bi-recent-updates bt-card bt-margin bt-hide-small">
   <div class="t-recent-updates-title-container bt-container bt-padding">
     <h4 class="bi-recent-updates-title bt-left bt-text-black"><a href="/updates/" style="text-decoration:none;"><strong><i class="fa fa-newspaper-o bi-icon bt-margin-right bt-large bt-text-teal"></i></strong>{{ (i18n "recent updates" | default "Recent updates") | markdownify | humanize }}</a></h4>
   </div>
