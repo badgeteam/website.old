@@ -1,6 +1,5 @@
 mainSections = ["blog","project"]
 mainImage    = "/images/bodgeteam.jpg"
-defaultImage = "/images/mascot2.jpg"
 
 # Recent updates configuration
 updateSections = ["blog","project"]
@@ -151,3 +150,15 @@ updateSections = ["blog","project"]
       target    = "_blank"
       icon_pack = "fa"
       icon_name = "fa-telegram"
+
+
+[gridifier]
+  defaultImage = "/images/mascot2x.jpg"
+  defaultSize  = "250x250"
+
+  templateImage = "/images/gridifier/template.png"
+
+  defaultTileColour = "#b31280" #b31280
+  tileColours = ["#4E8289","#7AC3D7","#D26E51","#F7D55D","#765D82"] #Hugrid
+
+  [gridifier.colours]

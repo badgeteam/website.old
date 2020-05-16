@@ -32,7 +32,7 @@
               <a title="{{ .Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
                 <div class="bt-card">
       {{- if $image_file }}
-  			{{- $image := $image_file.Resize "600x600" }}
+  			{{- $image := $image_file.Fill "600x600" }}
 									<img class="bt-hover-greyscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 					{{- $prj := dict "title" ( .Title ) "description" ( .Params.Short_Title | default .Title ) "alt" (.Params.Short_Title | default .Title) "src" $image.RelPermalink }}
 					{{- $prjs = $prjs | append $prj}}
