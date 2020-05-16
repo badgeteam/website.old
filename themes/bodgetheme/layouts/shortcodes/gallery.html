@@ -28,7 +28,7 @@
         {{- end }}
       {{- end }}
       {{- if $include }}
-        {{- $image := .Resize "600x400" }}
+        {{- $image := .Fill "600x400" }}
     <div class="bt-col l3 m6 bt-margin-bottom">
   		<a title="{{ $caption }}" href="{{ if $extnurl }}{{ $extnurl }}{{ else }}{{ .RelPermalink }}{{ end }}" style="text-decoration:none;">
   			<div class="bt-card">

@@ -16,7 +16,7 @@
       {{- if $member.Params.avatar }}
         {{- $image := $member.Resources.GetMatch $member.Params.avatar }}
         {{- if $image }}
-          {{- $avatar = $image.Resize "300x300" }}
+          {{- $avatar = $image.Fill "300x300" }}
         {{- end }}
       {{- end }}
             <div class="bi-team-list-section-col bt-col l2 m3 s6 bt-margin-bottom">

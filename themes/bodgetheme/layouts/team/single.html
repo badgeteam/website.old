@@ -11,7 +11,7 @@
 {{- if .Params.avatar }}
   {{- $image := .Resources.GetMatch .Params.avatar }}
   {{- if $image }}
-    {{- $avatar = $image.Resize "600x600" }}
+    {{- $avatar = $image.Fill "600x600" }}
   {{- end }}
   {{- if $avatar }}
       <div class="bi-team-single-container bt-display-container bt-white">
