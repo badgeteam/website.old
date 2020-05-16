@@ -158,7 +158,13 @@ updateSections = ["blog","project"]
 
   templateImage = "/images/gridifier/template.png"
 
-  defaultTileColour = "#b31280" #b31280
+  # https://www.color-hex.com/color-palettes/
+  defaultTileColour = "#B31280" #B31280
+  #tileColours = ["#E0BEEC","#B48EE5","#8F60EC","#5D2E9A","#333489"] #Lavender
+  #tileColours = ["#FFCE00","#FFBF00","#FFAF9A","#99D4D9","#B8D3D2"] #Summer
+  #tileColours = ["#FDF49D","#FFE36F","#FFC455","#FF8F43","#FF612B"] #Sunset
+  #tileColours = ["#DBEACA","#BBDBA7","#A2DDAC","#8CD0AC","#63C19D"] #Aquatic
+  #tileColours = ["#FF74BA","#FF6BF1","#FEA4FF","#EEC8FF","#CE61FF"] #SweetHeart
+  #tileColours = ["#D8F0ED","#ECB0B0","#FFFFFF","#7F8294","#F6E4B7"] #Spring
+  #tileColours = ["#001800","#AE0000","#607C43","#F0C12D","#C7501D"] #Vintage70s
   tileColours = ["#4E8289","#7AC3D7","#D26E51","#F7D55D","#765D82"] #Hugrid
-
-  [gridifier.colours]

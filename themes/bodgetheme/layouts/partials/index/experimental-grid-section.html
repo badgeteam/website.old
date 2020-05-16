@@ -1,0 +1,59 @@
+{{- $page     := .context  }}
+{{- $projects := .projects }}
+{{- $label    := .label    }}
+{{- $projects_count := len $projects }}
+  <section class="bi-index-projects-active"> {{ "<!-- {{ $label }} -->" | safeHTML }}
+    <div class="bi-index-projects-active-title-container bt-container bt-center">
+      <h4 class="bi-index-projects-active-title bt-left">{{ $label }}</h4>
+    </div>
+    <div class="bi-index-projects-active-row bt-blue">
+{{- if ge $projects_count 1 }}
+{{- $index := 0 }}
+{{- range $projects.ByParam "short_title" }}
+{{- $image := "" }}
+{{- $image_file := "" }}
+{{- $image_src  := "" }}
+{{- if .Params.image_src }}
+  {{- $image_file = .Resources.GetMatch .Params.image_src }}
+{{- end }}
+{{- with .Site.Params.gridifier }}
+  {{ if and (not $image_file) .defaultImage }}
+    {{- $image_file = resources.GetMatch .defaultImage }}
+  {{ end }}
+  {{ if (not $image_file) }}
+    {{- $image_file = resources.GetMatch .templateImage }}
+  {{ end }}
+  {{- if $image_file }}
+    {{- $size := .defaultSize | default "250x250" }}
+    {{- $colour := .defaultTileColour | default "#b31280" }}
+    {{- if .tileColours }}
+      {{- $colourCount := len .tileColours }}
+      {{- $colourIndex := mod $index $colourCount }}
+      {{- $colour = index .tileColours $colourIndex }}
+      {{- $index = add $index 1 }}
+    {{- end }}
+    {{- $image = $image_file.Fill (printf "%s %s" $size $colour) }}
+  {{- end }}
+{{- else }}
+  {{- if $image_file }}
+    {{- $image = $image_file.Fill "250x250" }}
+  {{- end }}
+{{- end }}
+      <div class="bi-index-projects-active-col bt-left bt-margin-bottom bt-margin-right">
+        <a class="bi-index-projects-active-link" title="{{ .Params.Short_Title | default .Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
+          <div class="bi-index-projects-active-card bt-display-container">
+{{- if $image }}
+            <img class="bi-index-projects-active-title bt-hover-greyscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+{{- else }}
+            <img class="bi-index-projects-finished-title bt-hover-greyscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:250px;height:250px;background-color:#b31280;">
+{{- end }}
+            <div class="bi-index-projects-active-title bt-display-middle bt-text-white bt-center" style="width:100%"><h5><strong>{{ .Params.Short_Title | default .Title }}</strong></h5></div>
+          </div>
+        </a>
+      </div>
+{{- end }}
+{{- else }}
+      <div class="bi-index-projects-active-title bt-container bt-center bt-margin-bottom"><h5>There are currently no {{ $label | lower }} projects.</h5></div>
+{{- end }}
+    </div>
+  </section>  {{ "<!-- End {{ $label }} -->" | safeHTML }}
