@@ -18,13 +18,9 @@ teams :
 
 # Describe your participation in the projects
 participation :
-- project     : XY4242
-  role        : Sweatshopper
-  description : Helping hand flashing firmware, quality control and packaging.
-- project     : XY4242
+- project     : Bodgetheme
   role        : Bodgenator
-  description : Bodging the badge.
-
+  description : Bodging site.
 
 #### Mini profile (Displayed at end of posts, where available)
 
@@ -81,10 +77,6 @@ contact :
 # Social (Listed in social-link bars)
 # For available icons, see: https://fontawesome.com
 social :
-- title     : Twitter
-  icon_name : fa-twitter
-  icon_pack : fa
-  link      : https://twitter.com/USERNAME
 - title     : Github
   icon_name : fa-github
   icon_pack : fa
