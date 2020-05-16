@@ -2,7 +2,7 @@
 title       : "Fri3d2020 Badge Project"
 short_title : "Fri3d2020"
 description : "This is the project page description for the Fri3d2020 Project"
-draft       : false
+draft       : true
 
 # Project start date
 date        : 2020-03-26T09:44:25+02:00

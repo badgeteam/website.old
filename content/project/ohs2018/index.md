@@ -2,7 +2,7 @@
 title       : "Open Hardware Summit 2018 Badge Project"
 short_title : "OHS 2018"
 description : "This is the project page description for the Open Hardware Summit 2018 Project"
-draft       : false
+draft       : true
 
 # Project start date
 date        : 2018-04-26T09:44:35+02:00

@@ -2,7 +2,7 @@
 title       : "CampZone 2020 Badge Project"
 short_title : "CampZone 2020"
 description : "CampZone will be back in 2020 and requires a new flashy new badge!"
-draft       : false
+draft       : true
 
 # Project start date
 date        : 2020-03-28T16:14:06+01:00
@@ -77,7 +77,8 @@ icon_name : fa-bed
 icon_pack : fa
 
 # Default images related to this project
-image_src   : "images/mascot.png"
+#image_src   : "images/mascot.png"
+image_src   : ""
 image_alt   : "CZ2020"
 thumb_src   : ""
 thumb_alt   : "CZ2020"

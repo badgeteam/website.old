@@ -2,7 +2,7 @@
 title       : "EMF 2022"
 short_title : "EMF 2022"
 description : "EMF2022 Project"
-draft       : false
+draft       : true
 
 # Project start date
 date        : 2020-04-27T22:31:30+02:00
