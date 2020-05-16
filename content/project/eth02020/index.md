@@ -2,7 +2,7 @@
 title       : "eth0:2020"
 short_title : "eth0:2020"
 description : "This is the project page description for the Eth02020 Project."
-draft       : false
+draft       : true
 
 # Project start date
 date        : 2020-05-04T01:38:43+02:00

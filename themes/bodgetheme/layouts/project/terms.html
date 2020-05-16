@@ -24,7 +24,7 @@
               <a class="bi-team-list-link" title="{{ .Params.Short_Title | default .Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
                 <div class="bi-team-list-card bt-card">
       {{- if $image }}
-                  <img class="bi-team-list-image bi-image bt-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+                  <img class="bi-team-list-image bi-image bt-hover-greyscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
       {{- end }}
                   <div class="bi-team-list-name bt-center bt-small">{{ .Params.Short_Title | default .Title | truncate 18 }}</div>
                 </div>

@@ -10,14 +10,14 @@
     {{- if $member.Params.avatar }}
       {{- $image := $member.Resources.GetMatch $member.Params.avatar }}
       {{- if $image }}
-        {{- $avatar = $image.Resize "600x600" }}
+        {{- $avatar = $image.Fill "600x600" }}
       {{- end }}
     {{- end }}
             <div class="bi-team-list-section-col bt-col l3 m6 bt-margin-bottom">
               <a class="bi-team-list-link" title="{{ $member.Params.Name }}" href="{{ $member.RelPermalink }}" style="text-decoration:none;">
                 <div class="bi-team-list-card bt-card">
     {{- if $avatar }}
-                  <img class="bi-team-list-image bi-image bt-hover-grayscale" src="{{ $avatar.RelPermalink }}" alt="{{ $member.Params.Name }}" style="width:100%">
+                  <img class="bi-team-list-image bi-image bt-hover-greyscale" src="{{ $avatar.RelPermalink }}" alt="{{ $member.Params.Name }}" style="width:100%">
     {{- end }}
                   <div class="bi-team-list-name bt-container bt-center"><h5>{{ $member.Params.Name }}</h5></div>
                 </div>

@@ -2,7 +2,7 @@
 title       : "Hacktivity 2019 Badge Project"
 short_title : "Hacktivity 2019"
 description : "This is the project page description for the Hacktivity 2019 Project"
-draft       : false
+draft       : true
 
 # Project start date
 date        : 2019-10-08T09:44:31+02:00

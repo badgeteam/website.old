@@ -31,9 +31,9 @@
                 <div class="bi-index-projects-active-card bt-card">
       {{- if $image_file }}
   			{{- $image := $image_file.Resize "600x600" }}
-									<img class="bi-index-projects-active-title bt-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+									<img class="bi-index-projects-active-title bt-hover-greyscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- else }}
-			            <img class="bi-index-projects-active-title bt-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			            <img class="bi-index-projects-active-title bt-hover-greyscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- end }}
                   <div class="bi-index-projects-active-title bt-container bt-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
                 </div>
@@ -73,9 +73,9 @@
                 <div class="bi-index-projects-finished-card bt-card">
       {{- if $image_file }}
   			{{- $image := $image_file.Resize "600x600" }}
-									<img class="bi-index-projects-finished-title bt-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+									<img class="bi-index-projects-finished-title bt-hover-greyscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- else }}
-			            <img class="bi-index-projects-finished-title bt-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			            <img class="bi-index-projects-finished-title bt-hover-greyscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- end }}
                   <div class="bi-index-projects-finished-title bt-container bt-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
                 </div>
@@ -114,9 +114,9 @@
                 <div class="bi-index-projects-finished-card bt-card">
       {{- if $image_file }}
   			{{- $image := $image_file.Resize "600x600" }}
-									<img class="bi-index-projects-finished-title bt-hover-grayscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+									<img class="bi-index-projects-finished-title bt-hover-greyscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- else }}
-			            <img class="bi-index-projects-finished-title bt-hover-grayscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
+			            <img class="bi-index-projects-finished-title bt-hover-greyscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- end }}
                   <div class="bi-index-projects-finished-title bt-container bt-center"><h5>{{ .Params.Short_Title | default .Title | truncate 18 }}</h5></div>
                 </div>

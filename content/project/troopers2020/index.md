@@ -2,7 +2,7 @@
 title       : "Troopers 2020 Badge Project"
 short_title : "Troopers 2020"
 description : "The Troopers 2020 badge is an external development and not developed by the badge.team itself."
-draft       : false
+draft       : true
 
 # Project start date
 date        : 2020-03-16T09:44:15+02:00

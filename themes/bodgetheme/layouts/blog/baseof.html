@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
-{{ partialCached "head/site-head.html" . }}
+{{ partial "head/site-head.html" . }}
   <body>
-{{ partialCached "header/site-header.html" . }}
+{{ partial "header/site-header.html" . }}
     <div class="bi-page-wrapper bt-content bt-padding bt-margin-top" style="max-width:100%"> {{ "<!-- Page content -->" | safeHTML }}
       {{- block "page-header" . }}{{- end }}
       <div class="bt-row">
@@ -11,6 +11,6 @@
       </div>
       {{- block "page-footer" . }}{{- end }}
     </div> {{ "<!-- End page content -->" | safeHTML }}
-{{ partialCached "footer/site-footer.html" . }}
+{{ partial "footer/site-footer.html" . }}
   </body>
 </html>

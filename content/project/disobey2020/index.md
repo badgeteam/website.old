@@ -22,7 +22,7 @@ projects    : ["DISOBEY2020"]
 slug        : "disobey2020"
 
 # Project state
-active      : true
+active      : false
 archived    : false
 external    : false
 featured    : false

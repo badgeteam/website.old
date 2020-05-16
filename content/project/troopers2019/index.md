@@ -2,7 +2,7 @@
 title       : "Troopers 2019 Badge Project"
 short_title : "Troopers 2019"
 description : "This is the project page description for the Troopers 2019 Project"
-draft       : false
+draft       : true
 
 # Project start date
 date        : 2019-03-18T09:44:56+02:00
