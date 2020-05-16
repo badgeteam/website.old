@@ -60,7 +60,7 @@
       </div>
       <div class="bi-project-single-description bt-container">
         {{ if $image }}
-  		  <img class="bi-project-single-entry-image" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:150px;">
+  		  <img class="bi-project-single-entry-image bt-margin-bottom bt-margin-right bt-margin-top bt-left" src="{{ $image.RelPermalink }}" alt="{{ .Params.image_alt }}" style="width:150px;">
   		  {{ end }}
         <p>{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary | plainify | emojify }}{{ end }}</p>
       </div>
@@ -111,7 +111,7 @@
   </div>
 </div>
 {{ partial "widgets/project-contact.html" (dict "context" . "project" . ) }}
-{{ partial "widgets/project-recent-updates.html" (dict "context" . "project" . ) }}
+{{/* partial "widgets/project-recent-updates.html" (dict "context" . "project" . ) */}}
 {{ partial "widgets/project-participants.html" (dict "context" . "project" . ) }}
 {{ partial "widgets/taxo-cloud.html" . }}
 {{ end }}
