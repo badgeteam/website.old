@@ -14,9 +14,13 @@
 {{- with $project }}
   {{- $pages := "" }}
   {{- if $sections }}
-    {{- $pages = first $maxpaginate ((where (where site.RegularPages "Type" "in" $sections) "Params.projects" "intersect" .Params.projects).ByLastmod.Reverse ) }}
+    {{- $no_archive_pages := (where (where site.RegularPages "Type" "in" $sections) "Params.archived" "==" nil ) }}
+    {{- $non_archived_pages := (where (where site.RegularPages "Type" "in" $sections) "Params.archived" false ) }}
+    {{- $pages = first $maxpaginate ((where ($non_archived_pages | union $no_archive_pages) "Params.projects" "intersect" .Params.projects).ByLastmod.Reverse ) }}
   {{- else }}
-    {{- $pages = first $maxpaginate ((where site.RegularPages "Params.projects" "intersect" .Params.projects).ByLastmod.Reverse ) }}
+    {{- $no_archive_pages := (where (where site.RegularPages "Params.projects" "intersect" .Params.projects) "Params.archived" "==" nil ) }}
+    {{- $non_archived_pages := (where (where site.RegularPages "Params.projects" "intersect" .Params.projects) "Params.archived" false ) }}
+    {{- $pages = first $maxpaginate (($non_archived_pages | union $no_archive_pages).ByLastmod.Reverse ) }}
   {{- end }}
   {{- "<!-- Project recent updates -->" | safeHTML }}
   {{- $page_count := len $pages }}
