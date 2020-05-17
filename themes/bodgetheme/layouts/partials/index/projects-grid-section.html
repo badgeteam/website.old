@@ -2,11 +2,11 @@
 {{- $projects := .projects }}
 {{- $label    := .label    }}
 {{- $projects_count := len $projects }}
-  <section class="bi-index-projects-active"> {{ "<!-- {{ $label }} -->" | safeHTML }}
-    <div class="bi-index-projects-active-title-container bt-container bt-center">
+  <section class="bi-index-projects-active">
+    <div class="bi-index-projects-active-title-container bt-container">
       <h4 class="bi-index-projects-active-title bt-left">{{ $label }}</h4>
     </div>
-    <div class="bi-index-projects-active-row bt-blue">
+    <div class="bi-index-projects-active-row bt-padding">
 {{- if ge $projects_count 1 }}
 {{- $index := 0 }}
 {{- range $projects.ByParam "short_title" }}
@@ -56,4 +56,4 @@
       <div class="bi-index-projects-active-title bt-container bt-center bt-margin-bottom"><h5>There are currently no {{ $label | lower }} projects.</h5></div>
 {{- end }}
     </div>
-  </section>  {{ "<!-- End {{ $label }} -->" | safeHTML }}
+  </section>

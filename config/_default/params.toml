@@ -155,11 +155,13 @@ updateSections = ["blog","project"]
 [gridifier]
   defaultImage = "/images/mascot2x.jpg"
   defaultSize  = "250x250"
+  #defaultSize  = "300x300"
 
   templateImage = "/images/gridifier/template.png"
 
   # https://www.color-hex.com/color-palettes/
   defaultTileColour = "#B31280" #B31280
+  #tileColours = ["#FFFFFF"] #White only
   #tileColours = ["#E0BEEC","#B48EE5","#8F60EC","#5D2E9A","#333489"] #Lavender
   #tileColours = ["#FFCE00","#FFBF00","#FFAF9A","#99D4D9","#B8D3D2"] #Summer
   #tileColours = ["#FDF49D","#FFE36F","#FFC455","#FF8F43","#FF612B"] #Sunset
