@@ -1,8 +1,8 @@
 ---
 title  : "Privacy"
-layout : "privacy"
+layout : "plain"
 ---
 
-We value your privacy.
+### {{< icon name="fa-lock" >}} Privacy statement
 
 No cookies, no calories.

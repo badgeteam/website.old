@@ -23,7 +23,7 @@ slug        : "fri3d2020"
 
 # Project state
 active      : true
-archived    : false
+archived    : true
 external    : true
 featured    : true
 

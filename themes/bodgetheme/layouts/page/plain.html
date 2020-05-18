@@ -1,0 +1,7 @@
+{{ define "main" }}
+  {{ "<!-- Start content -->"  | safeHTML }}
+  <div class="bt-container">
+    {{ .Content }}
+  </div>
+  {{ "<!-- End content -->" | safeHTML }}
+{{ end }}

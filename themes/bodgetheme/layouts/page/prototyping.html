@@ -1,0 +1,18 @@
+{{ define "main" }}
+  {{ "<!-- Start experimental -->"  | safeHTML }}
+  <div class="bt-container">
+    <p>This page contains temporary content only, related to prototyping, development or just plain experimental.</p>
+    {{ if .Content }}<hr>{{ .Content }}{{ end  }}
+  </div>
+  <hr>
+  {{- /* partial "widgets/recent-updates.html" . */}}
+  {{- /* partial "index/temporary-examples.html" . */}}
+  {{- partial "index/experimental.html" . }}
+  {{ "<!-- End experimental -->" | safeHTML }}
+{{ end }}
+
+{{ define "page-header" }}
+<header class="bi-page-header bt-container bt-center">
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-warning bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n "prototyping" | default "Prototyping") | markdownify }}</h3>
+</header>
+{{ end }}

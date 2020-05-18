@@ -1,8 +1,4 @@
-<hr>
 <article class="bi-index-projects"> {{ "<!-- Projects -->" | safeHTML }}
-  <div class="bi-index-projects-title-container bt-container bt-center">
-    <h3 class="bi-index-projects-title bt-left bt-text-black bt-padding-8"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-xlarge bt-text-teal"></i>{{ (i18n "experimental" | default "Experimental") | markdownify }}</strong></h3>
-  </div>
 {{- $internal_projects := (where (where (where .Site.RegularPages "Section" "project") "Params.archived" false) "Params.external" false) }}
 {{- $legacy_projects := (where (where (where .Site.RegularPages "Section" "project") "Params.archived" false) "Params.external" "==" nil) }}
 {{- $projects := $internal_projects | union $legacy_projects }}

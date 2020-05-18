@@ -6,6 +6,7 @@ draft       : false
 
 # Project start date
 date        : 2020-02-19T15:27:19+01:00
+lastmod     : 2020-05-18T15:27:19+02:00
 
 # Project end date (commenting out, means no end date yet)
 #endDate     : 2021-08-10T23:00:00+02:00
