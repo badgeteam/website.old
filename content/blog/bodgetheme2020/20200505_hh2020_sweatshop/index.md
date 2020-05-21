@@ -1,6 +1,6 @@
 ---
 date        : 2020-05-05T00:00:00+02:00
-lastmod     : 2020-05-18T20:56:00+02:00
+lastmod     : 2020-05-21T22:23:00+02:00
 draft       : false
 title       : "Blog page rewrite test"
 author      : "elborro"
@@ -47,151 +47,151 @@ gallery:
     exclude      : false
     external_url : ""
   - image        : "photo02.jpg"
-    caption      : "People"
+    caption      : "Removing FETs"
     exclude      : false
     external_url : ""
   - image        : "photo03.jpg"
-    caption      : "Imagine"
+    caption      : "Bodging Fanatics"
     exclude      : false
     external_url : ""
   - image        : "photo04.jpg"
-    caption      : "People"
+    caption      : "The Harvest"
     exclude      : false
     external_url : ""
   - image        : "photo05.jpg"
-    caption      : "Imagine"
+    caption      : "Trimming long leads"
     exclude      : false
     external_url : ""
   - image        : "photo06.jpg"
-    caption      : "People"
+    caption      : "Loads of battery boxes"
     exclude      : false
     external_url : ""
   - image        : "photo07.jpg"
-    caption      : "Imagine"
+    caption      : "Removing with hot air"
     exclude      : false
     external_url : ""
   - image        : "photo08.jpg"
-    caption      : "People"
+    caption      : "Replacing the diode"
     exclude      : false
     external_url : ""
   - image        : "photo09.jpg"
-    caption      : "Imagine"
+    caption      : "Badge on jig"
     exclude      : false
     external_url : ""
   - image        : "photo10.jpg"
-    caption      : "People"
+    caption      : "Programming jig"
     exclude      : false
     external_url : ""
   - image        : "photo11.jpg"
-    caption      : "Imagine"
+    caption      : "STICKERS!"
     exclude      : false
     external_url : ""
   - image        : "photo12.jpg"
-    caption      : "People"
+    caption      : "Exhausted Bodhajes"
     exclude      : false
     external_url : ""
   - image        : "photo13.jpg"
-    caption      : "Imagine"
+    caption      : "Noseyhaj"
     exclude      : false
     external_url : ""
   - image        : "photo14.jpg"
-    caption      : "People"
+    caption      : "Adventure then Pizza"
     exclude      : false
     external_url : ""
   - image        : "photo15.jpg"
-    caption      : "Imagine"
+    caption      : "Chase the flavors"
     exclude      : false
     external_url : ""
   - image        : "photo16.jpg"
-    caption      : "People"
+    caption      : "Pizza with love"
     exclude      : false
     external_url : ""
   - image        : "photo17.jpg"
-    caption      : "Imagine"
+    caption      : "Oh yes we did!"
     exclude      : false
     external_url : ""
   - image        : "photo18.jpg"
-    caption      : "People"
+    caption      : "Measure. Meditate. Cut!"
     exclude      : false
     external_url : ""
   - image        : "photo19.jpg"
-    caption      : "Imagine"
+    caption      : "Monks work"
     exclude      : false
     external_url : ""
   - image        : "photo20.jpg"
-    caption      : "People"
+    caption      : "Bodge-planning"
     exclude      : false
     external_url : ""
   - image        : "photo21.jpg"
-    caption      : "Imagine"
+    caption      : "Tinning"
     exclude      : false
     external_url : ""
   - image        : "photo22.jpg"
-    caption      : "People"
+    caption      : "Precision work"
     exclude      : false
     external_url : ""
   - image        : "photo23.jpg"
-    caption      : "Imagine"
+    caption      : "Push and pray ..."
     exclude      : false
     external_url : ""
   - image        : "photo24.jpg"
-    caption      : "People"
+    caption      : "... HURRAY!"
     exclude      : false
     external_url : ""
   - image        : "photo25.jpg"
-    caption      : "Imagine"
+    caption      : "QC failures"
     exclude      : false
     external_url : ""
   - image        : "photo26.jpg"
-    caption      : "People"
+    caption      : "QC failures"
     exclude      : false
     external_url : ""
   - image        : "photo27.jpg"
-    caption      : "Imagine"
+    caption      : "Fixed the easy-fixers first"
     exclude      : false
     external_url : ""
   - image        : "photo28.jpg"
-    caption      : "People"
+    caption      : "Scrutinizing bugged badges"
     exclude      : false
     external_url : ""
   - image        : "photo29.jpg"
-    caption      : "Imagine"
+    caption      : "May be we fixed this bugger"
     exclude      : false
     external_url : ""
   - image        : "photo30.jpg"
-    caption      : "People"
+    caption      : "Beathaj"
     exclude      : false
     external_url : ""
   - image        : "photo31.jpg"
-    caption      : "Imagine"
+    caption      : "Bodgefield remains"
     exclude      : false
     external_url : ""
   - image        : "photo32.jpg"
-    caption      : "People"
+    caption      : "Hobbybob sealed the boxes"
     exclude      : false
     external_url : ""
   - image        : "photo33.jpg"
-    caption      : "Imagine"
+    caption      : "Debodination swept"
     exclude      : false
     external_url : ""
   - image        : "photo34.jpg"
-    caption      : "People"
+    caption      : "Toys!"
     exclude      : false
     external_url : ""
   - image        : "photo35.jpg"
-    caption      : "Imagine"
+    caption      : "Badges ..."
     exclude      : false
     external_url : ""
   - image        : "photo36.jpg"
-    caption      : "People"
+    caption      : "... more badges ..."
     exclude      : false
     external_url : ""
   - image        : "photo37.jpg"
-    caption      : "Imagine"
+    caption      : "... even more badges"
     exclude      : false
     external_url : ""
   - image        : "photo38.jpg"
-    caption      : "People"
+    caption      : "HÅJ!"
     exclude      : false
     external_url : ""
 
