@@ -1,7 +1,8 @@
 ---
-date        : 2020-04-06T14:21:02+01:00
-draft       : false
-title       : "Blogpage images"
+date        : 2020-05-21T19:08:17+02:00
+lastmod     : 2020-05-22T19:08:17+02:00
+draft       : true
+title       : "New img shortcode for blogpage images"
 author      : "Elborro"
 
 # Description overrides the automated summary of marked-up content
@@ -16,24 +17,25 @@ projects    : ["Bodgetheme"]
 slug        : ""
 
 # Identifying tags, searchable/visible to site visitors
-tags        :
-- website
-- Bodgetheme
-- 2020
+tags        : []
 
 # Identifying categories, searchable/visible to site visitors
 categories  :
-- Website design
+- Hacker conference badge
+- Hardware design
+- Software development
+- Embedded software
 
 # Blog icon
+# For available icons, see: https://forkaweso.me
 icon_name : fa-bug
 icon_pack : fa
 
 # Default image related to this blog
-image_src   : "images/images.png"
-image_alt   : ""
-thumb_src   : ""
-thumb_alt   : ""
+#image_src   : "images/mascot.png"
+#image_alt   : ""
+#thumb_src   : ""
+#thumb_alt   : ""
 
 # Author about box
 about_show   : true
@@ -44,19 +46,23 @@ gallery:
 - album   : "images"
   exclude : true
   images  :
-  - image   : "imagine.jpg"
-    caption : "Imagine"
-    exclude : false
-  - image   : "people.jpg"
-    caption : "People"
-    exclude : false
+  - image        : "imagine.jpg"
+    caption      : "Imagine"
+    exclude      : false
+    external_url : ""
+  - image        : "people.jpg"
+    caption      : "People"
+    exclude      : false
+    external_url : ""
+
+# Write the content of this blog page below in markup language.
+# An emoji cheat sheet can be found here:
+#  https://www.webfx.com/tools/emoji-cheat-sheet/
 ---
 
 While standard formatting should deliver quite a clean page, someone might want to add images at a later stage. This shows how to share nice pictures in your blog-posts.
 
 <!--more-->
-
-{{< alert >}}Some information on this page is obsolete. Please check blog [**"New img shortcode"**](/blog/bodgetheme2020/20200521_img_shortcode/) for more accurate information. {{< /alert >}}
 
 ## Inserting images in text
 
@@ -92,44 +98,57 @@ While standard formatting should deliver quite a clean page, someone might want 
 
 {{< img-card src="images/bodgeteam.jpg" alt="Bodgenators" width="50%" >}}
 
-----
 
-### Insert image-card - 50% width, description
 
-{{< img-card src="images/bodgeteam.jpg" alt="Bodgenators" width="50%" descr="Let's show a quite long description to see if this gets nice wrapped onto the next line and such." >}}
 
-----
 
-### Insert image-card - 50% width, title
 
-{{< img-card src="images/bodgeteam.jpg" alt="Bodgenators" width="50%" title="Bodgenators" >}}
 
-----
 
-### Insert image-card - 50% width, title and description
 
-{{< img-card src="images/bodgeteam.jpg" alt="Bodgenators" width="50%" title="Bodgenators" descr="Let's show a quite long description to see if this gets nice wrapped onto the next line and such." >}}
 
-----
 
-### Insert image - 100% width
 
-{{< img src="images/bodgeteam.jpg" alt="Bodgenators" >}}
 
-----
 
-### Insert image - 100% width, title
 
-{{< img src="images/bodgeteam.jpg" alt="Bodgenators" title="Bodgenators" >}}
+##### img shortcode update
 
-----
+The updated shortcode to show images has been updated to support gallery records, image processing, easier layout, etc.
+<!--more-->
 
-### Insert image - 100% width, description
+This part of the text will show up on the blog page only, not in the previews of the project page.
 
-{{< img src="images/bodgeteam.jpg" alt="Bodgenators" descr="Let's show a quite long description to see if this gets nice wrapped onto the next line and such." >}}
+{{< img "images/photo01.jpg" >}}
 
-----
+{{< img "images/photo01.jpg" "fill" >}}
 
-### Insert image - 100% width, title and description
+{{< img "images/photo01.jpg" "fill" "250x250" >}}
 
-{{< img src="images/bodgeteam.jpg" alt="Bodgenators" title="Bodgenators" descr="Let's show a quite long description to see if this gets nice wrapped onto the next line and such." >}}
+{{< img src="images/photo01.jpg" >}}
+
+{{< img src="images/photo01.jpg" method="fill" >}}
+
+{{< img src="images/photo01.jpg" method="fill" size="250x250" >}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{< img src="images/photo01.jpg,images/photo02.jpg,images/photo03x.jpg,images/photo04x.jpg,images/photo05.jpg,images/photo06.jpg" method="fill" size="250x250" align="left" >}}
