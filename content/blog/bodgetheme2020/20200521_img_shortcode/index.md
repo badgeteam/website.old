@@ -78,7 +78,7 @@ While standard formatting should deliver quite a clean page, someone might want 
 {{</* img-card src="images/bodgeteam.jpg" alt="Bodgenators" width="50%" descr="Description." */>}}
 {{</ highlight>}}
 
-{{< note >}}Note that **src** is a only mandatory parameter.{{< /note >}}
+{{< note >}}Note that **src** is the only mandatory parameter.{{< /note >}}
 
 ----
 
