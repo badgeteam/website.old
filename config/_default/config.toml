@@ -32,8 +32,11 @@ rssLimit    = 25
   nickname = "nicknames"
 
 [outputs]
-  home = [ "HTML", "RSS" ]
-  section = [ "HTML", "RSS" ]
+  home         = [ "HTML", "RSS" ]
+  #page         = [ "HTML", "RSS" ]
+  #section      = [ "HTML", "RSS" ]
+  #taxonomy     = [ "HTML", "RSS" ]
+  #taxonomyTerm = [ "HTML", "RSS" ]
 
 [minify]
   disableCSS   = false
