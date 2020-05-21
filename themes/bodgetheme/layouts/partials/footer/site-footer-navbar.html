@@ -22,10 +22,12 @@
           {{- end }}
 
           {{- /* Links to other output formats */}}
+          {{- if .Site.Params.outputs.showInNavbar }}
           {{- with  .OutputFormats.Get "rss" }}
             <a class="bi-button bi-footer-button bt-bar-item" title="RSS" alt="RSS" href="{{ .Permalink }}">
               <i class="fa fa-rss bt-hover-opacity"></i>
             </a>
+          {{- end }}
           {{- end }}
         </div>
       </div>
