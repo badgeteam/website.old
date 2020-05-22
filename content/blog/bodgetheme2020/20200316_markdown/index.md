@@ -61,6 +61,12 @@ gallery:
 
 #tag
 
+heading
+=======
+
+Sub-heading
+-----------
+
 * List 1
 + List 2
 - List 3
@@ -91,6 +97,8 @@ __Bold__
 ___Bold+Italics___
 
 this_is_not_emphasis
+
+`monospace`
 
 ~~Strikethough~~
 

@@ -13,6 +13,15 @@
 {{- else }}
   {{- $pages = first $maxpaginate ((site.RegularPages).ByLastmod.Reverse ) }}
 {{- end }}
+{{- if $sections }}
+  {{- $no_archive_pages := (where (where site.RegularPages "Type" "in" $sections) "Params.archived" "==" nil ) }}
+  {{- $non_archived_pages := (where (where site.RegularPages "Type" "in" $sections) "Params.archived" false ) }}
+  {{- $pages = first $maxpaginate (($non_archived_pages | union $no_archive_pages).ByLastmod.Reverse ) }}
+{{- else }}
+  {{- $no_archive_pages := (where site.RegularPages "Params.archived" "==" nil ) }}
+  {{- $non_archived_pages := (where site.RegularPages "Params.archived" false ) }}
+  {{- $pages = first $maxpaginate (($non_archived_pages | union $no_archive_pages).ByLastmod.Reverse ) }}
+{{- end }}
   <article class="bi-default-list"> {{ "<!-- Recent updates -->" | safeHTML }}
     {{- if .Content }}{{ .Content }}{{end}}
     <section class="bi-default-list-section bt-card bt-margin">

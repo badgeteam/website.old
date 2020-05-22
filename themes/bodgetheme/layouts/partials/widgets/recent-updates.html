@@ -10,7 +10,9 @@
 {{- else if site.Params.mainSections }}
   {{- $sections    = site.Params.mainSections }}
 {{- end }}
-{{- $pages := first $maxpaginate ((where site.RegularPages "Type" "in" $sections).ByLastmod.Reverse ) }}
+{{- $no_archive_pages   := (where (where site.RegularPages "Type" "in" $sections) "Params.archived" "==" nil ) }}
+{{- $non_archived_pages := (where (where site.RegularPages "Type" "in" $sections) "Params.archived" false ) }}
+{{- $pages := first $maxpaginate (($non_archived_pages | union $no_archive_pages).ByLastmod.Reverse ) }}
 {{- $page_count := len $pages }}
 {{- if ge $page_count 1 }}
 <div class="bi-recent-updates bt-card bt-margin bt-hide-small">

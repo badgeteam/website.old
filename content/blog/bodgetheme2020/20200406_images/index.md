@@ -56,6 +56,8 @@ While standard formatting should deliver quite a clean page, someone might want 
 
 <!--more-->
 
+{{< alert >}}Some information on this page is obsolete. Please check blog [**"New img shortcode"**](/blog/bodgetheme2020/20200521_img_shortcode/) for more accurate information. {{< /alert >}}
+
 ## Inserting images in text
 
 ### Use the following shortcode to insert an image
@@ -70,7 +72,7 @@ While standard formatting should deliver quite a clean page, someone might want 
 {{</* img-card src="images/bodgeteam.jpg" alt="Bodgenators" width="50%" descr="Description." */>}}
 {{</ highlight>}}
 
-{{< note >}}Note that **src** is a only mandatory parameter.{{< /note >}}
+{{< note >}}Note that **src** is the only mandatory parameter.{{< /note >}}
 
 ----
 

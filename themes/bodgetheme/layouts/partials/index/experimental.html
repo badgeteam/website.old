@@ -1,21 +1,17 @@
-<hr>
 <article class="bi-index-projects"> {{ "<!-- Projects -->" | safeHTML }}
-  <div class="bi-index-projects-title-container bt-container bt-center">
-    <h3 class="bi-index-projects-title bt-left bt-text-black bt-padding-8"><strong><i class="fa fa-suitcase bi-icon bt-margin-right bt-xlarge bt-text-teal"></i>{{ (i18n "experimental" | default "Experimental") | markdownify }}</strong></h3>
-  </div>
 {{- $internal_projects := (where (where (where .Site.RegularPages "Section" "project") "Params.archived" false) "Params.external" false) }}
 {{- $legacy_projects := (where (where (where .Site.RegularPages "Section" "project") "Params.archived" false) "Params.external" "==" nil) }}
 {{- $projects := $internal_projects | union $legacy_projects }}
 
 {{- $current_projects := (where ($projects) "Params.active" true) }}
-{{ partial "index/projects-grid-section.html" (dict "label" "Active Projects" "context" . "projects" $current_projects) }}
+{{ partial "index/experimental-grid-section.html" (dict "label" "Active Projects" "context" . "projects" $current_projects) }}
 
 {{- $inactive_projects := (where ($projects) "Params.active" false) }}
-{{ partial "index/projects-grid-section.html" (dict "label" "Finished Projects" "context" . "projects" $inactive_projects) }}
+{{ partial "index/experimental-grid-section.html" (dict "label" "Finished Projects" "context" . "projects" $inactive_projects) }}
 
 {{- $external_projects := (where (where (where .Site.RegularPages "Section" "project") "Params.archived" false) "Params.external" true) }}
-{{ partial "index/projects-grid-section.html" (dict "label" "Other interesting developments" "context" . "projects" $external_projects) }}
+{{ partial "index/experimental-grid-section.html" (dict "label" "Other interesting developments" "context" . "projects" $external_projects) }}
 
 {{- $all_projects := where .Site.RegularPages "Section" "project" }}
-{{ partial "index/projects-grid-section.html" (dict "label" "All Projects" "context" . "projects" $all_projects) }}
+{{ partial "index/experimental-grid-section.html" (dict "label" "All Projects" "context" . "projects" $all_projects) }}
 </article> {{ "<!-- End Projects -->" | safeHTML }}

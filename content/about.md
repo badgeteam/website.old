@@ -1,6 +1,8 @@
 ---
 title  : "About"
-layout : "about"
+layout : "plain"
 ---
 
-About us.
+### {{< icon name="fa-commenting" >}} About us
+
+About us

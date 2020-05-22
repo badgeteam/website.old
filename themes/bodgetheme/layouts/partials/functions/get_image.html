@@ -1,12 +1,10 @@
 {{/*- $image   = (partial `functions/get_image` (dict "context" . "src" "image/pic.jpg")) */}}
 {{/* Search resources for image reference */}}
-{{- $page        := .context  }}
-{{- $src         := .src }}
-
-{{ $image := "" }}
-{{ $image = .Resources.GetMatch $src }}
-{{ if (not $image) }}
-  {{ $image = resources.Get $src }}
-{{ end }}
-
-{{ return $image }}
+{{- $pctx  := .context  }}
+{{- $src   := .src }}
+{{- $image := "" }}
+{{- $image = .Resources.GetMatch $src }}
+{{- if (not $image) }}
+  {{- $image = resources.Get $src }}
+{{- end }}
+{{- return $image }}

@@ -60,6 +60,6 @@ As days are melting into each other whilst we stay at home to battle #COVIDー19
 
 Downloadable from the on-badge app store: [Hatchery](https://hatchery.badge.team/projects/days_spent_inside)
 
-{{< img src="images/thebadge.jpg" alt="Work in progress." width="100%"  >}}
+{{< img src="images/thebadge.jpg" method="resize" size="800x" align="center" option="nocap" alt="Days spent inside app" >}}
 
 ( [original](https://twitter.com/HackZoneNL/status/1251867795073257473) )

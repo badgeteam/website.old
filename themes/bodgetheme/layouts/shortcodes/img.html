@@ -1,22 +1,188 @@
-{{- $img_src    := (.Get "src") }}
-{{- $img_alt    := (.Get "alt") }}
-{{- $img_width  := (.Get "width")  | default "100%" }}
-{{- $img_owidth := (.Get "owidth") | default $img_width }}
-{{- $img_iwidth := (.Get "iwidth") | default "100%" }}
-{{- $img_class  := (.Get "class") }}
-{{- $img_title  := (.Get "title") }}
-{{- $img_descr  := (.Get "descr") }}
-{{- $image      := (partial `functions/get_image` (dict "context" . "src" $img_src)) }}
-  <div class="bi-img bt-display-container bt-right" style="width:{{ $img_owidth }}">
-    <div class="bt-center">
-      <img class="bi-img-img bi-image {{ $img_class }}" src="{{ if $image }}{{ $image.RelPermalink }}{{ else }}{{ $img_src }}{{ end }}" alt="{{ $img_alt }}" title="{{ $img_alt }}" style="width:{{ $img_iwidth }}">
-    </div>
-    <div class="bi-img-caption bt-container">
-      {{- if $img_title -}}
-      <h4><strong>{{ $img_title }}</strong></h4>
-      {{- end -}}
-      {{- if $img_descr -}}
-      <p>{{ $img_descr }}</p>
-      {{- end -}}
-    </div>
+{{- $context := .Page }}
+{{- $source  := .Get "src"     | default (.Get 0) }}
+{{- $method  := .Get "method"  | default (.Get 1) | lower }}
+{{- $size    := .Get "size"    | default (.Get 2) }}
+
+{{- $album   := .Get "album"   }}
+{{- $alt     := .Get "alt"     }}
+{{- $caption := .Get "caption" }}
+{{- $capcol  := .Get "capcol"  }}
+{{- $cappos  := .Get "cappos"  }}
+{{- $title   := .Get "title"   }}
+
+{{- $align   := .Get "align"   | default "left" }}
+{{- $colour  := .Get "colour"  }}
+{{- $ipcmds  := .Get "ipcmds"  }}
+{{- $option  := .Get "option"  }}
+
+{{- $sources := "" }}
+{{- if and $album (not $source) }}
+  {{- if $context.Params.gallery }}
+    {{- $sources = slice }}
+    {{- range (where $context.Params.gallery "album" $album) }}
+      {{- range .images }}
+        {{- if (not .exclude )}}
+          {{- $sources = $sources | append .image }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- else }}
+  {{- $sources = split $source "," }}
+{{- end }}
+
+{{- $index := 0 }}
+{{- if $sources }}
+<div class="bi-index-projects-active-row bt-row">
+  {{- $options := split $option "," }}
+  {{- range $sources }}
+    {{- $image := "" }}
+
+    {{- $filename := . }}
+    {{- if $album }}
+      {{- $filename = printf "%s/%s" $album $filename }}
+    {{- end }}
+
+    {{- $original := $context.Page.Resources.GetMatch $filename }}
+
+    {{- with $.Site.Params.gridifier }}
+      {{- if and (not $original) .defaultImage }}
+        {{- $original = resources.GetMatch .defaultImage }}
+      {{- end }}
+      {{- if (not $original) }}
+        {{- $original = resources.GetMatch .templateImage }}
+      {{- end }}
+      {{- if $original }}
+        {{- $tileSize := $size }}
+        {{- if (not $tileSize) }}
+          {{- $tileSize = .defaultSize | default "250x250" }}
+        {{- end }}
+        {{- $bgcolour := $colour }}
+        {{- if (not $bgcolour) }}
+          {{- $bgcolour = .defaultTileColour | default "#ffffff" }}
+          {{- if .tileColours }}
+            {{- $colourCount := len .tileColours }}
+            {{- $colourIndex := mod $index $colourCount }}
+            {{- $bgcolour = index .tileColours $colourIndex }}
+          {{- end }}
+        {{- end }}
+        {{-      if eq $method "fit"    }}{{ $image = $original.Fit    (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}
+        {{- else if eq $method "resize" }}{{ $image = $original.Resize (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}
+        {{- else if eq $method "none"   }}{{ $image = $original }}
+        {{- else                        }}{{ $image = $original.Fill   (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}{{ end }}
+      {{- end }}
+    {{- else }}
+      {{- if $original }}
+        {{- $tileSize := $size | default "250x250" }}
+        {{- $bgcolour := $colour | default "#ffffff" }}
+        {{-      if eq $method "fill"   }}{{ $image = $original.Fill   (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}
+        {{- else if eq $method "fit"    }}{{ $image = $original.Fit    (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}
+        {{- else if eq $method "resize" }}{{ $image = $original.Resize (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}
+        {{- else if eq $method "none"   }}{{ $image = $original }}
+        {{- else                        }}{{ $image = $original.Fill   (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}{{ end }}
+      {{- end }}
+    {{- end }}
+
+    {{- $img_url := "" }}
+    {{- $img_cap := path.Base $filename }}
+    {{- $img_alt := path.Base $filename }}
+    {{- if $context.Params.gallery }}
+      {{- $album_name := $album }}
+      {{- if (not $album_name) }}{{ $album_name = path.Dir $filename }}{{ end }}
+      {{- $filename  := path.Base $filename }}
+      {{- range (where $context.Params.gallery "album" $album_name) }}
+        {{- range (where .images "image" $filename) }}
+          {{- $img_cap = .caption }}
+          {{- if .alternative }}{{ $img_alt = .alternative }}{{ else }}{{ $img_alt = .caption }}{{ end }}
+          {{- $img_url = .external_url }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+
+    {{- $url := $img_url }}
+
+    {{- /* Get caption */}}
+    {{- $cap_text := $img_cap }}
+    {{- if $caption }}
+      {{- if in $caption "," }}
+        {{- $captions := split $caption "," }}
+        {{- $cap_index := mod $index (len $captions) }}
+        {{- $cap_text = index $captions $cap_index }}
+      {{- else }}
+        {{- $cap_text = $caption }}
+      {{- end }}
+    {{- end }}
+
+    {{- $alt_text := $img_alt }}
+    {{- if $alt }}
+      {{- if in $alt "," }}
+        {{- $alts := split $alt "," }}
+        {{- $alt_index := mod $index (len $alts) }}
+        {{- $alt_text = index $alts $alt_index }}
+      {{- else }}
+        {{- $alt_text = $alt }}
+      {{- end }}
+    {{- end }}
+
+    {{- $title_text := $alt_text }}
+    {{- if $title }}
+      {{- if in $title "," }}
+        {{- $titles := split $title "," }}
+        {{- $title_index := mod $index (len $titles) }}
+        {{- $title_text = index $titles $title_index }}
+      {{- else }}
+        {{- $title_text = $title }}
+      {{- end }}
+    {{- end }}
+
+    {{- $cap_position := "bt-display-bottom" }}
+    {{- if $cappos }}
+      {{ $cap_position = printf "bt-display-%s" ($cappos | lower) }}
+    {{ end }}
+
+    {{- $cap_colour_class  := "bt-text-black" }}
+    {{- $cap_colour_number := "" }}
+    {{- if $capcol }}
+      {{- if in $capcol "#" }}
+        {{- $cap_colour_class  = "" }}
+        {{- $cap_colour_number = $capcol }}
+      {{- else }}
+        {{- $cap_colour_class = printf "bt-text-%s" ($capcol | lower) }}
+        {{- $cap_colour_number = "" }}
+      {{- end }}
+    {{- end }}
+
+    {{- /* Picture alignment */}}
+    {{- $alignment := "bt-left bt-margin-right" }}
+    {{- if eq $align "right" }}
+      {{- $alignment = "bt-right bt-margin-left" }}
+    {{- else if eq $align "center" }}
+      {{- $alignment = "bt-center bt-margin-right" }}
+    {{- end }}
+
+    {{- /* Overrides */}}
+    {{- range $options }}
+      {{-      if in . "nourl" }}{{ $url = "" }}
+      {{- else if in . "nocap" }}{{ $cap_text = "" }}
+      {{- else if in . "noalt" }}{{ $alt_text = "" }}
+      {{- else if in . "notit" }}{{ $title_text = "" }}
+      {{- end }}
+    {{- end }}
+  <div class="bi-img bt-display-container bt-margin-bottom {{ $alignment }}" style="width:{{ $image.Width }}">
+    {{- if $url }}
+    <a title="{{ $cap_text }}" href="{{ $url }}" style="text-decoration:none;">
+    {{- end }}
+      <div class="bi-img-caption bt-display-container">
+        <img class="bi-img-img bi-image" src="{{ if $image }}{{ $image.RelPermalink }}{{ else }}{{ . }}{{ end }}"{{ if $alt_text}} alt="{{ $alt_text }}"{{ end }}{{ if $title_text}} title="{{ $title_text }}"{{ end }} width="{{ $image.Width }}" height="{{ $image.Height }}">
+        {{- if $cap_text }}
+        <div class="bt-container bt-center {{ $cap_position }}{{ if $cap_colour_class }} {{ $cap_colour_class }}{{ end }}"{{ if $cap_colour_number }} style="color:{{ $cap_colour_number }};"{{ end }}>{{ $cap_text | markdownify }}</div>
+        {{- end }}
+      </div>
+    {{- if $url }}
+    </a>
+    {{- end }}
   </div>
+    {{- $index = add $index 1 }}
+  {{- end }}
+</div>
+{{- end }}

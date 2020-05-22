@@ -22,7 +22,7 @@ slug        : "emf2022"
 
 # Project state
 active      : true
-archived    : false
+archived    : true
 external    : false
 featured    : false
 

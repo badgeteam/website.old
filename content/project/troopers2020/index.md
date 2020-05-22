@@ -24,7 +24,7 @@ slug        : "troopers2020"
 # Project state
 active      : true
 archived    : false
-external    : true
+external    : false
 featured    : true
 
 # Identifying tags, searchable/visible to site visitors

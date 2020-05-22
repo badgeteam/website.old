@@ -64,12 +64,12 @@ We also want to share a nice surprise: we are experimenting with _full colour ar
 
 Working on getting the alignment right, but we think it looks amazing already!
 
-{{< img src="images/arty.jpg" alt="Work in progress." width="100%"  >}}
+{{< img src="images/arty.jpg" method="resize" size="800x" align="center" option="nocap" alt="Work in progress." >}}
 
 We're hopeful that we can ship them by the end of next month. Figuring out batch sizes is still very new to us. Accurately predicting demand is hard, even with the sign-up sheet we posted before. Perhaps we should allow pre-orders to prevent running out quickly after launch.
 
 What do you think: should we open for pre-orders soon already, so we can try to make sure we have enough for everyone already in the first batch of Pixel Badges?
 
-{{< img src="images/lights.jpg" alt="Work in progress." width="100%"  >}}
+{{< img src="images/lights.jpg" method="resize" size="600x" align="center" option="nocap" alt="Work in progress." >}}
 
 ( [original](https://twitter.com/HackZoneNL/status/1252196323618668544) )

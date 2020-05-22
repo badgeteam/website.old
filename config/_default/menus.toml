@@ -12,6 +12,36 @@
 #   pre        = ""
 #   post       = ""
 
+# [[main]]
+#   identifier = "privacy"
+#   name       = "Privacy"
+#   title      = "Privacy"
+#   url        = "/privacy/"
+#   parent     = ""
+#   weight     = 800
+#   # pre        = "<i class='fa fa-lock bt-hover-opacity'></i><x class='bt-hide-small'> "
+#   # post       = "</x>"
+#
+# [[main]]
+#   identifier = "about"
+#   name       = "About"
+#   title      = "About"
+#   url        = "/about/"
+#   parent     = ""
+#   weight     = 850
+#   # pre        = "<i class='fa fa-users bt-hover-opacity'></i><x class='bt-hide-small'> "
+#   # post       = "</x>"
+#
+# [[main]]
+#   identifier = "proto"
+#   name       = "Proto"
+#   title      = "Proto"
+#   url        = "/prototyping/"
+#   parent     = ""
+#   weight     = 900
+#   # pre        = "<i class='fa fa-lightbulb-o bt-hover-opacity'></i><x class='bt-hide-small'> "
+#   # post       = "</x>"
+
 # Top navigation bar items
 #   This allows you to add an additional button to the top navigation bar,
 #   in a Hugo-menu-item manner.

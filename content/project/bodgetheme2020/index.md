@@ -5,14 +5,14 @@ description : "Badge.team website development in Hugo. Blogs are created to test
 draft       : false
 
 # Project start date
-date        : 2020-03-14T12:34:56+01:00
-#lastmod     : 2020-04-25T12:34:56+01:00
+date        : 2020-03-14T13:37:42+01:00
+lastmod     : 2020-05-18T13:37:42+02:00
 
 # Project end date (commenting out, means no end date yet)
 #endDate     : 2021-08-10T23:00:00+02:00
 
 # Project gets published on the website after this date
-publishDate : 2020-03-14T12:34:56+01:00
+publishDate : 2020-03-14T13:37:42+01:00
 
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.

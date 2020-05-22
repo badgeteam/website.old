@@ -2,28 +2,28 @@
 {{- $projects := .projects }}
 {{- $label    := .label    }}
 {{- $projects_count := len $projects }}
-  <section class="bi-index-projects-active"> {{ "<!-- {{ $label }} -->" | safeHTML }}
-    <div class="bi-index-projects-active-title-container bt-container bt-center">
+  <section class="bi-index-projects-active">
+    <div class="bi-index-projects-active-title-container bt-container">
       <h4 class="bi-index-projects-active-title bt-left">{{ $label }}</h4>
     </div>
-    <div class="bi-index-projects-active-row bt-blue">
+    <div class="bi-index-projects-active-row bt-padding">
 {{- if ge $projects_count 1 }}
 {{- $index := 0 }}
 {{- range $projects.ByParam "short_title" }}
 {{- $image := "" }}
-{{- $image_file := "" }}
+{{- $original := "" }}
 {{- $image_src  := "" }}
 {{- if .Params.image_src }}
-  {{- $image_file = .Resources.GetMatch .Params.image_src }}
+  {{- $original = .Resources.GetMatch .Params.image_src }}
 {{- end }}
 {{- with .Site.Params.gridifier }}
-  {{ if and (not $image_file) .defaultImage }}
-    {{- $image_file = resources.GetMatch .defaultImage }}
+  {{ if and (not $original) .defaultImage }}
+    {{- $original = resources.GetMatch .defaultImage }}
   {{ end }}
-  {{ if (not $image_file) }}
-    {{- $image_file = resources.GetMatch .templateImage }}
+  {{ if (not $original) }}
+    {{- $original = resources.GetMatch .templateImage }}
   {{ end }}
-  {{- if $image_file }}
+  {{- if $original }}
     {{- $size := .defaultSize | default "250x250" }}
     {{- $colour := .defaultTileColour | default "#b31280" }}
     {{- if .tileColours }}
@@ -32,11 +32,11 @@
       {{- $colour = index .tileColours $colourIndex }}
       {{- $index = add $index 1 }}
     {{- end }}
-    {{- $image = $image_file.Fill (printf "%s %s" $size $colour) }}
+    {{- $image = $original.Fill (printf "%s %s" $size $colour) }}
   {{- end }}
 {{- else }}
-  {{- if $image_file }}
-    {{- $image = $image_file.Fill "250x250" }}
+  {{- if $original }}
+    {{- $image = $original.Fill "250x250" }}
   {{- end }}
 {{- end }}
       <div class="bi-index-projects-active-col bt-left bt-margin-bottom bt-margin-right">
@@ -56,4 +56,4 @@
       <div class="bi-index-projects-active-title bt-container bt-center bt-margin-bottom"><h5>There are currently no {{ $label | lower }} projects.</h5></div>
 {{- end }}
     </div>
-  </section>  {{ "<!-- End {{ $label }} -->" | safeHTML }}
+  </section>

@@ -60,12 +60,12 @@ Remember our CZ19 "i-pane" ESP32 led matrix badge? Because many people who could
 
 More updates soon™ :smile:
 
-{{< img src="images/pixelbadge.jpg" alt="Work in progress." width="100%"  >}}
+{{< img src="images/pixelbadge.jpg" method="resize" size="800x" align="center" option="nocap" alt="Work in progress." >}}
 
 The upgraded design is ready, and prototypes have been ordered. They will be produced in the first week of Feb, so we might be ready for mass production by the end of February!
 
 This run is a project of [@Tom_Clement](https://twitter.com/Tom_Clement), who partnered with our friends at [@AllnetChina](https://twitter.com/AllnetChina)for production and sales logistics. Here's a picture of them brewing their plans in Shenzhen, China Woman scientist.
 
-{{< img src="images/allnetchina.jpg" alt="Work in progress." width="100%"  >}}
+{{< img src="images/allnetchina.jpg" method="none" align="center" option="nocap" alt="Work in progress." >}}
 
 ( [original](https://twitter.com/HackZoneNL/status/1220637774254157826) )

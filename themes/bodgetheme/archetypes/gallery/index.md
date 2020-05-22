@@ -19,10 +19,12 @@ gallery:
   images  :
   - image        : "imagine.jpg"
     caption      : "Imagine"
+    alternative  : "Imagine picture"
     exclude      : false
     external_url : ""
   - image        : "people.jpg"
     caption      : "People"
+    alternative  : "People picture"
     exclude      : false
     external_url : ""
 ---

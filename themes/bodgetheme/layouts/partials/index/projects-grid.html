@@ -30,7 +30,7 @@
               <a class="bi-index-projects-active-link" title="{{ .Params.Short_Title | default .Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
                 <div class="bi-index-projects-active-card bt-card">
       {{- if $image_file }}
-  			{{- $image := $image_file.Resize "600x600" }}
+  			{{- $image := $image_file.Fill "300x300" }}
 									<img class="bi-index-projects-active-title bt-hover-greyscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- else }}
 			            <img class="bi-index-projects-active-title bt-hover-greyscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
@@ -72,7 +72,7 @@
               <a class="bi-index-projects-finished-link" title="{{ .Params.Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
                 <div class="bi-index-projects-finished-card bt-card">
       {{- if $image_file }}
-  			{{- $image := $image_file.Resize "600x600" }}
+  			{{- $image := $image_file.Fill "300x300" }}
 									<img class="bi-index-projects-finished-title bt-hover-greyscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- else }}
 			            <img class="bi-index-projects-finished-title bt-hover-greyscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
@@ -113,7 +113,7 @@
               <a class="bi-index-projects-finished-link" title="{{ .Params.Title }}" href="{{ .RelPermalink }}" style="text-decoration:none;">
                 <div class="bi-index-projects-finished-card bt-card">
       {{- if $image_file }}
-  			{{- $image := $image_file.Resize "600x600" }}
+  			{{- $image := $image_file.Fill "300x300" }}
 									<img class="bi-index-projects-finished-title bt-hover-greyscale" src="{{ $image.RelPermalink }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">
 			{{- else }}
 			            <img class="bi-index-projects-finished-title bt-hover-greyscale" src="{{ $image_src }}" alt="{{ .Params.Short_Title | default .Title }}" style="width:100%">

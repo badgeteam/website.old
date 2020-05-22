@@ -23,7 +23,7 @@ slug        : "fri3d2018"
 
 # Project state
 active      : false
-archived    : false
+archived    : true
 external    : true
 featured    : true
 
