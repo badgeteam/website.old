@@ -1,6 +1,6 @@
 ---
 date        : 2020-05-21T19:08:17+02:00
-lastmod     : 2020-05-22T16:22:17+02:00
+lastmod     : 2020-05-22T18:58:42+02:00
 draft       : false
 title       : "New img shortcode for blogpage images"
 author      : "Elborro"
@@ -32,7 +32,7 @@ icon_name : fa-bug
 icon_pack : fa
 
 # Default image related to this blog
-#image_src   : "images/mascot.png"
+image_src   : "images/imgshortcode.png"
 #image_alt   : ""
 #thumb_src   : ""
 #thumb_alt   : ""
@@ -239,7 +239,7 @@ Allows you to specify the source album of the images, as an alternative to speci
 
 {{< img album="images" src="bodgeteam.jpg,mascot.png" colour="#ffffff" >}}
 
-A special case is where you want to show the entire content of the album.
+A special case is where you want to show the entire content of the album, _as specified in front matter_.
 
 {{< highlight html >}}
 {{</* img album="images" */>}}
