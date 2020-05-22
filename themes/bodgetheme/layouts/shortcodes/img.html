@@ -15,15 +15,35 @@
 {{- $ipcmds  := .Get "ipcmds"  }}
 {{- $option  := .Get "option"  }}
 
+{{- $sources := "" }}
+{{- if and $album (not $source) }}
+  {{- if $context.Params.gallery }}
+    {{- $sources = slice }}
+    {{- range (where $context.Params.gallery "album" $album) }}
+      {{- range .images }}
+        {{- if (not .exclude )}}
+          {{- $sources = $sources | append .image }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- else }}
+  {{- $sources = split $source "," }}
+{{- end }}
+
 {{- $index := 0 }}
-{{- if $source }}
+{{- if $sources }}
 <div class="bi-index-projects-active-row bt-row">
   {{- $options := split $option "," }}
-  {{- $sources := split $source "," }}
   {{- range $sources }}
     {{- $image := "" }}
 
-    {{- $original := $context.Page.Resources.GetMatch . }}
+    {{- $filename := . }}
+    {{- if $album }}
+      {{- $filename = printf "%s/%s" $album $filename }}
+    {{- end }}
+
+    {{- $original := $context.Page.Resources.GetMatch $filename }}
 
     {{- with $.Site.Params.gridifier }}
       {{- if and (not $original) .defaultImage }}
@@ -64,16 +84,16 @@
     {{- end }}
 
     {{- $img_url := "" }}
-    {{- $img_cap := path.Base . }}
-    {{- $img_alt := path.Base . }}
+    {{- $img_cap := path.Base $filename }}
+    {{- $img_alt := path.Base $filename }}
     {{- if $context.Params.gallery }}
       {{- $album_name := $album }}
-      {{- if (not $album_name) }}{{ $album_name = path.Dir . }}{{ end }}
-      {{- $filename  := path.Base . }}
+      {{- if (not $album_name) }}{{ $album_name = path.Dir $filename }}{{ end }}
+      {{- $filename  := path.Base $filename }}
       {{- range (where $context.Params.gallery "album" $album_name) }}
         {{- range (where .images "image" $filename) }}
           {{- $img_cap = .caption }}
-          {{- $img_alt = .alt }}
+          {{- if .alternative }}{{ $img_alt = .alternative }}{{ else }}{{ $img_alt = .caption }}{{ end }}
           {{- $img_url = .external_url }}
         {{- end }}
       {{- end }}
@@ -117,7 +137,7 @@
 
     {{- $cap_position := "bt-display-bottom" }}
     {{- if $cappos }}
-      {{ $cap_position = printf "bt-display-%s" $cappos }}
+      {{ $cap_position = printf "bt-display-%s" ($cappos | lower) }}
     {{ end }}
 
     {{- $cap_colour_class  := "bt-text-black" }}
@@ -127,7 +147,7 @@
         {{- $cap_colour_class  = "" }}
         {{- $cap_colour_number = $capcol }}
       {{- else }}
-        {{- $cap_colour_class = printf "bt-text-%s" $capcol }}
+        {{- $cap_colour_class = printf "bt-text-%s" ($capcol | lower) }}
         {{- $cap_colour_number = "" }}
       {{- end }}
     {{- end }}
@@ -155,7 +175,7 @@
       <div class="bi-img-caption bt-display-container">
         <img class="bi-img-img bi-image" src="{{ if $image }}{{ $image.RelPermalink }}{{ else }}{{ . }}{{ end }}"{{ if $alt_text}} alt="{{ $alt_text }}"{{ end }}{{ if $title_text}} title="{{ $title_text }}"{{ end }} width="{{ $image.Width }}" height="{{ $image.Height }}">
         {{- if $cap_text }}
-        <div class="bt-container bt-center {{ $cap_position }}{{ if $cap_colour_class }} {{ $cap_colour_class }}{{ end }}"{{ if $cap_colour_number }} style="color:{{ $cap_colour_number }};"{{ end }}>{{ $cap_text }}</div>
+        <div class="bt-container bt-center {{ $cap_position }}{{ if $cap_colour_class }} {{ $cap_colour_class }}{{ end }}"{{ if $cap_colour_number }} style="color:{{ $cap_colour_number }};"{{ end }}>{{ $cap_text | markdownify }}</div>
         {{- end }}
       </div>
     {{- if $url }}
