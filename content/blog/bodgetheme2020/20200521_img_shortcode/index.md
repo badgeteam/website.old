@@ -1,6 +1,6 @@
 ---
 date        : 2020-05-21T19:08:17+02:00
-lastmod     : 2020-05-22T18:58:42+02:00
+lastmod     : 2020-05-23T15:01:42+02:00
 draft       : false
 title       : "New img shortcode for blogpage images"
 author      : "Elborro"
@@ -166,7 +166,7 @@ Since other parameters were not specified, the images are *filled* to a *250x250
 When not specified, the shortcode will use *Fill* for all images.
 
 ##### **Resize**
-Resize with width of 500px and preserve ratio, specify size as "500x" or "x500" for height 500px and preserve ratio. "500x500" will squeeze the image to fit without preserving ratio.
+Resize with width of 500px and preserve ratio. Specify size as "500x" for width 500px and preserve ratio or "x500" for height 500px and preserve ratio. "500x500" will squeeze the image to fit.
 
 {{< highlight html >}}
 {{</* img src="images/bodgeteam.jpg,images/mascot.png" method="resize" */>}}
@@ -175,7 +175,7 @@ Resize with width of 500px and preserve ratio, specify size as "500x" or "x500" 
 {{< img src="images/bodgeteam.jpg,images/mascot.png" method="resize" colour="#ffffff" >}}
 
 ##### **Fit**
-Scales down the image while preserving the ratio, until it fits either specified height or width. When specified with the 'size' parameter, both height and width are required parameters.
+Scales down the image while preserving the ratio, until it fits either specified height or width. Specifying size as "500x" or "x500" will estimate the other dimension preserving the current ratio.
 
 {{< highlight html >}}
 {{</* img src="images/bodgeteam.jpg,images/mascot.png" method="fit" */>}}
@@ -184,7 +184,7 @@ Scales down the image while preserving the ratio, until it fits either specified
 {{< img src="images/bodgeteam.jpg,images/mascot.png" method="fit" colour="#ffffff" >}}
 
 ##### **Fill**
-Resizes and crops the image to match both given dimensions. When specified with the 'size' parameter, both height and width are required parameters.
+Resizes and crops the image to match both given dimensions. Specifying size as "500x" or "x500" will estimate the other dimension preserving the current ratio.
 
 {{< highlight html >}}
 {{</* img src="images/bodgeteam.jpg,images/mascot.png" method="fill" */>}}
@@ -193,7 +193,7 @@ Resizes and crops the image to match both given dimensions. When specified with 
 {{< img src="images/bodgeteam.jpg,images/mascot.png" method="fill" colour="#ffffff" >}}
 
 ##### **None**
-Skips image processing and show original image. This disables the generation of coloured tiles for missing pictures as well.
+Skips image processing and show original image. This disables background colour and the generation of coloured tiles for missing pictures.
 
 {{< highlight html >}}
 {{</* img src="images/bodgeteam.jpg,images/mascot.png" method="none" */>}}
