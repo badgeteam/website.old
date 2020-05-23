@@ -66,6 +66,20 @@
             {{- $bgcolour = index .tileColours $colourIndex }}
           {{- end }}
         {{- end }}
+
+        {{- $widthOnly := findRE "^(?P<width>[0-9]+)x$" $tileSize }}
+        {{- if $widthOnly }}
+          {{- $requestedWidth := float (strings.TrimRight "x" (index $widthOnly 0)) }}
+          {{- $newHeight := div (mul $requestedWidth $original.Height) $original.Width }}
+          {{- $tileSize = printf "%.0fx%.0f" $requestedWidth $newHeight }}
+        {{- end }}
+        {{- $heightOnly := findRE "^x(?P<height>[0-9]+)$" $tileSize }}
+        {{- if $heightOnly }}
+          {{- $requestedHeight := float (strings.TrimLeft "x" (index $heightOnly 0)) }}
+          {{- $newWidth := div (mul $requestedHeight $original.Width) $original.Height }}
+          {{- $tileSize = printf "%.0fx%.0f" $newWidth $requestedHeight }}
+        {{- end }}
+
         {{-      if eq $method "fit"    }}{{ $image = $original.Fit    (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}
         {{- else if eq $method "resize" }}{{ $image = $original.Resize (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}
         {{- else if eq $method "none"   }}{{ $image = $original }}
@@ -74,6 +88,20 @@
     {{- else }}
       {{- if $original }}
         {{- $tileSize := $size | default "250x250" }}
+
+        {{- $widthOnly := findRE "^(?P<width>[0-9]+)x$" $tileSize }}
+        {{- if $widthOnly }}
+          {{- $requestedWidth := float (strings.TrimRight "x" (index $widthOnly 0)) }}
+          {{- $newHeight := div (mul $requestedWidth $original.Height) $original.Width }}
+          {{- $tileSize = printf "%.0fx%.0f" $requestedWidth $newHeight }}
+        {{- end }}
+        {{- $heightOnly := findRE "^x(?P<height>[0-9]+)$" $tileSize }}
+        {{- if $heightOnly }}
+          {{- $requestedHeight := float (strings.TrimLeft "x" (index $heightOnly 0)) }}
+          {{- $newWidth := div (mul $requestedHeight $original.Width) $original.Height }}
+          {{- $tileSize = printf "%.0fx%.0f" $newWidth $requestedHeight }}
+        {{- end }}
+
         {{- $bgcolour := $colour | default "#ffffff" }}
         {{-      if eq $method "fill"   }}{{ $image = $original.Fill   (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}
         {{- else if eq $method "fit"    }}{{ $image = $original.Fit    (printf "%s %s %s" $tileSize $ipcmds $bgcolour) }}
