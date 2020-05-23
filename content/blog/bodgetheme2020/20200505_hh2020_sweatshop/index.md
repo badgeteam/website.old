@@ -45,155 +45,155 @@ gallery:
   - image        : "photo01.jpg"
     caption      : "Sweating Bodgers"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_140149_-_DSC08744.jpg"
   - image        : "photo02.jpg"
     caption      : "Removing FETs"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_140909_-_DSC08749.jpg"
   - image        : "photo03.jpg"
     caption      : "Bodging Fanatics"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_141119_-_DSC08757.jpg"
   - image        : "photo04.jpg"
     caption      : "The Harvest"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_141010_-_DSC08753.jpg"
   - image        : "photo05.jpg"
     caption      : "Trimming long leads"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_141414_-_DSC08769.jpg"
   - image        : "photo06.jpg"
     caption      : "Loads of battery boxes"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_141356_-_DSC08767.jpg"
   - image        : "photo07.jpg"
     caption      : "Removing with hot air"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_150645_-_DSC08816.jpg"
   - image        : "photo08.jpg"
     caption      : "Replacing the diode"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_141658_-_DSC08772.jpg"
   - image        : "photo09.jpg"
     caption      : "Badge on jig"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_141842_-_DSC08775.jpg"
   - image        : "photo10.jpg"
     caption      : "Programming jig"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_141848_-_DSC08776.jpg"
   - image        : "photo11.jpg"
     caption      : "STICKERS!"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_142121_-_DSC08786.jpg"
   - image        : "photo12.jpg"
     caption      : "Exhausted Bodhajes"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_195156_-_DSC08904.jpg"
   - image        : "photo13.jpg"
     caption      : "Noseyhaj"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_202322_-_DSC08910.jpg"
   - image        : "photo14.jpg"
     caption      : "Adventure then Pizza"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_190334_-_DSC08898.jpg"
   - image        : "photo15.jpg"
     caption      : "Chase the flavors"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_190348_-_DSC08899.jpg"
   - image        : "photo16.jpg"
     caption      : "Pizza with love"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_190908_-_DSC08900.jpg"
   - image        : "photo17.jpg"
     caption      : "Oh yes we did!"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_195928_-_DSC08905.jpg"
   - image        : "photo18.jpg"
     caption      : "Measure. Meditate. Cut!"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_154541_-_DSC08835.jpg"
   - image        : "photo19.jpg"
     caption      : "Monks work"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_165602_-_DSC08863.jpg"
   - image        : "photo20.jpg"
     caption      : "Bodge-planning"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_155709_-_DSC08844.jpg"
   - image        : "photo21.jpg"
     caption      : "Tinning"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_155146_-_DSC08839.jpg"
   - image        : "photo22.jpg"
     caption      : "Precision work"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_182210_-_DSC08889.jpg"
   - image        : "photo23.jpg"
     caption      : "Push and pray ..."
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_221535_-_DSC08934.jpg"
   - image        : "photo24.jpg"
     caption      : "... HURRAY!"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_221639_-_DSC08936.jpg"
   - image        : "photo25.jpg"
     caption      : "QC failures"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_203047_-_DSC08915.jpg"
   - image        : "photo26.jpg"
     caption      : "QC failures"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_202735_-_DSC08914.jpg"
   - image        : "photo27.jpg"
     caption      : "Fixed the easy-fixers first"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_211455_-_DSC08925.jpg"
   - image        : "photo28.jpg"
     caption      : "Scrutinizing bugged badges"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_213907_-_DSC08928.jpg"
   - image        : "photo29.jpg"
     caption      : "May be we fixed this bugger"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_213950_-_DSC08929.jpg"
   - image        : "photo30.jpg"
     caption      : "Beathaj"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_222744_-_DSC08941.jpg"
   - image        : "photo31.jpg"
     caption      : "Bodgefield remains"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_222806_-_DSC08942.jpg"
   - image        : "photo32.jpg"
     caption      : "Hobbybob sealed the boxes"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_223743_-_DSC08950.jpg"
   - image        : "photo33.jpg"
     caption      : "Debodination swept"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_231810_-_DSC08955.jpg"
   - image        : "photo34.jpg"
     caption      : "Toys!"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_223216_-_DSC08947.jpg"
   - image        : "photo35.jpg"
     caption      : "Badges ..."
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_140754_-_DSC08745.jpg"
   - image        : "photo36.jpg"
     caption      : "... more badges ..."
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_142111_-_DSC08785.jpg"
   - image        : "photo37.jpg"
     caption      : "... even more badges"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_142059_-_DSC08784.jpg"
   - image        : "photo38.jpg"
     caption      : "HÅJ!"
     exclude      : false
-    external_url : ""
+    external_url : "https://gallery.bodge.team/hackerhotel2020/2020-02-01-sweatshop-1/imgs/2020-02-01_204108_-_DSC08920.jpg"
 
 # Write the content of this blog page below in markup language.
 # An emoji cheat sheet can be found here:

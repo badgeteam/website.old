@@ -463,3 +463,34 @@ capcol="white"
 {{</ highlight>}}
 
 {{< img src="unknown01.jpg,unknown02.jpg,unknown03.jpg,unknown04.jpg,unknown05.jpg,unknown06.jpg" caption="*Image 01*,~~Image 02~~,**Image 03**,*Image 04*,~~Image 05~~,**Image 06**" cappos="middle" capcol="white" >}}
+
+
+---
+
+#### Testing
+
+{{< highlight html >}}
+{{</* img album="images" src="bodgeteam.jpg,mascot.png" size="300x" */>}}
+{{</ highlight>}}
+
+{{< img album="images" src="bodgeteam.jpg,mascot.png" method="fit" size="x150" >}}
+
+{{< highlight html >}}
+{{</* img album="images" src="bodgeteam.jpg,mascot.png" size="300x" */>}}
+{{</ highlight>}}
+
+{{< img album="images" src="bodgeteam.jpg,mascot.png" size="x150" >}}
+
+
+
+{{< highlight html >}}
+{{</* img album="images" src="voyage-cambodge.jpg" size="300x" */>}}
+{{</ highlight>}}
+
+{{< img album="images" src="voyage-cambodge.jpg" size="300x" >}}
+
+{{< highlight html >}}
+{{</* img album="images" src="voyage-cambodge.jpg" size="x150" */>}}
+{{</ highlight>}}
+
+{{< img album="images" src="voyage-cambodge.jpg" size="x150" option="nourl" >}}
