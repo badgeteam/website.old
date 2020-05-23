@@ -44,6 +44,10 @@
     {{- end }}
 
     {{- $original := $context.Page.Resources.GetMatch $filename }}
+    {{- $original_url := "" }}
+    {{- if $original }}
+      {{- $original_url = $original.RelPermalink }}
+    {{- end }}
 
     {{- with $.Site.Params.gridifier }}
       {{- if and (not $original) .defaultImage }}
@@ -128,6 +132,9 @@
     {{- end }}
 
     {{- $url := $img_url }}
+    {{- if and $original_url (not $url) }}
+      {{- $url = $original_url }}
+    {{- end }}
 
     {{- /* Get caption */}}
     {{- $cap_text := $img_cap }}
