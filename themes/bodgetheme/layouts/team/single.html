@@ -95,7 +95,7 @@
     {{- with .Params.bio }}
     <div class="bi-team-single-bio bt-container bt-card bt-margin bt-white">
       <p class="bi-team-single-bio-title bt-large"><strong><i class="fa fa-address-card bi-icon bt-margin-right bt-text-teal"></i>{{ (i18n "biography" | default "Biography") | markdownify }}</strong></p>
-      <p class="bi-team-single-bio-content">{{ . }}</p>
+      <p class="bi-team-single-bio-content">{{ . | markdownify | emojify }}</p>
     </div>
     {{- end }}
 
@@ -156,12 +156,12 @@
         <h6 class="bi-team-single-projects-project-date bt-text-teal"><i class="fa fa-calendar bi-icon bt-margin-right"></i>{{ $startDate }}{{ if ne $startDate $endDate }} - {{ $endDate }}{{ end }}</h6>
         {{- if $page.Params.participation }}
           {{- range (where $page.Params.participation "project" "in" .Params.projects) }}
-            <p>{{ .role }} : {{ .description }}</p>
+            <p>{{ .role }} : {{ .description |  markdownify | emojify }}</p>
           {{- else }}
-          <p>{{ .Description }}</p>
+          <p>{{ .Description | markdownify | emojify }}</p>
           {{- end }}
         {{- else }}
-        <p>{{ .Description }}</p>
+        <p>{{ .Description |  markdownify | emojify }}</p>
         {{- end }}
       {{- end }}
     </div>
