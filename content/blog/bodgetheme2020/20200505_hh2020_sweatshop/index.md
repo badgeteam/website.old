@@ -1,6 +1,6 @@
 ---
 date        : 2020-05-05T00:00:00+02:00
-lastmod     : 2020-05-21T22:23:00+02:00
+lastmod     : 2020-05-23T18:53:00+02:00
 draft       : false
 title       : "Blog page rewrite test"
 author      : "elborro"
