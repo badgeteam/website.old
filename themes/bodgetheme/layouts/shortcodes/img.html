@@ -203,9 +203,16 @@
       {{- else if in . "notit" }}{{ $title_text = "" }}
       {{- end }}
     {{- end }}
+
+    {{- $target := "" }}
+    {{- if $url }}
+      {{- if not (in $url $.Site.BaseURL) }}
+        {{- $target = "_blank"}}
+      {{- end }}
+    {{- end }}
   <div class="bi-img bt-display-container bt-margin-bottom {{ $alignment }}" style="width:{{ $image.Width }}">
     {{- if $url }}
-    <a title="{{ $cap_text }}" href="{{ $url }}" style="text-decoration:none;">
+    <a title="{{ $cap_text }}" href="{{ $url }}"{{ if $target }} target="{{ $target }}"{{ end }} style="text-decoration:none;">
     {{- end }}
       <div class="bi-img-caption bt-display-container">
         <img class="bi-img-img bi-image" src="{{ if $image }}{{ $image.RelPermalink }}{{ else }}{{ . }}{{ end }}"{{ if $alt_text}} alt="{{ $alt_text }}"{{ end }}{{ if $title_text}} title="{{ $title_text }}"{{ end }} width="{{ $image.Width }}" height="{{ $image.Height }}">
