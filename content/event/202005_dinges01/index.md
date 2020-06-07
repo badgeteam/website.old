@@ -17,6 +17,10 @@ publishDate : 2020-05-08T20:09:43+02:00
 # Event status (drafts do NOT show!)
 draft       : true
 
+# Until there's a better method to generate the separate calendar pages;
+# this needs to contain the 6 digit month (YYYYMM)
+calendars   : ["202005"]
+
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["ReplaceThisWithTheCorrectProjectID"]

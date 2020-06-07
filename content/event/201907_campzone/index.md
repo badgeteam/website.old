@@ -17,6 +17,10 @@ publishDate : 2019-07-26T13:37:00+01:00
 # Event status (drafts do NOT show!)
 draft       : true
 
+# Specify the calendar page this should up on.
+# Default calendar pages are specified as a digit month (YYYYMM)
+calendars   : ["201907"]
+
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["CZ2019"]

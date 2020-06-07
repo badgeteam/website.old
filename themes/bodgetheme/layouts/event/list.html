@@ -1,0 +1,71 @@
+{{ define "main" }}
+{{- $pages    := slice }}
+{{- $curr_key := .Scratch.Get "key" | default "2020-05" }}
+
+{{- range .Pages.GroupByDate "2006-01" }}
+  {{- $pages = $pages | append (dict "Key" .Key "Pages" .Pages) }}
+{{- end }}
+
+{{ $pages_count := len $pages }}
+{{- if gt $pages_count 1 }}
+
+  {{- $page_prev := "" }}
+  {{- $page_curr := "" }}
+  {{- $page_next := "" }}
+
+  {{- range $pages }}
+    {{- if and ($page_curr) (not $page_next) }}
+      {{- $page_next = .Key }}
+    {{- end }}
+    {{- if or (eq .Key $curr_key) (and (not $page_curr) (not $curr_key)) }}
+      {{- $page_curr = .Key }}
+    {{- else if (not $page_curr) }}
+      {{- $page_prev = .Key }}
+    {{- end }}
+  {{- end }}
+
+  <p>{{ printf "PageCurr: %#v" $page_curr }}</p>
+  <p>{{ printf "PageNext: %#v" $page_next }}</p>
+  <p>{{ printf "PagePrev: %#v" $page_prev }}</p>
+
+  <article class="bi-default-list"> {{ "<!-- Event list -->" | safeHTML }}
+    <section class="bi-default-list-section bt-card bt-margin">
+      <ul class="bi-ul bi-default-list-section-ul bt-ul bt-hoverable bt-white">
+        {{- /* range $pages */}}
+        {{- /*range (where $pages "Key" $page_curr) */}}
+        {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups  }}
+          <p>{{ .Key }}</p>
+
+          {{- range .Pages }}
+          <li class="bi-li bi-default-list-section-li bt-padding-16">
+            {{ .Title }}
+          </li>
+          {{- end }}
+        {{- end }}
+      </ul>
+    </section>
+
+    <div class="bi-article-navigation bt-container">
+      <div class="bi-article-nav-row bt-row">
+        {{- $label := "" }}
+        {{- with $page_prev }}
+        <div class="bi-article-nav-prev-col bt-col m3 s2 bt-left">
+          <p class="bi-article-nav-prev-title"><a class="bt-button bt-padding-large bt-white bt-border" title="Title" alt="Previous {{ $label }}" href="{{ $page_prev }}"><strong>&Lang;<x class="bt-hide-small"> PREVIOUS {{ $label | upper }}</x></strong></a></p>
+        </div>
+        {{- end }}
+        {{- with $page_next }}
+        <div class="bi-article-nav-next-col bt-col m3 s2 bt-right">
+          <p class="bi-article-nav-next-title bt-right"><a class="bt-button bt-padding-large bt-white bt-border" title="Title" alt="Next {{ $label }}" href="{{ $page_next }}"><strong><x class="bt-hide-small">NEXT {{ $label | upper }} </x>&Rang;</strong></a></p>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </article> {{ "<!-- End event list -->" | safeHTML }}
+  {{- end }}
+{{ end }}
+
+{{ define "page-header" }}
+<header class="bi-page-header bt-container bt-center">
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-calendar bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n .Title | default (humanize .Title)) | markdownify }}</h3>
+</header>
+{{ end }}

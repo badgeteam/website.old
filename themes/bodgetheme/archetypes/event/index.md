@@ -17,6 +17,10 @@ publishDate : {{ .Date }}
 # Event status (drafts do NOT show!)
 draft       : true
 
+# Specify the calendar page this should up on.
+# Default calendar pages are specified as a digit month (YYYYMM)
+calendars   : ["{{ replace (.Date.Format "2006-01") "-" "" }}"]
+
 # Identifying mnemonics, INTERNAL use only.
 # This refers to this project from other items like blogs, teams, etc.
 projects    : ["ReplaceThisWithTheCorrectProjectID"]

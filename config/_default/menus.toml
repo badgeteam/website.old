@@ -98,15 +98,15 @@
   pre        = "<i class='fa fa-camera-retro bt-hover-opacity'></i><x class='bt-hide-small'> "
   post       = "</x>"
 
-# [[navbar_top]]
-#   identifier = "events"
-#   name       = "Events"
-#   title      = "Events"
-#   url        = "/event/"
-#   parent     = ""
-#   weight     = 500
-#   pre        = "<i class='fa fa-calendar bt-hover-opacity'></i><x class='bt-hide-small'> "
-#   post       = "</x>"
+[[navbar_top]]
+  identifier = "calendar"
+  name       = "Calendar"
+  title      = "Calendar"
+  url        = "/calendars/"
+  parent     = ""
+  weight     = 500
+  pre        = "<i class='fa fa-calendar bt-hover-opacity'></i><x class='bt-hide-small'> "
+  post       = "</x>"
 
 # [[navbar_top]]
 #   identifier = "archive"

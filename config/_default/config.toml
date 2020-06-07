@@ -25,7 +25,7 @@ rssLimit    = 25
 [taxonomies]
   tag      = "tags"
   category = "categories"
-  event    = "events"
+  calendar = "calendars"
   project  = "projects"
   blog     = "blogs"
   team     = "teams"

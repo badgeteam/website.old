@@ -1,0 +1,89 @@
+{{ define "main" }}
+  {{- $firstPage := index .Pages 0 }}
+  {{- $firstPageDate := time (printf "%04d-%02d-%02d" $firstPage.Date.Year $firstPage.Date.Month $firstPage.Date.Day) }}
+  {{- $firstDate :=  $firstPageDate.AddDate 0 0 (int (sub 1 $firstPageDate.Day)) }}
+  {{- $lastDate  := ($firstDate.AddDate 0 1 0).AddDate 0 0 -1 }}
+  {{- $firstCalDate := $firstDate.AddDate 0 0 (int (sub 0 (partial `functions/get_weekday_index` $firstDate))) }}
+  {{- $lastCalDate  := $lastDate.AddDate 0 0 (int (sub 6 (partial `functions/get_weekday_index` $lastDate))) }}
+  {{- $calDays := add (div ($lastCalDate.Sub $firstCalDate).Hours 24) 1 }}
+  {{- $dayIndices := first $calDays (slice 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41) }}
+  {{- $weekDayIndices := slice 0 1 2 3 4 5 6 }}
+  <div>
+    <div id="calendar">
+      <ul class="weekdays">
+  {{- range $weekDayIndices }}
+        <li>{{ (partial `functions/get_weekday_name_by_index` (add . 7) ) }}</li>{{- /* WIP : get_weekday_by_index requires a fix for index 0 */}}
+  {{- end }}
+      </ul>
+      <ul class="days">
+  {{- range $dayIndices }}
+    {{- $calDate := $firstCalDate.AddDate 0 0 (.) }}
+    {{- if or (lt $calDate $firstDate) (gt $calDate $lastDate) }}
+        <li class="day other-month">
+    {{- else }}
+        <li class="day">
+    {{- end }}
+          <div class="date">{{ $calDate.Day }}</div>
+    {{- $taxonomy := index $.Site.Taxonomies "calendars" }}
+    {{- range $key, $value := $taxonomy }}
+      {{- if eq $key $.Page.Name }}
+        {{- range (where (where $value.Pages "Date.UTC" ">=" $calDate) "Date.UTC" "<" ($calDate.AddDate 0 0 1)) }}
+          <a href="{{ .Permalink }}">
+            <div class="event">
+              <div class="event-desc"><strong>{{ .Title }}</strong>{{ if .Summary }}<br>{{ .Summary }}{{ end }}</div>
+            </div>
+          </a>
+        {{- end }}
+      {{- end }}
+    {{- end }}
+        </li>
+    {{- if le (mod (add . 1) 7) 0 }}
+      </ul>
+      <ul class="days">
+    {{- end }}
+  {{- end }}
+      </ul>
+    </div>
+  </div>
+
+  {{- $page_prev := "" }}
+  {{- $page_curr := "" }}
+  {{- $page_next := "" }}
+  {{- $curr_key := $.Page.Name }}
+  {{- $taxonomy := index $.Site.Taxonomies "calendars" }}
+  {{- range $key, $value := $taxonomy }}
+    {{- if and ($page_curr) (not $page_next) }}
+      {{- $page_next = printf "/calendars/%s" $key }}
+    {{- end }}
+    {{- if or (eq $key $curr_key) (and (not $page_curr) (not $curr_key)) }}
+      {{- $page_curr = printf "/calendars/%s" $key }}
+    {{- else if (not $page_curr) }}
+      {{- $page_prev = printf "/calendars/%s" $key }}
+    {{- end }}
+  {{- end }}
+  <div class="bi-article-navigation bt-container">
+    <div class="bi-article-nav-row bt-row">
+      {{- $label := "" }}
+      {{- with $page_prev }}
+      <div class="bi-article-nav-prev-col bt-col m3 s2 bt-left">
+        <p class="bi-article-nav-prev-title"><a class="bt-button bt-padding-large bt-white bt-border" title="Previous" alt="Previous" href="{{ $page_prev }}"><strong>&Lang;<x class="bt-hide-small"> PREVIOUS</x></strong></a></p>
+      </div>
+      {{- end }}
+      {{- with $page_next }}
+      <div class="bi-article-nav-next-col bt-col m3 s2 bt-right">
+        <p class="bi-article-nav-next-title bt-right"><a class="bt-button bt-padding-large bt-white bt-border" title="Next" alt="Next" href="{{ $page_next }}"><strong><x class="bt-hide-small">NEXT </x>&Rang;</strong></a></p>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+{{ end }}
+
+{{ define "page-header" }}
+<header class="bi-page-header bt-container bt-center">
+  {{- $firstPage := index .Pages 0 }}
+  {{- $month := $firstPage.Date.Format "January" }}
+  {{- $month  = (i18n $month | default $month) }}
+  {{- $title := (printf "%s %s" $month ($firstPage.Date.Format "2006")) | humanize }}
+  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-calendar bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ $title }}</h3>
+</header>
+{{ end }}
