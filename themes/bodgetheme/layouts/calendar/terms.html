@@ -1,23 +1,50 @@
 {{ define "main" }}
+  {{- $firstPageDate := "" }}
+  {{- $firstPageName := "" }}
+
+  {{- $taxonomy := index $.Site.Taxonomies "calendars" }}
+  {{- range $key, $value := $taxonomy }}
+    {{- range $value.Pages }}
+      {{- if $firstPageDate }}
+        {{- if gt .Date.UTC $firstPageDate }}
+          {{- if lt $firstPageDate now }}
+            {{- $firstPageDate = .Date.UTC }}
+            {{- $firstPageName = $key }}
+          {{- end }}
+        {{- else }}
+          {{- if gt $firstPageDate now }}
+            {{- $firstPageDate = .Date.UTC }}
+            {{- $firstPageName = $key }}
+          {{- end }}
+        {{- end }}
+      {{- else }}
+        {{- $firstPageDate = .Date.UTC }}
+        {{- $firstPageName = $key }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+
+  {{- $month := $firstPageDate.Format "January" }}
+  {{- $month  = (i18n $month | default $month) }}
+  {{- $title := (printf "%s %s" $month ($firstPageDate.Format "2006")) | humanize }}
+  <header class="bi-page-header bt-container bt-center">
+    <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-calendar bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ $title }}</h3>
+  </header>
+
   {{- $page_prev := "" }}
   {{- $page_curr := "" }}
   {{- $page_next := "" }}
-  {{- $curr_key := "202010" }}
-  {{- $taxonomy := index $.Site.Taxonomies "calendars" }}
   {{- range $key, $value := $taxonomy }}
     {{- if and ($page_curr) (not $page_next) }}
       {{- $page_next = printf "/calendars/%s" $key }}
     {{- end }}
-    {{- if or (eq $key $curr_key) (and (not $page_curr) (not $curr_key)) }}
+    {{- if or (eq $key $firstPageName) (and (not $page_curr) (not $firstPageName)) }}
       {{- $page_curr = printf "/calendars/%s" $key }}
     {{- else if (not $page_curr) }}
       {{- $page_prev = printf "/calendars/%s" $key }}
     {{- end }}
   {{- end }}
 
-  {{- /* $firstPage := index .Pages 0 */}}
-  {{- /* $firstPageDate := time (printf "%04d-%02d-%02d" $firstPage.Date.Year $firstPage.Date.Month $firstPage.Date.Day) */}}
-  {{- $firstPageDate := time (printf "2020-01-04") }}
   {{- $firstDate :=  $firstPageDate.AddDate 0 0 (int (sub 1 $firstPageDate.Day)) }}
   {{- $lastDate  := ($firstDate.AddDate 0 1 0).AddDate 0 0 -1 }}
   {{- $firstCalDate := $firstDate.AddDate 0 0 (int (sub 0 (partial `functions/get_weekday_index` $firstDate))) }}
@@ -41,9 +68,8 @@
         <li class="day">
     {{- end }}
           <div class="date">{{ $calDate.Day }}</div>
-    {{- $taxonomy := index $.Site.Taxonomies "calendars" }}
     {{- range $key, $value := $taxonomy }}
-      {{- if eq $key $.Page.Name }}
+      {{- if eq $key $firstPageName }}
         {{- range (where (where $value.Pages "Date.UTC" ">=" $calDate) "Date.UTC" "<" ($calDate.AddDate 0 0 1)) }}
           <a href="{{ .Permalink }}">
             <div class="event">
@@ -77,10 +103,4 @@
       {{- end }}
     </div>
   </div>
-{{ end }}
-
-{{ define "page-header" }}
-<header class="bi-page-header bt-container bt-center">
-  <h3 class="bi-page-header-title bt-left bt-text-black"><strong><i class="fa fa-hashtag bi-icon bt-margin-right bt-xlarge bt-text-teal"></i></strong>{{ (i18n .Title | default (humanize .Title)) | markdownify }}</h3>
-</header>
 {{ end }}
